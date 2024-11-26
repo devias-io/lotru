@@ -50,22 +50,21 @@ const DrawerContent = styled(Primitives.Popup, {
   borderColor: "hsl(var(--color-border))",
   borderStyle: "solid",
   borderWidth: "1px",
-  borderRadius: "var(--borderRadius-lg)",
-  bottom: "calc(var(--spacing-unit) * 2)",
+  bottom: 0,
   boxShadow: "var(--shadow-xl)",
   display: "flex",
   flex: "1 1 auto",
   flexDirection: "column",
   maxWidth: "calc(var(--drawer-max-width, 560px) - calc(var(--spacing-unit) * 2))",
+  opacity: 0,
   outline: "none",
   position: "fixed",
-  top: "calc(var(--spacing-unit) * 2)",
-  transitionProperty: "transform, opacity",
+  top: 0,
   transitionDuration: "var(--duration-normal)",
+  transitionProperty: "transform, opacity",
   transitionTimingFunction: "var(--easing-default)",
   width: "var(--size-full)",
   zIndex: "var(--zIndex-modal)",
-  opacity: 0,
   "&[data-state='open']": {
     opacity: 1,
     transform: "translateX(0)",
@@ -77,7 +76,7 @@ const DrawerContent = styled(Primitives.Popup, {
     {
       props: { side: "left" },
       style: {
-        left: "calc(var(--spacing-unit) * 2)",
+        left: 0,
         transform: "translateX(-100%)",
         "&[data-entering]": {
           transform: "translateX(-100%)",
@@ -87,7 +86,7 @@ const DrawerContent = styled(Primitives.Popup, {
     {
       props: { side: "right" },
       style: {
-        right: "calc(var(--spacing-unit) * 2)",
+        right: 0,
         transform: "translateX(100%)",
         "&[data-entering]": {
           transform: "translateX(100%)",

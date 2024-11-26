@@ -15,7 +15,7 @@ export function ThemeSwitch(): React.JSX.Element | null {
   }, []);
 
   if (!mounted) {
-    return null;
+    return <IconButton disabled variant="ghost" />;
   }
 
   const Icon = theme === "light" ? SunIcon : MoonIcon;

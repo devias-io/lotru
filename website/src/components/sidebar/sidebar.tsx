@@ -33,35 +33,34 @@ export function GlobalSidebar(): React.JSX.Element {
       })}
       side="left"
     >
-      <SidebarContent
-        className={css({
-          "@media (min-width: 768px)": {
-            display: "block",
-          },
-        })}
-      >
-        <SidebarHeader>
-          <div
-            className={css({
-              alignItems: "flex-start",
-              borderBottom: "1px solid hsl(var(--color-border))",
-              boxSizing: "border-box",
+      <SidebarContent>
+        <SidebarHeader
+          className={css({
+            alignItems: "flex-start",
+            borderBottom: "1px solid hsl(var(--color-border))",
+            boxSizing: "border-box",
+            display: "none",
+            flexDirection: "column",
+            flexShrink: 0,
+            height: "64px",
+            justifyContent: "center",
+            paddingBlock: "calc(var(--spacing-unit) * 4)",
+            "@media (min-width: 768px)": {
               display: "flex",
-              flexDirection: "column",
-              flexShrink: 0,
-              height: "65px",
-              justifyContent: "center",
-              paddingBlock: "calc(var(--spacing-unit) * 4)",
-            })}
-          >
-            <Link href="/" prefetch={false}>
-              <Logo height={20} />
-            </Link>
-          </div>
+            },
+          })}
+        >
+          <Link href="/" prefetch={false}>
+            <Logo />
+          </Link>
         </SidebarHeader>
         <SidebarBody
           className={css({
             overflowY: "unset",
+            padding: "calc(var(--spacing-unit) * 4)",
+            "@media (min-width: 768px)": {
+              padding: 0,
+            },
           })}
         >
           {groups.map((group) => (

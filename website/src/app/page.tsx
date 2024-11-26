@@ -19,7 +19,7 @@ export default function Page(): React.JSX.Element {
           paddingInline: "calc(var(--spacing-unit) * 6)",
         })}
       >
-        <Logo height={20} />
+        <Logo />
       </div>
       <header
         className={css({

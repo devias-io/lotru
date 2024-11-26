@@ -11,11 +11,10 @@ const StackRoot = styled("div", {
 });
 
 interface StackProps extends React.HTMLAttributes<HTMLDivElement> {
-  alignItems?: React.CSSProperties["alignItems"];
   /**
-   * The space between each child element.
+   * The alignment of the stack.
    */
-  gap?: number;
+  alignItems?: React.CSSProperties["alignItems"];
   /**
    * The direction of the stack.
    */
@@ -24,10 +23,18 @@ interface StackProps extends React.HTMLAttributes<HTMLDivElement> {
    * The flex-wrap property of the stack.
    */
   flexWrap?: React.CSSProperties["flexWrap"];
+  /**
+   * The space between each child element.
+   */
+  gap?: number;
+  /**
+   * The justify-content property of the stack.
+   */
+  justifyContent?: React.CSSProperties["justifyContent"];
 }
 
 export const Stack = React.forwardRef<HTMLDivElement, StackProps>(
-  ({ alignItems, children, direction = "column", flexWrap, gap = 0, style, ...props }, ref) => {
+  ({ alignItems, children, direction = "column", flexWrap, gap = 0, justifyContent, style, ...props }, ref) => {
     return (
       <StackRoot
         ref={ref}
@@ -37,6 +44,7 @@ export const Stack = React.forwardRef<HTMLDivElement, StackProps>(
             "--direction": direction,
             alignItems,
             flexWrap,
+            justifyContent,
             ...style,
           } as React.CSSProperties
         }

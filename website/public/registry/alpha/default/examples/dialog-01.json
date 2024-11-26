@@ -1,0 +1,14 @@
+{
+  "id": "examples/dialog-01",
+  "name": "Dialog",
+  "registryDependencies": [
+    "ui/button",
+    "ui/dialog"
+  ],
+  "files": [
+    {
+      "path": "examples/dialog-01.tsx",
+      "content": "import * as React from \"react\";\n\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Dialog,\n  DialogContent,\n  DialogDescription,\n  DialogOverlay,\n  DialogTitle,\n  DialogTrigger,\n} from \"@/components/ui/dialog\";\n\nexport default function DialogExample(): React.JSX.Element {\n  return (\n    <Dialog>\n      <DialogTrigger render={<Button>Open dialog</Button>} />\n      <DialogOverlay />\n      <DialogContent>\n        <DialogTitle>Subscription montly usage</DialogTitle>\n        <DialogDescription>You have used 10GB of your 100GB montly quota.</DialogDescription>\n      </DialogContent>\n    </Dialog>\n  );\n}\n"
+    }
+  ]
+}

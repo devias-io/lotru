@@ -1,0 +1,10 @@
+{
+  "id": "ui/stack",
+  "name": "Stack",
+  "files": [
+    {
+      "path": "ui/stack.tsx",
+      "content": "import * as React from \"react\";\nimport { styled } from \"@pigment-css/react\";\n\nconst StackRoot = styled(\"div\", {\n  name: \"Stack\",\n  slot: \"root\",\n})({\n  display: \"flex\",\n  flexDirection: \"var(--direction)\" as \"row\" | \"column\",\n  gap: \"var(--gap)\",\n});\n\ninterface StackProps extends React.HTMLAttributes<HTMLDivElement> {\n  alignItems?: React.CSSProperties[\"alignItems\"];\n  /**\n   * The space between each child element.\n   */\n  gap?: number;\n  /**\n   * The direction of the stack.\n   */\n  direction?: React.CSSProperties[\"flexDirection\"];\n  /**\n   * The flex-wrap property of the stack.\n   */\n  flexWrap?: React.CSSProperties[\"flexWrap\"];\n}\n\nexport const Stack = React.forwardRef<HTMLDivElement, StackProps>(\n  ({ alignItems, children, direction = \"column\", flexWrap, gap = 0, style, ...props }, ref) => {\n    return (\n      <StackRoot\n        ref={ref}\n        style={\n          {\n            \"--gap\": `calc(var(--spacing-unit) * ${gap})`,\n            \"--direction\": direction,\n            alignItems,\n            flexWrap,\n            ...style,\n          } as React.CSSProperties\n        }\n        {...props}\n      >\n        {children}\n      </StackRoot>\n    );\n  }\n);\nStack.displayName = \"Stack\";\n"
+    }
+  ]
+}

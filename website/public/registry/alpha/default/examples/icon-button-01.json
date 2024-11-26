@@ -1,0 +1,13 @@
+{
+  "id": "examples/icon-button-01",
+  "name": "Basic",
+  "registryDependencies": [
+    "ui/icon-button"
+  ],
+  "files": [
+    {
+      "path": "examples/icon-button-01.tsx",
+      "content": "import * as React from \"react\";\nimport { ArrowRightIcon } from \"lucide-react\";\n\nimport { IconButton } from \"@/components/ui/icon-button\";\n\nexport default function IconButtonExample(): React.JSX.Element {\n  return (\n    <IconButton size=\"lg\">\n      <ArrowRightIcon />\n    </IconButton>\n  );\n}\n"
+    }
+  ]
+}

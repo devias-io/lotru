@@ -1,0 +1,13 @@
+{
+  "id": "examples/badge-01",
+  "name": "Basic",
+  "registryDependencies": [
+    "ui/badge"
+  ],
+  "files": [
+    {
+      "path": "examples/badge-01.tsx",
+      "content": "import * as React from \"react\";\n\nimport { Badge } from \"@/components/ui/badge\";\n\nexport default function BadgeExample(): React.JSX.Element {\n  return <Badge>Lotru</Badge>;\n}\n"
+    }
+  ]
+}

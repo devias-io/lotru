@@ -1,0 +1,102 @@
+[
+  {
+    "id": "examples/alert-01",
+    "name": "Basic"
+  },
+  {
+    "id": "examples/alert-02",
+    "name": "With dismiss button"
+  },
+  {
+    "id": "examples/avatar-01",
+    "name": "Avatar"
+  },
+  {
+    "id": "examples/badge-01",
+    "name": "Basic"
+  },
+  {
+    "id": "examples/badge-02",
+    "name": "With a different variant"
+  },
+  {
+    "id": "examples/button-01",
+    "name": "Basic"
+  },
+  {
+    "id": "examples/button-02",
+    "name": "With a different variant"
+  },
+  {
+    "id": "examples/button-03",
+    "name": "With loading indicator"
+  },
+  {
+    "id": "examples/card-01",
+    "name": "Card"
+  },
+  {
+    "id": "examples/checkbox-01",
+    "name": "Checkbox"
+  },
+  {
+    "id": "examples/dialog-01",
+    "name": "Dialog"
+  },
+  {
+    "id": "examples/drawer-01",
+    "name": "Drawer"
+  },
+  {
+    "id": "examples/field-01",
+    "name": "Field"
+  },
+  {
+    "id": "examples/input-01",
+    "name": "Input"
+  },
+  {
+    "id": "examples/heading-01",
+    "name": "Heading"
+  },
+  {
+    "id": "examples/icon-button-01",
+    "name": "Basic"
+  },
+  {
+    "id": "examples/icon-button-02",
+    "name": "With a different variant"
+  },
+  {
+    "id": "examples/popover-01",
+    "name": "Popover"
+  },
+  {
+    "id": "examples/prompt-01",
+    "name": "Prompt"
+  },
+  {
+    "id": "examples/select-01",
+    "name": "Select"
+  },
+  {
+    "id": "examples/switch-01",
+    "name": "Switch"
+  },
+  {
+    "id": "examples/table-01",
+    "name": "Table"
+  },
+  {
+    "id": "examples/tabs-01",
+    "name": "Tabs"
+  },
+  {
+    "id": "examples/text-01",
+    "name": "Text"
+  },
+  {
+    "id": "examples/textarea-01",
+    "name": "Textarea"
+  }
+]

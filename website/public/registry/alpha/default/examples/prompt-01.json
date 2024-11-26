@@ -1,0 +1,13 @@
+{
+  "id": "examples/prompt-01",
+  "name": "Prompt",
+  "registryDependencies": [
+    "ui/prompt"
+  ],
+  "files": [
+    {
+      "path": "examples/prompt-01.tsx",
+      "content": "import * as React from \"react\";\n\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Prompt,\n  PromptAction,\n  PromptOverlay,\n  PromptCancel,\n  PromptContent,\n  PromptDescription,\n  PromptFooter,\n  PromptHeader,\n  PromptTitle,\n  PromptTrigger,\n} from \"@/components/ui/prompt\";\n\nexport default function PromptExample(): React.JSX.Element {\n  return (\n    <Prompt variant=\"danger\">\n      <PromptTrigger render={<Button>Open prompt</Button>} />\n      <PromptOverlay />\n      <PromptContent>\n        <PromptHeader>\n          <PromptTitle>Delete something</PromptTitle>\n          <PromptDescription>Are you sure? This cannot be undone.</PromptDescription>\n        </PromptHeader>\n        <PromptFooter>\n          <PromptCancel>Cancel</PromptCancel>\n          <PromptAction>Delete</PromptAction>\n        </PromptFooter>\n      </PromptContent>\n    </Prompt>\n  );\n}\n"
+    }
+  ]
+}

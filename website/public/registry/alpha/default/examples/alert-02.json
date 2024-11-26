@@ -1,0 +1,13 @@
+{
+  "id": "examples/alert-02",
+  "name": "With dismiss button",
+  "registryDependencies": [
+    "ui/alert"
+  ],
+  "files": [
+    {
+      "path": "examples/alert-02.tsx",
+      "content": "import * as React from \"react\";\nimport { InfoIcon } from \"lucide-react\";\n\nimport { Alert, AlertContent, AlertIcon, AlertTitle } from \"@/components/ui/alert\";\n\nexport default function AlertExample(): React.JSX.Element {\n  return (\n    <Alert dismissible>\n      <AlertIcon>\n        <InfoIcon />\n      </AlertIcon>\n      <AlertContent>\n        <AlertTitle>Organization created successfully.</AlertTitle>\n      </AlertContent>\n    </Alert>\n  );\n}\n"
+    }
+  ]
+}

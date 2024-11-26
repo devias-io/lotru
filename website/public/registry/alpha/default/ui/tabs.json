@@ -1,0 +1,10 @@
+{
+  "id": "ui/tabs",
+  "name": "Tabs",
+  "files": [
+    {
+      "path": "ui/tabs.tsx",
+      "content": "import * as React from \"react\";\nimport * as Primitives from \"@base_ui/react/Tabs\";\nimport { styled } from \"@pigment-css/react\";\n\nconst Tabs = styled(Primitives.Root, {\n  name: \"Tabs\",\n  slot: \"root\",\n})({});\n\nconst TabsList = styled(Primitives.List, {\n  name: \"TabsList\",\n  slot: \"list\",\n})({\n  display: \"flex\",\n  alignItems: \"center\",\n  gap: \"calc(var(--spacing-unit) * 2)\",\n});\n\nconst TabsTrigger = styled(Primitives.Tab, {\n  name: \"TabsTrigger\",\n  slot: \"trigger\",\n})({\n  alignItems: \"center\",\n  backgroundColor: \"transparent\",\n  border: \"none\",\n  borderRadius: \"var(--borderRadius-full)\",\n  color: \"hsl(var(--color-foregroundSubtle))\",\n  cursor: \"pointer\",\n  display: \"inline-flex\",\n  fontFamily: \"var(--fontFamily-sans)\",\n  fontSize: \"var(--fontSize-sm)\",\n  justifyContent: \"center\",\n  padding: \"var(--spacing-unit) calc(var(--spacing-unit) * 2.5)\",\n  transitionDuration: \"var(--duration-normal)\",\n  transitionProperty: \"color\",\n  transitionTimingFunction: \"var(--easing-default)\",\n  \"&:hover\": {\n    color: \"hsl(var(--color-foreground))\",\n  },\n  \"&:focus-visible\": {\n    backgroundColor: \"hsl(var(--color-background))\",\n  },\n  \"&[data-selected='true']\": {\n    color: \"hsl(var(--color-foreground))\",\n    backgroundColor: \"hsl(var(--color-background))\",\n    boxShadow: \"var(--shadow-md)\",\n  },\n  \"&[data-disabled='true']\": {\n    color: \"hsl(var(--color-foregroundDisabled))\",\n    cursor: \"not-allowed\",\n  },\n});\n\nconst TabsContent = styled(Primitives.Panel, {\n  name: \"TabsContent\",\n  slot: \"content\",\n})({\n  outline: \"none\",\n});\n\nconst TabsIndicator = Primitives.Indicator;\n\nexport { Tabs, TabsTrigger, TabsList, TabsContent, TabsIndicator };\n"
+    }
+  ]
+}

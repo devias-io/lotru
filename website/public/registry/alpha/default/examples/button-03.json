@@ -1,0 +1,13 @@
+{
+  "id": "examples/button-03",
+  "name": "With loading indicator",
+  "registryDependencies": [
+    "ui/button"
+  ],
+  "files": [
+    {
+      "path": "examples/button-03.tsx",
+      "content": "import * as React from \"react\";\n\nimport { Button } from \"@/components/ui/button\";\n\nexport default function ButtonExample(): React.JSX.Element {\n  return <Button isLoading loadingText=\"Loading...\" />;\n}\n"
+    }
+  ]
+}

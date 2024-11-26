@@ -1,0 +1,13 @@
+{
+  "id": "examples/badge-02",
+  "name": "With a different variant",
+  "registryDependencies": [
+    "ui/badge"
+  ],
+  "files": [
+    {
+      "path": "examples/badge-02.tsx",
+      "content": "import * as React from \"react\";\n\nimport { Badge } from \"@/components/ui/badge\";\nimport { Stack } from \"@/components/ui/stack\";\n\nexport default function BadgeExample(): React.JSX.Element {\n  return (\n    <Stack direction=\"row\" gap={4} flexWrap=\"wrap\">\n      <Badge variant=\"solid\">Lotru</Badge>\n      <Badge variant=\"subtle\">Lotru</Badge>\n      <Badge variant=\"outline\">Lotru</Badge>\n    </Stack>\n  );\n}\n"
+    }
+  ]
+}

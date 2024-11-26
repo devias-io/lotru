@@ -1,0 +1,86 @@
+[
+  {
+    "id": "ui/alert",
+    "name": "Alert"
+  },
+  {
+    "id": "ui/avatar",
+    "name": "Avatar"
+  },
+  {
+    "id": "ui/badge",
+    "name": "Badge"
+  },
+  {
+    "id": "ui/button",
+    "name": "Button"
+  },
+  {
+    "id": "ui/card",
+    "name": "Card"
+  },
+  {
+    "id": "ui/checkbox",
+    "name": "Checkbox"
+  },
+  {
+    "id": "ui/dialog",
+    "name": "Dialog"
+  },
+  {
+    "id": "ui/drawer",
+    "name": "Drawer"
+  },
+  {
+    "id": "ui/field",
+    "name": "Field"
+  },
+  {
+    "id": "ui/heading",
+    "name": "Heading"
+  },
+  {
+    "id": "ui/icon-button",
+    "name": "Icon-button"
+  },
+  {
+    "id": "ui/input",
+    "name": "Input"
+  },
+  {
+    "id": "ui/popover",
+    "name": "Popover"
+  },
+  {
+    "id": "ui/prompt",
+    "name": "Prompt"
+  },
+  {
+    "id": "ui/select",
+    "name": "Select"
+  },
+  {
+    "id": "ui/stack",
+    "name": "Stack"
+  },
+  {
+    "id": "ui/switch",
+    "name": "Switch"
+  },
+  {
+    "id": "ui/tabs",
+    "name": "Tabs"
+  },
+  {
+    "id": "ui/table",
+    "name": "Table"
+  },
+  {
+    "id": "ui/text",
+    "name": "Text"
+  },
+  {
+    "id": "ui/textarea",
+    "name": "Textarea"
+  }
+]

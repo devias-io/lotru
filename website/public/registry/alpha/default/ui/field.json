@@ -1,0 +1,13 @@
+{
+  "id": "ui/field",
+  "name": "Field",
+  "dependencies": [
+    "@base_ui/react"
+  ],
+  "files": [
+    {
+      "path": "ui/field.tsx",
+      "content": "import * as React from \"react\";\nimport * as Primitives from \"@base_ui/react/Field\";\nimport { styled } from \"@pigment-css/react\";\n\nconst Field = Primitives.Root;\n\ninterface FieldControlProps extends Primitives.ControlProps {\n  children: React.ReactElement;\n}\n\nconst FieldControl = ({ children, ...props }: FieldControlProps): React.JSX.Element => {\n  return <Primitives.Control render={children} {...props} />;\n};\nFieldControl.displayName = \"FieldControl\";\n\nconst FieldLabel = styled(Primitives.Label)({\n  color: \"hsl(var(--color-foreground))\",\n  display: \"block\",\n  fontFamily: \"var(--fontFamily-sans)\",\n  fontSize: \"var(--fontSize-sm)\",\n  lineHeight: \"var(--lineHeight-normal)\",\n});\n\nconst FieldDescription = styled(Primitives.Description)({\n  color: \"hsl(var(--color-foregroundSubtle))\",\n  display: \"block\",\n  fontFamily: \"var(--fontFamily-sans)\",\n  fontSize: \"var(--fontSize-sm)\",\n  lineHeight: \"var(--lineHeight-normal)\",\n  marginBlockStart: \"var(--spacing-unit)\",\n  \"&[data-error]\": {\n    color: \"hsl(var(--color-foregroundDanger))\",\n  },\n});\n\nconst FieldError = styled(Primitives.Error)({\n  color: \"hsl(var(--color-foregroundDanger))\",\n  display: \"block\",\n  fontFamily: \"var(--fontFamily-sans)\",\n  fontSize: \"var(--fontSize-sm)\",\n  lineHeight: \"var(--lineHeight-normal)\",\n  marginBlockStart: \"var(--spacing-unit)\",\n});\n\nconst FieldValidity = Primitives.Validity;\n\nexport { Field, FieldControl, FieldDescription, FieldError, FieldValidity, FieldLabel };\n"
+    }
+  ]
+}

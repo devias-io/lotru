@@ -1,0 +1,13 @@
+{
+  "id": "examples/button-02",
+  "name": "With a different variant",
+  "registryDependencies": [
+    "ui/button"
+  ],
+  "files": [
+    {
+      "path": "examples/button-02.tsx",
+      "content": "import * as React from \"react\";\n\nimport { Button } from \"@/components/ui/button\";\nimport { Stack } from \"@/components/ui/stack\";\n\nexport default function ButtonExample(): React.JSX.Element {\n  return (\n    <Stack direction=\"row\" gap={4} flexWrap=\"wrap\">\n      <Button variant=\"solid\">Button</Button>\n      <Button variant=\"outline\">Button</Button>\n      <Button variant=\"ghost\">Button</Button>\n    </Stack>\n  );\n}\n"
+    }
+  ]
+}

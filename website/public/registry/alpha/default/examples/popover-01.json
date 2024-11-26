@@ -1,0 +1,13 @@
+{
+  "id": "examples/popover-01",
+  "name": "Popover",
+  "registryDependencies": [
+    "ui/popover"
+  ],
+  "files": [
+    {
+      "path": "examples/popover-01.tsx",
+      "content": "import * as React from \"react\";\n\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Popover,\n  PopoverArrow,\n  PopoverContent,\n  PopoverDescription,\n  PopoverPositioner,\n  PopoverTitle,\n  PopoverTrigger,\n} from \"@/components/ui/popover\";\n\nexport default function PopoverExample(): React.JSX.Element {\n  return (\n    <Popover>\n      <PopoverTrigger render={<Button>Trigger popover</Button>} />\n      <PopoverPositioner sideOffset={8}>\n        <PopoverContent>\n          <PopoverArrow />\n          <PopoverTitle>Popover Title</PopoverTitle>\n          <PopoverDescription>Popover Description</PopoverDescription>\n        </PopoverContent>\n      </PopoverPositioner>\n    </Popover>\n  );\n}\n"
+    }
+  ]
+}

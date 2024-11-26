@@ -1,0 +1,13 @@
+{
+  "id": "examples/alert-01",
+  "name": "Basic",
+  "registryDependencies": [
+    "ui/alert"
+  ],
+  "files": [
+    {
+      "path": "examples/alert-01.tsx",
+      "content": "import * as React from \"react\";\nimport { InfoIcon } from \"lucide-react\";\n\nimport { Alert, AlertContent, AlertDescription, AlertIcon, AlertTitle } from \"@/components/ui/alert\";\n\nexport default function AlertExample(): React.JSX.Element {\n  return (\n    <Alert>\n      <AlertIcon>\n        <InfoIcon />\n      </AlertIcon>\n      <AlertContent>\n        <AlertTitle>Enable Premium Features</AlertTitle>\n        <AlertDescription>\n          Upgrade to a premium plan to unlock features like unlimited projects and custom domains.\n        </AlertDescription>\n      </AlertContent>\n    </Alert>\n  );\n}\n"
+    }
+  ]
+}

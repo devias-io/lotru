@@ -1,0 +1,98 @@
+{
+  "id": "theme-preset",
+  "tokens": {
+    "borderRadius": {
+      "2xs": "0.0625rem",
+      "xs": "0.125rem",
+      "sm": "0.25rem",
+      "md": "0.375rem",
+      "lg": "0.5rem",
+      "xl": "0.75rem",
+      "2xl": "1rem",
+      "3xl": "1.5rem",
+      "full": "9999px"
+    },
+    "duration": {
+      "fastest": "50ms",
+      "faster": "100ms",
+      "fast": "150ms",
+      "normal": "200ms",
+      "slow": "300ms",
+      "slower": "400ms",
+      "slowest": "500ms"
+    },
+    "easing": {
+      "pulse": "cubic-bezier(0.4, 0.0, 0.6, 1.0)",
+      "default": "cubic-bezier(0.2, 0.0, 0, 1.0)",
+      "emphasizedIn": "cubic-bezier(0.05, 0.7, 0.1, 1.0)",
+      "emphasizedOut": "cubic-bezier(0.3, 0.0, 0.8, 0.15)"
+    },
+    "fontFamily": {
+      "sans": "var(--font-geist-sans), sans-serif",
+      "mono": "var(--font-geist-mono), monospace"
+    },
+    "fontSize": {
+      "2xs": "0.5rem",
+      "xs": "0.75rem",
+      "sm": "0.875rem",
+      "md": "1rem",
+      "lg": "1.125rem",
+      "xl": "1.25rem",
+      "2xl": "1.5rem",
+      "3xl": "1.875rem",
+      "4xl": "2.25rem",
+      "5xl": "3rem",
+      "6xl": "3.75rem",
+      "7xl": "4.5rem",
+      "8xl": "6rem",
+      "9xl": "8rem"
+    },
+    "fontWeight": {
+      "light": "300",
+      "regular": "400",
+      "medium": "500",
+      "semibold": "600",
+      "bold": "700"
+    },
+    "letterSpacing": {
+      "tighter": "-0.05em",
+      "tight": "-0.025em",
+      "normal": "0em",
+      "wide": "0.025em",
+      "wider": "0.05em",
+      "widest": "0.1em"
+    },
+    "lineHeight": {
+      "none": "1",
+      "tighter": "1.125",
+      "tight": "1.25",
+      "normal": "1.5",
+      "relaxed": "1.75",
+      "loose": "2"
+    },
+    "size": {
+      "unit": ".25rem",
+      "full": "100%",
+      "min": "min-content",
+      "max": "max-content",
+      "fit": "fit-content"
+    },
+    "spacing": {
+      "unit": ".25rem"
+    },
+    "zIndex": {
+      "hide": "-1",
+      "base": "0",
+      "docked": "10",
+      "dropdown": "1000",
+      "sticky": "1100",
+      "banner": "1200",
+      "overlay": "1300",
+      "modal": "1400",
+      "popover": "1500",
+      "skipLink": "1600",
+      "toast": "1700",
+      "tooltip": "1800"
+    }
+  }
+}

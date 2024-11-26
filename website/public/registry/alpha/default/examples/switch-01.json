@@ -1,0 +1,13 @@
+{
+  "id": "examples/switch-01",
+  "name": "Switch",
+  "registryDependencies": [
+    "ui/switch"
+  ],
+  "files": [
+    {
+      "path": "examples/switch-01.tsx",
+      "content": "import * as React from \"react\";\nimport { css } from \"@pigment-css/react\";\n\nimport { Switch } from \"@/components/ui/switch\";\nimport { Text } from \"@/components/ui/text\";\n\nexport default function SwitchExample(): React.JSX.Element {\n  return (\n    <div\n      className={css({\n        alignItems: \"center\",\n        display: \"flex\",\n        gap: \"calc(var(--spacing-unit) * 2)\",\n      })}\n    >\n      <Switch />\n      <Text>Manage Inventory</Text>\n    </div>\n  );\n}\n"
+    }
+  ]
+}

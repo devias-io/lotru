@@ -1,0 +1,10 @@
+{
+  "id": "ui/heading",
+  "name": "Heading",
+  "files": [
+    {
+      "path": "ui/heading.tsx",
+      "content": "import * as React from \"react\";\nimport { styled } from \"@pigment-css/react\";\n\ninterface HeadingRootProps extends React.ComponentPropsWithoutRef<\"h1\"> {\n  level: \"h1\" | \"h2\" | \"h3\";\n}\n\nconst HeadingRoot = styled(\"h1\", {\n  name: \"Heading\",\n  slot: \"root\",\n})<HeadingRootProps>({\n  boxSizing: \"border-box\",\n  fontFamily: \"var(--fontFamily-sans)\",\n  margin: 0,\n  variants: [\n    {\n      props: { level: \"h1\" },\n      style: {\n        fontSize: \"var(--fontSize-3xl)\",\n        fontWeight: \"var(--fontWeight-semibold)\",\n        lineHeight: \"var(--lineHeight-relaxed)\",\n      },\n    },\n    {\n      props: { level: \"h2\" },\n      style: {\n        fontSize: \"var(--fontSize-2xl)\",\n        fontWeight: \"var(--fontWeight-semibold)\",\n        lineHeight: \"var(--lineHeight-normal)\",\n      },\n    },\n    {\n      props: { level: \"h3\" },\n      style: {\n        fontSize: \"var(--fontSize-xl)\",\n        fontWeight: \"var(--fontWeight-semibold)\",\n        lineHeight: \"var(--lineHeight-tight)\",\n      },\n    },\n  ],\n});\n\ninterface HeadingProps extends React.ComponentPropsWithoutRef<\"h1\"> {\n  level?: \"h1\" | \"h2\" | \"h3\";\n}\n\nconst Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(\n  (\n    {\n      children,\n      /**\n       * The heading level which specifies which heading element is used.\n       */\n      level = \"h1\",\n      ...props\n    }: HeadingProps,\n    ref\n  ) => {\n    const Component = level || \"h1\";\n\n    return (\n      <HeadingRoot as={Component} ref={ref} level={level} {...props}>\n        {children}\n      </HeadingRoot>\n    );\n  }\n);\nHeading.displayName = \"Heading\";\n\nexport { Heading };\n"
+    }
+  ]
+}

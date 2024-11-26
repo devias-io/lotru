@@ -1,0 +1,13 @@
+{
+  "id": "examples/card-01",
+  "name": "Card",
+  "registryDependencies": [
+    "ui/card"
+  ],
+  "files": [
+    {
+      "path": "examples/card-01.tsx",
+      "content": "import * as React from \"react\";\n\nimport { Card, CardContent } from \"@/components/ui/card\";\nimport { Stack } from \"@/components/ui/stack\";\nimport { Text } from \"@/components/ui/text\";\n\nexport default function CardExample(): React.JSX.Element {\n  return (\n    <Card>\n      <CardContent>\n        <Stack gap={2}>\n          <Text size=\"xl\" weight=\"semibold\">\n            Latest orders\n          </Text>\n          <Text>You have 5 new orders. Check them out in the orders section.</Text>\n        </Stack>\n      </CardContent>\n    </Card>\n  );\n}\n"
+    }
+  ]
+}

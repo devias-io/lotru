@@ -1,0 +1,10 @@
+{
+  "id": "ui/card",
+  "name": "Card",
+  "files": [
+    {
+      "path": "ui/card.tsx",
+      "content": "import * as React from \"react\";\nimport { styled } from \"@pigment-css/react\";\n\nconst Card = styled(\"div\", {\n  name: \"CardRoot\",\n  slot: \"root\",\n})({\n  background: \"hsl(var(--color-background))\",\n  borderRadius: \"var(--borderRadius-lg)\",\n  boxShadow: \"var(--shadow-lg)\",\n});\n\nconst CardContent = styled(\"div\", {\n  name: \"CardContent\",\n  slot: \"content\",\n})({\n  paddingBlock: \"calc(var(--spacing-unit) * 4)\",\n  paddingInline: \"calc(var(--spacing-unit) * 6)\",\n});\n\nexport { Card, CardContent };\n"
+    }
+  ]
+}

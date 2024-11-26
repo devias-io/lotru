@@ -1,0 +1,13 @@
+{
+  "id": "examples/field-01",
+  "name": "Field",
+  "registryDependencies": [
+    "ui/field"
+  ],
+  "files": [
+    {
+      "path": "examples/field-01.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { css } from \"@pigment-css/react\";\n\nimport {\n  FieldControl,\n  FieldDescription,\n  FieldError,\n  FieldLabel,\n  Field,\n  FieldValidity,\n} from \"@/components/ui/field\";\nimport { Input } from \"@/components/ui/input\";\n\nexport default function FieldExample(): React.JSX.Element {\n  return (\n    <Field\n      className={css({ maxWidth: \"350px\", width: \"var(--size-full)\" })}\n      validate={(value) => (value === \"admin\" ? \"Name not allowed\" : null)}\n    >\n      <FieldLabel>Name</FieldLabel>\n      <FieldControl required pattern=\"[a-zA-Z0-9]+\">\n        <Input />\n      </FieldControl>\n      <FieldValidity>\n        {({ validity, value }) => {\n          if (validity.valueMissing || validity.patternMismatch || value === \"admin\") {\n            return null;\n          }\n\n          return <FieldDescription>Your name will be visible on your profile.</FieldDescription>;\n        }}\n      </FieldValidity>\n      <FieldError show=\"customError\" />\n      <FieldError show=\"valueMissing\" />\n      <FieldError show=\"patternMismatch\">Only alphanumeric characters are allowed (a-z, A-Z, 0-9).</FieldError>\n    </Field>\n  );\n}\n"
+    }
+  ]
+}

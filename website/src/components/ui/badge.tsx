@@ -19,6 +19,32 @@ const BadgeRoot = styled("span", {
   gap: "var(--spacing-unit)",
   variants: [
     {
+      props: { variant: "solid" },
+      style: {
+        backgroundColor: "hsl(var(--color-primaryBackground))",
+        color: "hsl(var(--color-primaryForeground))",
+      },
+    },
+    {
+      props: { variant: "subtle" },
+      style: {
+        backgroundColor: "hsl(var(--color-backgroundSubtle))",
+        borderWidth: "1px",
+        borderStyle: "solid",
+        borderColor: "hsl(var(--color-border))",
+        color: "hsl(var(--color-foreground))",
+      },
+    },
+    {
+      props: { variant: "outline" },
+      style: {
+        borderWidth: "2px",
+        borderStyle: "solid",
+        borderColor: "hsl(var(--color-border))",
+        color: "hsl(var(--color-foreground))",
+      },
+    },
+    {
       props: { size: "sm" },
       style: {
         fontSize: "var(--fontSize-xs)",
@@ -52,32 +78,6 @@ const BadgeRoot = styled("span", {
       props: { rounded: true },
       style: {
         borderRadius: "var(--borderRadius-full)",
-      },
-    },
-    {
-      props: { variant: "solid" },
-      style: {
-        backgroundColor: "hsl(var(--color-foreground))",
-        color: "hsl(var(--color-background))",
-      },
-    },
-    {
-      props: { variant: "subtle" },
-      style: {
-        backgroundColor: "hsl(var(--color-backgroundSubtle))",
-        borderWidth: "1px",
-        borderStyle: "solid",
-        borderColor: "hsl(var(--color-border))",
-        color: "hsl(var(--color-foreground))",
-      },
-    },
-    {
-      props: { variant: "outline" },
-      style: {
-        borderWidth: "2px",
-        borderStyle: "solid",
-        borderColor: "hsl(var(--color-border))",
-        color: "hsl(var(--color-foreground))",
       },
     },
   ],

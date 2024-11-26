@@ -3,7 +3,7 @@ import type { RegistryComponent } from "../schema";
 export const examples: RegistryComponent[] = [
   {
     id: "examples/alert-01",
-    name: "Basic",
+    name: "Alert 01",
     registryDependencies: ["ui/alert"],
     files: [
       {
@@ -13,7 +13,7 @@ export const examples: RegistryComponent[] = [
   },
   {
     id: "examples/alert-02",
-    name: "With dismiss button",
+    name: "Alert 02",
     registryDependencies: ["ui/alert"],
     files: [
       {
@@ -23,7 +23,7 @@ export const examples: RegistryComponent[] = [
   },
   {
     id: "examples/avatar-01",
-    name: "Avatar",
+    name: "Avatar 01",
     registryDependencies: ["ui/avatar"],
     files: [
       {
@@ -33,7 +33,7 @@ export const examples: RegistryComponent[] = [
   },
   {
     id: "examples/badge-01",
-    name: "Basic",
+    name: "Badge 01",
     registryDependencies: ["ui/badge"],
     files: [
       {
@@ -43,7 +43,7 @@ export const examples: RegistryComponent[] = [
   },
   {
     id: "examples/badge-02",
-    name: "With a different variant",
+    name: "Badge 02",
     registryDependencies: ["ui/badge"],
     files: [
       {
@@ -53,7 +53,7 @@ export const examples: RegistryComponent[] = [
   },
   {
     id: "examples/button-01",
-    name: "Basic",
+    name: "Button 01",
     registryDependencies: ["ui/button"],
     files: [
       {
@@ -63,7 +63,7 @@ export const examples: RegistryComponent[] = [
   },
   {
     id: "examples/button-02",
-    name: "With a different variant",
+    name: "Button 02",
     registryDependencies: ["ui/button"],
     files: [
       {
@@ -73,7 +73,7 @@ export const examples: RegistryComponent[] = [
   },
   {
     id: "examples/button-03",
-    name: "With loading indicator",
+    name: "Button 03",
     registryDependencies: ["ui/button"],
     files: [
       {
@@ -83,7 +83,7 @@ export const examples: RegistryComponent[] = [
   },
   {
     id: "examples/card-01",
-    name: "Card",
+    name: "Card 01",
     registryDependencies: ["ui/card"],
     files: [
       {
@@ -93,7 +93,7 @@ export const examples: RegistryComponent[] = [
   },
   {
     id: "examples/checkbox-01",
-    name: "Checkbox",
+    name: "Checkbox 01",
     registryDependencies: ["ui/checkbox"],
     files: [
       {
@@ -102,8 +102,18 @@ export const examples: RegistryComponent[] = [
     ],
   },
   {
+    id: "examples/checkbox-02",
+    name: "Checkbox 02",
+    registryDependencies: ["ui/checkbox"],
+    files: [
+      {
+        path: "examples/checkbox-02.tsx",
+      },
+    ],
+  },
+  {
     id: "examples/dialog-01",
-    name: "Dialog",
+    name: "Dialog 01",
     registryDependencies: ["ui/button", "ui/dialog"],
     files: [
       {
@@ -113,7 +123,7 @@ export const examples: RegistryComponent[] = [
   },
   {
     id: "examples/drawer-01",
-    name: "Drawer",
+    name: "Drawer 01",
     registryDependencies: ["ui/button", "ui/drawer", "ui/text"],
     files: [
       {
@@ -123,7 +133,7 @@ export const examples: RegistryComponent[] = [
   },
   {
     id: "examples/field-01",
-    name: "Field",
+    name: "Field 01",
     registryDependencies: ["ui/field"],
     files: [
       {
@@ -133,7 +143,7 @@ export const examples: RegistryComponent[] = [
   },
   {
     id: "examples/input-01",
-    name: "Input",
+    name: "Input 01",
     registryDependencies: ["ui/input"],
     files: [
       {
@@ -143,7 +153,7 @@ export const examples: RegistryComponent[] = [
   },
   {
     id: "examples/heading-01",
-    name: "Heading",
+    name: "Heading 01",
     registryDependencies: ["ui/heading"],
     files: [
       {
@@ -153,7 +163,7 @@ export const examples: RegistryComponent[] = [
   },
   {
     id: "examples/icon-button-01",
-    name: "Basic",
+    name: "Icon Button 01",
     registryDependencies: ["ui/icon-button"],
     files: [
       {
@@ -163,7 +173,7 @@ export const examples: RegistryComponent[] = [
   },
   {
     id: "examples/icon-button-02",
-    name: "With a different variant",
+    name: "Icon Button 02",
     registryDependencies: ["ui/icon-button"],
     files: [
       {
@@ -173,7 +183,7 @@ export const examples: RegistryComponent[] = [
   },
   {
     id: "examples/popover-01",
-    name: "Popover",
+    name: "Popover 01",
     registryDependencies: ["ui/popover"],
     files: [
       {
@@ -183,7 +193,7 @@ export const examples: RegistryComponent[] = [
   },
   {
     id: "examples/prompt-01",
-    name: "Prompt",
+    name: "Prompt 01",
     registryDependencies: ["ui/prompt"],
     files: [
       {
@@ -193,7 +203,7 @@ export const examples: RegistryComponent[] = [
   },
   {
     id: "examples/select-01",
-    name: "Select",
+    name: "Select 01",
     registryDependencies: ["ui/select"],
     files: [
       {
@@ -203,7 +213,7 @@ export const examples: RegistryComponent[] = [
   },
   {
     id: "examples/switch-01",
-    name: "Switch",
+    name: "Switch 01",
     registryDependencies: ["ui/switch"],
     files: [
       {
@@ -213,7 +223,7 @@ export const examples: RegistryComponent[] = [
   },
   {
     id: "examples/table-01",
-    name: "Table",
+    name: "Table 01",
     registryDependencies: ["ui/table"],
     files: [
       {
@@ -223,7 +233,7 @@ export const examples: RegistryComponent[] = [
   },
   {
     id: "examples/tabs-01",
-    name: "Tabs",
+    name: "Tabs 01",
     registryDependencies: ["ui/tabs"],
     files: [
       {
@@ -233,7 +243,7 @@ export const examples: RegistryComponent[] = [
   },
   {
     id: "examples/text-01",
-    name: "Text",
+    name: "Text 01",
     registryDependencies: ["ui/text"],
     files: [
       {
@@ -243,7 +253,7 @@ export const examples: RegistryComponent[] = [
   },
   {
     id: "examples/textarea-01",
-    name: "Textarea",
+    name: "Textarea 01",
     registryDependencies: ["ui/textarea"],
     files: [
       {

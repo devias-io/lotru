@@ -1,6 +1,6 @@
 {
   "id": "examples/prompt-01",
-  "name": "Prompt",
+  "name": "Prompt 01",
   "registryDependencies": [
     "ui/prompt"
   ],

@@ -1,6 +1,6 @@
 {
   "id": "examples/drawer-01",
-  "name": "Drawer",
+  "name": "Drawer 01",
   "registryDependencies": [
     "ui/button",
     "ui/drawer",

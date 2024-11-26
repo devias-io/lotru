@@ -5,88 +5,67 @@ import { styled } from "@pigment-css/react";
 const SwitchRoot = styled(Primitives.Root, {
   name: "Switch",
   slot: "root",
-})(({ theme }) => ({
+})({
   borderColor: "hsl(var(--color-border))",
+  borderRadius: "calc(var(--size-unit) * 2.5)",
   borderStyle: "solid",
   borderWidth: "1px",
-  borderRadius: "24px",
-  boxShadow: "inset 0px 1px 1px rgba(0, 0, 0, .05)",
   boxSizing: "border-box",
   cursor: "pointer",
   display: "inline-block",
-  height: "18px",
-  padding: 0,
-  transitionDuration: "var(--duration-normal)",
-  transitionProperty: "all",
-  transitionTimingFunction: "var(--easing-default)",
-  width: "32px",
+  height: "calc(var(--size-unit) * 5)",
   overflow: "hidden",
+  padding: 0,
   position: "relative",
+  transitionDuration: "var(--duration-normal)",
+  transitionProperty: "background-color, border-color",
+  transitionTimingFunction: "var(--easing-default)",
+  width: "calc(var(--size-unit) * 9)",
   "&[data-disabled]": {
+    backgroundColor: "hsl(var(--color-backgroundDisabled))",
     cursor: "not-allowed",
-    opacity: 0.4,
   },
   "&:hover:not([data-disabled])": {
     backgroundColor: "hsl(var(--color-backgroundSubtleHover))",
     borderColor: "hsl(var(--color-borderStrong))",
   },
-  "&:focus-visible": {
-    boxShadow: "0 0 0 3px hsl(var(--color-borderInteractive))",
-  },
-  "&[data-state='checked']": {
-    backgroundColor: "hsl(var(--color-backgroundInteractive))",
-    border: "none",
+  "&:focus-visible": {},
+  "&[data-state='checked']:not([data-disabled])": {
+    backgroundColor: "hsl(var(--color-primaryBackground))",
+    borderColor: "transparent",
   },
   "&[data-state='checked']:not([data-disabled]):hover": {
-    backgroundColor: "hsl(var(--color-backgroundInteractiveHover))",
+    backgroundColor: "hsl(var(--color-primaryBackground) / 80%)",
   },
   "&[data-state='unchecked']:not([data-disabled])": {
-    backgroundColor: "hsl(220 13% 91%)",
-    ...theme.applyStyles("dark", {
-      backgroundColor: "hsl(220 13% 30%)",
-    }),
+    backgroundColor: "hsl(var(--color-backgroundSubtle))",
   },
   "&[data-state='unchecked']:not([data-disabled]):hover": {
-    backgroundColor: "hsl(216 12% 86%)",
-    ...theme.applyStyles("dark", {
-      backgroundColor: "hsl(216 12% 35%)",
-    }),
+    backgroundColor: "hsl(var(--color-background))",
   },
-  "&:before": {
-    content: '""',
-    display: "block",
-    height: "var(--size-full)",
-    position: "absolute",
-    width: "var(--size-full)",
-    left: 0,
-    top: 0,
-    boxShadow:
-      "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(3, 7, 18, .04) 0px 1px 1px 0px inset, rgba(3, 7, 18, .04) 0px 2px 4px 0px inset, rgba(3, 7, 18, .06) 0px 0px 0px .5px inset, rgba(3, 7, 18, .02) 0px 0px 8px 0px inset, rgba(3, 7, 18, .04) 0px 2px 4px 0px",
-  },
-}));
+});
 
 const SwitchThumb = styled(Primitives.Thumb, {
   name: "SwitchThumb",
   slot: "thumb",
 })({
-  backgroundColor: "hsl(var(--color-foregroundOnColor))",
+  backgroundColor: "hsl(var(--color-background))",
   borderColor: "hsl(var(--color-border))",
   borderStyle: "solid",
   borderWidth: "1px",
-  borderRadius: "16px",
-  boxShadow: "0px 1px 2px rgba(0, 0, 0, .1)",
+  borderRadius: "50%",
+  boxShadow: "var(--shadow-xs)",
   boxSizing: "border-box",
   display: "block",
-  height: "14px",
-  left: "2px",
+  height: "calc(var(--size-unit) * 4)",
+  left: "1px",
   position: "relative",
   transitionDuration: "var(--duration-normal)",
-  transitionProperty: "all",
+  transitionProperty: "left",
   transitionTimingFunction: "var(--easing-default)",
-  width: "14px",
+  width: "calc(var(--size-unit) * 4)",
   "&[data-state='checked']": {
-    boxShadow: "0px 1px 2px rgba(0, 0, 0, .3)",
-    left: "16px",
+    left: "calc(calc(var(--size-unit) * 5) - 2px)",
   },
 });
 

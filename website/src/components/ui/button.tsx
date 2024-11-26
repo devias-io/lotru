@@ -15,7 +15,7 @@ interface ButtonRootProps extends React.ComponentPropsWithoutRef<"button"> {
 const ButtonRoot = styled("button", {
   name: "ButtonRoot",
   slot: "root",
-})<ButtonRootProps>(({ theme }) => ({
+})<ButtonRootProps>({
   alignItems: "center",
   appearance: "none",
   borderRadius: "var(--borderRadius-sm)",
@@ -38,23 +38,17 @@ const ButtonRoot = styled("button", {
     {
       props: { variant: "solid" },
       style: {
-        backgroundColor: "hsl(var(--color-foreground))",
+        backgroundColor: "hsl(var(--color-primaryBackground))",
         border: "none",
-        color: "hsl(var(--color-background))",
-        ...theme.applyStyles("dark", {
-          backgroundColor: "hsl(220 9% 94%)",
-        }),
+        color: "hsl(var(--color-primaryForeground))",
+        transitionDuration: "var(--duration-normal)",
+        transitionProperty: "background-color",
+        transitionTimingFunction: "var(--easing-normal)",
         "&:hover": {
-          backgroundColor: "hsl(240 5% 25%)",
-          ...theme.applyStyles("dark", {
-            backgroundColor: "hsl(0 0% 100%)",
-          }),
+          backgroundColor: "hsl(var(--color-primaryBackground) / 80%)",
         },
         "&:active": {
-          backgroundColor: "hsl(240 5% 35%)",
-          ...theme.applyStyles("dark", {
-            backgroundColor: "hsl(220 9% 94%)",
-          }),
+          backgroundColor: "hsl(var(--color-primaryBackground))",
         },
         "&:disabled": {
           backgroundColor: "hsl(var(--color-backgroundDisabled))",
@@ -65,25 +59,19 @@ const ButtonRoot = styled("button", {
     {
       props: { variant: "outline" },
       style: {
-        backgroundColor: "hsl(0 0% 100%)",
+        backgroundColor: "transparent",
         borderColor: "hsl(var(--color-border))",
         borderStyle: "solid",
         borderWidth: "1px",
         color: "hsl(var(--color-foreground))",
-        ...theme.applyStyles("dark", {
-          backgroundColor: "hsl(230 7% 16%)",
-        }),
+        transitionDuration: "var(--duration-normal)",
+        transitionProperty: "background-color",
+        transitionTimingFunction: "var(--easing-normal)",
         "&:hover": {
-          backgroundColor: "hsl(240 5% 96%)",
-          ...theme.applyStyles("dark", {
-            backgroundColor: "hsl(223 6% 22%)",
-          }),
+          backgroundColor: "hsl(var(--color-backgroundHover))",
         },
         "&:active": {
-          backgroundColor: "hsl(240 5% 90%)",
-          ...theme.applyStyles("dark", {
-            backgroundColor: "hsl(218 6% 25%)",
-          }),
+          backgroundColor: "hsl(var(--color-backgroundPressed))",
         },
         "&:disabled": {
           backgroundColor: "hsl(var(--color-backgroundDisabled))",
@@ -97,23 +85,18 @@ const ButtonRoot = styled("button", {
         backgroundColor: "transparent",
         border: "none",
         color: "hsl(var(--color-foreground))",
+        transitionDuration: "var(--duration-normal)",
+        transitionProperty: "background-color",
+        transitionTimingFunction: "var(--easing-normal)",
         "&:hover": {
-          backgroundColor: "hsl(240 5% 96%)",
-          ...theme.applyStyles("dark", {
-            backgroundColor: "hsl(240 5% 15%)",
-          }),
+          backgroundColor: "hsl(var(--color-backgroundHover))",
         },
         "&:active": {
-          backgroundColor: "hsl(240 5% 90%)",
-          ...theme.applyStyles("dark", {
-            backgroundColor: "hsl(240 5% 20%)",
-          }),
-        },
-        "&:focus-visible": {
-          backgroundColor: "hsl(240 5% 96%)",
+          backgroundColor: "hsl(var(--color-backgroundPressed))",
         },
         "&:disabled": {
           backgroundColor: "transparent",
+          color: "hsl(var(--color-foregroundDisabled))",
         },
       },
     },
@@ -184,7 +167,7 @@ const ButtonRoot = styled("button", {
       },
     },
   ],
-}));
+});
 
 interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
   isLoading?: boolean;

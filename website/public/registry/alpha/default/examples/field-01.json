@@ -1,6 +1,6 @@
 {
   "id": "examples/field-01",
-  "name": "Field",
+  "name": "Field 01",
   "registryDependencies": [
     "ui/field"
   ],

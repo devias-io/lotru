@@ -21,6 +21,8 @@ interface ColorTokens {
   backgroundHighlight: string;
   backgroundHighlightHover: string;
   backgroundOverlay: string;
+  primaryBackground: string;
+  primaryForeground: string;
   border: string;
   borderStrong: string;
   borderTransparent: string;
@@ -207,6 +209,8 @@ const theme: ThemeInput = {
         backgroundHighlight: "210 100% 95%",
         backgroundHighlightHover: "210 100% 90%",
         backgroundOverlay: "224 71% 4% / 40%",
+        primaryBackground: "240 4% 16%",
+        primaryForeground: "0 0% 100%",
         border: "240 5% 90%",
         borderStrong: "240 5% 83%",
         borderTransparent: "0 0% 100%",
@@ -236,6 +240,8 @@ const theme: ThemeInput = {
         backgroundOverlay: "240 4% 10% / 70%",
         backgroundHighlight: "226 57% 21%",
         backgroundHighlightHover: "224 64% 33%",
+        primaryBackground: "220 9% 94%",
+        primaryForeground: "0 0% 7%",
         border: "223 7% 19%",
         borderStrong: "223 6% 22%",
         borderTransparent: "0 0% 100%",

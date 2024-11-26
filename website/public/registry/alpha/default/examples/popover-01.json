@@ -1,6 +1,6 @@
 {
   "id": "examples/popover-01",
-  "name": "Popover",
+  "name": "Popover 01",
   "registryDependencies": [
     "ui/popover"
   ],

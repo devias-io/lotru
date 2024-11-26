@@ -207,7 +207,7 @@ export const index: Record<
   },
   "examples/alert-01": {
     id: "examples/alert-01",
-    name: "Basic",
+    name: "Alert 01",
     description: "",
     files: [{
       path: "examples/alert-01.tsx",
@@ -216,7 +216,7 @@ export const index: Record<
   },
   "examples/alert-02": {
     id: "examples/alert-02",
-    name: "With dismiss button",
+    name: "Alert 02",
     description: "",
     files: [{
       path: "examples/alert-02.tsx",
@@ -225,7 +225,7 @@ export const index: Record<
   },
   "examples/avatar-01": {
     id: "examples/avatar-01",
-    name: "Avatar",
+    name: "Avatar 01",
     description: "",
     files: [{
       path: "examples/avatar-01.tsx",
@@ -234,7 +234,7 @@ export const index: Record<
   },
   "examples/badge-01": {
     id: "examples/badge-01",
-    name: "Basic",
+    name: "Badge 01",
     description: "",
     files: [{
       path: "examples/badge-01.tsx",
@@ -243,7 +243,7 @@ export const index: Record<
   },
   "examples/badge-02": {
     id: "examples/badge-02",
-    name: "With a different variant",
+    name: "Badge 02",
     description: "",
     files: [{
       path: "examples/badge-02.tsx",
@@ -252,7 +252,7 @@ export const index: Record<
   },
   "examples/button-01": {
     id: "examples/button-01",
-    name: "Basic",
+    name: "Button 01",
     description: "",
     files: [{
       path: "examples/button-01.tsx",
@@ -261,7 +261,7 @@ export const index: Record<
   },
   "examples/button-02": {
     id: "examples/button-02",
-    name: "With a different variant",
+    name: "Button 02",
     description: "",
     files: [{
       path: "examples/button-02.tsx",
@@ -270,7 +270,7 @@ export const index: Record<
   },
   "examples/button-03": {
     id: "examples/button-03",
-    name: "With loading indicator",
+    name: "Button 03",
     description: "",
     files: [{
       path: "examples/button-03.tsx",
@@ -279,7 +279,7 @@ export const index: Record<
   },
   "examples/card-01": {
     id: "examples/card-01",
-    name: "Card",
+    name: "Card 01",
     description: "",
     files: [{
       path: "examples/card-01.tsx",
@@ -288,16 +288,25 @@ export const index: Record<
   },
   "examples/checkbox-01": {
     id: "examples/checkbox-01",
-    name: "Checkbox",
+    name: "Checkbox 01",
     description: "",
     files: [{
       path: "examples/checkbox-01.tsx",
     }],
     component: React.lazy(() => import("@/src/components/examples/checkbox-01.tsx"))
   },
+  "examples/checkbox-02": {
+    id: "examples/checkbox-02",
+    name: "Checkbox 02",
+    description: "",
+    files: [{
+      path: "examples/checkbox-02.tsx",
+    }],
+    component: React.lazy(() => import("@/src/components/examples/checkbox-02.tsx"))
+  },
   "examples/dialog-01": {
     id: "examples/dialog-01",
-    name: "Dialog",
+    name: "Dialog 01",
     description: "",
     files: [{
       path: "examples/dialog-01.tsx",
@@ -306,7 +315,7 @@ export const index: Record<
   },
   "examples/drawer-01": {
     id: "examples/drawer-01",
-    name: "Drawer",
+    name: "Drawer 01",
     description: "",
     files: [{
       path: "examples/drawer-01.tsx",
@@ -315,7 +324,7 @@ export const index: Record<
   },
   "examples/field-01": {
     id: "examples/field-01",
-    name: "Field",
+    name: "Field 01",
     description: "",
     files: [{
       path: "examples/field-01.tsx",
@@ -324,7 +333,7 @@ export const index: Record<
   },
   "examples/input-01": {
     id: "examples/input-01",
-    name: "Input",
+    name: "Input 01",
     description: "",
     files: [{
       path: "examples/input-01.tsx",
@@ -333,7 +342,7 @@ export const index: Record<
   },
   "examples/heading-01": {
     id: "examples/heading-01",
-    name: "Heading",
+    name: "Heading 01",
     description: "",
     files: [{
       path: "examples/heading-01.tsx",
@@ -342,7 +351,7 @@ export const index: Record<
   },
   "examples/icon-button-01": {
     id: "examples/icon-button-01",
-    name: "Basic",
+    name: "Icon Button 01",
     description: "",
     files: [{
       path: "examples/icon-button-01.tsx",
@@ -351,7 +360,7 @@ export const index: Record<
   },
   "examples/icon-button-02": {
     id: "examples/icon-button-02",
-    name: "With a different variant",
+    name: "Icon Button 02",
     description: "",
     files: [{
       path: "examples/icon-button-02.tsx",
@@ -360,7 +369,7 @@ export const index: Record<
   },
   "examples/popover-01": {
     id: "examples/popover-01",
-    name: "Popover",
+    name: "Popover 01",
     description: "",
     files: [{
       path: "examples/popover-01.tsx",
@@ -369,7 +378,7 @@ export const index: Record<
   },
   "examples/prompt-01": {
     id: "examples/prompt-01",
-    name: "Prompt",
+    name: "Prompt 01",
     description: "",
     files: [{
       path: "examples/prompt-01.tsx",
@@ -378,7 +387,7 @@ export const index: Record<
   },
   "examples/select-01": {
     id: "examples/select-01",
-    name: "Select",
+    name: "Select 01",
     description: "",
     files: [{
       path: "examples/select-01.tsx",
@@ -387,7 +396,7 @@ export const index: Record<
   },
   "examples/switch-01": {
     id: "examples/switch-01",
-    name: "Switch",
+    name: "Switch 01",
     description: "",
     files: [{
       path: "examples/switch-01.tsx",
@@ -396,7 +405,7 @@ export const index: Record<
   },
   "examples/table-01": {
     id: "examples/table-01",
-    name: "Table",
+    name: "Table 01",
     description: "",
     files: [{
       path: "examples/table-01.tsx",
@@ -405,7 +414,7 @@ export const index: Record<
   },
   "examples/tabs-01": {
     id: "examples/tabs-01",
-    name: "Tabs",
+    name: "Tabs 01",
     description: "",
     files: [{
       path: "examples/tabs-01.tsx",
@@ -414,7 +423,7 @@ export const index: Record<
   },
   "examples/text-01": {
     id: "examples/text-01",
-    name: "Text",
+    name: "Text 01",
     description: "",
     files: [{
       path: "examples/text-01.tsx",
@@ -423,7 +432,7 @@ export const index: Record<
   },
   "examples/textarea-01": {
     id: "examples/textarea-01",
-    name: "Textarea",
+    name: "Textarea 01",
     description: "",
     files: [{
       path: "examples/textarea-01.tsx",

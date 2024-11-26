@@ -10,7 +10,7 @@ const AlertRoot = styled("div", {
   name: "AlertRoot",
   slot: "root",
 })({
-  alignItems: "start",
+  alignItems: "flex-start",
   borderColor: "hsl(var(--color-border))",
   borderStyle: "solid",
   borderWidth: "1px",

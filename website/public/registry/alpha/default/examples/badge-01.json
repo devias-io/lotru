@@ -1,6 +1,6 @@
 {
   "id": "examples/badge-01",
-  "name": "Basic",
+  "name": "Badge 01",
   "registryDependencies": [
     "ui/badge"
   ],

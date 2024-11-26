@@ -1,6 +1,6 @@
 {
   "id": "examples/alert-02",
-  "name": "With dismiss button",
+  "name": "Alert 02",
   "registryDependencies": [
     "ui/alert"
   ],

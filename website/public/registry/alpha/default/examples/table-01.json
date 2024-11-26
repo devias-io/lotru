@@ -1,6 +1,6 @@
 {
   "id": "examples/table-01",
-  "name": "Table",
+  "name": "Table 01",
   "registryDependencies": [
     "ui/table"
   ],

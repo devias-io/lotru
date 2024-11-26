@@ -1,102 +1,106 @@
 [
   {
     "id": "examples/alert-01",
-    "name": "Basic"
+    "name": "Alert 01"
   },
   {
     "id": "examples/alert-02",
-    "name": "With dismiss button"
+    "name": "Alert 02"
   },
   {
     "id": "examples/avatar-01",
-    "name": "Avatar"
+    "name": "Avatar 01"
   },
   {
     "id": "examples/badge-01",
-    "name": "Basic"
+    "name": "Badge 01"
   },
   {
     "id": "examples/badge-02",
-    "name": "With a different variant"
+    "name": "Badge 02"
   },
   {
     "id": "examples/button-01",
-    "name": "Basic"
+    "name": "Button 01"
   },
   {
     "id": "examples/button-02",
-    "name": "With a different variant"
+    "name": "Button 02"
   },
   {
     "id": "examples/button-03",
-    "name": "With loading indicator"
+    "name": "Button 03"
   },
   {
     "id": "examples/card-01",
-    "name": "Card"
+    "name": "Card 01"
   },
   {
     "id": "examples/checkbox-01",
-    "name": "Checkbox"
+    "name": "Checkbox 01"
+  },
+  {
+    "id": "examples/checkbox-02",
+    "name": "Checkbox 02"
   },
   {
     "id": "examples/dialog-01",
-    "name": "Dialog"
+    "name": "Dialog 01"
   },
   {
     "id": "examples/drawer-01",
-    "name": "Drawer"
+    "name": "Drawer 01"
   },
   {
     "id": "examples/field-01",
-    "name": "Field"
+    "name": "Field 01"
   },
   {
     "id": "examples/input-01",
-    "name": "Input"
+    "name": "Input 01"
   },
   {
     "id": "examples/heading-01",
-    "name": "Heading"
+    "name": "Heading 01"
   },
   {
     "id": "examples/icon-button-01",
-    "name": "Basic"
+    "name": "Icon Button 01"
   },
   {
     "id": "examples/icon-button-02",
-    "name": "With a different variant"
+    "name": "Icon Button 02"
   },
   {
     "id": "examples/popover-01",
-    "name": "Popover"
+    "name": "Popover 01"
   },
   {
     "id": "examples/prompt-01",
-    "name": "Prompt"
+    "name": "Prompt 01"
   },
   {
     "id": "examples/select-01",
-    "name": "Select"
+    "name": "Select 01"
   },
   {
     "id": "examples/switch-01",
-    "name": "Switch"
+    "name": "Switch 01"
   },
   {
     "id": "examples/table-01",
-    "name": "Table"
+    "name": "Table 01"
   },
   {
     "id": "examples/tabs-01",
-    "name": "Tabs"
+    "name": "Tabs 01"
   },
   {
     "id": "examples/text-01",
-    "name": "Text"
+    "name": "Text 01"
   },
   {
     "id": "examples/textarea-01",
-    "name": "Textarea"
+    "name": "Textarea 01"
   }
 ]

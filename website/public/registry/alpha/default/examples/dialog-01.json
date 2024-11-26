@@ -1,6 +1,6 @@
 {
   "id": "examples/dialog-01",
-  "name": "Dialog",
+  "name": "Dialog 01",
   "registryDependencies": [
     "ui/button",
     "ui/dialog"

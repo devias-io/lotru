@@ -10,8 +10,8 @@ const TableRoot = styled("table", {
   name: "Table",
   slot: "root",
 })({
-  width: "var(--size-full)",
   borderCollapse: "collapse",
+  width: "var(--size-full)",
 });
 
 const TableHeader = styled("thead", {
@@ -45,9 +45,9 @@ const TableCell = styled("td", {
   fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
   height: "calc(var(--spacing-unit) * 12)",
-  paddingRight: "calc(var(--spacing-unit) * 2)",
-  paddingBottom: "1px",
-  paddingTop: "1px",
+  paddingInlineStart: "calc(var(--spacing-unit) * 2)",
+  paddingBlockEnd: "1px",
+  paddingBlockStart: "1px",
   textAlign: "left",
   verticalAlign: "middle",
   "&:first-child": {

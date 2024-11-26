@@ -1,6 +1,6 @@
 {
   "id": "examples/select-01",
-  "name": "Select",
+  "name": "Select 01",
   "registryDependencies": [
     "ui/select"
   ],

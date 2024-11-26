@@ -1,0 +1,13 @@
+{
+  "id": "examples/checkbox-02",
+  "name": "Checkbox 02",
+  "registryDependencies": [
+    "ui/checkbox"
+  ],
+  "files": [
+    {
+      "path": "examples/checkbox-02.tsx",
+      "content": "import * as React from \"react\";\n\nimport { Checkbox } from \"@/components/ui/checkbox\";\nimport { Text } from \"@/components/ui/text\";\nimport { Stack } from \"@/components/ui/stack\";\n\nexport default function CheckboxExample(): React.JSX.Element {\n  return (\n    <Stack gap={4}>\n      <Stack alignItems=\"center\" direction=\"row\" gap={2}>\n        <Checkbox />\n        <Text>Default</Text>\n      </Stack>\n      <Stack alignItems=\"center\" direction=\"row\" gap={2}>\n        <Checkbox checked />\n        <Text>Checked</Text>\n      </Stack>\n      <Stack alignItems=\"center\" direction=\"row\" gap={2}>\n        <Checkbox checked indeterminate />\n        <Text>Intermediate</Text>\n      </Stack>\n      <Stack alignItems=\"center\" direction=\"row\" gap={2}>\n        <Checkbox disabled />\n        <Text>Disabled</Text>\n      </Stack>\n    </Stack>\n  );\n}\n"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "id": "examples/textarea-01",
-  "name": "Textarea",
+  "name": "Textarea 01",
   "registryDependencies": [
     "ui/textarea"
   ],

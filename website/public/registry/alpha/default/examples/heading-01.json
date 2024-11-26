@@ -1,6 +1,6 @@
 {
   "id": "examples/heading-01",
-  "name": "Heading",
+  "name": "Heading 01",
   "registryDependencies": [
     "ui/heading"
   ],

@@ -1,13 +1,13 @@
 {
   "id": "examples/checkbox-01",
-  "name": "Checkbox",
+  "name": "Checkbox 01",
   "registryDependencies": [
     "ui/checkbox"
   ],
   "files": [
     {
       "path": "examples/checkbox-01.tsx",
-      "content": "import * as React from \"react\";\nimport { css } from \"@pigment-css/react\";\n\nimport { Checkbox } from \"@/components/ui/checkbox\";\nimport { Text } from \"@/components/ui/text\";\n\nexport default function CheckboxExample(): React.JSX.Element {\n  return (\n    <div\n      className={css({\n        display: \"flex\",\n        flexDirection: \"column\",\n        gap: \"calc(var(--spacing-unit) * 4)\",\n      })}\n    >\n      <div\n        className={css({\n          alignItems: \"center\",\n          display: \"flex\",\n          gap: \"calc(var(--spacing-unit) * 2)\",\n        })}\n      >\n        <Checkbox />\n        <Text>Default</Text>\n      </div>\n      <div\n        className={css({\n          alignItems: \"center\",\n          display: \"flex\",\n          gap: \"calc(var(--spacing-unit) * 2)\",\n        })}\n      >\n        <Checkbox checked indeterminate />\n        <Text>Intermediate</Text>\n      </div>\n      <div\n        className={css({\n          alignItems: \"center\",\n          display: \"flex\",\n          gap: \"calc(var(--spacing-unit) * 2)\",\n        })}\n      >\n        <Checkbox disabled />\n        <Text>Disabled</Text>\n      </div>\n    </div>\n  );\n}\n"
+      "content": "import * as React from \"react\";\n\nimport { Checkbox } from \"@/components/ui/checkbox\";\nimport { Stack } from \"@/components/ui/stack\";\nimport { Text } from \"@/components/ui/text\";\n\nexport default function CheckboxExample(): React.JSX.Element {\n  return (\n    <Stack alignItems=\"center\" direction=\"row\" gap={2}>\n      <Checkbox />\n      <Text>Label</Text>\n    </Stack>\n  );\n}\n"
     }
   ]
 }

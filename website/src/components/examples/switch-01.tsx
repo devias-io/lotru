@@ -1,20 +1,14 @@
 import * as React from "react";
-import { css } from "@pigment-css/react";
 
 import { Switch } from "@/src/components/ui/switch";
+import { Stack } from "@/src/components/ui/stack";
 import { Text } from "@/src/components/ui/text";
 
 export default function SwitchExample(): React.JSX.Element {
   return (
-    <div
-      className={css({
-        alignItems: "center",
-        display: "flex",
-        gap: "calc(var(--spacing-unit) * 2)",
-      })}
-    >
+    <Stack alignItems="center" direction="row" gap={2}>
       <Switch />
-      <Text>Manage Inventory</Text>
-    </div>
+      <Text>Label</Text>
+    </Stack>
   );
 }

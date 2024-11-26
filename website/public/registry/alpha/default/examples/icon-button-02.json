@@ -1,6 +1,6 @@
 {
   "id": "examples/icon-button-02",
-  "name": "With a different variant",
+  "name": "Icon Button 02",
   "registryDependencies": [
     "ui/icon-button"
   ],

@@ -1,6 +1,6 @@
 {
   "id": "examples/card-01",
-  "name": "Card",
+  "name": "Card 01",
   "registryDependencies": [
     "ui/card"
   ],

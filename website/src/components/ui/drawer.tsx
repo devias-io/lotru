@@ -32,7 +32,7 @@ const DrawerOverlay = styled(Primitives.Backdrop, {
   name: "DrawerOverlay",
   slot: "overlay",
 })({
-  backgroundColor: "hsl(var(--color-backgroundOverlay))",
+  backgroundColor: "hsl(var(--color-overlay))",
   inset: 0,
   position: "fixed",
   zIndex: "var(--zIndex-overlay)",
@@ -46,7 +46,7 @@ const DrawerContent = styled(Primitives.Popup, {
   name: "DialogContent",
   slot: "content",
 })<DrawerContentProps>({
-  backgroundColor: "hsl(var(--color-background))",
+  backgroundColor: "hsl(var(--color-surface))",
   borderColor: "hsl(var(--color-border))",
   borderStyle: "solid",
   borderWidth: "1px",

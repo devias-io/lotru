@@ -24,7 +24,7 @@ const TabsTrigger = styled(Primitives.Tab, {
   backgroundColor: "transparent",
   border: "none",
   borderRadius: "var(--borderRadius-full)",
-  color: "hsl(var(--color-foregroundSubtle))",
+  color: "hsl(var(--color-mutedForeground))",
   cursor: "pointer",
   display: "inline-flex",
   fontFamily: "var(--fontFamily-sans)",
@@ -34,20 +34,21 @@ const TabsTrigger = styled(Primitives.Tab, {
   transitionDuration: "var(--duration-normal)",
   transitionProperty: "color",
   transitionTimingFunction: "var(--easing-default)",
-  "&:hover": {
+  "&:hover:not([data-disabled])": {
     color: "hsl(var(--color-foreground))",
   },
   "&:focus-visible": {
-    backgroundColor: "hsl(var(--color-background))",
+    outline: "2px solid hsl(var(--color-ring))",
+    outlineOffset: "2px",
   },
-  "&[data-selected='true']": {
-    color: "hsl(var(--color-foreground))",
+  "&[data-disabled]": {
+    color: "hsl(var(--color-mutedForeground))",
+    cursor: "not-allowed",
+  },
+  "&[data-selected]": {
     backgroundColor: "hsl(var(--color-background))",
     boxShadow: "var(--shadow-md)",
-  },
-  "&[data-disabled='true']": {
-    color: "hsl(var(--color-foregroundDisabled))",
-    cursor: "not-allowed",
+    color: "hsl(var(--color-foreground))",
   },
 });
 

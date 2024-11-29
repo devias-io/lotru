@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/icon-button-02.tsx",
-      "content": "import * as React from \"react\";\nimport { ArrowRightIcon } from \"lucide-react\";\n\nimport { IconButton } from \"@/components/ui/icon-button\";\nimport { Stack } from \"@/components/ui/stack\";\n\nexport default function IconButtonExample(): React.JSX.Element {\n  return (\n    <Stack direction=\"row\" gap={4} flexWrap=\"wrap\">\n      <IconButton variant=\"solid\">\n        <ArrowRightIcon />\n      </IconButton>\n      <IconButton variant=\"outline\">\n        <ArrowRightIcon />\n      </IconButton>\n      <IconButton variant=\"ghost\">\n        <ArrowRightIcon />\n      </IconButton>\n    </Stack>\n  );\n}\n"
+      "content": "import * as React from \"react\";\nimport { ArrowRightIcon } from \"lucide-react\";\n\nimport { IconButton } from \"@/components/ui/icon-button\";\nimport { Stack } from \"@/components/ui/stack\";\n\nexport default function IconButtonExample(): React.JSX.Element {\n  return (\n    <Stack direction=\"row\" gap={4} flexWrap=\"wrap\">\n      <IconButton variant=\"solid\">\n        <ArrowRightIcon />\n      </IconButton>\n      <IconButton variant=\"outline\">\n        <ArrowRightIcon />\n      </IconButton>\n      <IconButton variant=\"ghost\">\n        <ArrowRightIcon />\n      </IconButton>\n      <IconButton disabled>\n        <ArrowRightIcon />\n      </IconButton>\n    </Stack>\n  );\n}\n"
     }
   ]
 }

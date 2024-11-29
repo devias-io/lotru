@@ -8,7 +8,7 @@ const RadioRoot = styled(Primitives.Root, {
 })({
   alignItems: "center",
   border: "1px solid hsl(var(--color-border))",
-  backgroundColor: "hsl(var(--color-backgroundSubtle))",
+  backgroundColor: "hsl(var(--color-muted))",
   borderRadius: "var(--borderRadius-full)",
   boxSizing: "border-box",
   cursor: "pointer",
@@ -32,8 +32,6 @@ const RadioRoot = styled(Primitives.Root, {
   },
   "&[data-disabled]": {
     cursor: "not-allowed",
-    backgroundColor: "hsl(var(--color-backgroundDisabled))",
-    border: "1px solid hsl(var(--color-border))",
   },
   "&[data-radio='checked']": {
     backgroundColor: "hsl(var(--color-primary))",
@@ -43,7 +41,7 @@ const RadioRoot = styled(Primitives.Root, {
     backgroundColor: "hsl(var(--color-primary) / 80%)",
   },
   "&[data-radio='checked'][data-disabled]": {
-    backgroundColor: "hsl(var(--color-backgroundDisabled))",
+    backgroundColor: "hsl(var(--color-muted))",
     border: "1px solid hsl(var(--color-border))",
   },
 });

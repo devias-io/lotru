@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/input-01.tsx",
-      "content": "import * as React from \"react\";\nimport { css } from \"@pigment-css/react\";\n\nimport { Input } from \"@/components/ui/input\";\n\nexport default function InputExample(): React.JSX.Element {\n  return <Input className={css({ maxWidth: \"350px\" })} placeholder=\"Your Name\" />;\n}\n"
+      "content": "import * as React from \"react\";\n\nimport { Input } from \"@/components/ui/input\";\n\nexport default function InputExample(): React.JSX.Element {\n  return <Input placeholder=\"Name\" />;\n}\n"
     }
   ]
 }

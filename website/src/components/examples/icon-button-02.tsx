@@ -16,6 +16,9 @@ export default function IconButtonExample(): React.JSX.Element {
       <IconButton variant="ghost">
         <ArrowRightIcon />
       </IconButton>
+      <IconButton disabled>
+        <ArrowRightIcon />
+      </IconButton>
     </Stack>
   );
 }

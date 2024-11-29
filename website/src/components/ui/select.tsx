@@ -10,36 +10,33 @@ const SelectRoot = styled("select", {
   slot: "root",
 })<SelectRootProps>({
   appearance: "none",
-  background: "none",
-  borderColor: "hsl(var(--color-border))",
-  borderStyle: "solid",
-  borderWidth: "1px",
+  backgroundColor: "var(--color-background)",
+  border: "1px solid hsl(var(--color-border))",
   borderRadius: "var(--borderRadius-sm)",
   boxSizing: "border-box",
   color: "hsl(var(--color-foreground))",
-  outline: "none",
   position: "relative",
-  transitionDuration: "var(--duration-normal)",
-  transitionProperty: "border-color, box-shadow",
-  transitionTimingFunction: "var(--easing-default)",
+  maxWidth: "var(--size-xs)",
   width: "var(--size-full)",
-  "&:disabled": {
-    backgroundColor: "hsl(var(--color-input-backgroundDisabled))",
-    color: "hsl(var(--color-foregroundDisabled))",
-    cursor: "not-allowed",
-    "&::placeholder": {
-      color: "hsl(var(--color-foregroundDisabled))",
-    },
-  },
   "&:focus-visible": {
-    borderColor: "hsl(var(--color-borderStrong))",
-    '&[data-field="invalid"]': {
-      borderColor: "hsl(var(--color-borderStrong))",
-    },
+    borderColor: "hsl(var(--color-ring))",
+    outline: "3px solid hsl(var(--color-ring) / 20%)",
   },
-  '&[data-field="invalid"]': {},
+  "&:disabled": {
+    cursor: "not-allowed",
+    opacity: 0.5,
+  },
+  '&[data-field="invalid"]': {
+    borderColor: "hsl(var(--color-danger))",
+  },
+  '&[data-field="invalid"]:focus-visible': {
+    outline: "3px solid hsl(var(--color-danger) / 24%)",
+  },
   "&::placeholder": {
-    color: "hsl(var(--color-foregroundMuted))",
+    color: "hsl(var(--color-mutedForeground))",
+  },
+  "&::placeholder:disabled": {
+    color: "hsl(var(--color-mutedForeground))",
   },
   variants: [
     {
@@ -48,6 +45,7 @@ const SelectRoot = styled("select", {
         fontSize: "var(--fontSize-sm)",
         height: "calc(var(--size-unit) * 9)",
         minWidth: "calc(var(--size-unit) * 9)",
+        paddingBlock: "calc(var(--spacing-unit) * 1.5)",
         paddingInline: "calc(var(--spacing-unit) * 2.5)",
       },
     },
@@ -57,6 +55,7 @@ const SelectRoot = styled("select", {
         fontSize: "var(--fontSize-md)",
         height: "calc(var(--size-unit) * 10)",
         minWidth: "calc(var(--size-unit) * 10)",
+        paddingBlock: "calc(var(--spacing-unit) * 2)",
         paddingInline: "calc(var(--spacing-unit) * 3)",
       },
     },
@@ -66,6 +65,7 @@ const SelectRoot = styled("select", {
         fontSize: "var(--fontSize-md)",
         height: "calc(var(--size-unit) * 11)",
         minWidth: "calc(var(--size-unit) * 11)",
+        paddingBlock: "calc(var(--spacing-unit) * 2.5)",
         paddingInline: "calc(var(--spacing-unit) * 3.5)",
       },
     },
@@ -75,6 +75,7 @@ const SelectRoot = styled("select", {
         fontSize: "var(--fontSize-lg)",
         height: "calc(var(--size-unit) * 12)",
         minWidth: "calc(var(--size-unit) * 12)",
+        paddingBlock: "calc(var(--spacing-unit) * 3)",
         paddingInline: "calc(var(--spacing-unit) * 4)",
       },
     },

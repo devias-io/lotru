@@ -56,6 +56,10 @@
     "name": "Field 01"
   },
   {
+    "id": "examples/field-02",
+    "name": "Field 02"
+  },
+  {
     "id": "examples/input-01",
     "name": "Input 01"
   },

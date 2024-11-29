@@ -28,7 +28,7 @@ const BadgeRoot = styled("span", {
     {
       props: { variant: "subtle" },
       style: {
-        backgroundColor: "hsl(var(--color-backgroundSubtle))",
+        backgroundColor: "hsl(var(--color-muted))",
         borderWidth: "1px",
         borderStyle: "solid",
         borderColor: "hsl(var(--color-border))",

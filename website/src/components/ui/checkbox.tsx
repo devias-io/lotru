@@ -8,8 +8,8 @@ const CheckboxRoot = styled(Primitives.Root, {
   slot: "root",
 })({
   alignItems: "center",
+  backgroundColor: "hsl(var(--color-muted))",
   border: "1px solid hsl(var(--color-border))",
-  backgroundColor: "hsl(var(--color-backgroundSubtle))",
   borderRadius: "var(--borderRadius-sm)",
   boxSizing: "border-box",
   cursor: "pointer",
@@ -17,8 +17,6 @@ const CheckboxRoot = styled(Primitives.Root, {
   flexShrink: 0,
   height: "calc(var(--size-unit) * 5)",
   justifyContent: "center",
-  margin: 0,
-  outline: "none",
   padding: 0,
   transitionDuration: "var(--duration-fast)",
   transitionProperty: "background-color",
@@ -33,8 +31,7 @@ const CheckboxRoot = styled(Primitives.Root, {
   },
   "&[data-disabled]": {
     cursor: "not-allowed",
-    backgroundColor: "hsl(var(--color-backgroundDisabled))",
-    border: "1px solid hsl(var(--color-border))",
+    opacity: 0.5,
   },
   "&[data-state='checked']": {
     backgroundColor: "hsl(var(--color-primary))",
@@ -44,7 +41,7 @@ const CheckboxRoot = styled(Primitives.Root, {
     backgroundColor: "hsl(var(--color-primary) / 80%)",
   },
   "&[data-state='checked'][data-disabled]": {
-    backgroundColor: "hsl(var(--color-backgroundDisabled))",
+    backgroundColor: "hsl(var(--color-muted))",
     border: "1px solid hsl(var(--color-border))",
   },
 });
@@ -63,7 +60,7 @@ const CheckboxIndicator = styled(Primitives.Indicator, {
     color: "hsl(var(--color-primaryForeground))",
   },
   '&[data-state="checked"][data-disabled]': {
-    color: "hsl(var(--color-foregroundDisabled))",
+    color: "hsl(var(--color-mutedForeground))",
   },
   "& svg": {
     flexShrink: 0,

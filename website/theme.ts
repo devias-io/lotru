@@ -12,25 +12,17 @@ type SelectorFn = (colorScheme: string | undefined, css: Record<string, unknown>
 
 interface ColorTokens {
   background: string;
-  backgroundHover: string;
-  backgroundPressed: string;
-  backgroundDisabled: string;
-  backgroundSubtle: string;
-  backgroundSubtleHover: string;
-  backgroundSubtlePressed: string;
-  backgroundOverlay: string;
-  border: string;
-  borderStrong: string;
-  borderTransparent: string;
   foreground: string;
-  foregroundMuted: string;
-  foregroundDisabled: string;
-  foregroundSubtle: string;
+  border: string;
   ring: string;
+  overlay: string;
+  surface: string;
   primary: string;
   primaryForeground: string;
   danger: string;
   dangerForeground: string;
+  muted: string;
+  mutedForeground: string;
 }
 
 interface BorderRadiusTokens {
@@ -121,6 +113,17 @@ interface ShadowTokens {
 
 interface SizeTokens {
   unit: string;
+  xs: string;
+  sm: string;
+  md: string; 
+  lg: string;
+  xl: string;
+  "2xl": string;
+  "3xl": string;
+  "4xl": string;
+  "5xl": string;
+  "6xl": string;
+  "7xl": string;
   full: string;
   min: string;
   max: string;
@@ -201,25 +204,17 @@ const theme: ThemeInput = {
     light: {
       color: {
         background: "0 0% 100%",
-        backgroundHover: "240 5% 96%",
-        backgroundPressed: "240 5% 90%",
-        backgroundDisabled: "240 5% 96%",
-        backgroundSubtle: "0 0% 98%",
-        backgroundSubtleHover: "240 5% 96%",
-        backgroundSubtlePressed: "240 5% 90%",
-        backgroundOverlay: "224 71% 4% / 40%",
-        border: "240 5% 90%",
-        borderStrong: "240 4% 16%",
-        borderTransparent: "0 0% 100%",
         foreground: "240 5% 10%",
-        foregroundMuted: "0 0% 39%",
-        foregroundDisabled: "240 5% 83%",
-        foregroundSubtle: "240 5% 35%",
-        ring: "240 4% 16% / 24%",
+        border: "240 5% 90%",
+        ring: "240 5% 65%",
+        overlay: "224 71% 4% / 40%",
+        surface: "0 0% 100%",
         primary: "240 4% 16%",
         primaryForeground: "0 0% 100%",
         danger: "347 77% 50%",
         dangerForeground: "0 0% 100%",
+        muted: "0 0% 98%",
+        mutedForeground: "240 5% 35%",
       },
       shadow: {
         xs: "0px 1px 2px hsl(0 0% 0% / 12%), 0px 0px 1px hsl(0 0% 0% / 19%)",
@@ -233,25 +228,17 @@ const theme: ThemeInput = {
     dark: {
       color: {
         background: "0 0% 7%",
-        backgroundHover: "230 7% 16%",
-        backgroundPressed: "223 7% 19%",
-        backgroundDisabled: "230 7% 16%",
-        backgroundSubtle: "0 0% 13%",
-        backgroundSubtleHover: "240 7% 11%",
-        backgroundSubtlePressed: "230 7% 16%",
-        backgroundOverlay: "240 4% 10% / 70%",
-        border: "223 7% 19%",
-        borderStrong: "223 6% 22%",
-        borderTransparent: "0 0% 100%",
         foreground: "220 9% 94%",
-        foregroundMuted: "0 0% 71%",
-        foregroundDisabled: "218 6% 26%",
-        foregroundSubtle: "218 7% 70%",
-        ring: "240 4% 16% / 24%",
+        border: "223 7% 19%",
+        ring: "240 5% 16%",
+        overlay: "240 4% 10% / 70%",
+        surface: "0 0% 7%",
         primary: "220 9% 94%",
         primaryForeground: "0 0% 7%",
         danger: "347 77% 50%",
         dangerForeground: "0 0% 100%",
+        muted: "0 0% 10%",
+        mutedForeground: "218 7% 70%",
       },
       shadow: {
         xs: "0px 1px 1px hsl(0 0% 0% / 95%), 0px 0px 1px inset hsl(0 0% 100% / 23%)",
@@ -334,6 +321,17 @@ const theme: ThemeInput = {
   },
   size: {
     unit: ".25rem",
+    xs: "20rem",
+    sm: "24rem",
+    md: "28rem",
+    lg: "32rem",
+    xl: "36rem",
+    "2xl": "42rem",
+    "3xl": "48rem",
+    "4xl": "56rem",
+    "5xl": "64rem",
+    "6xl": "72rem",
+    "7xl": "80rem",
     full: "100%",
     min: "min-content",
     max: "max-content",

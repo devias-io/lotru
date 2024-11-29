@@ -18,7 +18,7 @@ const TableHeader = styled("thead", {
   name: "TableHeader",
   slot: "header",
 })({
-  backgroundColor: "hsl(var(--color-backgroundSubtle))",
+  backgroundColor: "hsl(var(--color-muted))",
 });
 
 const TableBody = styled("tbody", {
@@ -40,8 +40,7 @@ const TableCell = styled("td", {
   name: "TableCell",
   slot: "cell",
 })({
-  backgroundColor: "hsl(var(--color-background))",
-  color: "hsl(var(--color-foregroundSubtle))",
+  color: "hsl(var(--color-mutedForeground))",
   fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
   height: "calc(var(--spacing-unit) * 12)",

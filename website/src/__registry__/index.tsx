@@ -340,6 +340,15 @@ export const index: Record<
     }],
     component: React.lazy(() => import("@/src/components/examples/field-01.tsx"))
   },
+  "examples/field-02": {
+    id: "examples/field-02",
+    name: "Field 02",
+    description: "",
+    files: [{
+      path: "examples/field-02.tsx",
+    }],
+    component: React.lazy(() => import("@/src/components/examples/field-02.tsx"))
+  },
   "examples/input-01": {
     id: "examples/input-01",
     name: "Input 01",

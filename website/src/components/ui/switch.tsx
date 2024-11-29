@@ -6,42 +6,41 @@ const SwitchRoot = styled(Primitives.Root, {
   name: "Switch",
   slot: "root",
 })({
-  borderColor: "hsl(var(--color-border))",
+  backgroundColor: "hsl(var(--color-muted))",
+  border: "1px solid hsl(var(--color-border))",
   borderRadius: "calc(var(--size-unit) * 2.5)",
-  borderStyle: "solid",
-  borderWidth: "1px",
   boxSizing: "border-box",
   cursor: "pointer",
   display: "inline-block",
   height: "calc(var(--size-unit) * 5)",
-  overflow: "hidden",
+  flexShrink: 0,
   padding: 0,
   position: "relative",
   transitionDuration: "var(--duration-normal)",
-  transitionProperty: "background-color, border-color",
+  transitionProperty: "background-color",
   transitionTimingFunction: "var(--easing-default)",
   width: "calc(var(--size-unit) * 9)",
-  "&[data-disabled]": {
-    backgroundColor: "hsl(var(--color-backgroundDisabled))",
-    cursor: "not-allowed",
-  },
   "&:hover:not([data-disabled])": {
-    backgroundColor: "hsl(var(--color-backgroundSubtleHover))",
-    borderColor: "hsl(var(--color-borderStrong))",
+    backgroundColor: "hsl(var(--color-background))",
   },
-  "&:focus-visible": {},
-  "&[data-state='checked']:not([data-disabled])": {
+  "&:focus-visible": {
+    outline: "2px solid hsl(var(--color-ring))",
+    outlineOffset: "2px",
+  },
+  "&[data-disabled]": {
+    cursor: "not-allowed",
+    opacity: 0.5,
+  },
+  "&[data-state='checked']": {
     backgroundColor: "hsl(var(--color-primary))",
-    borderColor: "transparent",
+    border: "none",
   },
-  "&[data-state='checked']:not([data-disabled]):hover": {
+  "&[data-state='checked']:hover:not([data-disabled])": {
     backgroundColor: "hsl(var(--color-primary) / 80%)",
   },
-  "&[data-state='unchecked']:not([data-disabled])": {
-    backgroundColor: "hsl(var(--color-backgroundSubtle))",
-  },
-  "&[data-state='unchecked']:not([data-disabled]):hover": {
-    backgroundColor: "hsl(var(--color-background))",
+  "&[data-state='checked'][data-disabled]": {
+    backgroundColor: "hsl(var(--color-muted))",
+    border: "1px solid hsl(var(--color-border))",
   },
 });
 
@@ -50,9 +49,7 @@ const SwitchThumb = styled(Primitives.Thumb, {
   slot: "thumb",
 })({
   backgroundColor: "hsl(var(--color-background))",
-  borderColor: "hsl(var(--color-border))",
-  borderStyle: "solid",
-  borderWidth: "1px",
+  border: "1px solid hsl(var(--color-border))",
   borderRadius: "50%",
   boxShadow: "var(--shadow-xs)",
   boxSizing: "border-box",

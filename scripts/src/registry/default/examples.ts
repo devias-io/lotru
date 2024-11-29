@@ -134,10 +134,20 @@ export const examples: RegistryComponent[] = [
   {
     id: "examples/field-01",
     name: "Field 01",
-    registryDependencies: ["ui/field"],
+    registryDependencies: ["ui/field", "ui/input"],
     files: [
       {
         path: "examples/field-01.tsx",
+      },
+    ],
+  },
+  {
+    id: "examples/field-02",
+    name: "Field 02",
+    registryDependencies: ["ui/field", "ui/input"],
+    files: [
+      {
+        path: "examples/field-02.tsx",
       },
     ],
   },

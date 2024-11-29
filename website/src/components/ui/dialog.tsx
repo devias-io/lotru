@@ -18,7 +18,7 @@ const DialogOverlay = styled(Primitives.Backdrop, {
   name: "DialogOverlay",
   slot: "overlay",
 })({
-  backgroundColor: "hsl(var(--color-backgroundOverlay))",
+  backgroundColor: "hsl(var(--color-overlay))",
   inset: 0,
   position: "fixed",
   zIndex: "var(--zIndex-overlay)",
@@ -28,7 +28,7 @@ const DialogContent = styled(Primitives.Popup, {
   name: "DialogContent",
   slot: "content",
 })({
-  backgroundColor: "hsl(var(--color-background))",
+  backgroundColor: "hsl(var(--color-surface))",
   borderRadius: "var(--borderRadius-md)",
   boxShadow: "var(--shadow-xl)",
   left: "50%",
@@ -54,7 +54,7 @@ const DialogDescription = styled(Primitives.Description, {
   name: "DialogDescription",
   slot: "description",
 })({
-  color: "hsl(var(--color-foregroundSubtle))",
+  color: "hsl(var(--color-mutedForeground))",
   fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
   lineHeight: "var(--lineHeight-compact)",

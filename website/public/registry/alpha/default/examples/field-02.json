@@ -1,0 +1,14 @@
+{
+  "id": "examples/field-02",
+  "name": "Field 02",
+  "registryDependencies": [
+    "ui/field",
+    "ui/input"
+  ],
+  "files": [
+    {
+      "path": "examples/field-02.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { css } from \"@pigment-css/react\";\n\nimport { Field, FieldControl, FieldError, FieldLabel } from \"@/components/ui/field\";\nimport { Input } from \"@/components/ui/input\";\n\nexport default function FieldExample(): React.JSX.Element {\n  return (\n    <Field invalid className={css({ maxWidth: \"var(--size-sm)\", width: \"var(--size-full)\" })}>\n      <FieldLabel>Name</FieldLabel>\n      <FieldControl>\n        <Input />\n      </FieldControl>\n      <FieldError forceShow>Only alphanumeric characters are allowed (a-z, A-Z, 0-9).</FieldError>\n    </Field>\n  );\n}\n"
+    }
+  ]
+}

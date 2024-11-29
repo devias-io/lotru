@@ -5,7 +5,7 @@ const Card = styled("div", {
   name: "CardRoot",
   slot: "root",
 })({
-  background: "hsl(var(--color-background))",
+  background: "hsl(var(--color-surface))",
   borderRadius: "var(--borderRadius-lg)",
   boxShadow: "var(--shadow-lg)",
 });

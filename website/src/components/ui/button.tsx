@@ -47,15 +47,15 @@ const ButtonRoot = styled("button", {
         transitionDuration: "var(--duration-normal)",
         transitionProperty: "background-color",
         transitionTimingFunction: "var(--easing-default)",
-        "&:hover": {
+        "&:hover:not(:disabled)": {
           backgroundColor: "hsl(var(--color-primary) / 80%)",
         },
         "&:active": {
           backgroundColor: "hsl(var(--color-primary))",
         },
         "&:disabled": {
-          backgroundColor: "hsl(var(--color-backgroundDisabled))",
-          color: "hsl(var(--color-foregroundDisabled))",
+          backgroundColor: "hsl(var(--color-muted))",
+          color: "hsl(var(--color-mutedForeground))",
         },
       },
     },
@@ -63,22 +63,20 @@ const ButtonRoot = styled("button", {
       props: { variant: "outline" },
       style: {
         backgroundColor: "transparent",
-        borderColor: "hsl(var(--color-border))",
-        borderStyle: "solid",
-        borderWidth: "1px",
+        border: "1px solid hsl(var(--color-border))",
         color: "hsl(var(--color-foreground))",
         transitionDuration: "var(--duration-normal)",
         transitionProperty: "background-color",
         transitionTimingFunction: "var(--easing-default)",
-        "&:hover": {
-          backgroundColor: "hsl(var(--color-backgroundHover))",
+        "&:hover:not(:disabled)": {
+          backgroundColor: "hsl(var(--color-primary) / 10%)",
         },
         "&:active": {
-          backgroundColor: "hsl(var(--color-backgroundPressed))",
+          backgroundColor: "transparent",
         },
         "&:disabled": {
-          backgroundColor: "hsl(var(--color-backgroundDisabled))",
-          color: "hsl(var(--color-foregroundDisabled))",
+          backgroundColor: "hsl(var(--color-muted))",
+          color: "hsl(var(--color-mutedForeground))",
         },
       },
     },
@@ -91,15 +89,15 @@ const ButtonRoot = styled("button", {
         transitionDuration: "var(--duration-normal)",
         transitionProperty: "background-color",
         transitionTimingFunction: "var(--easing-default)",
-        "&:hover": {
-          backgroundColor: "hsl(var(--color-backgroundHover))",
+        "&:hover:not(:disabled)": {
+          backgroundColor: "hsl(var(--color-primary) / 10%)",
         },
         "&:active": {
-          backgroundColor: "hsl(var(--color-backgroundPressed))",
+          backgroundColor: "transparent",
         },
         "&:disabled": {
           backgroundColor: "transparent",
-          color: "hsl(var(--color-foregroundDisabled))",
+          color: "hsl(var(--color-mutedForeground))",
         },
       },
     },

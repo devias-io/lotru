@@ -5,7 +5,7 @@ import { IconButton } from "@/src/components/ui/icon-button";
 
 export default function IconButtonExample(): React.JSX.Element {
   return (
-    <IconButton size="lg">
+    <IconButton disabled size="lg">
       <ArrowRightIcon />
     </IconButton>
   );

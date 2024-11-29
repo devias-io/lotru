@@ -39,7 +39,7 @@ export default async function Page({ params }: PageProps): Promise<React.JSX.Ele
         {component.description ? (
           <Text
             className={css({
-              color: "hsl(var(--color-foregroundMuted))",
+              color: "hsl(var(--color-mutedForeground))",
             })}
             size="xl"
           >

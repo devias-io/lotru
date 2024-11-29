@@ -12,7 +12,7 @@ const AvatarRoot = styled(Primitives.Root, {
   slot: "root",
 })<AvatarRootProps>({
   alignItems: "center",
-  backgroundColor: "hsl(var(--color-backgroundSubtle))",
+  backgroundColor: "hsl(var(--color-muted))",
   display: "flex",
   flex: "0 0 auto",
   height: "var(--avatar-size)",
@@ -85,8 +85,8 @@ const AvatarFallback = styled(Primitives.Fallback, {
   slot: "fallback",
 })({
   alignItems: "center",
-  backgroundColor: "hsl(var(--color-backgroundSubtle))",
-  color: "hsl(var(--color-foregroundSubtle))",
+  backgroundColor: "hsl(var(--color-muted))",
+  color: "hsl(var(--color-mutedForeground))",
   display: "flex",
   fontFamily: "var(--fontFamily-sans)",
   fontSize: "calc(var(--avatar-size) / 2.5)",

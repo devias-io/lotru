@@ -47,7 +47,7 @@ const SidebarHeader = styled("div", {
   name: "SidebarHeader",
   slot: "header",
 })({
-  backgroundColor: "hsl(var(--color-background))",
+  backgroundColor: "hsl(var(--color-surface))",
   left: 0,
   position: "sticky",
   top: 0,
@@ -58,6 +58,7 @@ const SidebarBody = styled("div", {
   name: "SidebarBody",
   slot: "body",
 })({
+  backgroundColor: "hsl(var(--color-surface))",
   display: "flex",
   flexDirection: "column",
   flexGrow: 1,
@@ -69,7 +70,7 @@ const SidebarFooter = styled("div", {
   name: "SidebarFooter",
   slot: "footer",
 })({
-  backgroundColor: "hsl(var(--color-background))",
+  backgroundColor: "hsl(var(--color-surface))",
   bottom: 0,
   left: 0,
   position: "sticky",
@@ -125,7 +126,7 @@ const SidebarMenuButton = styled("button", {
   border: "none",
   borderRadius: "var(--borderRadius-md)",
   boxSizing: "border-box",
-  color: "hsl(var(--color-foregroundSubtle))",
+  color: "hsl(var(--color-mutedForeground))",
   cursor: "pointer",
   flexGrow: 1,
   fontFamily: "var(--fontFamily-sans)",
@@ -136,8 +137,12 @@ const SidebarMenuButton = styled("button", {
   textAlign: "left",
   textDecoration: "none",
   width: "var(--size-full)",
-  "&:hover": {
+  "&:hover:not(:disabled)": {
     color: "hsl(var(--color-foreground))",
+  },
+  "&:disabled": {
+    color: "hsl(var(--color-mutedForeground))",
+    cursor: "not-allowed",
   },
   variants: [
     {
@@ -174,7 +179,7 @@ function Sidebar({ children, className, side = "left" }: SidebarProps): React.JS
       className={cn(
         className,
         css({
-          backgroundColor: "hsl(var(--color-background))",
+          backgroundColor: "hsl(var(--color-surface))",
           boxSizing: "border-box",
           borderRight: "1px solid hsl(var(--color-border))",
           display: "none",

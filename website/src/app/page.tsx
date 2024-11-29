@@ -28,7 +28,7 @@ export default function Page(): React.JSX.Element {
       >
         <div
           className={css({
-            backgroundColor: "hsl(var(--color-backgroundSubtle))",
+            backgroundColor: "hsl(var(--color-muted))",
             borderWidth: "1px",
             borderStyle: "solid",
             borderColor: "hsl(var(--color-border))",
@@ -63,10 +63,10 @@ export default function Page(): React.JSX.Element {
                   paddingInline: "calc(var(--spacing-unit) * 2.5)",
                 })}
               >
-                <StarsIcon color="hsl(var(--color-foregroundSubtle))" size={16} />
+                <StarsIcon color="hsl(var(--color-mutedForeground))" size={16} />
                 <Text
                   className={css({
-                    color: "hsl(var(--color-foregroundSubtle))",
+                    color: "hsl(var(--color-mutedForeground))",
                   })}
                   size="xs"
                   weight="medium"
@@ -86,7 +86,7 @@ export default function Page(): React.JSX.Element {
             </Text>
             <div
               className={css({
-                color: "hsl(var(--color-foregroundSubtle))",
+                color: "hsl(var(--color-mutedForeground))",
                 textAlign: "center",
               })}
             >
@@ -106,7 +106,7 @@ export default function Page(): React.JSX.Element {
                   })}
                 >
                   Base UI
-                  <SquareArrowOutUpRightIcon color="hsl(var(--color-foregroundSubtle))" size={12} />
+                  <SquareArrowOutUpRightIcon color="hsl(var(--color-mutedForeground))" size={12} />
                 </span>{" "}
                 and{" "}
                 <span
@@ -123,7 +123,7 @@ export default function Page(): React.JSX.Element {
                   })}
                 >
                   Pigment CSS
-                  <SquareArrowOutUpRightIcon color="hsl(var(--color-foregroundSubtle))" size={12} />
+                  <SquareArrowOutUpRightIcon color="hsl(var(--color-mutedForeground))" size={12} />
                 </span>{" "}
                 to effortlessly create stunning, inclusive user interfaces.
               </Text>

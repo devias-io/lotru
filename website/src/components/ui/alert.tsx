@@ -59,7 +59,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
         <IconButton size="xs" variant="ghost" onClick={handleDismiss}>
           <XIcon
             className={css({
-              color: "hsl(var(--color-foregroundMuted))",
+              color: "hsl(var(--color-mutedForeground))",
             })}
           />
         </IconButton>
@@ -108,7 +108,7 @@ const AlertDescription = styled("p", {
   name: "AlertTitle",
   slot: "title",
 })({
-  color: "hsl(var(--color-foregroundSubtle))",
+  color: "hsl(var(--color-mutedForeground))",
   fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
   lineHeight: "var(--lineHeight-normal)",

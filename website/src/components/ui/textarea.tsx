@@ -6,38 +6,39 @@ const TextareaRoot = styled("textarea", {
   slot: "root",
 })({
   appearance: "none",
-  background: "none",
-  borderColor: "hsl(var(--color-border))",
-  borderStyle: "solid",
-  borderWidth: "1px",
+  backgroundColor: "var(--color-background)",
+  border: "1px solid hsl(var(--color-border))",
   borderRadius: "var(--borderRadius-sm)",
   boxSizing: "border-box",
   color: "hsl(var(--color-foreground))",
-  minHeight: "60px",
-  outline: "none",
-  padding: "6px 8px",
+  fontFamily: "var(--fontFamily-sans)",
+  fontSize: "var(--fontSize-md)",
+  height: "calc(var(--size-unit) * 10)",
+  maxWidth: "var(--size-xs)",
+  minWidth: "calc(var(--size-unit) * 10)",
+  paddingBlock: "calc(var(--spacing-unit) * 2)",
+  paddingInline: "calc(var(--spacing-unit) * 3)",
   position: "relative",
-  transitionDuration: "var(--duration-normal)",
-  transitionProperty: "border-color, box-shadow",
-  transitionTimingFunction: "var(--easing-default)",
   width: "var(--size-full)",
-  "&:disabled": {
-    backgroundColor: "hsl(var(--color-input-backgroundDisabled))",
-    color: "hsl(var(--color-foregroundDisabled))",
-    cursor: "not-allowed",
-    "&::placeholder": {
-      color: "hsl(var(--color-foregroundDisabled))",
-    },
-  },
   "&:focus-visible": {
-    borderColor: "hsl(var(--color-borderStrong))",
-    '&[data-field="invalid"]': {
-      borderColor: "hsl(var(--color-borderStrong))",
-    },
+    borderColor: "hsl(var(--color-ring))",
+    outline: "3px solid hsl(var(--color-ring) / 20%)",
   },
-  '&[data-field="invalid"]': {},
+  "&:disabled": {
+    cursor: "not-allowed",
+    opacity: 0.5,
+  },
+  '&[data-field="invalid"]': {
+    borderColor: "hsl(var(--color-danger))",
+  },
+  '&[data-field="invalid"]:focus-visible': {
+    outline: "3px solid hsl(var(--color-danger) / 24%)",
+  },
   "&::placeholder": {
-    color: "hsl(var(--color-foregroundMuted))",
+    color: "hsl(var(--color-mutedForeground))",
+  },
+  "&::placeholder:disabled": {
+    color: "hsl(var(--color-mutedForeground))",
   },
 });
 

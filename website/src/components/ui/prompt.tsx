@@ -54,7 +54,7 @@ const PromptOverlay = styled(Primitives.Backdrop, {
   name: "PromptOverlay",
   slot: "backdrop",
 })({
-  backgroundColor: "hsl(var(--color-backgroundOverlay))",
+  backgroundColor: "hsl(var(--color-overlay))",
   position: "fixed",
   inset: 0,
   zIndex: "var(--zIndex-overlay)",
@@ -64,7 +64,7 @@ const PromptContent = styled(Primitives.Popup, {
   name: "PromptContent",
   slot: "content",
 })({
-  backgroundColor: "hsl(var(--color-background))",
+  backgroundColor: "hsl(var(--color-surface))",
   borderColor: "hsl(var(--color-border))",
   borderStyle: "solid",
   borderWidth: "1px",
@@ -109,7 +109,7 @@ const PromptTitle = styled(Primitives.Title)({
 });
 
 const PromptDescription = styled(Primitives.Description)({
-  color: "hsl(var(--color-foregroundSubtle))",
+  color: "hsl(var(--color-mutedForeground))",
   fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-md)",
   lineHeight: "var(--lineHeight-tight)",

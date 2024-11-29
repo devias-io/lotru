@@ -2,7 +2,11 @@ import * as React from "react";
 import * as Primitives from "@base_ui/react/Field";
 import { styled } from "@pigment-css/react";
 
-const Field = Primitives.Root;
+const Field = styled(Primitives.Root)({
+  display: "flex",
+  flexDirection: "column",
+  gap: "calc(var(--spacing-unit) * 2)",
+});
 
 interface FieldControlProps extends Primitives.ControlProps {
   children: React.ReactElement;
@@ -18,28 +22,25 @@ const FieldLabel = styled(Primitives.Label)({
   display: "block",
   fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
-  lineHeight: "var(--lineHeight-normal)",
+  lineHeight: "var(--lineHeight-none)",
 });
 
 const FieldDescription = styled(Primitives.Description)({
-  color: "hsl(var(--color-foregroundSubtle))",
+  color: "hsl(var(--color-mutedForeground))",
   display: "block",
   fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
   lineHeight: "var(--lineHeight-normal)",
-  marginBlockStart: "var(--spacing-unit)",
-  "&[data-error]": {
-    color: "hsl(var(--color-foregroundDanger))",
-  },
+  margin: 0,
 });
 
 const FieldError = styled(Primitives.Error)({
-  color: "hsl(var(--color-foregroundDanger))",
+  color: "hsl(var(--color-danger))",
   display: "block",
   fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
   lineHeight: "var(--lineHeight-normal)",
-  marginBlockStart: "var(--spacing-unit)",
+  margin: 0,
 });
 
 const FieldValidity = Primitives.Validity;

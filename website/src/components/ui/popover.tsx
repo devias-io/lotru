@@ -9,7 +9,7 @@ const PopoverTrigger = Primitives.Trigger;
 const PopoverPositioner = Primitives.Positioner;
 
 const PopoverContent = styled(Primitives.Popup)({
-  backgroundColor: "hsl(var(--color-background))",
+  backgroundColor: "hsl(var(--color-surface))",
   borderColor: "hsl(var(--color-border))",
   borderStyle: "solid",
   borderWidth: "1px",
@@ -21,7 +21,7 @@ const PopoverContent = styled(Primitives.Popup)({
 });
 
 const PopoverArrow = styled(Primitives.Arrow)({
-  backgroundColor: "hsl(var(--color-background))",
+  backgroundColor: "hsl(var(--color-surface))",
   height: "10px",
   transform: "rotate(45deg)",
   width: "10px",
@@ -53,7 +53,7 @@ const PopoverTitle = styled(Primitives.Title)({
 });
 
 const PopoverDescription = styled(Primitives.Description)({
-  color: "hsl(var(--color-foregroundSubtle))",
+  color: "hsl(var(--color-mutedForeground))",
   fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
   lineHeight: "var(--lineHeight-compact)",

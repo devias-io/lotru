@@ -79,6 +79,10 @@ export const groups: Group[] = [
         href: "/docs/components/prompt",
       },
       {
+        label: "Radio",
+        href: "/docs/components/radio",
+      },
+      {
         label: "Select",
         href: "/docs/components/select",
       },

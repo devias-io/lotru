@@ -66,8 +66,8 @@ const PromptContent = styled(Primitives.Popup, {
 })({
   backgroundColor: "hsl(var(--color-background))",
   borderColor: "hsl(var(--color-border))",
-borderStyle: "solid",
-borderWidth: "1px",
+  borderStyle: "solid",
+  borderWidth: "1px",
   borderRadius: "var(--borderRadius-md)",
   boxShadow: "var(--shadow-xl)",
   position: "fixed",
@@ -127,17 +127,7 @@ const PromptAction = React.forwardRef<HTMLButtonElement, PromptActionProps>(func
 ) {
   const _ = usePromptContext();
 
-  return (
-    <Primitives.Close
-      ref={ref}
-      render={
-        <Button type={type}>
-          {children}
-        </Button>
-      }
-      {...props}
-    />
-  );
+  return <Primitives.Close ref={ref} render={<Button type={type}>{children}</Button>} {...props} />;
 });
 
 interface PromptCancelProps {

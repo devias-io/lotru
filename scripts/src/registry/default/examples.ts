@@ -94,7 +94,7 @@ export const examples: RegistryComponent[] = [
   {
     id: "examples/checkbox-01",
     name: "Checkbox 01",
-    registryDependencies: ["ui/checkbox"],
+    registryDependencies: ["ui/checkbox", "ui/stack", "ui/text"],
     files: [
       {
         path: "examples/checkbox-01.tsx",
@@ -104,7 +104,7 @@ export const examples: RegistryComponent[] = [
   {
     id: "examples/checkbox-02",
     name: "Checkbox 02",
-    registryDependencies: ["ui/checkbox"],
+    registryDependencies: ["ui/checkbox", "ui/stack", "ui/text"],
     files: [
       {
         path: "examples/checkbox-02.tsx",
@@ -198,6 +198,26 @@ export const examples: RegistryComponent[] = [
     files: [
       {
         path: "examples/prompt-01.tsx",
+      },
+    ],
+  },
+  {
+    id: "examples/radio-01",
+    name: "Radio 01",
+    registryDependencies: ["ui/radio", "ui/radio-group", "ui/stack", "ui/text"],
+    files: [
+      {
+        path: "examples/radio-01.tsx",
+      },
+    ],
+  },
+  {
+    id: "examples/radio-02",
+    name: "Radio 02",
+    registryDependencies: ["ui/radio", "ui/radio-group", "ui/stack", "ui/text"],
+    files: [
+      {
+        path: "examples/radio-02.tsx",
       },
     ],
   },

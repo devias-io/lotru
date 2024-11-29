@@ -1,0 +1,13 @@
+{
+  "id": "ui/radio",
+  "name": "Radio",
+  "dependencies": [
+    "@base_ui/react"
+  ],
+  "files": [
+    {
+      "path": "ui/radio.tsx",
+      "content": "import * as React from \"react\";\nimport * as Primitives from \"@base_ui/react/Radio\";\nimport { styled } from \"@pigment-css/react\";\n\nconst RadioRoot = styled(Primitives.Root, {\n  name: \"RadioRoot\",\n  slot: \"root\",\n})({\n  alignItems: \"center\",\n  border: \"1px solid hsl(var(--color-border))\",\n  backgroundColor: \"hsl(var(--color-backgroundSubtle))\",\n  borderRadius: \"var(--borderRadius-full)\",\n  boxSizing: \"border-box\",\n  cursor: \"pointer\",\n  display: \"inline-flex\",\n  flexShrink: 0,\n  height: \"calc(var(--size-unit) * 5)\",\n  justifyContent: \"center\",\n  margin: 0,\n  outline: \"none\",\n  padding: 0,\n  transitionDuration: \"var(--duration-fast)\",\n  transitionProperty: \"background-color\",\n  transitionTimingFunction: \"var(--easing-default)\",\n  width: \"calc(var(--size-unit) * 5)\",\n  \"&:hover:not([data-disabled])\": {\n    backgroundColor: \"hsl(var(--color-background))\",\n  },\n  \"&:focus-visible\": {\n    outline: \"2px solid hsl(var(--color-ring))\",\n    outlineOffset: \"2px\",\n  },\n  \"&[data-disabled]\": {\n    cursor: \"not-allowed\",\n    backgroundColor: \"hsl(var(--color-backgroundDisabled))\",\n    border: \"1px solid hsl(var(--color-border))\",\n  },\n  \"&[data-radio='checked']\": {\n    backgroundColor: \"hsl(var(--color-primary))\",\n    border: \"none\",\n  },\n  \"&[data-radio='checked']:hover:not([data-disabled])\": {\n    backgroundColor: \"hsl(var(--color-primary) / 80%)\",\n  },\n  \"&[data-radio='checked'][data-disabled]\": {\n    backgroundColor: \"hsl(var(--color-backgroundDisabled))\",\n    border: \"1px solid hsl(var(--color-border))\",\n  },\n});\n\nconst RadioIndicator = styled(Primitives.Indicator, {\n  name: \"RadioIndicator\",\n  slot: \"indicator\",\n})({\n  borderRadius: \"var(--borderRadius-full)\",\n  flexShrink: 0,\n  height: \"calc(var(--size-unit) * 2)\",\n  width: \"calc(var(--size-unit) * 2)\",\n  \"&[data-radio='unchecked']\": {\n    display: \"none\",\n  },\n  \"&[data-radio='checked']\": {\n    backgroundColor: \"hsl(var(--color-primaryForeground))\",\n  },\n});\n\ninterface RadioProps extends React.ComponentPropsWithoutRef<typeof RadioRoot> {}\n\nconst Radio = React.forwardRef<React.ElementRef<typeof RadioRoot>, RadioProps>(({ ...props }: RadioProps, ref) => (\n  <RadioRoot ref={ref} tabIndex={0} {...props}>\n    <RadioIndicator />\n  </RadioRoot>\n));\nRadio.displayName = \"Radio\";\n\nexport { Radio };\n"
+    }
+  ]
+}

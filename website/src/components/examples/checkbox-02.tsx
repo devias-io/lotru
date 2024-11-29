@@ -1,12 +1,13 @@
 import * as React from "react";
 
 import { Checkbox } from "@/src/components/ui/checkbox";
-import { Text } from "@/src/components/ui/text";
+import { CheckboxGroup } from "@/src/components/ui/checkbox-group";
 import { Stack } from "@/src/components/ui/stack";
+import { Text } from "@/src/components/ui/text";
 
 export default function CheckboxExample(): React.JSX.Element {
   return (
-    <Stack gap={4}>
+    <CheckboxGroup>
       <Stack alignItems="center" direction="row" gap={2}>
         <Checkbox />
         <Text>Default</Text>
@@ -23,6 +24,10 @@ export default function CheckboxExample(): React.JSX.Element {
         <Checkbox disabled />
         <Text>Disabled</Text>
       </Stack>
-    </Stack>
+      <Stack alignItems="center" direction="row" gap={2}>
+        <Checkbox checked disabled />
+        <Text>Disabled checked</Text>
+      </Stack>
+    </CheckboxGroup>
   );
 }

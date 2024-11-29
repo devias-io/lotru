@@ -24,10 +24,13 @@ const ButtonRoot = styled("button", {
   display: "inline-flex",
   flexShrink: 0,
   justifyContent: "center",
-  outline: "none",
   overflow: "hidden",
   position: "relative",
   width: "var(--size-fit)",
+  "&:focus-visible": {
+    outline: "2px solid hsl(var(--color-ring))",
+    outlineOffset: "2px",
+  },
   "& svg": {
     flexShrink: 0,
     fontSize: "1.1em",
@@ -38,17 +41,17 @@ const ButtonRoot = styled("button", {
     {
       props: { variant: "solid" },
       style: {
-        backgroundColor: "hsl(var(--color-primaryBackground))",
+        backgroundColor: "hsl(var(--color-primary))",
         border: "none",
         color: "hsl(var(--color-primaryForeground))",
         transitionDuration: "var(--duration-normal)",
         transitionProperty: "background-color",
-        transitionTimingFunction: "var(--easing-normal)",
+        transitionTimingFunction: "var(--easing-default)",
         "&:hover": {
-          backgroundColor: "hsl(var(--color-primaryBackground) / 80%)",
+          backgroundColor: "hsl(var(--color-primary) / 80%)",
         },
         "&:active": {
-          backgroundColor: "hsl(var(--color-primaryBackground))",
+          backgroundColor: "hsl(var(--color-primary))",
         },
         "&:disabled": {
           backgroundColor: "hsl(var(--color-backgroundDisabled))",
@@ -66,7 +69,7 @@ const ButtonRoot = styled("button", {
         color: "hsl(var(--color-foreground))",
         transitionDuration: "var(--duration-normal)",
         transitionProperty: "background-color",
-        transitionTimingFunction: "var(--easing-normal)",
+        transitionTimingFunction: "var(--easing-default)",
         "&:hover": {
           backgroundColor: "hsl(var(--color-backgroundHover))",
         },
@@ -87,7 +90,7 @@ const ButtonRoot = styled("button", {
         color: "hsl(var(--color-foreground))",
         transitionDuration: "var(--duration-normal)",
         transitionProperty: "background-color",
-        transitionTimingFunction: "var(--easing-normal)",
+        transitionTimingFunction: "var(--easing-default)",
         "&:hover": {
           backgroundColor: "hsl(var(--color-backgroundHover))",
         },

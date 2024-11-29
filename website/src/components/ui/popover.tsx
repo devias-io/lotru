@@ -11,8 +11,8 @@ const PopoverPositioner = Primitives.Positioner;
 const PopoverContent = styled(Primitives.Popup)({
   backgroundColor: "hsl(var(--color-background))",
   borderColor: "hsl(var(--color-border))",
-borderStyle: "solid",
-borderWidth: "1px",
+  borderStyle: "solid",
+  borderWidth: "1px",
   borderRadius: "var(--borderRadius-md)",
   filter: "drop-shadow(rgba(0, 10, 20, .2) 0px 2px 4px)",
   outline: "none",

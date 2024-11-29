@@ -142,6 +142,15 @@ export const index: Record<
     }],
     
   },
+  "ui/radio": {
+    id: "ui/radio",
+    name: "Radio",
+    description: "",
+    files: [{
+      path: "ui/radio.tsx",
+    }],
+    
+  },
   "ui/select": {
     id: "ui/select",
     name: "Select",
@@ -384,6 +393,24 @@ export const index: Record<
       path: "examples/prompt-01.tsx",
     }],
     component: React.lazy(() => import("@/src/components/examples/prompt-01.tsx"))
+  },
+  "examples/radio-01": {
+    id: "examples/radio-01",
+    name: "Radio 01",
+    description: "",
+    files: [{
+      path: "examples/radio-01.tsx",
+    }],
+    component: React.lazy(() => import("@/src/components/examples/radio-01.tsx"))
+  },
+  "examples/radio-02": {
+    id: "examples/radio-02",
+    name: "Radio 02",
+    description: "",
+    files: [{
+      path: "examples/radio-02.tsx",
+    }],
+    component: React.lazy(() => import("@/src/components/examples/radio-02.tsx"))
   },
   "examples/select-01": {
     id: "examples/select-01",

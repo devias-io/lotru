@@ -2,7 +2,9 @@
   "id": "examples/checkbox-01",
   "name": "Checkbox 01",
   "registryDependencies": [
-    "ui/checkbox"
+    "ui/checkbox",
+    "ui/stack",
+    "ui/text"
   ],
   "files": [
     {

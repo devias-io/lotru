@@ -141,6 +141,16 @@ export const ui: RegistryComponent[] = [
     ],
   },
   {
+    id: "ui/radio",
+    name: "Radio",
+    dependencies: ["@base_ui/react"],
+    files: [
+      {
+        path: "ui/radio.tsx",
+      },
+    ],
+  },
+  {
     id: "ui/select",
     name: "Select",
     dependencies: ["@base_ui/react"],

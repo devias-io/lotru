@@ -12,8 +12,8 @@ const SelectRoot = styled("select", {
   appearance: "none",
   background: "none",
   borderColor: "hsl(var(--color-border))",
-borderStyle: "solid",
-borderWidth: "1px",
+  borderStyle: "solid",
+  borderWidth: "1px",
   borderRadius: "var(--borderRadius-sm)",
   boxSizing: "border-box",
   color: "hsl(var(--color-foreground))",
@@ -25,7 +25,6 @@ borderWidth: "1px",
   width: "var(--size-full)",
   "&:disabled": {
     backgroundColor: "hsl(var(--color-input-backgroundDisabled))",
-    borderColor: "hsl(var(--color-borderDisabled))",
     color: "hsl(var(--color-foregroundDisabled))",
     cursor: "not-allowed",
     "&::placeholder": {

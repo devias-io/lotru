@@ -8,10 +8,11 @@ const CheckboxRoot = styled(Primitives.Root, {
   slot: "root",
 })({
   alignItems: "center",
-  background: "transparent",
-  border: "none",
-  cursor: "pointer",
+  border: "1px solid hsl(var(--color-border))",
+  backgroundColor: "hsl(var(--color-backgroundSubtle))",
+  borderRadius: "var(--borderRadius-sm)",
   boxSizing: "border-box",
+  cursor: "pointer",
   display: "inline-flex",
   flexShrink: 0,
   height: "calc(var(--size-unit) * 5)",
@@ -19,7 +20,33 @@ const CheckboxRoot = styled(Primitives.Root, {
   margin: 0,
   outline: "none",
   padding: 0,
+  transitionDuration: "var(--duration-fast)",
+  transitionProperty: "background-color",
+  transitionTimingFunction: "var(--easing-default)",
   width: "calc(var(--size-unit) * 5)",
+  "&:hover:not([data-disabled])": {
+    backgroundColor: "hsl(var(--color-background))",
+  },
+  "&:focus-visible": {
+    outline: "2px solid hsl(var(--color-ring))",
+    outlineOffset: "2px",
+  },
+  "&[data-disabled]": {
+    cursor: "not-allowed",
+    backgroundColor: "hsl(var(--color-backgroundDisabled))",
+    border: "1px solid hsl(var(--color-border))",
+  },
+  "&[data-state='checked']": {
+    backgroundColor: "hsl(var(--color-primary))",
+    border: "none",
+  },
+  "&[data-state='checked']:hover:not([data-disabled])": {
+    backgroundColor: "hsl(var(--color-primary) / 80%)",
+  },
+  "&[data-state='checked'][data-disabled]": {
+    backgroundColor: "hsl(var(--color-backgroundDisabled))",
+    border: "1px solid hsl(var(--color-border))",
+  },
 });
 
 const CheckboxIndicator = styled(Primitives.Indicator, {
@@ -27,41 +54,22 @@ const CheckboxIndicator = styled(Primitives.Indicator, {
   slot: "indicator",
 })({
   alignItems: "center",
-  backgroundColor: "hsl(var(--color-backgroundSubtle))",
-  borderColor: "hsl(var(--color-border))",
-  borderRadius: "var(--borderRadius-sm)",
-  borderStyle: "solid",
-  borderWidth: "1px",
-  boxShadow: "var(--shadow-xs)",
-  boxSizing: "border-box",
-  color: "hsl(var(--color-foreground))",
-  display: "flex",
-  flexShrink: 0,
-  height: "calc(var(--size-unit) * 5)",
+  display: "none",
   justifyContent: "center",
-  transitionDuration: "var(--duration-normal)",
-  transitionProperty: "background-color, border-color",
-  transitionTimingFunction: "var(--easing-normal)",
-  width: "calc(var(--size-unit) * 5)",
-  "&:hover:not([data-disabled])": {
-    backgroundColor: "hsl(var(--color-background))",
-    borderColor: "hsl(var(--color-borderStrong))",
+  '&[data-state="checked"]': {
+    display: "inline-flex",
   },
-  "&:focus-visible": {},
-  "&[data-disabled]": {
-    backgroundColor: "hsl(var(--color-backgroundDisabled))",
-    color: "hsl(var(--color-foregroundDisabled))",
-    cursor: "not-allowed",
-  },
-  "&[data-state='checked']": {
-    backgroundColor: "hsl(var(--color-primaryBackground))",
+  '&[data-state="checked"]:not([data-disabled])': {
     color: "hsl(var(--color-primaryForeground))",
   },
-  "&[data-state='checked']:hover": {
-    backgroundColor: "hsl(var(--color-primaryBackground) / 80%)",
+  '&[data-state="checked"][data-disabled]': {
+    color: "hsl(var(--color-foregroundDisabled))",
   },
-  '&[data-state="unchecked"] svg': {
-    display: "none",
+  "& svg": {
+    flexShrink: 0,
+    fontSize: "1.1em",
+    height: "1.1em",
+    width: "1.1em",
   },
 });
 

@@ -159,7 +159,9 @@ const TablePagination = React.forwardRef<HTMLDivElement, TablePaginationProps>(
         <Stack alignItems="center" direction="row" gap={1}>
           <Text>{from}</Text>
           <MinusIcon />
-          <Text>{to} {translations.of} {count} {translations.results}</Text>
+          <Text>
+            {to} {translations.of} {count} {translations.results}
+          </Text>
         </Stack>
         <Stack alignItems="center" gap={2}>
           <Text>

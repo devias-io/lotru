@@ -31,11 +31,11 @@ const SwitchRoot = styled(Primitives.Root, {
   },
   "&:focus-visible": {},
   "&[data-state='checked']:not([data-disabled])": {
-    backgroundColor: "hsl(var(--color-primaryBackground))",
+    backgroundColor: "hsl(var(--color-primary))",
     borderColor: "transparent",
   },
   "&[data-state='checked']:not([data-disabled]):hover": {
-    backgroundColor: "hsl(var(--color-primaryBackground) / 80%)",
+    backgroundColor: "hsl(var(--color-primary) / 80%)",
   },
   "&[data-state='unchecked']:not([data-disabled])": {
     backgroundColor: "hsl(var(--color-backgroundSubtle))",

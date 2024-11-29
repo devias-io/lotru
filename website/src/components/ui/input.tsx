@@ -12,35 +12,31 @@ const InputRoot = styled("input", {
   appearance: "none",
   background: "none",
   borderColor: "hsl(var(--color-border))",
-borderStyle: "solid",
-borderWidth: "1px",
+  borderStyle: "solid",
+  borderWidth: "1px",
   borderRadius: "var(--borderRadius-sm)",
   boxSizing: "border-box",
   color: "hsl(var(--color-foreground))",
-  outline: "none",
   position: "relative",
-  transitionDuration: "var(--duration-normal)",
-  transitionProperty: "border-color, box-shadow",
-  transitionTimingFunction: "var(--easing-default)",
   width: "var(--size-full)",
-  "&:disabled": {
-    backgroundColor: "hsl(var(--color-input-backgroundDisabled))",
-    borderColor: "hsl(var(--color-borderDisabled))",
-    color: "hsl(var(--color-foregroundDisabled))",
-    cursor: "not-allowed",
-    "&::placeholder": {
-      color: "hsl(var(--color-foregroundDisabled))",
-    },
-  },
   "&:focus-visible": {
     borderColor: "hsl(var(--color-borderStrong))",
-    '&[data-field="invalid"]': {
-      borderColor: "hsl(var(--color-borderStrong))",
-    },
+    outline: "3px solid hsl(var(--color-ring))",
   },
-  '&[data-field="invalid"]': {},
+  "&:disabled": {
+    backgroundColor: "hsl(var(--color-input-backgroundDisabled))",
+    color: "hsl(var(--color-foregroundDisabled))",
+    cursor: "not-allowed",
+  },
+  '&[data-field="invalid"]:focus-visible': {
+    borderColor: "hsl(var(--color-danger))",
+    outline: "3px solid hsl(var(--color-danger) / 24%)",
+  },
   "&::placeholder": {
     color: "hsl(var(--color-foregroundMuted))",
+  },
+  "&::placeholder:disabled": {
+    color: "hsl(var(--color-foregroundDisabled))",
   },
   variants: [
     {

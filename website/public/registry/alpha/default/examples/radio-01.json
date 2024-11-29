@@ -1,0 +1,16 @@
+{
+  "id": "examples/radio-01",
+  "name": "Radio 01",
+  "registryDependencies": [
+    "ui/radio",
+    "ui/radio-group",
+    "ui/stack",
+    "ui/text"
+  ],
+  "files": [
+    {
+      "path": "examples/radio-01.tsx",
+      "content": "import * as React from \"react\";\n\nimport { Radio } from \"@/components/ui/radio\";\nimport { RadioGroup } from \"@/components/ui/radio-group\";\nimport { Stack } from \"@/components/ui/stack\";\nimport { Text } from \"@/components/ui/text\";\n\nexport default function RadioExample(): React.JSX.Element {\n  return (\n    <RadioGroup defaultValue=\"a\">\n      <Stack alignItems=\"center\" direction=\"row\" gap={2}>\n        <Radio value=\"a\" />\n        <Text>Option</Text>\n      </Stack>\n    </RadioGroup>\n  );\n}\n"
+    }
+  ]
+}

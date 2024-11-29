@@ -80,6 +80,14 @@
     "name": "Prompt 01"
   },
   {
+    "id": "examples/radio-01",
+    "name": "Radio 01"
+  },
+  {
+    "id": "examples/radio-02",
+    "name": "Radio 02"
+  },
+  {
     "id": "examples/select-01",
     "name": "Select 01"
   },

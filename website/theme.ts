@@ -18,11 +18,7 @@ interface ColorTokens {
   backgroundSubtle: string;
   backgroundSubtleHover: string;
   backgroundSubtlePressed: string;
-  backgroundHighlight: string;
-  backgroundHighlightHover: string;
   backgroundOverlay: string;
-  primaryBackground: string;
-  primaryForeground: string;
   border: string;
   borderStrong: string;
   borderTransparent: string;
@@ -30,6 +26,11 @@ interface ColorTokens {
   foregroundMuted: string;
   foregroundDisabled: string;
   foregroundSubtle: string;
+  ring: string;
+  primary: string;
+  primaryForeground: string;
+  danger: string;
+  dangerForeground: string;
 }
 
 interface BorderRadiusTokens {
@@ -206,18 +207,19 @@ const theme: ThemeInput = {
         backgroundSubtle: "0 0% 98%",
         backgroundSubtleHover: "240 5% 96%",
         backgroundSubtlePressed: "240 5% 90%",
-        backgroundHighlight: "210 100% 95%",
-        backgroundHighlightHover: "210 100% 90%",
         backgroundOverlay: "224 71% 4% / 40%",
-        primaryBackground: "240 4% 16%",
-        primaryForeground: "0 0% 100%",
         border: "240 5% 90%",
-        borderStrong: "240 5% 83%",
+        borderStrong: "240 4% 16%",
         borderTransparent: "0 0% 100%",
         foreground: "240 5% 10%",
         foregroundMuted: "0 0% 39%",
         foregroundDisabled: "240 5% 83%",
         foregroundSubtle: "240 5% 35%",
+        ring: "240 4% 16% / 24%",
+        primary: "240 4% 16%",
+        primaryForeground: "0 0% 100%",
+        danger: "347 77% 50%",
+        dangerForeground: "0 0% 100%",
       },
       shadow: {
         xs: "0px 1px 2px hsl(0 0% 0% / 12%), 0px 0px 1px hsl(0 0% 0% / 19%)",
@@ -238,10 +240,6 @@ const theme: ThemeInput = {
         backgroundSubtleHover: "240 7% 11%",
         backgroundSubtlePressed: "230 7% 16%",
         backgroundOverlay: "240 4% 10% / 70%",
-        backgroundHighlight: "226 57% 21%",
-        backgroundHighlightHover: "224 64% 33%",
-        primaryBackground: "220 9% 94%",
-        primaryForeground: "0 0% 7%",
         border: "223 7% 19%",
         borderStrong: "223 6% 22%",
         borderTransparent: "0 0% 100%",
@@ -249,6 +247,11 @@ const theme: ThemeInput = {
         foregroundMuted: "0 0% 71%",
         foregroundDisabled: "218 6% 26%",
         foregroundSubtle: "218 7% 70%",
+        ring: "240 4% 16% / 24%",
+        primary: "220 9% 94%",
+        primaryForeground: "0 0% 7%",
+        danger: "347 77% 50%",
+        dangerForeground: "0 0% 100%",
       },
       shadow: {
         xs: "0px 1px 1px hsl(0 0% 0% / 95%), 0px 0px 1px inset hsl(0 0% 100% / 23%)",

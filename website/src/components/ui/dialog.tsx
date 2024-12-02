@@ -29,14 +29,37 @@ const DialogContent = styled(Primitives.Popup, {
   slot: "content",
 })({
   backgroundColor: "hsl(var(--color-surface))",
-  borderRadius: "var(--borderRadius-md)",
+  borderRadius: "var(--borderRadius-lg)",
   boxShadow: "var(--shadow-xl)",
+  display: "flex",
+  flexDirection: "column",
+  gap: "calc(var(--spacing-unit) * 4)",
   left: "50%",
-  padding: "calc(var(--spacing-unit) * 4)",
+  maxWidth: "var(--size-lg)",
+  padding: "calc(var(--spacing-unit) * 6)",
   position: "fixed",
   top: "50%",
   transform: "translate(-50%, -50%)",
+  width: "var(--size-full)",
   zIndex: "var(--zIndex-modal)",
+});
+
+const DialogHeader = styled("div", {
+  name: "DialogHeader",
+  slot: "header",
+})({
+  display: "flex",
+  flexDirection: "column",
+  gap: "var(--spacing-unit)",
+});
+
+const DialogFooter = styled("div", {
+  name: "DialogFooter",
+  slot: "footer",
+})({
+  display: "flex",
+  justifyContent: "flex-end",
+  gap: "calc(var(--spacing-unit) * 2)",
 });
 
 const DialogTitle = styled(Primitives.Title, {
@@ -46,8 +69,8 @@ const DialogTitle = styled(Primitives.Title, {
   fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-lg)",
   lineHeight: "var(--lineHeight-normal)",
-  fontWeight: "var(--fontWeight-medium)",
-  margin: 0,
+  fontWeight: "var(--fontWeight-semibold)",
+  marginBlock: 0,
 });
 
 const DialogDescription = styled(Primitives.Description, {
@@ -58,7 +81,7 @@ const DialogDescription = styled(Primitives.Description, {
   fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
   lineHeight: "var(--lineHeight-compact)",
-  margin: 0,
+  marginBlock: 0,
 });
 
 const DialogClose = React.forwardRef<
@@ -68,4 +91,14 @@ const DialogClose = React.forwardRef<
   return <Primitives.Close ref={ref} {...props} />;
 });
 
-export { Dialog, DialogTrigger, DialogOverlay, DialogContent, DialogClose, DialogTitle, DialogDescription };
+export {
+  Dialog,
+  DialogTrigger,
+  DialogOverlay,
+  DialogContent,
+  DialogClose,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+};

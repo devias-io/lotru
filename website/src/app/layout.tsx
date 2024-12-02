@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { css } from "@pigment-css/react";
 import { ThemeProvider } from "next-themes";
+
 import "@pigment-css/react/styles.css";
 
 import { cn } from "@/src/lib/cn";
@@ -34,6 +35,7 @@ export default function Layout({ children }: LayoutProps): React.JSX.Element {
     <html className={cn(geistSans.variable, geistMono.variable)} dir="ltr" lang="en" suppressHydrationWarning>
       <body
         className={css(({ theme }) => ({
+          "-webkit-font-smoothing": "antialiased",
           backgroundColor: "hsl(var(--color-background))",
           color: "hsl(var(--color-foreground))",
           margin: 0,

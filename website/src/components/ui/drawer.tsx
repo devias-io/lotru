@@ -57,7 +57,6 @@ const DrawerContent = styled(Primitives.Popup, {
   flexDirection: "column",
   maxWidth: "calc(var(--drawer-max-width, 560px) - calc(var(--spacing-unit) * 2))",
   opacity: 0,
-  outline: "none",
   position: "fixed",
   top: 0,
   transitionDuration: "var(--duration-normal)",
@@ -65,6 +64,9 @@ const DrawerContent = styled(Primitives.Popup, {
   transitionTimingFunction: "var(--easing-default)",
   width: "var(--size-full)",
   zIndex: "var(--zIndex-modal)",
+  "&:focus-visible": {
+    outline: "none",
+  },
   "&[data-state='open']": {
     opacity: 1,
     transform: "translateX(0)",

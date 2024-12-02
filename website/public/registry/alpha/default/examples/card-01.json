@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/card-01.tsx",
-      "content": "import * as React from \"react\";\n\nimport { Card, CardContent } from \"@/components/ui/card\";\nimport { Stack } from \"@/components/ui/stack\";\nimport { Text } from \"@/components/ui/text\";\n\nexport default function CardExample(): React.JSX.Element {\n  return (\n    <Card>\n      <CardContent>\n        <Stack gap={2}>\n          <Text size=\"xl\" weight=\"semibold\">\n            Latest orders\n          </Text>\n          <Text>You have 5 new orders. Check them out in the orders section.</Text>\n        </Stack>\n      </CardContent>\n    </Card>\n  );\n}\n"
+      "content": "import * as React from \"react\";\nimport { css } from \"@pigment-css/react\";\n\nimport { Button } from \"@/components/ui/button\";\nimport { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from \"@/components/ui/card\";\nimport { Field, FieldLabel } from \"@/components/ui/field\";\nimport { Input } from \"@/components/ui/input\";\n\nexport default function CardExample(): React.JSX.Element {\n  return (\n    <Card className={css({ width: \"350px\" })}>\n      <CardHeader>\n        <CardTitle>Create project</CardTitle>\n        <CardDescription>Deploy your new project in one-click.</CardDescription>\n      </CardHeader>\n      <CardContent>\n        <Field>\n          <FieldLabel>Name</FieldLabel>\n          <Input placeholder=\"Name of your project\" />\n        </Field>\n      </CardContent>\n      <CardFooter className={css({ display: \"flex\", justifyContent: \"space-between\" })}>\n        <Button variant=\"outline\">Cancel</Button>\n        <Button>Deploy</Button>\n      </CardFooter>\n    </Card>\n  );\n}\n"
     }
   ]
 }

@@ -15,7 +15,7 @@ interface IconButtonRootProps extends React.ComponentPropsWithoutRef<"button"> {
 const IconButtonRoot = styled("button", {
   name: "IconButton",
   slot: "root",
-})<IconButtonRootProps>(({ theme }) => ({
+})<IconButtonRootProps>({
   alignItems: "center",
   appearance: "none",
   borderRadius: "var(--borderRadius-md)",
@@ -27,8 +27,18 @@ const IconButtonRoot = styled("button", {
   position: "relative",
   width: "var(--size-fit)",
   "&:focus-visible": {
-    outline: "2px solid hsl(var(--color-ring))",
-    outlineOffset: "2px",
+    "--ring-offset-width": "2px",
+    "--ring-offset-color": "hsl(var(--color-background))",
+    "--ring-offset-shadow": "0 0 0 var(--ring-offset-width) var(--ring-offset-color)",
+    "--ring-width": "2px",
+    "--ring-color": "hsl(var(--color-ring))",
+    "--ring-shadow": "0 0 0 calc(var(--ring-offset-width) + var(--ring-width)) var(--ring-color)",
+    boxShadow: "var(--ring-offset-shadow), var(--ring-shadow), var(--shadow, 0 0 #0000)",
+    outline: "none",
+  },
+  "&:disabled": {
+    cursor: "not-allowed",
+    opacity: 0.5,
   },
   "& svg": {
     flexShrink: 0,
@@ -52,10 +62,6 @@ const IconButtonRoot = styled("button", {
         "&:active": {
           backgroundColor: "hsl(var(--color-primary))",
         },
-        "&:disabled": {
-          backgroundColor: "hsl(var(--color-muted))",
-          color: "hsl(var(--color-mutedForeground))",
-        },
       },
     },
     {
@@ -73,10 +79,6 @@ const IconButtonRoot = styled("button", {
         "&:active": {
           backgroundColor: "transparent",
         },
-        "&:disabled": {
-          backgroundColor: "hsl(var(--color-muted))",
-          color: "hsl(var(--color-mutedForeground))",
-        },
       },
     },
     {
@@ -93,10 +95,6 @@ const IconButtonRoot = styled("button", {
         },
         "&:active": {
           backgroundColor: "transparent",
-        },
-        "&:disabled": {
-          backgroundColor: "transparent",
-          color: "hsl(var(--color-mutedForeground))",
         },
       },
     },
@@ -155,7 +153,7 @@ const IconButtonRoot = styled("button", {
       },
     },
   ],
-}));
+} as React.CSSProperties);
 
 interface IconButtonProps extends React.ComponentPropsWithoutRef<"button"> {
   isLoading?: boolean;

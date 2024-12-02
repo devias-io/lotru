@@ -24,37 +24,37 @@ const AvatarRoot = styled(Primitives.Root, {
       props: { size: "2xs" },
       style: {
         "--avatar-size": "calc(var(--size-unit) * 5)",
-      } as React.CSSProperties,
+      },
     },
     {
       props: { size: "xs" },
       style: {
         "--avatar-size": "calc(var(--size-unit) * 6)",
-      } as React.CSSProperties,
+      },
     },
     {
       props: { size: "sm" },
       style: {
         "--avatar-size": "calc(var(--size-unit) * 7)",
-      } as React.CSSProperties,
+      },
     },
     {
       props: { size: "md" },
       style: {
         "--avatar-size": "calc(var(--size-unit) * 8)",
-      } as React.CSSProperties,
+      },
     },
     {
       props: { size: "lg" },
       style: {
         "--avatar-size": "calc(var(--size-unit) * 10)",
-      } as React.CSSProperties,
+      },
     },
     {
       props: { size: "xl" },
       style: {
         "--avatar-size": "calc(var(--size-unit) * 12)",
-      } as React.CSSProperties,
+      },
     },
     {
       props: { variant: "rounded" },
@@ -69,7 +69,7 @@ const AvatarRoot = styled(Primitives.Root, {
       },
     },
   ],
-});
+} as React.CSSProperties);
 
 const AvatarImage = styled(Primitives.Image, {
   name: "AvatarImage",

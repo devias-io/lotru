@@ -167,7 +167,7 @@ function Sidebar({ children, className, side = "left" }: SidebarProps): React.JS
     return (
       <Drawer onOpenChange={setOpenMobile} open={openMobile}>
         <DrawerOverlay />
-        <DrawerContent className={css({ maxWidth: "300px", overflow: "hidden" } as React.CSSProperties)} side={side}>
+        <DrawerContent className={css({ maxWidth: "300px", overflow: "hidden" })} side={side}>
           <div className={css({ overflowY: "auto" })}>{children}</div>
         </DrawerContent>
       </Drawer>

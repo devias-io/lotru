@@ -38,8 +38,14 @@ const TabsTrigger = styled(Primitives.Tab, {
     color: "hsl(var(--color-foreground))",
   },
   "&:focus-visible": {
-    outline: "2px solid hsl(var(--color-ring))",
-    outlineOffset: "2px",
+    "--ring-offset-width": "2px",
+    "--ring-offset-color": "hsl(var(--color-background))",
+    "--ring-offset-shadow": "0 0 0 var(--ring-offset-width) var(--ring-offset-color)",
+    "--ring-width": "2px",
+    "--ring-color": "hsl(var(--color-ring))",
+    "--ring-shadow": "0 0 0 calc(var(--ring-offset-width) + var(--ring-width)) var(--ring-color)",
+    boxShadow: "var(--ring-offset-shadow), var(--ring-shadow), var(--shadow, 0 0 #0000)",
+    outline: "none",
   },
   "&[data-disabled]": {
     color: "hsl(var(--color-mutedForeground))",
@@ -50,7 +56,7 @@ const TabsTrigger = styled(Primitives.Tab, {
     boxShadow: "var(--shadow-md)",
     color: "hsl(var(--color-foreground))",
   },
-});
+} as React.CSSProperties);
 
 const TabsContent = styled(Primitives.Panel, {
   name: "TabsContent",

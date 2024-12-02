@@ -11,6 +11,7 @@ export default function TabsExample(): React.JSX.Element {
         display: "flex",
         flexDirection: "column",
         gap: "calc(var(--spacing-unit) * 4)",
+        width: "var(--size-full)",
       })}
     >
       <TabsList>

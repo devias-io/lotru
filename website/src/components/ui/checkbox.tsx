@@ -26,8 +26,14 @@ const CheckboxRoot = styled(Primitives.Root, {
     backgroundColor: "hsl(var(--color-background))",
   },
   "&:focus-visible": {
-    outline: "2px solid hsl(var(--color-ring))",
-    outlineOffset: "2px",
+    "--ring-offset-width": "2px",
+    "--ring-offset-color": "hsl(var(--color-background))",
+    "--ring-offset-shadow": "0 0 0 var(--ring-offset-width) var(--ring-offset-color)",
+    "--ring-width": "2px",
+    "--ring-color": "hsl(var(--color-ring))",
+    "--ring-shadow": "0 0 0 calc(var(--ring-offset-width) + var(--ring-width)) var(--ring-color)",
+    boxShadow: "var(--ring-offset-shadow), var(--ring-shadow), var(--shadow, 0 0 #0000)",
+    outline: "none",
   },
   "&[data-disabled]": {
     cursor: "not-allowed",
@@ -44,7 +50,7 @@ const CheckboxRoot = styled(Primitives.Root, {
     backgroundColor: "hsl(var(--color-muted))",
     border: "1px solid hsl(var(--color-border))",
   },
-});
+} as React.CSSProperties);
 
 const CheckboxIndicator = styled(Primitives.Indicator, {
   name: "CheckboxIndicator",

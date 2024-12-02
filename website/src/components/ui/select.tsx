@@ -12,15 +12,22 @@ const SelectRoot = styled("select", {
   appearance: "none",
   backgroundColor: "var(--color-background)",
   border: "1px solid hsl(var(--color-border))",
-  borderRadius: "var(--borderRadius-sm)",
+  borderRadius: "var(--borderRadius-md)",
   boxSizing: "border-box",
   color: "hsl(var(--color-foreground))",
   position: "relative",
   maxWidth: "var(--size-xs)",
   width: "var(--size-full)",
   "&:focus-visible": {
+    "--ring-offset-width": "0px",
+    "--ring-offset-color": "hsl(var(--color-background))",
+    "--ring-offset-shadow": "0 0 0 var(--ring-offset-width) var(--ring-offset-color)",
+    "--ring-width": "3px",
+    "--ring-color": "hsl(var(--color-ring) / 20%)",
+    "--ring-shadow": "0 0 0 calc(var(--ring-offset-width) + var(--ring-width)) var(--ring-color)",
     borderColor: "hsl(var(--color-ring))",
-    outline: "3px solid hsl(var(--color-ring) / 20%)",
+    boxShadow: "var(--ring-offset-shadow), var(--ring-shadow), var(--shadow, 0 0 #0000)",
+    outline: "none",
   },
   "&:disabled": {
     cursor: "not-allowed",
@@ -30,7 +37,7 @@ const SelectRoot = styled("select", {
     borderColor: "hsl(var(--color-danger))",
   },
   '&[data-field="invalid"]:focus-visible': {
-    outline: "3px solid hsl(var(--color-danger) / 24%)",
+    '--ring-color': 'hsl(var(--color-danger) / 20%)',
   },
   "&::placeholder": {
     color: "hsl(var(--color-mutedForeground))",
@@ -80,7 +87,7 @@ const SelectRoot = styled("select", {
       },
     },
   ],
-});
+} as React.CSSProperties);
 
 interface SelectProps extends Omit<React.ComponentPropsWithoutRef<"select">, "size"> {
   size?: "sm" | "md" | "lg" | "xl";

@@ -110,6 +110,10 @@ export const groups: Group[] = [
         label: "Textarea",
         href: "/docs/components/textarea",
       },
+      {
+        label: "Tooltip",
+        href: "/docs/components/tooltip",
+      },
     ],
   },
 ];

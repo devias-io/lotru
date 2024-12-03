@@ -90,5 +90,9 @@
   {
     "id": "ui/textarea",
     "name": "Textarea"
+  },
+  {
+    "id": "ui/tooltip",
+    "name": "Tooltip"
   }
 ]

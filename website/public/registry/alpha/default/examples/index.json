@@ -118,5 +118,9 @@
   {
     "id": "examples/textarea-01",
     "name": "Textarea 01"
+  },
+  {
+    "id": "examples/tooltip-01",
+    "name": "Tooltip 01"
   }
 ]

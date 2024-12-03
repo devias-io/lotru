@@ -225,4 +225,13 @@ export const ui: RegistryComponent[] = [
       },
     ],
   },
+  {
+    id: "ui/tooltip",
+    name: "Tooltip",
+    files: [
+      {
+        path: "ui/tooltip.tsx",
+      },
+    ],
+  },
 ];

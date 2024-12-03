@@ -11,11 +11,7 @@ export default function HoverCardDemo() {
     <HoverCard>
       <HoverCardTrigger render={<Text className={css({ textDecoration: "underline" })}>@nextjs</Text>} />
       <HoverCardPositioner side="bottom">
-        <HoverCardContent
-          className={css({
-            width: "calc(var(--size-unit) * 80)",
-          })}
-        >
+        <HoverCardContent className={css({ width: "calc(var(--size-unit) * 80)" })}>
           <Stack direction="row" gap={4} justifyContent="space-between">
             <Avatar>
               <AvatarImage src="https://github.com/vercel.png" />

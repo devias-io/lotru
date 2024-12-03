@@ -12,8 +12,8 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/src/components/ui/sheet";
-import { Field, FieldLabel } from "../ui/field";
-import { Input } from "../ui/input";
+import { Field, FieldLabel } from "@/src/components/ui/field";
+import { Input } from "@/src/components/ui/input";
 
 export default function SheetExample(): React.JSX.Element {
   return (

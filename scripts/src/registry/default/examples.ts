@@ -262,6 +262,16 @@ export const examples: RegistryComponent[] = [
     ],
   },
   {
+    id: "examples/slider-01",
+    name: "Slider 01",
+    registryDependencies: ["ui/slider"],
+    files: [
+      {
+        path: "examples/slider-01.tsx",
+      },
+    ],
+  },
+  {
     id: "examples/switch-01",
     name: "Switch 01",
     registryDependencies: ["ui/switch"],

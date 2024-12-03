@@ -104,6 +104,10 @@
     "name": "Separator 01"
   },
   {
+    "id": "examples/slider-01",
+    "name": "Slider 01"
+  },
+  {
     "id": "examples/switch-01",
     "name": "Switch 01"
   },

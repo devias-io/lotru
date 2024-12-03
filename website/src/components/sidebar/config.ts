@@ -95,6 +95,10 @@ export const groups: Group[] = [
         href: "/docs/components/separator",
       },
       {
+        label: "Slider",
+        href: "/docs/components/slider",
+      },
+      {
         label: "Switch",
         href: "/docs/components/switch",
       },

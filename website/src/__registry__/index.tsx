@@ -466,6 +466,15 @@ export const index: Record<
     }],
     component: React.lazy(() => import("@/src/components/examples/separator-01.tsx"))
   },
+  "examples/slider-01": {
+    id: "examples/slider-01",
+    name: "Slider 01",
+    description: "",
+    files: [{
+      path: "examples/slider-01.tsx",
+    }],
+    component: React.lazy(() => import("@/src/components/examples/slider-01.tsx"))
+  },
   "examples/switch-01": {
     id: "examples/switch-01",
     name: "Switch 01",

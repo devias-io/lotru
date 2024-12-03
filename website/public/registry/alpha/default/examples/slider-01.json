@@ -1,0 +1,13 @@
+{
+  "id": "examples/slider-01",
+  "name": "Slider 01",
+  "registryDependencies": [
+    "ui/slider"
+  ],
+  "files": [
+    {
+      "path": "examples/slider-01.tsx",
+      "content": "import * as React from \"react\";\nimport { css } from \"@pigment-css/react\";\n\nimport { Slider } from \"@/components/ui/slider\";\n\nexport default function SliderExample(): React.JSX.Element {\n  return <Slider defaultValue={[50]} max={100} step={1} className={css({ width: \"60%\" })} />;\n}\n"
+    }
+  ]
+}

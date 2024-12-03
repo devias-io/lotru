@@ -65,16 +65,20 @@ const PromptContent = styled(Primitives.Popup, {
   slot: "content",
 })({
   backgroundColor: "hsl(var(--color-surface))",
-  borderColor: "hsl(var(--color-border))",
-  borderStyle: "solid",
-  borderWidth: "1px",
+  border: "1px solid hsl(var(--color-border))",
   borderRadius: "var(--borderRadius-md)",
-  boxShadow: "var(--shadow-xl)",
+  boxShadow: "var(--shadow-lg)",
+  display: "flex",
+  flexDirection: "column",
+  fontFamily: "var(--font-sans)",
+  gap: "calc(var(--spacing-unit) * 4)",
+  left: "50%",
+  maxWidth: "var(--size-lg)",
+  padding: "calc(var(--spacing-unit) * 6)",
   position: "fixed",
   top: "50%",
-  left: "50%",
-  fontFamily: "var(--font-sans)",
   transform: "translate(-50%, -50%)",
+  width: "var(--size-full)",
   zIndex: "var(--zIndex-modal)",
 });
 
@@ -84,10 +88,7 @@ const PromptHeader = styled("div", {
 })({
   display: "flex",
   flexDirection: "column",
-  gap: "var(--spacing-unit)",
-  paddingTop: "calc(var(--spacing-unit) * 6)",
-  paddingLeft: "calc(var(--spacing-unit) * 6)",
-  paddingRight: "calc(var(--spacing-unit) * 6)",
+  gap: "calc(var(--spacing-unit) * 2)",
 });
 
 const PromptFooter = styled("div", {
@@ -97,7 +98,6 @@ const PromptFooter = styled("div", {
   display: "flex",
   justifyContent: "flex-end",
   gap: "calc(var(--spacing-unit) * 2)",
-  padding: "calc(var(--spacing-unit) * 6)",
 });
 
 const PromptTitle = styled(Primitives.Title)({
@@ -105,15 +105,15 @@ const PromptTitle = styled(Primitives.Title)({
   fontSize: "var(--fontSize-lg)",
   lineHeight: "var(--lineHeight-normal)",
   fontWeight: "var(--fontWeight-semibold)",
-  margin: 0,
+  marginBlock: 0,
 });
 
 const PromptDescription = styled(Primitives.Description)({
   color: "hsl(var(--color-mutedForeground))",
   fontFamily: "var(--fontFamily-sans)",
-  fontSize: "var(--fontSize-md)",
+  fontSize: "var(--fontSize-sm)",
   lineHeight: "var(--lineHeight-tight)",
-  margin: 0,
+  marginBlock: 0,
 });
 
 interface PromptActionProps {

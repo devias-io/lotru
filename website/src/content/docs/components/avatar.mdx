@@ -14,11 +14,12 @@ npx lotru@latest add ui/avatar
 ## Usage
 
 ```tsx
-import { Avatar } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 ```
 
-## Examples
-
-### Default
-
-<ComponentPreview id="examples/avatar-01" />
+```tsx
+<Avatar>
+  <AvatarImage src="https://images.unsplash.com/photo-1492633423870-43d1cd2775eb?&w=128&h=128&dpr=2&q=80" />
+  <AvatarFallback>LT</AvatarFallback>
+</Avatar>
+```

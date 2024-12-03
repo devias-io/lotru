@@ -17,8 +17,14 @@ npx lotru@latest add ui/tooltip
 import { Tooltip } from "@/components/ui/tooltip";
 ```
 
-## Examples
-
-### Default
-
-<ComponentPreview id="examples/tooltip-01" />
+```tsx
+<TooltipProvider>
+  <Tooltip>
+    <TooltipTrigger>Hover</TooltipTrigger>
+    <TooltipPositioner>
+      <TooltipContent>Add to library</TooltipContent>
+      <TooltipArrow />
+    </TooltipPositioner>
+  </Tooltip>
+</TooltipProvider>
+```

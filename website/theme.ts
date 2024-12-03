@@ -277,8 +277,8 @@ const theme: ThemeInput = {
     emphasizedOut: "cubic-bezier(0.3, 0.0, 0.8, 0.15)",
   },
   fontFamily: {
-    sans: "var(--font-geist-sans), sans-serif",
-    mono: "var(--font-geist-mono), monospace",
+    sans: "var(--font-geist-sans)",
+    mono: "var(--font-geist-mono)",
   },
   fontSize: {
     "2xs": "0.5rem",

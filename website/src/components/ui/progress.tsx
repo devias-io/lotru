@@ -45,4 +45,4 @@ const Progress = React.forwardRef<React.ElementRef<typeof ProgressRoot>, Progres
   );
 });
 
-export { Progress, type ProgressProps };
+export { type ProgressProps, Progress };

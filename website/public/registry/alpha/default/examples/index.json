@@ -48,8 +48,8 @@
     "name": "Dialog 01"
   },
   {
-    "id": "examples/drawer-01",
-    "name": "Drawer 01"
+    "id": "examples/dropdown-menu-01",
+    "name": "Menu 01"
   },
   {
     "id": "examples/field-01",
@@ -80,10 +80,6 @@
     "name": "Input 01"
   },
   {
-    "id": "examples/menu-01",
-    "name": "Menu 01"
-  },
-  {
     "id": "examples/popover-01",
     "name": "Popover 01"
   },
@@ -102,6 +98,10 @@
   {
     "id": "examples/radio-02",
     "name": "Radio 02"
+  },
+  {
+    "id": "examples/sheet-01",
+    "name": "Sheet 01"
   },
   {
     "id": "examples/select-01",

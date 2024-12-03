@@ -3,19 +3,19 @@
 import * as Primitives from "@base_ui/react/Menu";
 import { styled } from "@pigment-css/react";
 
-const Menu = Primitives.Root;
+const DropdownMenu = Primitives.Root;
 
-const MenuTrigger = Primitives.Trigger;
+const DropdownMenuTrigger = Primitives.Trigger;
 
-const MenuPositioner = styled(Primitives.Positioner, {
-  name: "MenuPositioner",
+const DropdownMenuPositioner = styled(Primitives.Positioner, {
+  name: "DropdownMenuPositioner",
   slot: "positioner",
 })({
   outline: "none",
 });
 
-const MenuContent = styled(Primitives.Popup, {
-  name: "MenuContent",
+const DropdownMenuContent = styled(Primitives.Popup, {
+  name: "DropdownMenuContent",
   slot: "content",
 })({
   backgroundColor: "hsl(var(--color-surface))",
@@ -30,8 +30,8 @@ const MenuContent = styled(Primitives.Popup, {
   zIndex: "var(--zIndex-popover)",
 });
 
-const MenuLabel = styled("div", {
-  name: "MenuLabel",
+const DropdownMenuLabel = styled("div", {
+  name: "DropdownMenuLabel",
   slot: "label",
 })({
   color: "hsl(var(--color-foreground))",
@@ -42,8 +42,8 @@ const MenuLabel = styled("div", {
   paddingInline: "calc(var(--spacing-unit) * 2)",
 });
 
-const MenuItem = styled(Primitives.Item, {
-  name: "MenuItem",
+const DropdownMenuItem = styled(Primitives.Item, {
+  name: "DropdownMenuItem",
   slot: "item",
 })({
   alignItems: "center",
@@ -76,8 +76,8 @@ const MenuItem = styled(Primitives.Item, {
   },
 });
 
-const MenuShortcut = styled("span", {
-  name: "MenuShortcut",
+const DropdownMenuShortcut = styled("span", {
+  name: "DropdownMenuShortcut",
   slot: "shortcut",
 })({
   color: "hsl(var(--color-mutedForeground))",
@@ -85,7 +85,7 @@ const MenuShortcut = styled("span", {
   marginInlineStart: "auto",
 });
 
-const MenuSeparator = styled(Primitives.Separator, {
+const DropdownMenuSeparator = styled(Primitives.Separator, {
   name: "MenuSeparator",
   slot: "separator",
 })({
@@ -95,9 +95,9 @@ const MenuSeparator = styled(Primitives.Separator, {
   marginInline: "calc(var(--spacing-unit) * -1)",
 });
 
-const MenuGroup = Primitives.Group;
+const DropdownMenuGroup = Primitives.Group;
 
-const MenuGroupLabel = styled(Primitives.GroupLabel, {
+const DropdownMenuGroupLabel = styled(Primitives.GroupLabel, {
   name: "MenuGroupLabel",
   slot: "groupLabel",
 })({
@@ -110,14 +110,14 @@ const MenuGroupLabel = styled(Primitives.GroupLabel, {
 });
 
 export {
-  Menu,
-  MenuContent,
-  MenuGroup,
-  MenuGroupLabel,
-  MenuItem,
-  MenuLabel,
-  MenuPositioner,
-  MenuSeparator,
-  MenuShortcut,
-  MenuTrigger,
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuGroupLabel,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuPositioner,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuTrigger,
 };

@@ -51,8 +51,8 @@ export const groups: Group[] = [
         href: "/docs/components/dialog",
       },
       {
-        label: "Drawer",
-        href: "/docs/components/drawer",
+        label: "Dropdown Menu",
+        href: "/docs/components/dropdown-menu",
       },
       {
         label: "Field",
@@ -75,10 +75,6 @@ export const groups: Group[] = [
         href: "/docs/components/icon-button",
       },
       {
-        label: "Menu",
-        href: "/docs/components/menu",
-      },
-      {
         label: "Popover",
         href: "/docs/components/popover",
       },
@@ -93,6 +89,10 @@ export const groups: Group[] = [
       {
         label: "Radio",
         href: "/docs/components/radio",
+      },
+      {
+        label: "Sheet",
+        href: "/docs/components/sheet",
       },
       {
         label: "Select",

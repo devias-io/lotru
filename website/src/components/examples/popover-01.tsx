@@ -14,7 +14,7 @@ import {
 export default function PopoverExample(): React.JSX.Element {
   return (
     <Popover>
-      <PopoverTrigger render={<Button>Trigger popover</Button>} />
+      <PopoverTrigger render={<Button variant="outline">Open popover</Button>} />
       <PopoverPositioner sideOffset={8}>
         <PopoverContent>
           <PopoverArrow />

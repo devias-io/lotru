@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/select-01.tsx",
-      "content": "import * as React from \"react\";\nimport { css } from \"@pigment-css/react\";\n\nimport { Select } from \"@/components/ui/select\";\n\nexport default function SelectExample(): React.JSX.Element {\n  return (\n    <div className={css({ maxWidth: \"350px\", width: \"var(--size-full)\" })}>\n      <Select>\n        <option value=\"1\">Option 1</option>\n        <option value=\"2\">Option 2</option>\n      </Select>\n    </div>\n  );\n}\n"
+      "content": "import * as React from \"react\";\nimport { css } from \"@pigment-css/react\";\n\nimport { Select } from \"@/components/ui/select\";\n\nexport default function SelectExample(): React.JSX.Element {\n  return (\n    <Select className={css({ maxWidth: \"350px\", width: \"var(--size-full)\" })} defaultValue=\"1\">\n      <option value=\"1\">Option 1</option>\n      <option value=\"2\">Option 2</option>\n    </Select>\n  );\n}\n"
     }
   ]
 }

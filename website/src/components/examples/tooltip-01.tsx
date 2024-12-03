@@ -14,7 +14,7 @@ export default function TooltipExample(): React.JSX.Element {
   return (
     <TooltipProvider>
       <Tooltip>
-        <TooltipTrigger render={<Button variant="outline">Hover</Button>}></TooltipTrigger>
+        <TooltipTrigger render={<Button variant="outline">Hover</Button>} />
         <TooltipPositioner>
           <TooltipContent>Add to library</TooltipContent>
           <TooltipArrow />

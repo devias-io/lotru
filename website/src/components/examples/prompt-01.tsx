@@ -16,17 +16,20 @@ import {
 
 export default function PromptExample(): React.JSX.Element {
   return (
-    <Prompt variant="danger">
-      <PromptTrigger render={<Button>Open prompt</Button>} />
+    <Prompt>
+      <PromptTrigger render={<Button variant="outline">Show Dialog</Button>} />
       <PromptOverlay />
       <PromptContent>
         <PromptHeader>
-          <PromptTitle>Delete something</PromptTitle>
-          <PromptDescription>Are you sure? This cannot be undone.</PromptDescription>
+          <PromptTitle>Are you absolutely sure?</PromptTitle>
+          <PromptDescription>
+            This action cannot be undone. This will permanently delete your account and remove your data from our
+            servers.
+          </PromptDescription>
         </PromptHeader>
         <PromptFooter>
           <PromptCancel>Cancel</PromptCancel>
-          <PromptAction>Delete</PromptAction>
+          <PromptAction>Continue</PromptAction>
         </PromptFooter>
       </PromptContent>
     </Prompt>

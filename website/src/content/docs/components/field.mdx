@@ -14,7 +14,17 @@ npx lotru@latest add ui/field
 ## Usage
 
 ```tsx
-import { Field } from "@/components/ui/field";
+import { Field, FieldControl, FieldDescription, FieldLabel } from "@/components/ui/field";
+```
+
+```tsx
+<Field>
+  <FieldLabel>Name</FieldLabel>
+  <FieldControl>
+    <input type="text" />
+  </FieldControl>
+  <FieldDescription>We will use this name to personalize your experience.</FieldDescription>
+</Field>
 ```
 
 ## Examples

@@ -115,4 +115,4 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
   );
 });
 
-export { Alert, AlertIcon, AlertContent, AlertTitle, AlertDescription, type AlertProps };
+export { type AlertProps, Alert, AlertIcon, AlertContent, AlertTitle, AlertDescription };

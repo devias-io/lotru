@@ -1,0 +1,15 @@
+{
+  "id": "examples/sheet-01",
+  "name": "Sheet 01",
+  "registryDependencies": [
+    "ui/button",
+    "ui/sheet",
+    "ui/text"
+  ],
+  "files": [
+    {
+      "path": "examples/sheet-01.tsx",
+      "content": "import * as React from \"react\";\nimport { css } from \"@pigment-css/react\";\n\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Sheet,\n  SheetContent,\n  SheetDescription,\n  SheetFooter,\n  SheetHeader,\n  SheetOverlay,\n  SheetTitle,\n  SheetTrigger,\n} from \"@/components/ui/sheet\";\nimport { Field, FieldLabel } from \"../ui/field\";\nimport { Input } from \"../ui/input\";\n\nexport default function SheetExample(): React.JSX.Element {\n  return (\n    <Sheet>\n      <SheetTrigger render={<Button variant=\"outline\">Open</Button>} />\n      <SheetOverlay />\n      <SheetContent side=\"right\">\n        <SheetHeader>\n          <SheetTitle>Edit Profile</SheetTitle>\n          <SheetDescription>Make changes to your profile here. Click save when you're done.</SheetDescription>\n        </SheetHeader>\n        <div\n          className={css({\n            display: \"grid\",\n            gap: \"calc(var(--spacing-unit) * 3)\",\n            paddingBlock: \"calc(var(--spacing-unit) * 4)\",\n          })}\n        >\n          <Field className={css({ alignItems: \"center\", display: \"grid\", gridTemplateColumns: \"1fr 3fr\" })}>\n            <FieldLabel className={css({ textAlign: \"right\" })}>Name</FieldLabel>\n            <Input defaultValue=\"John Doe\" />\n          </Field>\n          <Field className={css({ alignItems: \"center\", display: \"grid\", gridTemplateColumns: \"1fr 3fr\" })}>\n            <FieldLabel className={css({ textAlign: \"right\" })}>Username</FieldLabel>\n            <Input defaultValue=\"@john.doe\" />\n          </Field>\n        </div>\n        <SheetFooter>\n          <Button>Save Changes</Button>\n        </SheetFooter>\n      </SheetContent>\n    </Sheet>\n  );\n}\n"
+    }
+  ]
+}

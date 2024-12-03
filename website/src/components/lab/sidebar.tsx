@@ -3,7 +3,7 @@
 import * as React from "react";
 import { css, styled } from "@pigment-css/react";
 
-import { Drawer, DrawerOverlay, DrawerContent } from "@/src/components/ui/drawer";
+import { Sheet, SheetContent, SheetOverlay } from "@/src/components/ui/sheet";
 import { useIsMobile } from "@/src/hooks/use-mobile";
 import { cn } from "@/src/lib/cn";
 
@@ -165,12 +165,12 @@ function Sidebar({ children, className, side = "left" }: SidebarProps): React.JS
 
   if (isMobile) {
     return (
-      <Drawer onOpenChange={setOpenMobile} open={openMobile}>
-        <DrawerOverlay />
-        <DrawerContent className={css({ maxWidth: "300px", overflow: "hidden" })} side={side}>
+      <Sheet onOpenChange={setOpenMobile} open={openMobile}>
+        <SheetOverlay />
+        <SheetContent className={css({ maxWidth: "300px", overflow: "hidden" })} side={side}>
           <div className={css({ overflowY: "auto" })}>{children}</div>
-        </DrawerContent>
-      </Drawer>
+        </SheetContent>
+      </Sheet>
     );
   }
 

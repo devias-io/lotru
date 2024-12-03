@@ -73,4 +73,4 @@ const Slider = React.forwardRef<React.ElementRef<typeof SliderRoot>, SliderProps
   );
 });
 
-export { Slider, type SliderProps };
+export { type SliderProps, Slider };

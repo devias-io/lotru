@@ -1,8 +1,7 @@
-import { CalendarDaysIcon } from "lucide-react";
 import { css } from "@pigment-css/react";
+import { CalendarDaysIcon } from "lucide-react";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/src/components/ui/avatar";
-import { Button } from "@/src/components/ui/button";
 import { HoverCard, HoverCardContent, HoverCardPositioner, HoverCardTrigger } from "@/src/components/ui/hover-card";
 import { Stack } from "@/src/components/ui/stack";
 import { Text } from "@/src/components/ui/text";
@@ -10,7 +9,7 @@ import { Text } from "@/src/components/ui/text";
 export default function HoverCardDemo() {
   return (
     <HoverCard>
-      <HoverCardTrigger render={<Button variant="ghost">@nextjs</Button>}></HoverCardTrigger>
+      <HoverCardTrigger render={<Text className={css({ textDecoration: "underline" })}>@nextjs</Text>} />
       <HoverCardPositioner side="bottom">
         <HoverCardContent
           className={css({

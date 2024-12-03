@@ -28,8 +28,8 @@
     "name": "Dialog"
   },
   {
-    "id": "ui/drawer",
-    "name": "Drawer"
+    "id": "ui/dropdown-menu",
+    "name": "Dropdown Menu"
   },
   {
     "id": "ui/field",
@@ -52,10 +52,6 @@
     "name": "Input"
   },
   {
-    "id": "ui/menu",
-    "name": "Menu"
-  },
-  {
     "id": "ui/popover",
     "name": "Popover"
   },
@@ -70,6 +66,10 @@
   {
     "id": "ui/radio",
     "name": "Radio"
+  },
+  {
+    "id": "ui/sheet",
+    "name": "Sheet"
   },
   {
     "id": "ui/select",

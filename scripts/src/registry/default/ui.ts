@@ -71,13 +71,12 @@ export const ui: RegistryComponent[] = [
     ],
   },
   {
-    id: "ui/drawer",
-    name: "Drawer",
-    dependencies: ["@base_ui/react", "lucide-react"],
-    registryDependencies: ["ui/icon-button"],
+    id: "ui/dropdown-menu",
+    name: "Dropdown Menu",
+    dependencies: ["@base_ui/react"],
     files: [
       {
-        path: "ui/drawer.tsx",
+        path: "ui/dropdown-menu.tsx",
       },
     ],
   },
@@ -130,16 +129,6 @@ export const ui: RegistryComponent[] = [
     ],
   },
   {
-    id: "ui/menu",
-    name: "Menu",
-    dependencies: ["@base_ui/react"],
-    files: [
-      {
-        path: "ui/menu.tsx",
-      },
-    ],
-  },
-  {
     id: "ui/popover",
     name: "Popover",
     dependencies: ["@base_ui/react"],
@@ -176,6 +165,17 @@ export const ui: RegistryComponent[] = [
     files: [
       {
         path: "ui/radio.tsx",
+      },
+    ],
+  },
+  {
+    id: "ui/sheet",
+    name: "Sheet",
+    dependencies: ["@base_ui/react", "lucide-react"],
+    registryDependencies: ["ui/icon-button"],
+    files: [
+      {
+        path: "ui/sheet.tsx",
       },
     ],
   },

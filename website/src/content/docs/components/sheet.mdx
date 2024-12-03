@@ -1,0 +1,45 @@
+---
+title: "Sheet"
+description: "A sheet component for React."
+---
+
+<ComponentPreview id="examples/sheet-01" />
+
+## Installation
+
+```bash
+npx lotru@latest add ui/sheet
+```
+
+## Usage
+
+```tsx
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+```
+
+```tsx
+<Sheet>
+  <SheetTrigger>Open</SheetTrigger>
+  <SheetContent>
+    <SheetHeader>
+      <SheetTitle>Are you absolutely sure?</SheetTitle>
+      <SheetDescription>This action cannot be undone.</SheetDescription>
+    </SheetHeader>
+    <SheetFooter>
+      <Button>Submit</Button>
+      <SheetClose>
+        <Button variant="outline">Cancel</Button>
+      </SheetClose>
+    </SheetFooter>
+  </SheetContent>
+</Sheet>
+```

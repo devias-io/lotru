@@ -17,8 +17,21 @@ npx lotru@latest add ui/prompt
 import { Prompt } from "@/components/ui/prompt";
 ```
 
-## Examples
-
-### Default
-
-<ComponentPreview id="examples/prompt-01" />
+```tsx
+<Prompt>
+  <PromptTrigger>Open</PromptTrigger>
+  <PromptOverlay />
+  <PromptContent>
+    <PromptHeader>
+      <PromptTitle>Are you absolutely sure?</PromptTitle>
+      <PromptDescription>
+        This action cannot be undone. This will permanently delete your account and remove your data from our servers.
+      </PromptDescription>
+    </PromptHeader>
+    <PromptFooter>
+      <PromptCancel>Cancel</PromptCancel>
+      <PromptAction>Continue</PromptAction>
+    </PromptFooter>
+  </PromptContent>
+</Prompt>
+```

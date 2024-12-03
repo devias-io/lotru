@@ -22,6 +22,7 @@ const FieldLabel = styled(Primitives.Label)({
   display: "block",
   fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
+  fontWeight: "var(--fontWeight-medium)",
   lineHeight: "var(--lineHeight-none)",
 });
 

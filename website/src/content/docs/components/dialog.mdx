@@ -14,11 +14,27 @@ npx lotru@latest add ui/dialog
 ## Usage
 
 ```tsx
-import { Dialog } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 ```
 
-## Examples
-
-### Default
-
-<ComponentPreview id="examples/dialog-01" />
+```tsx
+<Dialog>
+  <DialogTrigger>Open</DialogTrigger>
+  <DialogOverlay />
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle>Are you absolutely sure?</DialogTitle>
+      <DialogDescription>
+        This action cannot be undone. This will permanently delete your account and remove your data from our servers.
+      </DialogDescription>
+    </DialogHeader>
+  </DialogContent>
+</Dialog>
+```

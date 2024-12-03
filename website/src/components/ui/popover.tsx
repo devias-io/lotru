@@ -26,19 +26,15 @@ const PopoverArrow = styled(Primitives.Arrow)({
   transform: "rotate(45deg)",
   width: "10px",
   zIndex: "var(--zIndex-hide)",
-
   "&[data-side='top']": {
     bottom: "-5px",
   },
-
   "&[data-side='right']": {
     left: "-5px",
   },
-
   "&[data-side='bottom']": {
     top: "-5px",
   },
-
   "&[data-side='left']": {
     right: "-5px",
   },
@@ -49,7 +45,7 @@ const PopoverTitle = styled(Primitives.Title)({
   fontSize: "var(--fontSize-md)",
   lineHeight: "var(--lineHeight-normal)",
   fontWeight: "var(--fontWeight-medium)",
-  margin: 0,
+  marginBlock: 0,
 });
 
 const PopoverDescription = styled(Primitives.Description)({
@@ -57,7 +53,7 @@ const PopoverDescription = styled(Primitives.Description)({
   fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
   lineHeight: "var(--lineHeight-compact)",
-  margin: 0,
+  marginBlock: 0,
 });
 
 export { Popover, PopoverTrigger, PopoverPositioner, PopoverContent, PopoverArrow, PopoverTitle, PopoverDescription };

@@ -14,5 +14,14 @@ npx lotru@latest add ui/hover-card
 ## Usage
 
 ```tsx
-import { Radio } from "@/components/ui/hover-card";
+import { HoverCard, HoverCardContent, HoverCardPositioner, HoverCardTrigger } from "@/components/ui/hover-card";
+```
+
+```tsx
+<HoverCard>
+  <HoverCardTrigger>Hover</HoverCardTrigger>
+  <HoverCardPositioner side="bottom">
+    <HoverCardContent>The React Framework – created and maintained by @vercel.</HoverCardContent>
+  </HoverCardPositioner>
+</HoverCard>
 ```

@@ -122,12 +122,12 @@ export const examples: RegistryComponent[] = [
     ],
   },
   {
-    id: "examples/drawer-01",
-    name: "Drawer 01",
-    registryDependencies: ["ui/button", "ui/drawer", "ui/text"],
+    id: "examples/dropdown-menu-01",
+    name: "Menu 01",
+    registryDependencies: ["ui/dropdown-menu"],
     files: [
       {
-        path: "examples/drawer-01.tsx",
+        path: "examples/dropdown-menu-01.tsx",
       },
     ],
   },
@@ -164,7 +164,7 @@ export const examples: RegistryComponent[] = [
   {
     id: "examples/hover-card-01",
     name: "Hover Card 01",
-    registryDependencies: ["ui/avatar", "ui/button", "ui/hover-card"],
+    registryDependencies: ["ui/avatar", "ui/hover-card", "ui/stack", "ui/text"],
     files: [
       {
         path: "examples/hover-card-01.tsx",
@@ -198,16 +198,6 @@ export const examples: RegistryComponent[] = [
     files: [
       {
         path: "examples/input-01.tsx",
-      },
-    ],
-  },
-  {
-    id: "examples/menu-01",
-    name: "Menu 01",
-    registryDependencies: ["ui/menu"],
-    files: [
-      {
-        path: "examples/menu-01.tsx",
       },
     ],
   },
@@ -258,6 +248,16 @@ export const examples: RegistryComponent[] = [
     files: [
       {
         path: "examples/radio-02.tsx",
+      },
+    ],
+  },
+  {
+    id: "examples/sheet-01",
+    name: "Sheet 01",
+    registryDependencies: ["ui/button", "ui/sheet", "ui/text"],
+    files: [
+      {
+        path: "examples/sheet-01.tsx",
       },
     ],
   },

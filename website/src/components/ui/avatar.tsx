@@ -35,25 +35,25 @@ const AvatarRoot = styled(Primitives.Root, {
     {
       props: { size: "sm" },
       style: {
-        "--avatar-size": "calc(var(--size-unit) * 7)",
+        "--avatar-size": "calc(var(--size-unit) * 8)",
       },
     },
     {
       props: { size: "md" },
       style: {
-        "--avatar-size": "calc(var(--size-unit) * 8)",
+        "--avatar-size": "calc(var(--size-unit) * 10)",
       },
     },
     {
       props: { size: "lg" },
       style: {
-        "--avatar-size": "calc(var(--size-unit) * 10)",
+        "--avatar-size": "calc(var(--size-unit) * 12)",
       },
     },
     {
       props: { size: "xl" },
       style: {
-        "--avatar-size": "calc(var(--size-unit) * 12)",
+        "--avatar-size": "calc(var(--size-unit) * 14)",
       },
     },
     {
@@ -109,4 +109,4 @@ const Avatar = React.forwardRef<React.ElementRef<typeof AvatarRoot>, AvatarProps
 );
 Avatar.displayName = "Avatar";
 
-export { Avatar, AvatarImage, AvatarFallback, type AvatarProps };
+export { type AvatarProps, Avatar, AvatarImage, AvatarFallback };

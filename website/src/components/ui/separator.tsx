@@ -39,4 +39,4 @@ const Separator = React.forwardRef<HTMLHRElement, SeparatorProps>(({ orientation
 });
 Separator.displayName = "Separator";
 
-export { Separator, type SeparatorProps };
+export { type SeparatorProps, Separator };

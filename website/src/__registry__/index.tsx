@@ -79,12 +79,12 @@ export const index: Record<
     }],
     
   },
-  "ui/drawer": {
-    id: "ui/drawer",
-    name: "Drawer",
+  "ui/dropdown-menu": {
+    id: "ui/dropdown-menu",
+    name: "Dropdown Menu",
     description: "",
     files: [{
-      path: "ui/drawer.tsx",
+      path: "ui/dropdown-menu.tsx",
     }],
     
   },
@@ -133,15 +133,6 @@ export const index: Record<
     }],
     
   },
-  "ui/menu": {
-    id: "ui/menu",
-    name: "Menu",
-    description: "",
-    files: [{
-      path: "ui/menu.tsx",
-    }],
-    
-  },
   "ui/popover": {
     id: "ui/popover",
     name: "Popover",
@@ -175,6 +166,15 @@ export const index: Record<
     description: "",
     files: [{
       path: "ui/radio.tsx",
+    }],
+    
+  },
+  "ui/sheet": {
+    id: "ui/sheet",
+    name: "Sheet",
+    description: "",
+    files: [{
+      path: "ui/sheet.tsx",
     }],
     
   },
@@ -358,14 +358,14 @@ export const index: Record<
     }],
     component: React.lazy(() => import("@/src/components/examples/dialog-01.tsx"))
   },
-  "examples/drawer-01": {
-    id: "examples/drawer-01",
-    name: "Drawer 01",
+  "examples/dropdown-menu-01": {
+    id: "examples/dropdown-menu-01",
+    name: "Menu 01",
     description: "",
     files: [{
-      path: "examples/drawer-01.tsx",
+      path: "examples/dropdown-menu-01.tsx",
     }],
-    component: React.lazy(() => import("@/src/components/examples/drawer-01.tsx"))
+    component: React.lazy(() => import("@/src/components/examples/dropdown-menu-01.tsx"))
   },
   "examples/field-01": {
     id: "examples/field-01",
@@ -430,15 +430,6 @@ export const index: Record<
     }],
     component: React.lazy(() => import("@/src/components/examples/input-01.tsx"))
   },
-  "examples/menu-01": {
-    id: "examples/menu-01",
-    name: "Menu 01",
-    description: "",
-    files: [{
-      path: "examples/menu-01.tsx",
-    }],
-    component: React.lazy(() => import("@/src/components/examples/menu-01.tsx"))
-  },
   "examples/popover-01": {
     id: "examples/popover-01",
     name: "Popover 01",
@@ -483,6 +474,15 @@ export const index: Record<
       path: "examples/radio-02.tsx",
     }],
     component: React.lazy(() => import("@/src/components/examples/radio-02.tsx"))
+  },
+  "examples/sheet-01": {
+    id: "examples/sheet-01",
+    name: "Sheet 01",
+    description: "",
+    files: [{
+      path: "examples/sheet-01.tsx",
+    }],
+    component: React.lazy(() => import("@/src/components/examples/sheet-01.tsx"))
   },
   "examples/select-01": {
     id: "examples/select-01",

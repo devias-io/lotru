@@ -20,11 +20,11 @@ const HoverCardContent = styled(Primitives.Popup, {
   fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
   lineHeight: "var(--lineHeight-tight)",
+  maxWidth: "var(--size-md)",
   outline: "none",
   padding: "calc(var(--size-unit) * 4)",
+  width: "var(--size-full)",
   zIndex: "var(--zIndex-popover)",
-  width: "calc(var(--size-unit) * 64)",
-  maxWidth: "calc(100% - var(--size-unit) * 4)",
 });
 
 const HoverCardTrigger = Primitives.Trigger;

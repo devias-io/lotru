@@ -47,7 +47,7 @@ const CardTitle = styled("div", {
   fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-2xl)",
   lineHeight: "var(--lineHeight-none)",
-  fontWeight: "var(--fontWeight-medium)",
+  fontWeight: "var(--fontWeight-semibold)",
 });
 
 const CardDescription = styled("div", {

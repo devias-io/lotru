@@ -67,6 +67,10 @@ export const groups: Group[] = [
         href: "/docs/components/heading",
       },
       {
+        label: "Hover Card",
+        href: "/docs/components/hover-card",
+      },
+      {
         label: "Icon Button",
         href: "/docs/components/icon-button",
       },

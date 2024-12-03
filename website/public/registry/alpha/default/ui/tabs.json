@@ -1,6 +1,9 @@
 {
   "id": "ui/tabs",
   "name": "Tabs",
+  "dependencies": [
+    "@base_ui/react"
+  ],
   "files": [
     {
       "path": "ui/tabs.tsx",

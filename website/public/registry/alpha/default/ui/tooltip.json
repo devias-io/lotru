@@ -1,6 +1,9 @@
 {
   "id": "ui/tooltip",
   "name": "Tooltip",
+  "dependencies": [
+    "@base_ui/react"
+  ],
   "files": [
     {
       "path": "ui/tooltip.tsx",

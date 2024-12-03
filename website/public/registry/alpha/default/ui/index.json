@@ -40,6 +40,10 @@
     "name": "Heading"
   },
   {
+    "id": "ui/hover-card",
+    "name": "Hover Card"
+  },
+  {
     "id": "ui/icon-button",
     "name": "Icon-button"
   },

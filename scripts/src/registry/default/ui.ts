@@ -101,6 +101,16 @@ export const ui: RegistryComponent[] = [
     ],
   },
   {
+    id: "ui/hover-card",
+    name: "Hover Card",
+    dependencies: ["@base_ui/react"],
+    files: [
+      {
+        path: "ui/hover-card.tsx",
+      },
+    ],
+  },
+  {
     id: "ui/icon-button",
     name: "Icon-button",
     dependencies: ["lucide-react"],
@@ -113,7 +123,6 @@ export const ui: RegistryComponent[] = [
   {
     id: "ui/input",
     name: "Input",
-    dependencies: ["@base_ui/react"],
     files: [
       {
         path: "ui/input.tsx",
@@ -173,7 +182,6 @@ export const ui: RegistryComponent[] = [
   {
     id: "ui/select",
     name: "Select",
-    dependencies: ["@base_ui/react"],
     files: [
       {
         path: "ui/select.tsx",
@@ -202,6 +210,7 @@ export const ui: RegistryComponent[] = [
   {
     id: "ui/tabs",
     name: "Tabs",
+    dependencies: ["@base_ui/react"],
     files: [
       {
         path: "ui/tabs.tsx",
@@ -238,6 +247,7 @@ export const ui: RegistryComponent[] = [
   {
     id: "ui/tooltip",
     name: "Tooltip",
+    dependencies: ["@base_ui/react"],
     files: [
       {
         path: "ui/tooltip.tsx",

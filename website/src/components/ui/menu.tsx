@@ -27,7 +27,7 @@ const MenuContent = styled(Primitives.Popup, {
   minWidth: "8rem",
   outline: "none",
   padding: "var(--spacing-unit)",
-  zIndex: "50",
+  zIndex: "var(--zIndex-popover)",
 });
 
 const MenuLabel = styled("div", {

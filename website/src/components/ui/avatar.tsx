@@ -96,19 +96,17 @@ const AvatarFallback = styled(Primitives.Fallback, {
 });
 
 interface AvatarProps extends React.ComponentPropsWithoutRef<typeof Primitives.Root> {
-  src?: string;
-  fallback: string;
   size?: "2xs" | "xs" | "sm" | "md" | "lg" | "xl";
   variant?: "rounded" | "squared";
 }
 
 const Avatar = React.forwardRef<React.ElementRef<typeof AvatarRoot>, AvatarProps>(
-  ({ src, fallback, size = "md", variant = "rounded", ...props }: AvatarProps, ref) => (
+  ({ children, size = "md", variant = "rounded", ...props }: AvatarProps, ref) => (
     <AvatarRoot ref={ref} size={size} variant={variant} {...props}>
-      {src ? <AvatarImage src={src} /> : <AvatarFallback>{fallback}</AvatarFallback>}
+      {children}
     </AvatarRoot>
   )
 );
 Avatar.displayName = "Avatar";
 
-export { Avatar };
+export { Avatar, AvatarImage, AvatarFallback, type AvatarProps };

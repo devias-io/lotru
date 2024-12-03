@@ -60,12 +60,12 @@
     "name": "Field 02"
   },
   {
-    "id": "examples/input-01",
-    "name": "Input 01"
-  },
-  {
     "id": "examples/heading-01",
     "name": "Heading 01"
+  },
+  {
+    "id": "examples/hover-card-01",
+    "name": "Hover Card 01"
   },
   {
     "id": "examples/icon-button-01",
@@ -74,6 +74,10 @@
   {
     "id": "examples/icon-button-02",
     "name": "Icon Button 02"
+  },
+  {
+    "id": "examples/input-01",
+    "name": "Input 01"
   },
   {
     "id": "examples/menu-01",

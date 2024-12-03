@@ -106,6 +106,15 @@ export const index: Record<
     }],
     
   },
+  "ui/hover-card": {
+    id: "ui/hover-card",
+    name: "Hover Card",
+    description: "",
+    files: [{
+      path: "ui/hover-card.tsx",
+    }],
+    
+  },
   "ui/icon-button": {
     id: "ui/icon-button",
     name: "Icon-button",
@@ -376,15 +385,6 @@ export const index: Record<
     }],
     component: React.lazy(() => import("@/src/components/examples/field-02.tsx"))
   },
-  "examples/input-01": {
-    id: "examples/input-01",
-    name: "Input 01",
-    description: "",
-    files: [{
-      path: "examples/input-01.tsx",
-    }],
-    component: React.lazy(() => import("@/src/components/examples/input-01.tsx"))
-  },
   "examples/heading-01": {
     id: "examples/heading-01",
     name: "Heading 01",
@@ -393,6 +393,15 @@ export const index: Record<
       path: "examples/heading-01.tsx",
     }],
     component: React.lazy(() => import("@/src/components/examples/heading-01.tsx"))
+  },
+  "examples/hover-card-01": {
+    id: "examples/hover-card-01",
+    name: "Hover Card 01",
+    description: "",
+    files: [{
+      path: "examples/hover-card-01.tsx",
+    }],
+    component: React.lazy(() => import("@/src/components/examples/hover-card-01.tsx"))
   },
   "examples/icon-button-01": {
     id: "examples/icon-button-01",
@@ -411,6 +420,15 @@ export const index: Record<
       path: "examples/icon-button-02.tsx",
     }],
     component: React.lazy(() => import("@/src/components/examples/icon-button-02.tsx"))
+  },
+  "examples/input-01": {
+    id: "examples/input-01",
+    name: "Input 01",
+    description: "",
+    files: [{
+      path: "examples/input-01.tsx",
+    }],
+    component: React.lazy(() => import("@/src/components/examples/input-01.tsx"))
   },
   "examples/menu-01": {
     id: "examples/menu-01",

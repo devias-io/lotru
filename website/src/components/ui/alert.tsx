@@ -22,52 +22,6 @@ const AlertRoot = styled("div", {
   width: "var(--size-full)",
 });
 
-interface AlertProps extends React.ComponentPropsWithoutRef<"div"> {
-  dismissible?: boolean;
-  variant?: "error" | "success" | "warning" | "info";
-}
-
-const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
-  {
-    children,
-    /**
-     * Whether the alert is dismissible
-     */
-    dismissible = false,
-    /**
-     * The variant of the alert
-     */
-    variant = "info",
-    ...props
-  }: AlertProps,
-  ref
-) {
-  const [dismissed, setDismissed] = React.useState<boolean>(false);
-
-  const handleDismiss = (): void => {
-    setDismissed(true);
-  };
-
-  if (dismissed) {
-    return null;
-  }
-
-  return (
-    <AlertRoot ref={ref} {...props}>
-      {children}
-      {dismissible && (
-        <IconButton size="xs" variant="ghost" onClick={handleDismiss}>
-          <XIcon
-            className={css({
-              color: "hsl(var(--color-mutedForeground))",
-            })}
-          />
-        </IconButton>
-      )}
-    </AlertRoot>
-  );
-});
-
 const AlertIcon = styled("div", {
   name: "AlertIcon",
   slot: "icon",
@@ -115,6 +69,50 @@ const AlertDescription = styled("p", {
   margin: 0,
 });
 
-export { Alert, AlertIcon, AlertContent, AlertTitle, AlertDescription };
+interface AlertProps extends React.ComponentPropsWithoutRef<"div"> {
+  dismissible?: boolean;
+  variant?: "error" | "success" | "warning" | "info";
+}
 
-export type { AlertProps };
+const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
+  {
+    children,
+    /**
+     * Whether the alert is dismissible
+     */
+    dismissible = false,
+    /**
+     * The variant of the alert
+     */
+    variant = "info",
+    ...props
+  }: AlertProps,
+  ref
+) {
+  const [dismissed, setDismissed] = React.useState<boolean>(false);
+
+  const handleDismiss = (): void => {
+    setDismissed(true);
+  };
+
+  if (dismissed) {
+    return null;
+  }
+
+  return (
+    <AlertRoot ref={ref} {...props}>
+      {children}
+      {dismissible && (
+        <IconButton size="xs" variant="ghost" onClick={handleDismiss}>
+          <XIcon
+            className={css({
+              color: "hsl(var(--color-mutedForeground))",
+            })}
+          />
+        </IconButton>
+      )}
+    </AlertRoot>
+  );
+});
+
+export { Alert, AlertIcon, AlertContent, AlertTitle, AlertDescription, type AlertProps };

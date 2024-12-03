@@ -1,9 +1,6 @@
 {
   "id": "ui/input",
   "name": "Input",
-  "dependencies": [
-    "@base_ui/react"
-  ],
   "files": [
     {
       "path": "ui/input.tsx",

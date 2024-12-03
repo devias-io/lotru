@@ -100,6 +100,10 @@
     "name": "Select 01"
   },
   {
+    "id": "examples/separator-01",
+    "name": "Separator 01"
+  },
+  {
     "id": "examples/switch-01",
     "name": "Switch 01"
   },

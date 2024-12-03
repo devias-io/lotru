@@ -1,0 +1,13 @@
+{
+  "id": "examples/separator-01",
+  "name": "Separator 01",
+  "registryDependencies": [
+    "ui/separator"
+  ],
+  "files": [
+    {
+      "path": "examples/separator-01.tsx",
+      "content": "import * as React from \"react\";\nimport { css } from \"@pigment-css/react\";\n\nimport { Separator } from \"@/components/ui/separator\";\nimport { Stack } from \"@/components/ui/stack\";\nimport { Text } from \"@/components/ui/text\";\n\nexport default function SeparatorExample(): React.JSX.Element {\n  return (\n    <Stack gap={4}>\n      <Stack gap={1}>\n        <Text size=\"sm\" leading=\"none\" weight=\"medium\">\n          Base UI Primitives\n        </Text>\n        <Text size=\"sm\" className={css({ color: \"var(--color-mutedForeground)\" })}>\n          An open-source UI component library.\n        </Text>\n      </Stack>\n      <Separator />\n      <Stack alignItems=\"center\" direction=\"row\" gap={4} className={css({ height: \"calc(var(--size-unit) * 5)\" })}>\n        <Text size=\"sm\">Blog</Text>\n        <Separator orientation=\"vertical\" />\n        <Text size=\"sm\">Docs</Text>\n        <Separator orientation=\"vertical\" />\n        <Text size=\"sm\">Source</Text>\n      </Stack>\n    </Stack>\n  );\n}\n"
+    }
+  ]
+}

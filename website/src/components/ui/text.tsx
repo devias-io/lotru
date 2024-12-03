@@ -3,7 +3,7 @@ import { styled } from "@pigment-css/react";
 
 interface TextRootProps extends React.ComponentPropsWithoutRef<"p"> {
   family: "sans" | "mono";
-  leading: "normal" | "compact";
+  leading: "normal" | "tight" | "none";
   size: "2xs" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl" | "7xl" | "8xl" | "9xl";
   weight: "regular" | "medium" | "semibold" | "bold";
 }
@@ -136,9 +136,15 @@ const TextRoot = styled("p", {
       },
     },
     {
-      props: { leading: "compact" },
+      props: { leading: "tight" },
       style: {
-        lineHeight: "var(--lineHeight-compact)",
+        lineHeight: "var(--lineHeight-tight)",
+      },
+    },
+    {
+      props: { leading: "none" },
+      style: {
+        lineHeight: "var(--lineHeight-none)",
       },
     },
   ],
@@ -146,10 +152,10 @@ const TextRoot = styled("p", {
 
 interface TextProps extends React.ComponentPropsWithoutRef<"p"> {
   as?: "p" | "span" | "div";
+  family?: "sans" | "mono";
+  leading?: "normal" | "tight" | "none";
   size?: "2xs" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl" | "7xl" | "8xl" | "9xl";
   weight?: "regular" | "medium" | "semibold" | "bold";
-  family?: "sans" | "mono";
-  leading?: "normal" | "compact";
 }
 
 const Text = React.forwardRef<HTMLParagraphElement, TextProps>(

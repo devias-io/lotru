@@ -2,12 +2,10 @@ import * as React from "react";
 import { styled } from "@pigment-css/react";
 
 const StackRoot = styled("div", {
-  name: "Stack",
+  name: "StackRoot",
   slot: "root",
 })({
   display: "flex",
-  flexDirection: "var(--direction)" as "row" | "column",
-  gap: "var(--gap)",
 });
 
 interface StackProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -38,16 +36,14 @@ export const Stack = React.forwardRef<HTMLDivElement, StackProps>(
     return (
       <StackRoot
         ref={ref}
-        style={
-          {
-            "--gap": `calc(var(--spacing-unit) * ${gap})`,
-            "--direction": direction,
-            alignItems,
-            flexWrap,
-            justifyContent,
-            ...style,
-          } as React.CSSProperties
-        }
+        style={{
+          alignItems,
+          flexDirection: direction,
+          flexWrap,
+          gap: `calc(var(--spacing-unit) * ${gap})`,
+          justifyContent,
+          ...style,
+        }}
         {...props}
       >
         {children}

@@ -89,7 +89,7 @@ const MenuSeparator = styled(Primitives.Separator, {
   name: "MenuSeparator",
   slot: "separator",
 })({
-  backgroundColor: "hsl(var(--color-muted))",
+  backgroundColor: "hsl(var(--color-border))",
   height: "1px",
   marginBlock: "var(--spacing-unit)",
   marginInline: "calc(var(--spacing-unit) * -1)",

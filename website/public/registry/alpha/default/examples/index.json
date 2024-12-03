@@ -76,6 +76,10 @@
     "name": "Icon Button 02"
   },
   {
+    "id": "examples/menu-01",
+    "name": "Menu 01"
+  },
+  {
     "id": "examples/popover-01",
     "name": "Popover 01"
   },

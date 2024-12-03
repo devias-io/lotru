@@ -124,6 +124,15 @@ export const index: Record<
     }],
     
   },
+  "ui/menu": {
+    id: "ui/menu",
+    name: "Menu",
+    description: "",
+    files: [{
+      path: "ui/menu.tsx",
+    }],
+    
+  },
   "ui/popover": {
     id: "ui/popover",
     name: "Popover",
@@ -384,6 +393,15 @@ export const index: Record<
       path: "examples/icon-button-02.tsx",
     }],
     component: React.lazy(() => import("@/src/components/examples/icon-button-02.tsx"))
+  },
+  "examples/menu-01": {
+    id: "examples/menu-01",
+    name: "Menu 01",
+    description: "",
+    files: [{
+      path: "examples/menu-01.tsx",
+    }],
+    component: React.lazy(() => import("@/src/components/examples/menu-01.tsx"))
   },
   "examples/popover-01": {
     id: "examples/popover-01",

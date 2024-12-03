@@ -31,6 +31,7 @@ const DialogContent = styled(Primitives.Popup, {
   backgroundColor: "hsl(var(--color-surface))",
   borderRadius: "var(--borderRadius-lg)",
   boxShadow: "var(--shadow-xl)",
+  boxSizing: "border-box",
   display: "flex",
   flexDirection: "column",
   gap: "calc(var(--spacing-unit) * 4)",

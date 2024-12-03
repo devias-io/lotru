@@ -28,6 +28,7 @@ const ButtonRoot = styled("button", {
   justifyContent: "center",
   overflow: "hidden",
   position: "relative",
+  userSelect: "none",
   width: "var(--size-fit)",
   "&:focus-visible": {
     "--ring-offset-width": "2px",
@@ -47,6 +48,7 @@ const ButtonRoot = styled("button", {
     flexShrink: 0,
     fontSize: "1.1em",
     height: "1.1em",
+    pointerEvents: "none",
     width: "1.1em",
   },
   variants: [

@@ -37,7 +37,7 @@ const SelectRoot = styled("select", {
     borderColor: "hsl(var(--color-danger))",
   },
   '&[data-field="invalid"]:focus-visible': {
-    '--ring-color': 'hsl(var(--color-danger) / 20%)',
+    "--ring-color": "hsl(var(--color-danger) / 20%)",
   },
   "&::placeholder": {
     color: "hsl(var(--color-mutedForeground))",

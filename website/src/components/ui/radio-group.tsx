@@ -6,9 +6,9 @@ const RadioGroup = styled(Primitives.Root, {
   name: "RadioGroup",
   slot: "root",
 })({
-  display: 'flex',
-  flexDirection: 'column',
-  gap: 'calc(var(--size-unit) * 2)',
+  display: "flex",
+  flexDirection: "column",
+  gap: "calc(var(--size-unit) * 2)",
 });
 
 export { RadioGroup };

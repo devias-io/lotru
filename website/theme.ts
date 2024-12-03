@@ -115,7 +115,7 @@ interface SizeTokens {
   unit: string;
   xs: string;
   sm: string;
-  md: string; 
+  md: string;
   lg: string;
   xl: string;
   "2xl": string;

@@ -48,6 +48,10 @@
     "name": "Input"
   },
   {
+    "id": "ui/menu",
+    "name": "Menu"
+  },
+  {
     "id": "ui/popover",
     "name": "Popover"
   },

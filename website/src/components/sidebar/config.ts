@@ -79,6 +79,10 @@ export const groups: Group[] = [
         href: "/docs/components/popover",
       },
       {
+        label: "Progress",
+        href: "/docs/components/progress",
+      },
+      {
         label: "Prompt",
         href: "/docs/components/prompt",
       },

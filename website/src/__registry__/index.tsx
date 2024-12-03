@@ -142,6 +142,15 @@ export const index: Record<
     }],
     
   },
+  "ui/progress": {
+    id: "ui/progress",
+    name: "Progress",
+    description: "",
+    files: [{
+      path: "ui/progress.tsx",
+    }],
+    
+  },
   "ui/prompt": {
     id: "ui/prompt",
     name: "Prompt",
@@ -420,6 +429,15 @@ export const index: Record<
       path: "examples/popover-01.tsx",
     }],
     component: React.lazy(() => import("@/src/components/examples/popover-01.tsx"))
+  },
+  "examples/progress-01": {
+    id: "examples/progress-01",
+    name: "Progress 01",
+    description: "",
+    files: [{
+      path: "examples/progress-01.tsx",
+    }],
+    component: React.lazy(() => import("@/src/components/examples/progress-01.tsx"))
   },
   "examples/prompt-01": {
     id: "examples/prompt-01",

@@ -84,6 +84,10 @@
     "name": "Popover 01"
   },
   {
+    "id": "examples/progress-01",
+    "name": "Progress 01"
+  },
+  {
     "id": "examples/prompt-01",
     "name": "Prompt 01"
   },

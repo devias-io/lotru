@@ -141,6 +141,16 @@ export const ui: RegistryComponent[] = [
     ],
   },
   {
+    id: "ui/progress",
+    name: "Progress",
+    dependencies: ["@base_ui/react"],
+    files: [
+      {
+        path: "ui/progress.tsx",
+      },
+    ],
+  },
+  {
     id: "ui/prompt",
     name: "Prompt",
     dependencies: ["@base_ui/react"],

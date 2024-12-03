@@ -25,9 +25,9 @@ const SliderTrack = styled(Primitives.Track, {
   width: "var(--size-full)",
 });
 
-const SliderRange = styled(Primitives.Indicator, {
-  name: "SliderRange",
-  slot: "range",
+const SliderIndicator = styled(Primitives.Indicator, {
+  name: "SliderIndicator",
+  slot: "indicator",
 })({
   backgroundColor: "hsl(var(--color-primary))",
 });
@@ -65,7 +65,7 @@ const Slider = React.forwardRef<React.ElementRef<typeof SliderRoot>, SliderProps
     <SliderRoot ref={ref} {...props}>
       <Primitives.Control>
         <SliderTrack>
-          <SliderRange />
+          <SliderIndicator />
         </SliderTrack>
         <SliderThumb />
       </Primitives.Control>

@@ -56,6 +56,10 @@
     "name": "Popover"
   },
   {
+    "id": "ui/progress",
+    "name": "Progress"
+  },
+  {
     "id": "ui/prompt",
     "name": "Prompt"
   },

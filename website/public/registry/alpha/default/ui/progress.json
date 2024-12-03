@@ -1,0 +1,13 @@
+{
+  "id": "ui/progress",
+  "name": "Progress",
+  "dependencies": [
+    "@base_ui/react"
+  ],
+  "files": [
+    {
+      "path": "ui/progress.tsx",
+      "content": "import * as React from \"react\";\nimport * as Primitives from \"@base_ui/react/Progress\";\nimport { styled } from \"@pigment-css/react\";\n\nconst ProgressRoot = styled(Primitives.Root, {\n  name: \"ProgressRoot\",\n  slot: \"root\",\n})({});\n\nconst ProgressTrack = styled(Primitives.Track, {\n  name: \"ProgressTrack\",\n  slot: \"track\",\n})({\n  backgroundColor: \"hsl(var(--color-muted))\",\n  borderRadius: \"var(--borderRadius-full)\",\n  boxSizing: \"border-box\",\n  display: \"block\",\n  height: \"calc(var(--size-unit) * 3)\",\n  overflow: \"hidden\",\n  position: \"relative\",\n  width: \"var(--size-full)\",\n});\n\nconst ProgressIndicator = styled(Primitives.Indicator, {\n  name: \"ProgressIndicator\",\n  slot: \"indicator\",\n})({\n  backgroundColor: \"hsl(var(--color-primary))\",\n  boxSizing: \"border-box\",\n  position: \"absolute\",\n  transitionDuration: \"var(--duration-normal)\",\n  transitionProperty: \"width\",\n  transitionTimingFunction: \"var(--easing-default)\",\n});\n\ntype ProgressProps = React.ComponentPropsWithoutRef<typeof Primitives.Root>;\n\nconst Progress = React.forwardRef<React.ElementRef<typeof ProgressRoot>, ProgressProps>(({ ...props }, ref) => {\n  return (\n    <ProgressRoot ref={ref} {...props}>\n      <ProgressTrack>\n        <ProgressIndicator />\n      </ProgressTrack>\n    </ProgressRoot>\n  );\n});\n\nexport { Progress, type ProgressProps };\n"
+    }
+  ]
+}

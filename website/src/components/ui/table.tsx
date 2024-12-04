@@ -11,7 +11,7 @@ const TableRoot = styled("table", {
 })<React.ComponentProps<"table">>({
   borderCollapse: "collapse",
   captionSide: "bottom",
-  textIndent: "0",
+  textIndent: 0,
   width: "var(--size-full)",
 });
 

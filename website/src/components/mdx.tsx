@@ -86,8 +86,8 @@ function Pre({ className, ...props }: React.ComponentProps<"pre">): React.JSX.El
         css({
           borderRadius: "var(--borderRadius-md)",
           boxSizing: "border-box",
-          padding: "calc(var(--spacing-unit) * 4)",
           overflowX: "auto",
+          padding: "calc(var(--spacing-unit) * 4)",
           width: "var(--size-full)",
         }),
         className

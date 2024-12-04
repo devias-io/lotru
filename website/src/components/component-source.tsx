@@ -1,4 +1,7 @@
 import * as React from "react";
+import { css } from "@pigment-css/react";
+
+import { CodeBlockWrapper } from "@/src/components/code-block-wrapper";
 
 export interface ComponentSourceProps extends React.HTMLAttributes<HTMLDivElement> {
   id: string;
@@ -6,5 +9,5 @@ export interface ComponentSourceProps extends React.HTMLAttributes<HTMLDivElemen
 }
 
 export function ComponentSource({ children }: ComponentSourceProps): React.JSX.Element {
-  return <div>{children}</div>;
+  return <CodeBlockWrapper className={css({ borderRadius: "var(--borderRadius-md)" })}>{children}</CodeBlockWrapper>;
 }

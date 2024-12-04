@@ -64,24 +64,12 @@ export default function Page(): React.JSX.Element {
                 })}
               >
                 <StarsIcon color="hsl(var(--color-mutedForeground))" size={16} />
-                <Text
-                  className={css({
-                    color: "hsl(var(--color-mutedForeground))",
-                  })}
-                  size="xs"
-                  weight="medium"
-                >
+                <Text className={css({ color: "hsl(var(--color-mutedForeground))" })} size="xs" weight="medium">
                   New components every week
                 </Text>
               </div>
             </div>
-            <Text
-              className={css({
-                textAlign: "center",
-              })}
-              size="3xl"
-              weight="medium"
-            >
+            <Text className={css({ textAlign: "center" })} size="3xl" weight="medium">
               Building accessible UIs has never been easier.
             </Text>
             <div

@@ -13,7 +13,7 @@ const TooltipPositioner = Primitives.Positioner;
 const TooltipContent = styled(Primitives.Popup, {
   name: "TooltipContent",
   slot: "content",
-})({
+})<React.ComponentProps<typeof Primitives.Popup>>({
   backgroundColor: "hsl(var(--color-surface))",
   border: "1px solid hsl(var(--color-border))",
   borderRadius: "var(--borderRadius-md)",
@@ -28,7 +28,10 @@ const TooltipContent = styled(Primitives.Popup, {
   zIndex: "var(--zIndex-popover)",
 });
 
-const TooltipArrow = styled(Primitives.Arrow)({
+const TooltipArrow = styled(Primitives.Arrow, {
+  name: "TooltipArrow",
+  slot: "arrow",
+})<React.ComponentProps<typeof Primitives.Arrow>>({
   backgroundColor: "hsl(var(--color-surface))",
   height: "10px",
   transform: "rotate(45deg)",

@@ -5,7 +5,7 @@ import { styled } from "@pigment-css/react";
 const RadioRoot = styled(Primitives.Root, {
   name: "RadioRoot",
   slot: "root",
-})({
+})<React.ComponentProps<typeof Primitives.Root>>({
   alignItems: "center",
   border: "1px solid hsl(var(--color-border))",
   backgroundColor: "hsl(var(--color-muted))",
@@ -16,7 +16,6 @@ const RadioRoot = styled(Primitives.Root, {
   flexShrink: 0,
   height: "calc(var(--size-unit) * 5)",
   justifyContent: "center",
-  margin: 0,
   padding: 0,
   transitionDuration: "var(--duration-fast)",
   transitionProperty: "background-color",
@@ -54,8 +53,9 @@ const RadioRoot = styled(Primitives.Root, {
 const RadioIndicator = styled(Primitives.Indicator, {
   name: "RadioIndicator",
   slot: "indicator",
-})({
+})<React.ComponentProps<typeof Primitives.Indicator>>({
   borderRadius: "var(--borderRadius-full)",
+  boxSizing: "border-box",
   flexShrink: 0,
   height: "calc(var(--size-unit) * 2)",
   width: "calc(var(--size-unit) * 2)",
@@ -67,13 +67,13 @@ const RadioIndicator = styled(Primitives.Indicator, {
   },
 });
 
-interface RadioProps extends React.ComponentPropsWithoutRef<typeof RadioRoot> {}
-
-const Radio = React.forwardRef<React.ElementRef<typeof RadioRoot>, RadioProps>(({ ...props }: RadioProps, ref) => (
-  <RadioRoot ref={ref} tabIndex={0} {...props}>
-    <RadioIndicator />
-  </RadioRoot>
-));
+const Radio = React.forwardRef<React.ElementRef<typeof RadioRoot>, React.ComponentPropsWithoutRef<typeof RadioRoot>>(
+  (props, ref) => (
+    <RadioRoot ref={ref} tabIndex={0} {...props}>
+      <RadioIndicator />
+    </RadioRoot>
+  )
+);
 Radio.displayName = "Radio";
 
 export { Radio };

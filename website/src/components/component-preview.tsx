@@ -2,7 +2,7 @@ import * as React from "react";
 import { css } from "@pigment-css/react";
 
 import { index } from "@/src/__registry__";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/src/components/ui/tabs";
+import { Tabs, TabsContent, TabsIndicator, TabsList, TabsTrigger } from "@/src/components/ui/tabs";
 import { Text } from "@/src/components/ui/text";
 
 export interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -24,19 +24,42 @@ export function ComponentPreview({ children, id }: ComponentPreviewProps): React
   }, [id]);
 
   return (
-    <Tabs
-      className={css({
-        boxSizing: "border-box",
-        display: "flex",
-        flexDirection: "column",
-        gap: "calc(var(--spacing-unit) * 4)",
-        width: "var(--size-full)",
-      })}
-      defaultValue="preview"
-    >
-      <TabsList>
-        <TabsTrigger value="preview">Preview</TabsTrigger>
-        <TabsTrigger value="code">Code</TabsTrigger>
+    <Tabs defaultValue="preview">
+      <TabsList
+        className={css({
+          backgroundColor: "transparent",
+          borderBottom: "1px solid hsl(var(--color-border))",
+          borderRadius: 0,
+          justifyContent: "flex-start",
+          padding: 0,
+          width: "var(--size-full)",
+        })}
+      >
+        <TabsTrigger
+          className={css({
+            "&[data-selected]": {
+              boxShadow: "none",
+            },
+          })}
+          value="preview"
+        >
+          Preview
+        </TabsTrigger>
+        <TabsTrigger
+          className={css({
+            "&[data-selected]": {
+              boxShadow: "none",
+            },
+          })}
+          value="code"
+        >
+          Code
+        </TabsTrigger>
+        <TabsIndicator
+          className={css({
+            bottom: 0,
+          })}
+        />
       </TabsList>
       <TabsContent value="preview">
         <div

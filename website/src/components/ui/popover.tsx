@@ -11,19 +11,27 @@ const PopoverPositioner = Primitives.Positioner;
 const PopoverContent = styled(Primitives.Popup, {
   name: "PopoverContent",
   slot: "content",
-})({
+})<React.ComponentProps<typeof Primitives.Popup>>({
   backgroundColor: "hsl(var(--color-surface))",
   border: "1px solid hsl(var(--color-border))",
   borderRadius: "var(--borderRadius-md)",
   boxSizing: "border-box",
+  color: "hsl(var(--color-foreground))",
   filter: "drop-shadow(0px 2px 4px hsl(0 0% 0% / 6%))",
-  outline: "none",
+  maxWidth: "var(--size-md)",
   padding: "calc(var(--size-unit) * 4)",
-  zIndex: "var(--zIndex-popover)",
   position: "relative",
+  width: "var(--size-full)",
+  zIndex: "var(--zIndex-popover)",
+  "&:focus-visible": {
+    outline: "none",
+  },
 });
 
-const PopoverArrow = styled(Primitives.Arrow)({
+const PopoverArrow = styled(Primitives.Arrow, {
+  name: "PopoverArrow",
+  slot: "arrow",
+})<React.ComponentProps<typeof Primitives.Arrow>>({
   backgroundColor: "hsl(var(--color-surface))",
   height: "10px",
   transform: "rotate(45deg)",

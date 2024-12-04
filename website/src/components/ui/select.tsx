@@ -1,22 +1,22 @@
 import * as React from "react";
 import { styled } from "@pigment-css/react";
 
-interface SelectRootProps extends Omit<React.ComponentPropsWithoutRef<"select">, "size"> {
-  size_: "sm" | "md" | "lg" | "xl";
-}
-
 const SelectRoot = styled("select", {
   name: "SelectRoot",
   slot: "root",
-})<SelectRootProps>({
+})<
+  Omit<React.ComponentPropsWithoutRef<"select">, "size"> & {
+    size: "sm" | "md" | "lg" | "xl";
+  }
+>({
   appearance: "none",
   backgroundColor: "var(--color-background)",
   border: "1px solid hsl(var(--color-border))",
   borderRadius: "var(--borderRadius-md)",
   boxSizing: "border-box",
   color: "hsl(var(--color-foreground))",
-  position: "relative",
   maxWidth: "var(--size-xs)",
+  position: "relative",
   width: "var(--size-full)",
   "&:focus-visible": {
     "--ring-offset-width": "0px",
@@ -47,7 +47,7 @@ const SelectRoot = styled("select", {
   },
   variants: [
     {
-      props: { size_: "sm" },
+      props: { size: "sm" },
       style: {
         fontSize: "var(--fontSize-sm)",
         height: "calc(var(--size-unit) * 9)",
@@ -57,7 +57,7 @@ const SelectRoot = styled("select", {
       },
     },
     {
-      props: { size_: "md" },
+      props: { size: "md" },
       style: {
         fontSize: "var(--fontSize-md)",
         height: "calc(var(--size-unit) * 10)",
@@ -67,7 +67,7 @@ const SelectRoot = styled("select", {
       },
     },
     {
-      props: { size_: "lg" },
+      props: { size: "lg" },
       style: {
         fontSize: "var(--fontSize-md)",
         height: "calc(var(--size-unit) * 11)",
@@ -77,7 +77,7 @@ const SelectRoot = styled("select", {
       },
     },
     {
-      props: { size_: "xl" },
+      props: { size: "xl" },
       style: {
         fontSize: "var(--fontSize-lg)",
         height: "calc(var(--size-unit) * 12)",
@@ -89,12 +89,12 @@ const SelectRoot = styled("select", {
   ],
 } as React.CSSProperties);
 
-interface SelectProps extends Omit<React.ComponentPropsWithoutRef<"select">, "size"> {
-  size?: "sm" | "md" | "lg" | "xl";
-}
-
-const Select = React.forwardRef<HTMLSelectElement, SelectProps>(({ size = "md", ...props }, ref) => {
-  return <SelectRoot ref={ref} size_={size} {...props} />;
-});
+const Select = React.forwardRef<
+  HTMLSelectElement,
+  Omit<React.ComponentPropsWithoutRef<"select">, "size"> & {
+    size?: "sm" | "md" | "lg" | "xl";
+  }
+>(({ size = "md", ...props }, ref) => <SelectRoot ref={ref} size={size} {...props} />);
+Select.displayName = "Select";
 
 export { Select };

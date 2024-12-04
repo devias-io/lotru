@@ -14,46 +14,45 @@ const PromptContext = React.createContext<{ variant: PromptVariant }>({
 
 const usePromptContext = () => {
   const context = React.useContext(PromptContext);
+
   if (!context) {
     throw new Error("usePromptContext must be used within a PromptProvider");
   }
+
   return context;
 };
 
-type PromptProviderProps = React.PropsWithChildren<{
-  variant: PromptVariant;
-}>;
-
-const PromptProvider = ({ variant, children }: PromptProviderProps) => {
-  return <PromptContext.Provider value={{ variant }}>{children}</PromptContext.Provider>;
-};
-
-interface PromptProps {
+const PromptProvider = ({
+  variant,
+  children,
+}: {
   children: React.ReactNode;
-  variant?: PromptVariant;
-}
+  variant: PromptVariant;
+}): React.JSX.Element => <PromptContext.Provider value={{ variant }}>{children}</PromptContext.Provider>;
+PromptProvider.displayName = "PromptProvider";
 
-const Prompt: React.FC<PromptProps> = ({
+const Prompt = ({
   /**
    * The variant of the prompt.
    */
   variant = "danger",
   ...props
-}) => {
-  return (
-    <PromptProvider variant={variant}>
-      <Primitives.Root {...props} />
-    </PromptProvider>
-  );
-};
+}: {
+  children: React.ReactNode;
+  variant?: PromptVariant;
+}): React.JSX.Element => (
+  <PromptProvider variant={variant}>
+    <Primitives.Root {...props} />
+  </PromptProvider>
+);
 Prompt.displayName = "Prompt";
 
 const PromptTrigger = Primitives.Trigger;
 
 const PromptOverlay = styled(Primitives.Backdrop, {
   name: "PromptOverlay",
-  slot: "backdrop",
-})({
+  slot: "overlay",
+})<React.ComponentProps<typeof Primitives.Backdrop>>({
   backgroundColor: "hsl(var(--color-overlay))",
   position: "fixed",
   inset: 0,
@@ -63,7 +62,7 @@ const PromptOverlay = styled(Primitives.Backdrop, {
 const PromptContent = styled(Primitives.Popup, {
   name: "PromptContent",
   slot: "content",
-})({
+})<React.ComponentProps<typeof Primitives.Popup>>({
   backgroundColor: "hsl(var(--color-surface))",
   border: "1px solid hsl(var(--color-border))",
   borderRadius: "var(--borderRadius-md)",
@@ -85,7 +84,7 @@ const PromptContent = styled(Primitives.Popup, {
 const PromptHeader = styled("div", {
   name: "PromptHeader",
   slot: "header",
-})({
+})<React.ComponentProps<"div">>({
   display: "flex",
   flexDirection: "column",
   gap: "calc(var(--spacing-unit) * 2)",
@@ -94,13 +93,16 @@ const PromptHeader = styled("div", {
 const PromptFooter = styled("div", {
   name: "PromptFooter",
   slot: "footer",
-})({
+})<React.ComponentProps<"div">>({
   display: "flex",
   justifyContent: "flex-end",
   gap: "calc(var(--spacing-unit) * 2)",
 });
 
-const PromptTitle = styled(Primitives.Title)({
+const PromptTitle = styled(Primitives.Title, {
+  name: "PromptTitle",
+  slot: "title",
+})<React.ComponentProps<typeof Primitives.Title>>({
   fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-lg)",
   lineHeight: "var(--lineHeight-normal)",
@@ -108,7 +110,10 @@ const PromptTitle = styled(Primitives.Title)({
   marginBlock: 0,
 });
 
-const PromptDescription = styled(Primitives.Description)({
+const PromptDescription = styled(Primitives.Description, {
+  name: "PromptDescription",
+  slot: "description",
+})<React.ComponentProps<typeof Primitives.Description>>({
   color: "hsl(var(--color-mutedForeground))",
   fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
@@ -116,31 +121,28 @@ const PromptDescription = styled(Primitives.Description)({
   marginBlock: 0,
 });
 
-interface PromptActionProps {
-  children: React.ReactNode;
-  type?: "button" | "submit" | "reset";
-}
-
-const PromptAction = React.forwardRef<HTMLButtonElement, PromptActionProps>(function PromptAction(
-  { children, type, ...props },
-  ref
-) {
+const PromptAction = React.forwardRef<
+  HTMLButtonElement,
+  {
+    children: React.ReactNode;
+    type?: "button" | "submit" | "reset";
+  }
+>(({ children, type, ...props }, ref) => {
   const _ = usePromptContext();
 
   return <Primitives.Close ref={ref} render={<Button type={type}>{children}</Button>} {...props} />;
 });
 
-interface PromptCancelProps {
-  children: React.ReactNode;
-  type?: "button" | "submit" | "reset";
-}
-
-const PromptCancel = React.forwardRef<HTMLButtonElement, PromptCancelProps>(function PromptCancel(
-  { children, ...props },
-  ref
-) {
-  return <Primitives.Close ref={ref} render={<Button variant="ghost">{children}</Button>} {...props} />;
-});
+const PromptCancel = React.forwardRef<
+  HTMLButtonElement,
+  {
+    children: React.ReactNode;
+    type?: "button" | "submit" | "reset";
+  }
+>(({ children, ...props }, ref) => (
+  <Primitives.Close ref={ref} render={<Button variant="ghost">{children}</Button>} {...props} />
+));
+PromptCancel.displayName = "PromptCancel";
 
 export {
   Prompt,
@@ -154,5 +156,3 @@ export {
   PromptAction,
   PromptCancel,
 };
-
-export type { PromptProps, PromptActionProps, PromptCancelProps };

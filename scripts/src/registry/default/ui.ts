@@ -169,6 +169,24 @@ export const ui: RegistryComponent[] = [
     ],
   },
   {
+    id: "ui/select",
+    name: "Select",
+    files: [
+      {
+        path: "ui/select.tsx",
+      },
+    ],
+  },
+  {
+    id: "ui/separator",
+    name: "Separator",
+    files: [
+      {
+        path: "ui/separator.tsx",
+      },
+    ],
+  },
+  {
     id: "ui/sheet",
     name: "Sheet",
     dependencies: ["@base_ui/react", "lucide-react"],
@@ -180,11 +198,11 @@ export const ui: RegistryComponent[] = [
     ],
   },
   {
-    id: "ui/select",
-    name: "Select",
+    id: "ui/slider",
+    name: "Slider",
     files: [
       {
-        path: "ui/select.tsx",
+        path: "ui/slider.tsx",
       },
     ],
   },
@@ -220,6 +238,7 @@ export const ui: RegistryComponent[] = [
   {
     id: "ui/table",
     name: "Table",
+    registryDependencies: ["ui/button", "ui/stack"],
     files: [
       {
         path: "ui/table.tsx",

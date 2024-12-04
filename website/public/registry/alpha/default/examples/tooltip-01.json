@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/tooltip-01.tsx",
-      "content": "import * as React from \"react\";\n\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Tooltip,\n  TooltipArrow,\n  TooltipContent,\n  TooltipPositioner,\n  TooltipProvider,\n  TooltipTrigger,\n} from \"@/components/ui/tooltip\";\n\nexport default function TooltipExample(): React.JSX.Element {\n  return (\n    <TooltipProvider>\n      <Tooltip>\n        <TooltipTrigger render={<Button variant=\"outline\">Hover</Button>} />\n        <TooltipPositioner>\n          <TooltipContent>Add to library</TooltipContent>\n          <TooltipArrow />\n        </TooltipPositioner>\n      </Tooltip>\n    </TooltipProvider>\n  );\n}\n"
+      "content": "import * as React from \"react\";\n\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Tooltip,\n  TooltipArrow,\n  TooltipContent,\n  TooltipPositioner,\n  TooltipProvider,\n  TooltipTrigger,\n} from \"@/components/ui/tooltip\";\n\nexport default function TooltipExample(): React.JSX.Element {\n  return (\n    <TooltipProvider>\n      <Tooltip>\n        <TooltipTrigger render={<Button variant=\"outline\">Hover</Button>} />\n        <TooltipPositioner side=\"top\" sideOffset={4}>\n          <TooltipContent>\n            <TooltipArrow />\n            Add to library\n          </TooltipContent>\n        </TooltipPositioner>\n      </Tooltip>\n    </TooltipProvider>\n  );\n}\n"
     }
   ]
 }

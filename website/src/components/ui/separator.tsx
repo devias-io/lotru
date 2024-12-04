@@ -2,15 +2,16 @@ import * as React from "react";
 import * as Primitives from "@base_ui/react/Separator";
 import { styled } from "@pigment-css/react";
 
-interface SeparatorRootProps {
-  orientation: "vertical" | "horizontal";
-}
-
 const SeparatorRoot = styled(Primitives.Root, {
   name: "SeparatorRoot",
   slot: "root",
-})<SeparatorRootProps>({
+})<
+  React.ComponentProps<typeof Primitives.Root> & {
+    orientation: "vertical" | "horizontal";
+  }
+>({
   backgroundColor: "hsl(var(--color-border))",
+  boxSizing: "border-box",
   flexShrink: 0,
   variants: [
     {
@@ -30,13 +31,12 @@ const SeparatorRoot = styled(Primitives.Root, {
   ],
 });
 
-interface SeparatorProps extends React.ComponentPropsWithoutRef<"div"> {
-  orientation?: "vertical" | "horizontal";
-}
-
-const Separator = React.forwardRef<HTMLHRElement, SeparatorProps>(({ orientation = "horizontal", ...props }, ref) => {
-  return <SeparatorRoot ref={ref} orientation={orientation} {...props} />;
-});
+const Separator = React.forwardRef<
+  HTMLHRElement,
+  React.ComponentPropsWithoutRef<"div"> & {
+    orientation?: "vertical" | "horizontal";
+  }
+>(({ orientation = "horizontal", ...props }, ref) => <SeparatorRoot ref={ref} orientation={orientation} {...props} />);
 Separator.displayName = "Separator";
 
-export { type SeparatorProps, Separator };
+export { Separator };

@@ -1,19 +1,19 @@
 import * as React from "react";
 import { styled } from "@pigment-css/react";
 
-interface TextRootProps extends React.ComponentPropsWithoutRef<"p"> {
-  family: "sans" | "mono";
-  leading: "normal" | "tight" | "none";
-  size: "2xs" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl" | "7xl" | "8xl" | "9xl";
-  weight: "regular" | "medium" | "semibold" | "bold";
-}
-
 const TextRoot = styled("p", {
   name: "TextRoot",
   slot: "root",
-})<TextRootProps>({
+})<
+  React.ComponentPropsWithoutRef<"p"> & {
+    family: "sans" | "mono";
+    leading: "normal" | "tight" | "none";
+    size: "2xs" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl" | "7xl" | "8xl" | "9xl";
+    weight: "regular" | "medium" | "semibold" | "bold";
+  }
+>({
   boxSizing: "border-box",
-  margin: 0,
+  marginBlock: 0,
   variants: [
     {
       props: { size: "xs" },
@@ -150,22 +150,22 @@ const TextRoot = styled("p", {
   ],
 });
 
-interface TextProps extends React.ComponentPropsWithoutRef<"p"> {
-  as?: "p" | "span" | "div";
-  family?: "sans" | "mono";
-  leading?: "normal" | "tight" | "none";
-  size?: "2xs" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl" | "7xl" | "8xl" | "9xl";
-  weight?: "regular" | "medium" | "semibold" | "bold";
-}
-
-const Text = React.forwardRef<HTMLParagraphElement, TextProps>(
+const Text = React.forwardRef<
+  HTMLParagraphElement,
+  React.ComponentPropsWithoutRef<"p"> & {
+    as?: "p" | "span" | "div";
+    family?: "sans" | "mono";
+    leading?: "normal" | "tight" | "none";
+    size?: "2xs" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl" | "7xl" | "8xl" | "9xl";
+    weight?: "regular" | "medium" | "semibold" | "bold";
+  }
+>(
   (
     {
       /**
        * The wrapper element to use.
        */
       as = "p",
-      children,
       /**
        * The text's font family.
        */
@@ -183,18 +183,10 @@ const Text = React.forwardRef<HTMLParagraphElement, TextProps>(
        */
       weight = "regular",
       ...props
-    }: TextProps,
+    },
     ref
-  ) => {
-    return (
-      <TextRoot as={as} ref={ref} size={size} weight={weight} family={family} leading={leading} {...props}>
-        {children}
-      </TextRoot>
-    );
-  }
+  ) => <TextRoot as={as} ref={ref} size={size} weight={weight} family={family} leading={leading} {...props} />
 );
 Text.displayName = "Text";
 
 export { Text };
-
-export type { TextProps };

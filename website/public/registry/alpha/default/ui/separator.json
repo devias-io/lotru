@@ -1,0 +1,10 @@
+{
+  "id": "ui/separator",
+  "name": "Separator",
+  "files": [
+    {
+      "path": "ui/separator.tsx",
+      "content": "import * as React from \"react\";\nimport * as Primitives from \"@base_ui/react/Separator\";\nimport { styled } from \"@pigment-css/react\";\n\nconst SeparatorRoot = styled(Primitives.Root, {\n  name: \"SeparatorRoot\",\n  slot: \"root\",\n})<\n  React.ComponentProps<typeof Primitives.Root> & {\n    orientation: \"vertical\" | \"horizontal\";\n  }\n>({\n  backgroundColor: \"hsl(var(--color-border))\",\n  boxSizing: \"border-box\",\n  flexShrink: 0,\n  variants: [\n    {\n      props: { orientation: \"horizontal\" },\n      style: {\n        height: \"1px\",\n        width: \"var(--size-full)\",\n      },\n    },\n    {\n      props: { orientation: \"vertical\" },\n      style: {\n        height: \"var(--size-full)\",\n        width: \"1px\",\n      },\n    },\n  ],\n});\n\nconst Separator = React.forwardRef<\n  HTMLHRElement,\n  React.ComponentPropsWithoutRef<\"div\"> & {\n    orientation?: \"vertical\" | \"horizontal\";\n  }\n>(({ orientation = \"horizontal\", ...props }, ref) => <SeparatorRoot ref={ref} orientation={orientation} {...props} />);\nSeparator.displayName = \"Separator\";\n\nexport { Separator };\n"
+    }
+  ]
+}

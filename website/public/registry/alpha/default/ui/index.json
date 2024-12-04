@@ -68,12 +68,20 @@
     "name": "Radio"
   },
   {
+    "id": "ui/select",
+    "name": "Select"
+  },
+  {
+    "id": "ui/separator",
+    "name": "Separator"
+  },
+  {
     "id": "ui/sheet",
     "name": "Sheet"
   },
   {
-    "id": "ui/select",
-    "name": "Select"
+    "id": "ui/slider",
+    "name": "Slider"
   },
   {
     "id": "ui/stack",

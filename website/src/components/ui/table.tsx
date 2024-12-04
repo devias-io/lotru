@@ -4,12 +4,11 @@ import { MinusIcon } from "lucide-react";
 
 import { Button } from "@/src/components/ui/button";
 import { Stack } from "@/src/components/ui/stack";
-import { Text } from "@/src/components/ui/text";
 
 const TableRoot = styled("table", {
-  name: "Table",
+  name: "TableRoot",
   slot: "root",
-})({
+})<React.ComponentProps<"table">>({
   borderCollapse: "collapse",
   captionSide: "bottom",
   textIndent: "0",
@@ -19,12 +18,12 @@ const TableRoot = styled("table", {
 const TableHeader = styled("thead", {
   name: "TableHeader",
   slot: "header",
-})({});
+})<React.ComponentProps<"thead">>({});
 
 const TableBody = styled("tbody", {
   name: "TableBody",
   slot: "body",
-})({
+})<React.ComponentProps<"tbody">>({
   "& > tr:last-child": {
     borderBottom: "none",
   },
@@ -33,7 +32,7 @@ const TableBody = styled("tbody", {
 const TableFooter = styled("tfoot", {
   name: "TableFooter",
   slot: "footer",
-})({
+})<React.ComponentProps<"tfoot">>({
   backgroundColor: "hsl(var(--color-muted) / 50%)",
   borderTop: "1px solid hsl(var(--color-border))",
   fontWeight: "var(--fontWeight-medium)",
@@ -45,7 +44,7 @@ const TableFooter = styled("tfoot", {
 const TableCaption = styled("caption", {
   name: "TableCaption",
   slot: "caption",
-})({
+})<React.ComponentProps<"caption">>({
   color: "hsl(var(--color-mutedForeground))",
   fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
@@ -58,7 +57,7 @@ const TableCaption = styled("caption", {
 const TableRow = styled("tr", {
   name: "TableRow",
   slot: "row",
-})({
+})<React.ComponentProps<"tr">>({
   borderBottom: "1px solid hsl(var(--color-border))",
   "&:hover": {
     backgroundColor: "hsl(var(--color-muted) / 50%)",
@@ -68,7 +67,7 @@ const TableRow = styled("tr", {
 const TableHeaderCell = styled("th", {
   name: "TableHeaderCell",
   slot: "headerCell",
-})({
+})<React.ComponentProps<"th">>({
   color: "hsl(var(--color-mutedForeground))",
   fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
@@ -83,7 +82,7 @@ const TableHeaderCell = styled("th", {
 const TableCell = styled("td", {
   name: "TableCell",
   slot: "cell",
-})({
+})<React.ComponentProps<"td">>({
   color: "hsl(var(--color-foreground))",
   fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
@@ -93,35 +92,30 @@ const TableCell = styled("td", {
   verticalAlign: "middle",
 });
 
-interface TableProps extends React.ComponentPropsWithoutRef<"table"> {}
-
-const Table = React.forwardRef<HTMLTableElement, TableProps>(({ children, ...props }: TableProps, ref) => {
-  return (
-    <TableRoot ref={ref} {...props}>
-      {children}
-    </TableRoot>
-  );
+const Table = React.forwardRef<HTMLTableElement, React.ComponentPropsWithoutRef<"table">>((props, ref) => {
+  return <TableRoot ref={ref} {...props} />;
 });
 
-interface TablePaginationProps extends React.HTMLAttributes<HTMLDivElement> {
-  count: number;
-  pageSize: number;
-  pageIndex: number;
-  pageCount: number;
-  canPreviousPage: boolean;
-  canNextPage: boolean;
-  translations?: {
-    of?: string;
-    results?: string;
-    pages?: string;
-    prev?: string;
-    next?: string;
-  };
-  previousPage: () => void;
-  nextPage: () => void;
-}
-
-const TablePagination = React.forwardRef<HTMLDivElement, TablePaginationProps>(
+const TablePagination = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement> & {
+    count: number;
+    pageSize: number;
+    pageIndex: number;
+    pageCount: number;
+    canPreviousPage: boolean;
+    canNextPage: boolean;
+    translations?: {
+      of?: string;
+      results?: string;
+      pages?: string;
+      prev?: string;
+      next?: string;
+    };
+    onPreviousPage: () => void;
+    onNextPage: () => void;
+  }
+>(
   (
     {
       className,
@@ -153,12 +147,12 @@ const TablePagination = React.forwardRef<HTMLDivElement, TablePaginationProps>(
        * A function that handles navigating to the next page.
        * This function should handle retrieving data for the next page.
        */
-      nextPage,
+      onNextPage,
       /**
        * A function that handles navigating to the previous page.
        * This function should handle retrieving data for the previous page.
        */
-      previousPage,
+      onPreviousPage,
       /**
        * An optional object of words to use in the pagination component.
        * Use this to override the default words, or translate them into another language.
@@ -171,7 +165,7 @@ const TablePagination = React.forwardRef<HTMLDivElement, TablePaginationProps>(
         next: "Next",
       },
       ...props
-    }: TablePaginationProps,
+    },
     ref
   ) => {
     const { from, to } = React.useMemo(() => {
@@ -184,20 +178,20 @@ const TablePagination = React.forwardRef<HTMLDivElement, TablePaginationProps>(
     return (
       <div ref={ref} className={className} {...props}>
         <Stack alignItems="center" direction="row" gap={1}>
-          <Text>{from}</Text>
+          <span>{from}</span>
           <MinusIcon />
-          <Text>
+          <span>
             {to} {translations.of} {count} {translations.results}
-          </Text>
+          </span>
         </Stack>
         <Stack alignItems="center" gap={2}>
-          <Text>
+          <span>
             {pageIndex + 1} {translations.of} {Math.max(pageCount, 1)} {translations.pages}
-          </Text>
-          <Button variant="ghost" onClick={previousPage} disabled={!canPreviousPage}>
+          </span>
+          <Button variant="ghost" onClick={onPreviousPage} disabled={!canPreviousPage}>
             {translations.prev}
           </Button>
-          <Button variant="ghost" onClick={nextPage} disabled={!canNextPage}>
+          <Button variant="ghost" onClick={onNextPage} disabled={!canNextPage}>
             {translations.next}
           </Button>
         </Stack>
@@ -207,8 +201,6 @@ const TablePagination = React.forwardRef<HTMLDivElement, TablePaginationProps>(
 );
 
 export {
-  type TableProps,
-  type TablePaginationProps,
   Table,
   TableBody,
   TableCaption,

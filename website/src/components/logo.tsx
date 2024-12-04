@@ -2,13 +2,7 @@ import * as React from "react";
 
 export function Logo({ height = 32, width = 93 }: { height?: number; width?: number }): React.JSX.Element {
   return (
-    <svg
-      width={width}
-      height={height}
-      viewBox="0 0 93 32"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <svg width={width} height={height} viewBox="0 0 93 32" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         fillRule="evenodd"
         clipRule="evenodd"

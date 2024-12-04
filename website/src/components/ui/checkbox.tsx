@@ -6,7 +6,7 @@ import { CheckIcon, MinusIcon } from "lucide-react";
 const CheckboxRoot = styled(Primitives.Root, {
   name: "CheckboxRoot",
   slot: "root",
-})({
+})<React.ComponentProps<typeof Primitives.Root>>({
   alignItems: "center",
   backgroundColor: "hsl(var(--color-muted))",
   border: "1px solid hsl(var(--color-border))",
@@ -55,8 +55,9 @@ const CheckboxRoot = styled(Primitives.Root, {
 const CheckboxIndicator = styled(Primitives.Indicator, {
   name: "CheckboxIndicator",
   slot: "indicator",
-})({
+})<React.ComponentProps<typeof Primitives.Indicator>>({
   alignItems: "center",
+  boxSizing: "border-box",
   display: "none",
   justifyContent: "center",
   '&[data-state="checked"]': {
@@ -76,11 +77,12 @@ const CheckboxIndicator = styled(Primitives.Indicator, {
   },
 });
 
-interface CheckboxProps extends React.ComponentPropsWithoutRef<typeof CheckboxRoot> {
-  intermediate?: boolean;
-}
-
-const Checkbox = React.forwardRef<React.ElementRef<typeof CheckboxRoot>, CheckboxProps>(
+const Checkbox = React.forwardRef<
+  React.ElementRef<typeof CheckboxRoot>,
+  React.ComponentPropsWithoutRef<typeof Primitives.Root> & {
+    intermediate?: boolean;
+  }
+>(
   (
     {
       /**
@@ -88,7 +90,7 @@ const Checkbox = React.forwardRef<React.ElementRef<typeof CheckboxRoot>, Checkbo
        */
       indeterminate = false,
       ...props
-    }: CheckboxProps,
+    },
     ref
   ) => (
     <CheckboxRoot ref={ref} {...props}>

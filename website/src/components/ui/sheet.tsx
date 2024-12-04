@@ -5,45 +5,41 @@ import * as Primitives from "@base_ui/react/Dialog";
 import { styled } from "@pigment-css/react";
 import { XIcon } from "lucide-react";
 
-const Sheet = (props: React.ComponentPropsWithoutRef<typeof Primitives.Root>) => {
-  return <Primitives.Root {...props} />;
-};
+const Sheet = (props: React.ComponentProps<typeof Primitives.Root>): React.JSX.Element => (
+  <Primitives.Root {...props} />
+);
 Sheet.displayName = "Sheet";
 
 const SheetTrigger = React.forwardRef<
   React.ElementRef<typeof Primitives.Trigger>,
   React.ComponentPropsWithoutRef<typeof Primitives.Trigger>
->(({ ...props }, ref) => {
-  return <Primitives.Trigger ref={ref} {...props} />;
-});
+>((props, ref) => <Primitives.Trigger ref={ref} {...props} />);
 SheetTrigger.displayName = "SheetTrigger";
 
 const SheetClose = React.forwardRef<
   React.ElementRef<typeof Primitives.Close>,
   React.ComponentPropsWithoutRef<typeof Primitives.Close>
->(({ ...props }, ref) => {
-  return <Primitives.Close ref={ref} {...props} />;
-});
+>((props, ref) => <Primitives.Close ref={ref} {...props} />);
 SheetClose.displayName = "SheetClose";
 
 const SheetOverlay = styled(Primitives.Backdrop, {
   name: "SheetOverlay",
   slot: "overlay",
-})({
+})<React.ComponentProps<typeof Primitives.Backdrop>>({
   backgroundColor: "hsl(var(--color-overlay))",
   inset: 0,
   position: "fixed",
   zIndex: "var(--zIndex-overlay)",
 });
 
-interface SheetContentProps extends React.ComponentPropsWithoutRef<typeof Primitives.Popup> {
-  side: "left" | "right";
-}
-
 const SheetContent = styled(Primitives.Popup, {
   name: "SheetContent",
   slot: "content",
-})<SheetContentProps>({
+})<
+  React.ComponentProps<typeof Primitives.Popup> & {
+    side: "left" | "right";
+  }
+>({
   backgroundColor: "hsl(var(--color-surface))",
   bottom: 0,
   boxShadow: "var(--shadow-xl)",
@@ -101,7 +97,7 @@ const SheetContent = styled(Primitives.Popup, {
 const SheetHeaderRoot = styled("div", {
   name: "SheetHeader",
   slot: "header",
-})({
+})<React.ComponentProps<"div">>({
   boxSizing: "border-box",
   display: "flex",
   flexDirection: "column",
@@ -111,7 +107,7 @@ const SheetHeaderRoot = styled("div", {
 const SheedHeaderClose = styled("button", {
   name: "SheetHeaderClose",
   slot: "close",
-})({
+})<React.ComponentProps<"button">>({
   appearance: "none",
   background: "none",
   border: "none",
@@ -139,22 +135,24 @@ const SheedHeaderClose = styled("button", {
 const SheetHeader = React.forwardRef<
   React.ElementRef<typeof SheetHeaderRoot>,
   React.ComponentPropsWithoutRef<typeof SheetHeaderRoot>
->(({ children, className, ...props }, ref) => {
-  return (
-    <SheetHeaderRoot ref={ref} className={className} {...props}>
-      {children}
-      <Primitives.Close
-        render={
-          <SheedHeaderClose>
-            <XIcon />
-          </SheedHeaderClose>
-        }
-      />
-    </SheetHeaderRoot>
-  );
-});
+>(({ children, className, ...props }, ref) => (
+  <SheetHeaderRoot ref={ref} className={className} {...props}>
+    {children}
+    <Primitives.Close
+      render={
+        <SheedHeaderClose>
+          <XIcon />
+        </SheedHeaderClose>
+      }
+    />
+  </SheetHeaderRoot>
+));
+SheetHeader.displayName = "SheetHeader";
 
-const SheetTitle = styled(Primitives.Title)({
+const SheetTitle = styled(Primitives.Title, {
+  name: "SheetTitle",
+  slot: "title",
+})<React.ComponentProps<typeof Primitives.Title>>({
   color: "hsl(var(--color-foreground))",
   fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-lg)",
@@ -166,7 +164,7 @@ const SheetTitle = styled(Primitives.Title)({
 const SheetDescription = styled(Primitives.Description, {
   name: "SheetDescription",
   slot: "description",
-})({
+})<React.ComponentProps<typeof Primitives.Description>>({
   color: "hsl(var(--color-mutedForeground))",
   fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
@@ -177,7 +175,7 @@ const SheetDescription = styled(Primitives.Description, {
 const SheetFooter = styled("div", {
   name: "SheetFooter",
   slot: "footer",
-})({
+})<React.ComponentProps<"div">>({
   display: "flex",
   justifyContent: "flex-end",
 });

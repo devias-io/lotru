@@ -3,9 +3,9 @@ import * as Primitives from "@base_ui/react/Switch";
 import { styled } from "@pigment-css/react";
 
 const SwitchRoot = styled(Primitives.Root, {
-  name: "Switch",
+  name: "SwitchRoot",
   slot: "root",
-})({
+})<React.ComponentProps<typeof Primitives.Root>>({
   backgroundColor: "hsl(var(--color-muted))",
   border: "1px solid hsl(var(--color-border))",
   borderRadius: "calc(var(--size-unit) * 2.5)",
@@ -53,7 +53,7 @@ const SwitchRoot = styled(Primitives.Root, {
 const SwitchThumb = styled(Primitives.Thumb, {
   name: "SwitchThumb",
   slot: "thumb",
-})({
+})<React.ComponentProps<typeof Primitives.Thumb>>({
   backgroundColor: "hsl(var(--color-background))",
   border: "1px solid hsl(var(--color-border))",
   borderRadius: "50%",
@@ -72,15 +72,13 @@ const SwitchThumb = styled(Primitives.Thumb, {
   },
 });
 
-interface SwitchProps extends React.ComponentPropsWithoutRef<typeof SwitchRoot> {}
-
-const Switch = React.forwardRef<React.ElementRef<typeof SwitchRoot>, SwitchProps>((props, ref) => (
-  <SwitchRoot ref={ref} {...props}>
-    <SwitchThumb />
-  </SwitchRoot>
-));
+const Switch = React.forwardRef<React.ElementRef<typeof Primitives.Root>, React.ComponentProps<typeof Primitives.Root>>(
+  (props, ref) => (
+    <SwitchRoot ref={ref} {...props}>
+      <SwitchThumb />
+    </SwitchRoot>
+  )
+);
 Switch.displayName = "Switch";
 
 export { Switch };
-
-export type { SwitchProps };

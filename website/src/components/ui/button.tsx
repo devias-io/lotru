@@ -7,15 +7,15 @@ const spinKeyFrames = keyframes({
   to: { transform: "rotate(360deg)" },
 });
 
-interface ButtonRootProps extends React.ComponentPropsWithoutRef<"button"> {
-  size: "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
-  variant: "solid" | "outline" | "ghost";
-}
-
 const ButtonRoot = styled("button", {
   name: "ButtonRoot",
   slot: "root",
-})<ButtonRootProps>({
+})<
+  React.ComponentProps<"button"> & {
+    size: "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
+    variant: "solid" | "outline" | "ghost";
+  }
+>({
   alignItems: "center",
   appearance: "none",
   borderRadius: "var(--borderRadius-md)",
@@ -177,14 +177,15 @@ const ButtonRoot = styled("button", {
   ],
 } as React.CSSProperties);
 
-interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
-  isLoading?: boolean;
-  loadingText?: React.ReactNode;
-  size?: "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
-  variant?: "solid" | "outline" | "ghost";
-}
-
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+const Button = React.forwardRef<
+  HTMLButtonElement,
+  React.ComponentPropsWithoutRef<"button"> & {
+    isLoading?: boolean;
+    loadingText?: React.ReactNode;
+    size?: "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
+    variant?: "solid" | "outline" | "ghost";
+  }
+>(
   (
     {
       children,
@@ -209,7 +210,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
        */
       variant = "solid",
       ...props
-    }: ButtonProps,
+    },
     ref
   ) => {
     const renderInner = () => {

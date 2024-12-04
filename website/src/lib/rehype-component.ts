@@ -32,13 +32,73 @@ export interface UnistTree extends Node {
 export function rehypeComponent() {
   return async (tree: UnistTree) => {
     visit(tree, (node: UnistNode): void => {
-      // src prop overrides both name and fileName.
+      // src prop overrides both id and fileName.
       const { value: srcPath } =
         (getNodeAttributeByName(node, "src") as {
           name: string;
           value?: string;
           type?: string;
         }) || {};
+
+      if (node.name === "ComponentSource") {
+        const id = getNodeAttributeByName(node, "id")?.value as string;
+
+        if (!id && !srcPath) {
+          return undefined;
+        }
+
+        try {
+          const component = index[id];
+
+          if (!component) {
+            console.error(`Component "${id}" not found in registry.`);
+            return;
+          }
+
+          const src = component.files[0];
+
+          if (!src) {
+            console.error(`Component "${id}" does not have a source file.`);
+            return;
+          }
+
+          // Read the source file.
+          const filePath = path.join("src/components", src.path);
+          let source = fs.readFileSync(filePath, "utf8");
+
+          // Replace imports and export.
+          // TODO: Use ts-morph to replace this.
+          source = source.replaceAll("@/src/", "@/");
+          source = source.replaceAll("export default", "export");
+
+          // Add code as children so that rehype can take over at build time.
+          node.children?.push(
+            u("element", {
+              tagName: "pre",
+              properties: {
+                __src__: src,
+              },
+              attributes: [],
+              children: [
+                u("element", {
+                  tagName: "code",
+                  properties: {
+                    className: ["language-tsx"],
+                  },
+                  children: [
+                    {
+                      type: "text",
+                      value: source,
+                    },
+                  ],
+                }),
+              ],
+            })
+          );
+        } catch (error) {
+          console.error(error);
+        }
+      }
 
       if (node.name === "ComponentPreview") {
         const id = getNodeAttributeByName(node, "id")?.value as string;
@@ -67,7 +127,7 @@ export function rehypeComponent() {
           const filePath = path.join("src/components", src.path);
           let source = fs.readFileSync(filePath, "utf8");
 
-          // Replace export.
+          // Replace imports and export.
           // TODO: Use ts-morph to replace this.
           source = source.replaceAll("@/src/", "@/");
           source = source.replaceAll("export default", "export");

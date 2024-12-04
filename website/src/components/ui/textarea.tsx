@@ -4,7 +4,7 @@ import { styled } from "@pigment-css/react";
 const TextareaRoot = styled("textarea", {
   name: "TextareaRoot",
   slot: "root",
-})({
+})<React.ComponentProps<"textarea">>({
   appearance: "none",
   backgroundColor: "var(--color-background)",
   border: "1px solid hsl(var(--color-border))",
@@ -49,12 +49,9 @@ const TextareaRoot = styled("textarea", {
   },
 } as React.CSSProperties);
 
-interface TextareaProps extends React.ComponentPropsWithoutRef<"textarea"> {}
-
-const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((props, ref) => {
-  return <TextareaRoot ref={ref} {...props} />;
-});
+const Textarea = React.forwardRef<HTMLTextAreaElement, React.ComponentPropsWithoutRef<"textarea">>((props, ref) => (
+  <TextareaRoot ref={ref} {...props} />
+));
+Textarea.displayName = "Textarea";
 
 export { Textarea };
-
-export type { TextareaProps };

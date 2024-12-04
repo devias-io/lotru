@@ -2,41 +2,48 @@ import * as React from "react";
 import * as Primitives from "@base_ui/react/Tabs";
 import { styled } from "@pigment-css/react";
 
-const Tabs = styled(Primitives.Root, {
-  name: "Tabs",
-  slot: "root",
-})({});
+const Tabs = Primitives.Root;
 
 const TabsList = styled(Primitives.List, {
   name: "TabsList",
   slot: "list",
-})({
-  display: "flex",
+})<React.ComponentProps<typeof Primitives.List>>({
   alignItems: "center",
-  gap: "calc(var(--spacing-unit) * 2)",
+  backgroundColor: "hsl(var(--color-muted))",
+  borderRadius: "var(--borderRadius-md)",
+  boxSizing: "border-box",
+  color: "hsl(var(--color-mutedForeground))",
+  display: "inline-flex",
+  height: "calc(var(--size-unit) * 10)",
+  justifyContent: "center",
+  padding: "var(--spacing-unit)",
+  position: "relative",
 });
 
 const TabsTrigger = styled(Primitives.Tab, {
   name: "TabsTrigger",
   slot: "trigger",
-})({
+})<React.ComponentProps<typeof Primitives.Tab>>({
   alignItems: "center",
-  backgroundColor: "transparent",
+  appearance: "none",
+  background: "none",
   border: "none",
-  borderRadius: "var(--borderRadius-full)",
-  color: "hsl(var(--color-mutedForeground))",
+  borderRadius: "var(--borderRadius-md)",
+  boxSizing: "border-box",
+  color: "inherit",
   cursor: "pointer",
-  display: "inline-flex",
+  display: "flex",
   fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
+  fontWeight: "var(--fontWeight-medium)",
   justifyContent: "center",
-  padding: "var(--spacing-unit) calc(var(--spacing-unit) * 2.5)",
+  lineHeight: "var(--lineHeight-normal)",
+  paddingBlock: "calc(var(--spacing-unit) * 1.5)",
+  paddingInline: "calc(var(--spacing-unit) * 3)",
   transitionDuration: "var(--duration-normal)",
-  transitionProperty: "color",
+  transitionProperty: "all",
   transitionTimingFunction: "var(--easing-default)",
-  "&:hover:not([data-disabled])": {
-    color: "hsl(var(--color-foreground))",
-  },
+  whiteSpace: "nowrap",
   "&:focus-visible": {
     "--ring-offset-width": "2px",
     "--ring-offset-color": "hsl(var(--color-background))",
@@ -48,12 +55,12 @@ const TabsTrigger = styled(Primitives.Tab, {
     outline: "none",
   },
   "&[data-disabled]": {
-    color: "hsl(var(--color-mutedForeground))",
     cursor: "not-allowed",
+    opacity: 0.5,
   },
   "&[data-selected]": {
     backgroundColor: "hsl(var(--color-background))",
-    boxShadow: "var(--shadow-md)",
+    boxShadow: "var(--shadow-sm)",
     color: "hsl(var(--color-foreground))",
   },
 } as React.CSSProperties);
@@ -61,10 +68,25 @@ const TabsTrigger = styled(Primitives.Tab, {
 const TabsContent = styled(Primitives.Panel, {
   name: "TabsContent",
   slot: "content",
-})({
-  outline: "none",
+})<React.ComponentProps<typeof Primitives.Panel>>({
+  boxSizing: "border-box",
+  marginBlockStart: "calc(var(--spacing-unit) * 2)",
+  "&:focus-visible": {
+    outline: "none",
+  },
 });
 
-const TabsIndicator = Primitives.Indicator;
+const TabsIndicator = styled(Primitives.Indicator, {
+  name: "TabsIndicator",
+  slot: "indicator",
+})<React.ComponentProps<typeof Primitives.Indicator>>({
+  backgroundColor: "hsl(var(--color-primary))",
+  borderRadius: "var(--borderRadius-md)",
+  bottom: "var(--active-tab-bottom)",
+  height: "2px",
+  left: "var(--active-tab-left)",
+  position: "absolute",
+  right: "var(--active-tab-right)",
+});
 
 export { Tabs, TabsTrigger, TabsList, TabsContent, TabsIndicator };

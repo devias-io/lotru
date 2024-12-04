@@ -1,22 +1,22 @@
 import * as React from "react";
 import { styled } from "@pigment-css/react";
 
-interface InputRootProps extends Omit<React.ComponentPropsWithoutRef<"input">, "size"> {
-  size_: "sm" | "md" | "lg" | "xl";
-}
-
 const InputRoot = styled("input", {
   name: "InputRoot",
   slot: "root",
-})<InputRootProps>({
+})<
+  Omit<React.ComponentProps<"input">, "size"> & {
+    size: "sm" | "md" | "lg" | "xl";
+  }
+>({
   appearance: "none",
   backgroundColor: "var(--color-background)",
   border: "1px solid hsl(var(--color-border))",
   borderRadius: "var(--borderRadius-md)",
   boxSizing: "border-box",
   color: "hsl(var(--color-foreground))",
-  position: "relative",
   maxWidth: "var(--size-xs)",
+  position: "relative",
   width: "var(--size-full)",
   "&:focus-visible": {
     "--ring-offset-width": "0px",
@@ -47,7 +47,7 @@ const InputRoot = styled("input", {
   },
   variants: [
     {
-      props: { size_: "sm" },
+      props: { size: "sm" },
       style: {
         fontSize: "var(--fontSize-sm)",
         height: "calc(var(--size-unit) * 9)",
@@ -57,7 +57,7 @@ const InputRoot = styled("input", {
       },
     },
     {
-      props: { size_: "md" },
+      props: { size: "md" },
       style: {
         fontSize: "var(--fontSize-md)",
         height: "calc(var(--size-unit) * 10)",
@@ -67,7 +67,7 @@ const InputRoot = styled("input", {
       },
     },
     {
-      props: { size_: "lg" },
+      props: { size: "lg" },
       style: {
         fontSize: "var(--fontSize-md)",
         height: "calc(var(--size-unit) * 11)",
@@ -77,7 +77,7 @@ const InputRoot = styled("input", {
       },
     },
     {
-      props: { size_: "xl" },
+      props: { size: "xl" },
       style: {
         fontSize: "var(--fontSize-lg)",
         height: "calc(var(--size-unit) * 12)",
@@ -89,12 +89,12 @@ const InputRoot = styled("input", {
   ],
 } as React.CSSProperties);
 
-interface InputProps extends Omit<React.ComponentPropsWithoutRef<"input">, "size"> {
-  size?: "sm" | "md" | "lg" | "xl";
-}
-
-const Input = React.forwardRef<HTMLInputElement, InputProps>(({ size = "md", ...props }, ref) => {
-  return <InputRoot ref={ref} size_={size} {...props} />;
-});
+const Input = React.forwardRef<
+  HTMLInputElement,
+  Omit<React.ComponentPropsWithoutRef<"input">, "size"> & {
+    size?: "sm" | "md" | "lg" | "xl";
+  }
+>(({ size = "md", ...props }, ref) => <InputRoot ref={ref} size={size} {...props} />);
+Input.displayName = "Input";
 
 export { Input };

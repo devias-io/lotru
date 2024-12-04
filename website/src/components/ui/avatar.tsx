@@ -2,15 +2,15 @@ import * as React from "react";
 import { styled } from "@pigment-css/react";
 import * as Primitives from "@radix-ui/react-avatar";
 
-interface AvatarRootProps extends React.ComponentPropsWithoutRef<typeof Primitives.Root> {
-  size: "2xs" | "xs" | "sm" | "md" | "lg" | "xl";
-  variant: "rounded" | "squared";
-}
-
 const AvatarRoot = styled(Primitives.Root, {
   name: "AvatarRoot",
   slot: "root",
-})<AvatarRootProps>({
+})<
+  React.ComponentProps<typeof Primitives.Root> & {
+    size: "2xs" | "xs" | "sm" | "md" | "lg" | "xl";
+    variant: "rounded" | "squared";
+  }
+>({
   alignItems: "center",
   backgroundColor: "hsl(var(--color-muted))",
   display: "flex",
@@ -71,10 +71,23 @@ const AvatarRoot = styled(Primitives.Root, {
   ],
 } as React.CSSProperties);
 
+const Avatar = React.forwardRef<
+  React.ElementRef<typeof AvatarRoot>,
+  React.ComponentPropsWithoutRef<typeof Primitives.Root> & {
+    size?: "2xs" | "xs" | "sm" | "md" | "lg" | "xl";
+    variant?: "rounded" | "squared";
+  }
+>(({ children, size = "md", variant = "rounded", ...props }, ref) => (
+  <AvatarRoot ref={ref} size={size} variant={variant} {...props}>
+    {children}
+  </AvatarRoot>
+));
+Avatar.displayName = "Avatar";
+
 const AvatarImage = styled(Primitives.Image, {
   name: "AvatarImage",
   slot: "image",
-})({
+})<React.ComponentProps<typeof Primitives.Image>>({
   height: "var(--size-full)",
   objectFit: "cover",
   width: "var(--size-full)",
@@ -83,7 +96,7 @@ const AvatarImage = styled(Primitives.Image, {
 const AvatarFallback = styled(Primitives.Fallback, {
   name: "AvatarFallback",
   slot: "fallback",
-})({
+})<React.ComponentProps<typeof Primitives.Fallback>>({
   alignItems: "center",
   backgroundColor: "hsl(var(--color-muted))",
   color: "hsl(var(--color-mutedForeground))",
@@ -95,18 +108,4 @@ const AvatarFallback = styled(Primitives.Fallback, {
   width: "var(--size-full)",
 });
 
-interface AvatarProps extends React.ComponentPropsWithoutRef<typeof Primitives.Root> {
-  size?: "2xs" | "xs" | "sm" | "md" | "lg" | "xl";
-  variant?: "rounded" | "squared";
-}
-
-const Avatar = React.forwardRef<React.ElementRef<typeof AvatarRoot>, AvatarProps>(
-  ({ children, size = "md", variant = "rounded", ...props }: AvatarProps, ref) => (
-    <AvatarRoot ref={ref} size={size} variant={variant} {...props}>
-      {children}
-    </AvatarRoot>
-  )
-);
-Avatar.displayName = "Avatar";
-
-export { type AvatarProps, Avatar, AvatarImage, AvatarFallback };
+export { Avatar, AvatarFallback, AvatarImage };

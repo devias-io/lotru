@@ -1,17 +1,17 @@
 import * as React from "react";
 import { styled } from "@pigment-css/react";
 
-interface HeadingRootProps extends React.ComponentPropsWithoutRef<"h1"> {
-  level: "h1" | "h2" | "h3";
-}
-
 const HeadingRoot = styled("h1", {
-  name: "Heading",
+  name: "HeadingRoot",
   slot: "root",
-})<HeadingRootProps>({
+})<
+  React.ComponentProps<"h1"> & {
+    level: "h1" | "h2" | "h3";
+  }
+>({
   boxSizing: "border-box",
   fontFamily: "var(--fontFamily-sans)",
-  margin: 0,
+  marginBlock: 0,
   variants: [
     {
       props: { level: "h1" },
@@ -40,30 +40,22 @@ const HeadingRoot = styled("h1", {
   ],
 });
 
-interface HeadingProps extends React.ComponentPropsWithoutRef<"h1"> {
-  level?: "h1" | "h2" | "h3";
-}
-
-const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
+const Heading = React.forwardRef<
+  HTMLHeadingElement,
+  React.ComponentPropsWithoutRef<"h1"> & {
+    level?: "h1" | "h2" | "h3";
+  }
+>(
   (
     {
-      children,
       /**
        * The heading level which specifies which heading element is used.
        */
       level = "h1",
       ...props
-    }: HeadingProps,
+    },
     ref
-  ) => {
-    const Component = level || "h1";
-
-    return (
-      <HeadingRoot as={Component} ref={ref} level={level} {...props}>
-        {children}
-      </HeadingRoot>
-    );
-  }
+  ) => <HeadingRoot as={level} ref={ref} level={level} {...props} />
 );
 Heading.displayName = "Heading";
 

@@ -1,5 +1,3 @@
-"use client";
-
 import * as React from "react";
 import { css, styled } from "@pigment-css/react";
 import { XIcon } from "lucide-react";
@@ -9,11 +7,9 @@ import { IconButton } from "@/src/components/ui/icon-button";
 const AlertRoot = styled("div", {
   name: "AlertRoot",
   slot: "root",
-})({
+})<React.ComponentProps<"div">>({
   alignItems: "flex-start",
-  borderColor: "hsl(var(--color-border))",
-  borderStyle: "solid",
-  borderWidth: "1px",
+  border: "1px solid hsl(var(--color-border))",
   borderRadius: "var(--borderRadius-lg)",
   boxSizing: "border-box",
   display: "flex",
@@ -25,11 +21,11 @@ const AlertRoot = styled("div", {
 const AlertIcon = styled("div", {
   name: "AlertIcon",
   slot: "icon",
-})({
-  display: "flex",
+})<React.ComponentProps<"div">>({
   alignItems: "center",
-  justifyContent: "center",
+  display: "flex",
   fontSize: "var(--fontSize-lg)",
+  justifyContent: "center",
   "& svg": {
     color: "hsl(var(--color-foreground))",
     flexShrink: 0,
@@ -42,77 +38,76 @@ const AlertIcon = styled("div", {
 const AlertContent = styled("div", {
   name: "AlertContent",
   slot: "content",
-})({
+})<React.ComponentProps<"div">>({
   flexGrow: 1,
 });
 
 const AlertTitle = styled("p", {
   name: "AlertTitle",
   slot: "title",
-})({
+})<React.ComponentProps<"p">>({
   color: "hsl(var(--color-foreground))",
   fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-md)",
   lineHeight: "var(--lineHeight-normal)",
   fontWeight: "var(--fontWeight-medium)",
-  margin: 0,
+  marginBlock: 0,
 });
 
 const AlertDescription = styled("p", {
   name: "AlertTitle",
   slot: "title",
-})({
+})<React.ComponentProps<"p">>({
   color: "hsl(var(--color-mutedForeground))",
   fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
   lineHeight: "var(--lineHeight-normal)",
-  margin: 0,
+  marginBlock: 0,
 });
 
-interface AlertProps extends React.ComponentPropsWithoutRef<"div"> {
-  dismissible?: boolean;
-  variant?: "error" | "success" | "warning" | "info";
-}
-
-const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
-  {
-    children,
-    /**
-     * Whether the alert is dismissible
-     */
-    dismissible = false,
-    /**
-     * The variant of the alert
-     */
-    variant = "info",
-    ...props
-  }: AlertProps,
-  ref
-) {
-  const [dismissed, setDismissed] = React.useState<boolean>(false);
-
-  const handleDismiss = (): void => {
-    setDismissed(true);
-  };
-
-  if (dismissed) {
-    return null;
+const Alert = React.forwardRef<
+  HTMLDivElement,
+  React.ComponentPropsWithoutRef<"div"> & {
+    dismissible?: boolean;
+    onDismiss?: () => void;
+    variant?: "error" | "success" | "warning" | "info";
   }
+>(
+  (
+    {
+      children,
+      /**
+       * Whether the alert is dismissible
+       */
+      dismissible = false,
+      /**
+       * The callback called on dismiss click
+       */
+      onDismiss,
+      /**
+       * The variant of the alert
+       */
+      variant = "info",
+      ...props
+    },
+    ref
+  ) => {
+    return (
+      <AlertRoot ref={ref} {...props}>
+        {children}
+        {dismissible && (
+          <IconButton size="xs" variant="ghost" onClick={onDismiss}>
+            <XIcon
+              className={css({
+                color: "hsl(var(--color-mutedForeground))",
+              })}
+            />
+          </IconButton>
+        )}
+      </AlertRoot>
+    );
+  }
+);
+Alert.displayName = "Alert";
 
-  return (
-    <AlertRoot ref={ref} {...props}>
-      {children}
-      {dismissible && (
-        <IconButton size="xs" variant="ghost" onClick={handleDismiss}>
-          <XIcon
-            className={css({
-              color: "hsl(var(--color-mutedForeground))",
-            })}
-          />
-        </IconButton>
-      )}
-    </AlertRoot>
-  );
-});
-
-export { type AlertProps, Alert, AlertIcon, AlertContent, AlertTitle, AlertDescription };
+export { Alert, AlertIcon, AlertContent, AlertTitle, AlertDescription };

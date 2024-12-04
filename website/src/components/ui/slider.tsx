@@ -5,7 +5,7 @@ import { styled } from "@pigment-css/react";
 const SliderRoot = styled(Primitives.Root, {
   name: "SliderRoot",
   slot: "root",
-})({
+})<React.ComponentProps<typeof Primitives.Root>>({
   userSelect: "none",
   touchAction: "none",
   position: "relative",
@@ -14,7 +14,7 @@ const SliderRoot = styled(Primitives.Root, {
 const SliderTrack = styled(Primitives.Track, {
   name: "SliderTrack",
   slot: "track",
-})({
+})<React.ComponentProps<typeof Primitives.Track>>({
   backgroundColor: "hsl(var(--color-muted))",
   borderRadius: "var(--borderRadius-full)",
   boxSizing: "border-box",
@@ -28,14 +28,14 @@ const SliderTrack = styled(Primitives.Track, {
 const SliderIndicator = styled(Primitives.Indicator, {
   name: "SliderIndicator",
   slot: "indicator",
-})({
+})<React.ComponentProps<typeof Primitives.Indicator>>({
   backgroundColor: "hsl(var(--color-primary))",
 });
 
 const SliderThumb = styled(Primitives.Thumb, {
   name: "SliderThumb",
   slot: "thumb",
-})({
+})<React.ComponentProps<typeof Primitives.Thumb>>({
   backgroundColor: "hsl(var(--color-background))",
   border: "2px solid hsl(var(--color-primary))",
   borderRadius: "var(--borderRadius-full)",
@@ -58,19 +58,19 @@ const SliderThumb = styled(Primitives.Thumb, {
   },
 } as React.CSSProperties);
 
-type SliderProps = React.ComponentPropsWithoutRef<typeof Primitives.Root>;
+const Slider = React.forwardRef<
+  React.ElementRef<typeof SliderRoot>,
+  React.ComponentPropsWithoutRef<typeof Primitives.Root>
+>((props, ref) => (
+  <SliderRoot ref={ref} {...props}>
+    <Primitives.Control>
+      <SliderTrack>
+        <SliderIndicator />
+      </SliderTrack>
+      <SliderThumb />
+    </Primitives.Control>
+  </SliderRoot>
+));
+Slider.displayName = "Slider";
 
-const Slider = React.forwardRef<React.ElementRef<typeof SliderRoot>, SliderProps>(({ ...props }, ref) => {
-  return (
-    <SliderRoot ref={ref} {...props}>
-      <Primitives.Control>
-        <SliderTrack>
-          <SliderIndicator />
-        </SliderTrack>
-        <SliderThumb />
-      </Primitives.Control>
-    </SliderRoot>
-  );
-});
-
-export { type SliderProps, Slider };
+export { Slider };

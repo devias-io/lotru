@@ -169,6 +169,24 @@ export const index: Record<
     }],
     
   },
+  "ui/select": {
+    id: "ui/select",
+    name: "Select",
+    description: "",
+    files: [{
+      path: "ui/select.tsx",
+    }],
+    
+  },
+  "ui/separator": {
+    id: "ui/separator",
+    name: "Separator",
+    description: "",
+    files: [{
+      path: "ui/separator.tsx",
+    }],
+    
+  },
   "ui/sheet": {
     id: "ui/sheet",
     name: "Sheet",
@@ -178,12 +196,12 @@ export const index: Record<
     }],
     
   },
-  "ui/select": {
-    id: "ui/select",
-    name: "Select",
+  "ui/slider": {
+    id: "ui/slider",
+    name: "Slider",
     description: "",
     files: [{
-      path: "ui/select.tsx",
+      path: "ui/slider.tsx",
     }],
     
   },

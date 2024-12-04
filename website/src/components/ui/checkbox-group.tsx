@@ -5,7 +5,7 @@ import { styled } from "@pigment-css/react";
 const CheckboxGroup = styled(Primitives.Root, {
   name: "CheckboxGroup",
   slot: "root",
-})({
+})<React.ComponentProps<typeof Primitives.Root>>({
   display: "flex",
   flexDirection: "column",
   gap: "calc(var(--size-unit) * 2)",

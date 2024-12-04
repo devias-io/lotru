@@ -1,16 +1,16 @@
 import * as React from "react";
 import { styled } from "@pigment-css/react";
 
-interface BadgeRootProps extends React.ComponentPropsWithoutRef<"span"> {
-  rounded: boolean;
-  size: "sm" | "md" | "lg";
-  variant: "solid" | "subtle" | "outline";
-}
-
 const BadgeRoot = styled("span", {
   name: "BadgeRoot",
   slot: "root",
-})<BadgeRootProps>({
+})<
+  React.ComponentProps<"span"> & {
+    rounded: boolean;
+    size: "sm" | "md" | "lg";
+    variant: "solid" | "subtle" | "outline";
+  }
+>({
   alignItems: "center",
   boxSizing: "border-box",
   display: "inline-flex",
@@ -83,13 +83,14 @@ const BadgeRoot = styled("span", {
   ],
 });
 
-interface BadgeProps extends React.ComponentPropsWithoutRef<"span"> {
-  rounded?: boolean;
-  size?: "sm" | "md" | "lg";
-  variant?: "solid" | "subtle" | "outline";
-}
-
-const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
+const Badge = React.forwardRef<
+  HTMLSpanElement,
+  React.ComponentPropsWithoutRef<"span"> & {
+    rounded?: boolean;
+    size?: "sm" | "md" | "lg";
+    variant?: "solid" | "subtle" | "outline";
+  }
+>(
   (
     {
       children,
@@ -106,7 +107,7 @@ const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
        */
       variant = "solid",
       ...props
-    }: BadgeProps,
+    },
     ref
   ) => {
     return (

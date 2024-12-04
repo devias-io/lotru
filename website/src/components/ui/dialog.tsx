@@ -2,22 +2,16 @@ import * as React from "react";
 import * as Primitives from "@base_ui/react/Dialog";
 import { styled } from "@pigment-css/react";
 
-const Dialog = (props: React.ComponentPropsWithoutRef<typeof Primitives.Root>) => {
-  return <Primitives.Root {...props} />;
-};
-Dialog.displayName = "Dialog";
+const Dialog = Primitives.Root;
 
-const DialogTrigger = React.forwardRef<
-  React.ElementRef<typeof Primitives.Trigger>,
-  React.ComponentPropsWithoutRef<typeof Primitives.Trigger>
->(({ ...props }, ref) => {
-  return <Primitives.Trigger ref={ref} {...props} />;
-});
+const DialogTrigger = Primitives.Trigger;
+
+const DialogClose = Primitives.Close;
 
 const DialogOverlay = styled(Primitives.Backdrop, {
   name: "DialogOverlay",
   slot: "overlay",
-})({
+})<React.ComponentProps<typeof Primitives.Backdrop>>({
   backgroundColor: "hsl(var(--color-overlay))",
   inset: 0,
   position: "fixed",
@@ -27,7 +21,7 @@ const DialogOverlay = styled(Primitives.Backdrop, {
 const DialogContent = styled(Primitives.Popup, {
   name: "DialogContent",
   slot: "content",
-})({
+})<React.ComponentProps<typeof Primitives.Popup>>({
   backgroundColor: "hsl(var(--color-surface))",
   borderRadius: "var(--borderRadius-lg)",
   boxShadow: "var(--shadow-xl)",
@@ -48,7 +42,7 @@ const DialogContent = styled(Primitives.Popup, {
 const DialogHeader = styled("div", {
   name: "DialogHeader",
   slot: "header",
-})({
+})<React.ComponentProps<"div">>({
   display: "flex",
   flexDirection: "column",
   gap: "var(--spacing-unit)",
@@ -57,7 +51,7 @@ const DialogHeader = styled("div", {
 const DialogFooter = styled("div", {
   name: "DialogFooter",
   slot: "footer",
-})({
+})<React.ComponentProps<"div">>({
   display: "flex",
   justifyContent: "flex-end",
   gap: "calc(var(--spacing-unit) * 2)",
@@ -66,7 +60,7 @@ const DialogFooter = styled("div", {
 const DialogTitle = styled(Primitives.Title, {
   name: "DialogTitle",
   slot: "title",
-})({
+})<React.ComponentProps<typeof Primitives.Title>>({
   fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-lg)",
   lineHeight: "var(--lineHeight-normal)",
@@ -77,7 +71,7 @@ const DialogTitle = styled(Primitives.Title, {
 const DialogDescription = styled(Primitives.Description, {
   name: "DialogDescription",
   slot: "description",
-})({
+})<React.ComponentProps<typeof Primitives.Description>>({
   color: "hsl(var(--color-mutedForeground))",
   fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
@@ -85,21 +79,14 @@ const DialogDescription = styled(Primitives.Description, {
   marginBlock: 0,
 });
 
-const DialogClose = React.forwardRef<
-  React.ElementRef<typeof Primitives.Close>,
-  React.ComponentPropsWithoutRef<typeof Primitives.Close>
->(({ ...props }, ref) => {
-  return <Primitives.Close ref={ref} {...props} />;
-});
-
 export {
   Dialog,
-  DialogTrigger,
-  DialogOverlay,
-  DialogContent,
   DialogClose,
+  DialogContent,
+  DialogDescription,
   DialogFooter,
   DialogHeader,
+  DialogOverlay,
   DialogTitle,
-  DialogDescription,
+  DialogTrigger,
 };

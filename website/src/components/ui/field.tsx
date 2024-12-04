@@ -2,22 +2,27 @@ import * as React from "react";
 import * as Primitives from "@base_ui/react/Field";
 import { styled } from "@pigment-css/react";
 
-const Field = styled(Primitives.Root)({
+const Field = styled(Primitives.Root, {
+  name: "Field",
+  slot: "root",
+})<React.ComponentProps<typeof Primitives.Root>>({
   display: "flex",
   flexDirection: "column",
   gap: "calc(var(--spacing-unit) * 2)",
 });
 
-interface FieldControlProps extends Primitives.ControlProps {
+const FieldControl = ({
+  children,
+  ...props
+}: Primitives.ControlProps & {
   children: React.ReactElement;
-}
-
-const FieldControl = ({ children, ...props }: FieldControlProps): React.JSX.Element => {
-  return <Primitives.Control render={children} {...props} />;
-};
+}): React.JSX.Element => <Primitives.Control render={children} {...props} />;
 FieldControl.displayName = "FieldControl";
 
-const FieldLabel = styled(Primitives.Label)({
+const FieldLabel = styled(Primitives.Label, {
+  name: "FieldLabel",
+  slot: "label",
+})<React.ComponentProps<typeof Primitives.Label>>({
   color: "hsl(var(--color-foreground))",
   display: "block",
   fontFamily: "var(--fontFamily-sans)",
@@ -26,22 +31,28 @@ const FieldLabel = styled(Primitives.Label)({
   lineHeight: "var(--lineHeight-none)",
 });
 
-const FieldDescription = styled(Primitives.Description)({
+const FieldDescription = styled(Primitives.Description, {
+  name: "FieldDescription",
+  slot: "description",
+})<React.ComponentProps<typeof Primitives.Description>>({
   color: "hsl(var(--color-mutedForeground))",
   display: "block",
   fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
   lineHeight: "var(--lineHeight-normal)",
-  margin: 0,
+  marginBlock: 0,
 });
 
-const FieldError = styled(Primitives.Error)({
+const FieldError = styled(Primitives.Error, {
+  name: "FieldError",
+  slot: "error",
+})<React.ComponentProps<typeof Primitives.Error>>({
   color: "hsl(var(--color-danger))",
   display: "block",
   fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
   lineHeight: "var(--lineHeight-normal)",
-  margin: 0,
+  marginBlock: 0,
 });
 
 const FieldValidity = Primitives.Validity;

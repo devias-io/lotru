@@ -2,15 +2,12 @@ import * as React from "react";
 import * as Primitives from "@base_ui/react/Progress";
 import { styled } from "@pigment-css/react";
 
-const ProgressRoot = styled(Primitives.Root, {
-  name: "ProgressRoot",
-  slot: "root",
-})({});
+const ProgressRoot = Primitives.Root;
 
 const ProgressTrack = styled(Primitives.Track, {
   name: "ProgressTrack",
   slot: "track",
-})({
+})<React.ComponentProps<typeof Primitives.Track>>({
   backgroundColor: "hsl(var(--color-muted))",
   borderRadius: "var(--borderRadius-full)",
   boxSizing: "border-box",
@@ -24,7 +21,7 @@ const ProgressTrack = styled(Primitives.Track, {
 const ProgressIndicator = styled(Primitives.Indicator, {
   name: "ProgressIndicator",
   slot: "indicator",
-})({
+})<React.ComponentProps<typeof Primitives.Indicator>>({
   backgroundColor: "hsl(var(--color-primary))",
   boxSizing: "border-box",
   position: "absolute",
@@ -33,16 +30,16 @@ const ProgressIndicator = styled(Primitives.Indicator, {
   transitionTimingFunction: "var(--easing-default)",
 });
 
-type ProgressProps = React.ComponentPropsWithoutRef<typeof Primitives.Root>;
+const Progress = React.forwardRef<
+  React.ElementRef<typeof ProgressRoot>,
+  React.ComponentPropsWithoutRef<typeof Primitives.Root>
+>((props, ref) => (
+  <ProgressRoot ref={ref} {...props}>
+    <ProgressTrack>
+      <ProgressIndicator />
+    </ProgressTrack>
+  </ProgressRoot>
+));
+Progress.displayName = "Progress";
 
-const Progress = React.forwardRef<React.ElementRef<typeof ProgressRoot>, ProgressProps>(({ ...props }, ref) => {
-  return (
-    <ProgressRoot ref={ref} {...props}>
-      <ProgressTrack>
-        <ProgressIndicator />
-      </ProgressTrack>
-    </ProgressRoot>
-  );
-});
-
-export { type ProgressProps, Progress };
+export { Progress };

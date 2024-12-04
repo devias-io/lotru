@@ -11,58 +11,86 @@ const TableRoot = styled("table", {
   slot: "root",
 })({
   borderCollapse: "collapse",
+  captionSide: "bottom",
+  textIndent: "0",
   width: "var(--size-full)",
 });
 
 const TableHeader = styled("thead", {
   name: "TableHeader",
   slot: "header",
-})({
-  backgroundColor: "hsl(var(--color-muted))",
-});
+})({});
 
 const TableBody = styled("tbody", {
   name: "TableBody",
   slot: "body",
-})({});
+})({
+  "& > tr:last-child": {
+    borderBottom: "none",
+  },
+});
+
+const TableFooter = styled("tfoot", {
+  name: "TableFooter",
+  slot: "footer",
+})({
+  backgroundColor: "hsl(var(--color-muted) / 50%)",
+  borderTop: "1px solid hsl(var(--color-border))",
+  fontWeight: "var(--fontWeight-medium)",
+  "&:last-child > tr": {
+    borderBottom: "none",
+  },
+});
+
+const TableCaption = styled("caption", {
+  name: "TableCaption",
+  slot: "caption",
+})({
+  color: "hsl(var(--color-mutedForeground))",
+  fontFamily: "var(--fontFamily-sans)",
+  fontSize: "var(--fontSize-sm)",
+  lineHeight: "var(--lineHeight-normal)",
+  padding: "calc(var(--spacing-unit) * 4)",
+  textAlign: "center",
+  verticalAlign: "middle",
+});
 
 const TableRow = styled("tr", {
   name: "TableRow",
   slot: "row",
 })({
   borderBottom: "1px solid hsl(var(--color-border))",
-  "&:last-child": {
-    borderBottom: "none",
+  "&:hover": {
+    backgroundColor: "hsl(var(--color-muted) / 50%)",
   },
+});
+
+const TableHeaderCell = styled("th", {
+  name: "TableHeaderCell",
+  slot: "headerCell",
+})({
+  color: "hsl(var(--color-mutedForeground))",
+  fontFamily: "var(--fontFamily-sans)",
+  fontSize: "var(--fontSize-sm)",
+  fontWeight: "var(--fontWeight-medium)",
+  height: "calc(var(--spacing-unit) * 12)",
+  lineHeight: "var(--lineHeight-normal)",
+  paddingInline: "calc(var(--spacing-unit) * 4)",
+  textAlign: "left",
+  verticalAlign: "middle",
 });
 
 const TableCell = styled("td", {
   name: "TableCell",
   slot: "cell",
 })({
-  color: "hsl(var(--color-mutedForeground))",
-  fontFamily: "var(--fontFamily-sans)",
-  fontSize: "var(--fontSize-sm)",
-  height: "calc(var(--spacing-unit) * 12)",
-  paddingInlineStart: "calc(var(--spacing-unit) * 2)",
-  paddingBlockEnd: "1px",
-  paddingBlockStart: "1px",
-  textAlign: "left",
-  verticalAlign: "middle",
-  "&:first-child": {
-    paddingLeft: "calc(var(--spacing-unit) * 6)",
-  },
-});
-
-const TableHeaderCell = styled(TableCell, {
-  name: "TableHeaderCell",
-  slot: "headerCell",
-})({
   color: "hsl(var(--color-foreground))",
   fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
-  fontWeight: "var(--fontWeight-medium)",
-  height: "calc(var(--spacing-unit) * 12)",
+  lineHeight: "var(--lineHeight-normal)",
+  padding: "calc(var(--spacing-unit) * 4)",
+  textAlign: "left",
+  verticalAlign: "middle",
 });
 
 interface TableProps extends React.ComponentPropsWithoutRef<"table"> {}
@@ -178,6 +206,16 @@ const TablePagination = React.forwardRef<HTMLDivElement, TablePaginationProps>(
   }
 );
 
-export { Table, TableHeader, TableBody, TableRow, TableCell, TableHeaderCell, TablePagination };
-
-export type { TableProps, TablePaginationProps };
+export {
+  type TableProps,
+  type TablePaginationProps,
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableFooter,
+  TableHeader,
+  TableHeaderCell,
+  TablePagination,
+  TableRow,
+};

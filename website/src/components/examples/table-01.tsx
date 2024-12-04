@@ -1,7 +1,16 @@
 import * as React from "react";
 import { css } from "@pigment-css/react";
 
-import { Table, TableBody, TableCell, TableHeader, TableHeaderCell, TableRow } from "@/src/components/ui/table";
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableFooter,
+  TableHeader,
+  TableHeaderCell,
+  TableRow,
+} from "@/src/components/ui/table";
 
 type Row = {
   id: string;
@@ -19,7 +28,7 @@ const rows: Row[] = [
     customer: "Jill Miller",
     email: "32690@gmail.com",
     amount: 493,
-    currency: "EUR",
+    currency: "USD",
   },
   {
     id: "order_46487",
@@ -27,7 +36,7 @@ const rows: Row[] = [
     customer: "Sarah Garcia",
     email: "86379@gmail.com",
     amount: 113,
-    currency: "JPY",
+    currency: "USD",
   },
   {
     id: "order_8169",
@@ -43,7 +52,7 @@ const rows: Row[] = [
     customer: "Elvis Jones",
     email: "52860@gmail.com",
     amount: 840,
-    currency: "GBP",
+    currency: "USD",
   },
   {
     id: "order_61121",
@@ -51,20 +60,20 @@ const rows: Row[] = [
     customer: "Charles Rodriguez",
     email: "45675@gmail.com",
     amount: 304,
-    currency: "GBP",
+    currency: "USD",
   },
 ];
 
 export default function TableExample(): JSX.Element {
   return (
-    <Table className={css({ maxWidth: "800px", marginLeft: "auto", marginRight: "auto", width: "var(--size-full)" })}>
+    <Table className={css({ marginInline: "auto", maxWidth: "var(--size-3xl)" })}>
+      <TableCaption>A list of recent orders</TableCaption>
       <TableHeader>
         <TableRow>
           <TableHeaderCell>#</TableHeaderCell>
           <TableHeaderCell>Customer</TableHeaderCell>
           <TableHeaderCell>Email</TableHeaderCell>
           <TableHeaderCell className={css({ textAlign: "right" })}>Amount</TableHeaderCell>
-          <TableHeaderCell></TableHeaderCell>
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -80,11 +89,16 @@ export default function TableExample(): JSX.Element {
                   currency: order.currency,
                 }).format(order.amount)}
               </TableCell>
-              <TableCell className="text-ui-fg-muted">{order.currency}</TableCell>
             </TableRow>
           );
         })}
       </TableBody>
+      <TableFooter>
+        <TableRow>
+          <TableCell colSpan={3}>Total</TableCell>
+          <TableCell className={css({ textAlign: "right" })}>$2,500.00</TableCell>
+        </TableRow>
+      </TableFooter>
     </Table>
   );
 }

@@ -3,7 +3,6 @@ import * as React from "react";
 export function Logo({ height = 32, width = 93 }: { height?: number; width?: number }): React.JSX.Element {
   return (
     <svg
-      className="logo"
       width={width}
       height={height}
       viewBox="0 0 93 32"

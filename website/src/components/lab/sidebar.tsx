@@ -3,9 +3,9 @@
 import * as React from "react";
 import { css, styled } from "@pigment-css/react";
 
-import { Sheet, SheetContent, SheetOverlay } from "@/src/components/ui/sheet";
-import { useIsMobile } from "@/src/hooks/use-mobile";
 import { cn } from "@/src/lib/cn";
+import { useIsMobile } from "@/src/hooks/use-mobile";
+import { Sheet, SheetContent, SheetOverlay } from "@/src/components/ui/sheet";
 
 type SidebarContextValue = {
   openMobile: boolean;
@@ -16,15 +16,15 @@ const SidebarContext = React.createContext<SidebarContextValue | null>(null);
 
 export const useSidebarContext = () => {
   const context = React.useContext(SidebarContext);
+
   if (!context) {
     throw new Error("useSidebarContext must be used within a SidebarProvider");
   }
+
   return context;
 };
 
-type SidebarProviderProps = React.PropsWithChildren<{}>;
-
-export function SidebarProvider({ children }: SidebarProviderProps): React.JSX.Element {
+export function SidebarProvider({ children }: React.PropsWithChildren): React.JSX.Element {
   const [open, setOpen] = React.useState<boolean>(false);
 
   return (
@@ -35,7 +35,7 @@ export function SidebarProvider({ children }: SidebarProviderProps): React.JSX.E
 const SidebarContent = styled("div", {
   name: "SidebarContent",
   slot: "content",
-})({
+})<React.ComponentProps<"div">>({
   boxSizing: "border-box",
   display: "flex",
   flexDirection: "column",
@@ -46,7 +46,7 @@ const SidebarContent = styled("div", {
 const SidebarHeader = styled("div", {
   name: "SidebarHeader",
   slot: "header",
-})({
+})<React.ComponentProps<"div">>({
   backgroundColor: "hsl(var(--color-surface))",
   left: 0,
   position: "sticky",
@@ -57,7 +57,7 @@ const SidebarHeader = styled("div", {
 const SidebarBody = styled("div", {
   name: "SidebarBody",
   slot: "body",
-})({
+})<React.ComponentProps<"div">>({
   backgroundColor: "hsl(var(--color-surface))",
   display: "flex",
   flexDirection: "column",
@@ -69,7 +69,7 @@ const SidebarBody = styled("div", {
 const SidebarFooter = styled("div", {
   name: "SidebarFooter",
   slot: "footer",
-})({
+})<React.ComponentProps<"div">>({
   backgroundColor: "hsl(var(--color-surface))",
   bottom: 0,
   left: 0,
@@ -80,7 +80,7 @@ const SidebarFooter = styled("div", {
 const SidebarGroup = styled("div", {
   name: "MenuGroup",
   slot: "group",
-})({
+})<React.ComponentProps<"div">>({
   display: "flex",
   flexDirection: "column",
   paddingBlock: "calc(var(--spacing-unit) * 3)",
@@ -89,7 +89,7 @@ const SidebarGroup = styled("div", {
 const SidebarGroupLabel = styled("div", {
   name: "MenuGroupLabel",
   slot: "label",
-})({
+})<React.ComponentProps<"div">>({
   color: "hsl(var(--color-foreground))",
   fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
@@ -99,12 +99,12 @@ const SidebarGroupLabel = styled("div", {
 const SidebarGroupContent = styled("div", {
   name: "MenuGroupContent",
   slot: "content",
-})({});
+})<React.ComponentProps<"div">>({});
 
 const SidebarMenu = styled("div", {
   name: "SidebarMenu",
   slot: "menu",
-})({
+})<React.ComponentProps<"div">>({
   display: "flex",
   flexDirection: "column",
 });
@@ -112,7 +112,7 @@ const SidebarMenu = styled("div", {
 const SidebarMenuItem = styled("div", {
   name: "SidebarMenuItem",
   slot: "item",
-})({
+})<React.ComponentProps<"div">>({
   display: "flex",
 });
 
@@ -120,7 +120,7 @@ const SidebarMenuButton = styled("button", {
   name: "SidebarMenuButton",
   slot: "button",
   shouldForwardProp: (prop) => prop !== "active",
-})<{ active?: boolean }>({
+})<React.ComponentProps<"button"> & { active?: boolean }>({
   appearance: "none",
   background: "transparent",
   border: "none",
@@ -155,7 +155,6 @@ const SidebarMenuButton = styled("button", {
 });
 
 interface SidebarProps extends React.ComponentPropsWithoutRef<"aside"> {
-  children: React.ReactNode;
   side?: "left" | "right";
 }
 
@@ -207,7 +206,6 @@ function Sidebar({ children, className, side = "left" }: SidebarProps): React.JS
 
 export {
   type SidebarContextValue,
-  type SidebarProviderProps,
   type SidebarProps,
   Sidebar,
   SidebarContent,

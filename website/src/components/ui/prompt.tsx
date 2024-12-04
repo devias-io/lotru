@@ -25,10 +25,9 @@ const usePromptContext = () => {
 const PromptProvider = ({
   variant,
   children,
-}: {
-  children: React.ReactNode;
+}: React.PropsWithChildren<{
   variant: PromptVariant;
-}): React.JSX.Element => <PromptContext.Provider value={{ variant }}>{children}</PromptContext.Provider>;
+}>): React.JSX.Element => <PromptContext.Provider value={{ variant }}>{children}</PromptContext.Provider>;
 PromptProvider.displayName = "PromptProvider";
 
 const Prompt = ({
@@ -37,10 +36,9 @@ const Prompt = ({
    */
   variant = "danger",
   ...props
-}: {
-  children: React.ReactNode;
+}: React.PropsWithChildren<{
   variant?: PromptVariant;
-}): React.JSX.Element => (
+}>): React.JSX.Element => (
   <PromptProvider variant={variant}>
     <Primitives.Root {...props} />
   </PromptProvider>
@@ -123,22 +121,19 @@ const PromptDescription = styled(Primitives.Description, {
 
 const PromptAction = React.forwardRef<
   HTMLButtonElement,
-  {
-    children: React.ReactNode;
+  React.PropsWithChildren<{
     type?: "button" | "submit" | "reset";
-  }
+  }>
 >(({ children, type, ...props }, ref) => {
-  const _ = usePromptContext();
-
   return <Primitives.Close ref={ref} render={<Button type={type}>{children}</Button>} {...props} />;
 });
+PromptAction.displayName = "PromptAction";
 
 const PromptCancel = React.forwardRef<
   HTMLButtonElement,
-  {
-    children: React.ReactNode;
+  React.PropsWithChildren<{
     type?: "button" | "submit" | "reset";
-  }
+  }>
 >(({ children, ...props }, ref) => (
   <Primitives.Close ref={ref} render={<Button variant="ghost">{children}</Button>} {...props} />
 ));
@@ -155,4 +150,5 @@ export {
   PromptDescription,
   PromptAction,
   PromptCancel,
+  usePromptContext,
 };

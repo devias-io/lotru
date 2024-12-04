@@ -71,7 +71,7 @@ export function GlobalTopbar(): React.JSX.Element {
         </Stack>
         <Stack alignItems="center" justifyContent="flex-end" direction="row" gap={3}>
           <ThemeSwitch />
-          <a href="https://github.com/devias-io/lotru" target="_blank">
+          <a href="https://github.com/devias-io/lotru" target="_blank" rel="noreferrer">
             <IconButton variant="ghost">
               <GithubIcon />
             </IconButton>

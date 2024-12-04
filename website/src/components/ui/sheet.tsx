@@ -135,8 +135,8 @@ const SheedHeaderClose = styled("button", {
 const SheetHeader = React.forwardRef<
   React.ElementRef<typeof SheetHeaderRoot>,
   React.ComponentPropsWithoutRef<typeof SheetHeaderRoot>
->(({ children, className, ...props }, ref) => (
-  <SheetHeaderRoot ref={ref} className={className} {...props}>
+>(({ children, ...props }, ref) => (
+  <SheetHeaderRoot ref={ref} {...props}>
     {children}
     <Primitives.Close
       render={

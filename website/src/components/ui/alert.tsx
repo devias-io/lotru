@@ -70,7 +70,6 @@ const Alert = React.forwardRef<
   React.ComponentPropsWithoutRef<"div"> & {
     dismissible?: boolean;
     onDismiss?: () => void;
-    variant?: "error" | "success" | "warning" | "info";
   }
 >(
   (
@@ -84,10 +83,6 @@ const Alert = React.forwardRef<
        * The callback called on dismiss click
        */
       onDismiss,
-      /**
-       * The variant of the alert
-       */
-      variant = "info",
       ...props
     },
     ref

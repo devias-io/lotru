@@ -133,11 +133,3 @@ export const groups: Group[] = [
     ],
   },
 ];
-
-function startsWithMatch(href: string): (pathname: string) => boolean {
-  return (pathname: string) => pathname.startsWith(href);
-}
-
-function exactMatch(href: string): (pathname: string) => boolean {
-  return (pathname: string) => pathname === href;
-}

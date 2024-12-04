@@ -6,9 +6,12 @@ import { css } from "@pigment-css/react";
 import { cn } from "@/src/lib/cn";
 import { Button } from "@/src/components/ui/button";
 
-export interface CodeBlockWrapperProps extends React.HTMLAttributes<HTMLDivElement> {}
-
-export function CodeBlockWrapper({ children, className, style, ...props }: CodeBlockWrapperProps): React.JSX.Element {
+export function CodeBlockWrapper({
+  children,
+  className,
+  style,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>): React.JSX.Element {
   const [isOpened, setIsOpened] = React.useState<boolean>(false);
 
   return (

@@ -24,7 +24,7 @@ export default function DialogExample(): React.JSX.Element {
       <DialogContent className={css({ maxWidth: "425px" })}>
         <DialogHeader>
           <DialogTitle>Edit Profile</DialogTitle>
-          <DialogDescription>Make changes to your profile here. Click save when you're done.</DialogDescription>
+          <DialogDescription>Make changes to your profile here. Click save when you&apos;re done.</DialogDescription>
         </DialogHeader>
         <div
           className={css({

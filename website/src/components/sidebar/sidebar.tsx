@@ -1,5 +1,6 @@
 "use client";
 
+import * as React from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { css } from "@pigment-css/react";

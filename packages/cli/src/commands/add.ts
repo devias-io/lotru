@@ -24,7 +24,11 @@ export const add = new Command()
   .description("add a component to your project")
   .argument("[components...]", "the components to add or a url to the component.")
   .option("-a, --all", "install all ui components.", false)
-  .option("-c, --cwd <cwd>", "the working directory. defaults to the current directory.", process.cwd())
+  .option(
+    "-c, --cwd <cwd>",
+    "the working directory. defaults to the current directory.",
+    process.cwd()
+  )
   .option("-y, --yes", "skip confirmation prompt.", false)
   .option("-o, --overwrite", "overwrite existing files.", false)
   .option("-s, --silent", "mute output.", false)

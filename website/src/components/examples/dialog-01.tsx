@@ -24,7 +24,9 @@ export default function DialogExample(): React.JSX.Element {
       <DialogContent className={css({ maxWidth: "425px" })}>
         <DialogHeader>
           <DialogTitle>Edit Profile</DialogTitle>
-          <DialogDescription>Make changes to your profile here. Click save when you&apos;re done.</DialogDescription>
+          <DialogDescription>
+            Make changes to your profile here. Click save when you&apos;re done.
+          </DialogDescription>
         </DialogHeader>
         <div
           className={css({
@@ -33,11 +35,23 @@ export default function DialogExample(): React.JSX.Element {
             paddingBlock: "calc(var(--spacing-unit) * 3)",
           })}
         >
-          <Field className={css({ alignItems: "center", display: "grid", gridTemplateColumns: "1fr 3fr" })}>
+          <Field
+            className={css({
+              alignItems: "center",
+              display: "grid",
+              gridTemplateColumns: "1fr 3fr",
+            })}
+          >
             <FieldLabel className={css({ textAlign: "right" })}>Name</FieldLabel>
             <Input defaultValue="John Doe" />
           </Field>
-          <Field className={css({ alignItems: "center", display: "grid", gridTemplateColumns: "1fr 3fr" })}>
+          <Field
+            className={css({
+              alignItems: "center",
+              display: "grid",
+              gridTemplateColumns: "1fr 3fr",
+            })}
+          >
             <FieldLabel className={css({ textAlign: "right" })}>Username</FieldLabel>
             <Input defaultValue="@john.doe" />
           </Field>

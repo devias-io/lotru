@@ -231,7 +231,13 @@ const Button = React.forwardRef<
     };
 
     return (
-      <ButtonRoot ref={ref} disabled={disabled || isLoading} size={size} variant={variant} {...props}>
+      <ButtonRoot
+        ref={ref}
+        disabled={disabled || isLoading}
+        size={size}
+        variant={variant}
+        {...props}
+      >
         {renderInner()}
       </ButtonRoot>
     );

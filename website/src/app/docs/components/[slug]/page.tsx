@@ -32,12 +32,20 @@ export default async function Page({ params }: PageProps): Promise<React.JSX.Ele
         },
       })}
     >
-      <div className={css({ display: "flex", flexDirection: "column", gap: "calc(var(--spacing-unit) * 2)" })}>
+      <div
+        className={css({
+          display: "flex",
+          flexDirection: "column",
+          gap: "calc(var(--spacing-unit) * 2)",
+        })}
+      >
         <Text size="3xl" weight="bold">
           {component.title}
         </Text>
         {component.description ? (
-          <Text className={css({ color: "hsl(var(--color-mutedForeground))" })}>{component.description}</Text>
+          <Text className={css({ color: "hsl(var(--color-mutedForeground))" })}>
+            {component.description}
+          </Text>
         ) : null}
       </div>
       <div>

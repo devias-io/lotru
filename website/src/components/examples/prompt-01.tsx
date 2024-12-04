@@ -23,8 +23,8 @@ export default function PromptExample(): React.JSX.Element {
         <PromptHeader>
           <PromptTitle>Are you absolutely sure?</PromptTitle>
           <PromptDescription>
-            This action cannot be undone. This will permanently delete your account and remove your data from our
-            servers.
+            This action cannot be undone. This will permanently delete your account and remove your
+            data from our servers.
           </PromptDescription>
         </PromptHeader>
         <PromptFooter>

@@ -28,9 +28,12 @@ export async function updateDependencies(
     ...opts,
   };
 
-  const dependenciesSpinner = spinner(`Installing ${options.dev ? "devDependencies" : "dependencies"}.`, {
-    silent: options.silent,
-  }).start();
+  const dependenciesSpinner = spinner(
+    `Installing ${options.dev ? "devDependencies" : "dependencies"}.`,
+    {
+      silent: options.silent,
+    }
+  ).start();
 
   const packageManager = await getPackageManager(config.resolvedPaths.cwd);
 

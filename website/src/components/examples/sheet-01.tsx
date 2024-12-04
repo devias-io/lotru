@@ -23,7 +23,9 @@ export default function SheetExample(): React.JSX.Element {
       <SheetContent side="right">
         <SheetHeader>
           <SheetTitle>Edit Profile</SheetTitle>
-          <SheetDescription>Make changes to your profile here. Click save when you&apos;re done.</SheetDescription>
+          <SheetDescription>
+            Make changes to your profile here. Click save when you&apos;re done.
+          </SheetDescription>
         </SheetHeader>
         <div
           className={css({
@@ -32,11 +34,23 @@ export default function SheetExample(): React.JSX.Element {
             paddingBlock: "calc(var(--spacing-unit) * 4)",
           })}
         >
-          <Field className={css({ alignItems: "center", display: "grid", gridTemplateColumns: "1fr 3fr" })}>
+          <Field
+            className={css({
+              alignItems: "center",
+              display: "grid",
+              gridTemplateColumns: "1fr 3fr",
+            })}
+          >
             <FieldLabel className={css({ textAlign: "right" })}>Name</FieldLabel>
             <Input defaultValue="John Doe" />
           </Field>
-          <Field className={css({ alignItems: "center", display: "grid", gridTemplateColumns: "1fr 3fr" })}>
+          <Field
+            className={css({
+              alignItems: "center",
+              display: "grid",
+              gridTemplateColumns: "1fr 3fr",
+            })}
+          >
             <FieldLabel className={css({ textAlign: "right" })}>Username</FieldLabel>
             <Input defaultValue="@john.doe" />
           </Field>

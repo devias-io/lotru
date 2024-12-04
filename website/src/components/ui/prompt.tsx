@@ -27,7 +27,9 @@ const PromptProvider = ({
   children,
 }: React.PropsWithChildren<{
   variant: PromptVariant;
-}>): React.JSX.Element => <PromptContext.Provider value={{ variant }}>{children}</PromptContext.Provider>;
+}>): React.JSX.Element => (
+  <PromptContext.Provider value={{ variant }}>{children}</PromptContext.Provider>
+);
 PromptProvider.displayName = "PromptProvider";
 
 const Prompt = ({
@@ -135,7 +137,7 @@ const PromptCancel = React.forwardRef<
     type?: "button" | "submit" | "reset";
   }>
 >(({ children, ...props }, ref) => (
-  <Primitives.Close ref={ref} render={<Button variant="ghost">{children}</Button>} {...props} />
+  <Primitives.Close ref={ref} render={<Button variant="outline">{children}</Button>} {...props} />
 ));
 PromptCancel.displayName = "PromptCancel";
 

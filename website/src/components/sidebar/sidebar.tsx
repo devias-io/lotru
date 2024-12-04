@@ -75,7 +75,11 @@ export function GlobalSidebar(): React.JSX.Element {
                     return (
                       <SidebarMenuItem key={item.label}>
                         <Link
-                          className={css({ display: "flex", flexGrow: 1, textDecoration: "none" })}
+                          className={css({
+                            display: "flex",
+                            flexGrow: 1,
+                            textDecoration: "none",
+                          })}
                           href={item.href}
                           prefetch={false}
                           onClick={() => setOpenMobile(false)}

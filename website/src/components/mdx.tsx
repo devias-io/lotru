@@ -171,7 +171,10 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     Steps,
     Step,
     Tabs,
-    TabsList: ({ className, ...props }: React.ComponentProps<typeof TabsList>): React.JSX.Element => (
+    TabsList: ({
+      className,
+      ...props
+    }: React.ComponentProps<typeof TabsList>): React.JSX.Element => (
       <TabsList
         className={cn(
           css({
@@ -187,7 +190,10 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {...props}
       />
     ),
-    TabsTrigger: ({ className, ...props }: React.ComponentProps<typeof TabsTrigger>): React.JSX.Element => (
+    TabsTrigger: ({
+      className,
+      ...props
+    }: React.ComponentProps<typeof TabsTrigger>): React.JSX.Element => (
       <TabsTrigger
         className={cn(
           css({
@@ -201,7 +207,10 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       />
     ),
     TabsContent,
-    TabsIndicator: ({ className, ...props }: React.ComponentProps<typeof TabsIndicator>): React.JSX.Element => (
+    TabsIndicator: ({
+      className,
+      ...props
+    }: React.ComponentProps<typeof TabsIndicator>): React.JSX.Element => (
       <TabsIndicator
         className={cn(
           css({

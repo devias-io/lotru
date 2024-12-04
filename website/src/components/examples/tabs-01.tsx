@@ -2,7 +2,14 @@ import * as React from "react";
 import { css } from "@pigment-css/react";
 
 import { Button } from "@/src/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/src/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/src/components/ui/card";
 import { Field, FieldLabel } from "@/src/components/ui/field";
 import { Input } from "@/src/components/ui/input";
 import { Stack } from "@/src/components/ui/stack";
@@ -11,7 +18,12 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/src/components/ui/ta
 export default function TabsExample(): React.JSX.Element {
   return (
     <Tabs defaultValue="account" className={css({ width: "400px" })}>
-      <TabsList className={css({ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))" })}>
+      <TabsList
+        className={css({
+          display: "grid",
+          gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+        })}
+      >
         <TabsTrigger value="account">Account</TabsTrigger>
         <TabsTrigger value="password">Password</TabsTrigger>
       </TabsList>
@@ -19,7 +31,9 @@ export default function TabsExample(): React.JSX.Element {
         <Card>
           <CardHeader>
             <CardTitle>Account</CardTitle>
-            <CardDescription>Make changes to your account here. Click save when you&apos;re done.</CardDescription>
+            <CardDescription>
+              Make changes to your account here. Click save when you&apos;re done.
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <Stack gap={2}>
@@ -42,7 +56,9 @@ export default function TabsExample(): React.JSX.Element {
         <Card>
           <CardHeader>
             <CardTitle>Password</CardTitle>
-            <CardDescription>Change your password here. After saving, you&apos;ll be logged out.</CardDescription>
+            <CardDescription>
+              Change your password here. After saving, you&apos;ll be logged out.
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <Stack gap={2}>

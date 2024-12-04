@@ -201,7 +201,13 @@ const IconButton = React.forwardRef<
     };
 
     return (
-      <IconButtonRoot ref={ref} variant={variant} size={size} disabled={disabled || isLoading} {...props}>
+      <IconButtonRoot
+        ref={ref}
+        variant={variant}
+        size={size}
+        disabled={disabled || isLoading}
+        {...props}
+      >
         {renderInner()}
       </IconButtonRoot>
     );

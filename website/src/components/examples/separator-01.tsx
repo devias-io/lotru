@@ -17,7 +17,12 @@ export default function SeparatorExample(): React.JSX.Element {
         </Text>
       </Stack>
       <Separator />
-      <Stack alignItems="center" direction="row" gap={4} className={css({ height: "calc(var(--size-unit) * 5)" })}>
+      <Stack
+        alignItems="center"
+        direction="row"
+        gap={4}
+        className={css({ height: "calc(var(--size-unit) * 5)" })}
+      >
         <Text size="sm">Blog</Text>
         <Separator orientation="vertical" />
         <Text size="sm">Docs</Text>

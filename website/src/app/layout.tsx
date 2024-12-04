@@ -20,7 +20,12 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps): React.JSX.Element {
   return (
-    <html className={cn(fontSans.variable, fontMono.variable)} dir="ltr" lang="en" suppressHydrationWarning>
+    <html
+      className={cn(fontSans.variable, fontMono.variable)}
+      dir="ltr"
+      lang="en"
+      suppressHydrationWarning
+    >
       <body
         className={css(({ theme }) => ({
           "-webkit-font-smoothing": "antialiased",

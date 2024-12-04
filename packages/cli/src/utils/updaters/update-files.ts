@@ -10,7 +10,11 @@ import { RegistryComponent, registryFileSchema } from "@/src/utils/registry/sche
 import { spinner } from "@/src/utils/spinner";
 import { transform, transformImport } from "@/src/utils/transformer";
 
-function getRegistryItemFileTargetPath(file: z.infer<typeof registryFileSchema>, config: Config, override?: string) {
+function getRegistryItemFileTargetPath(
+  file: z.infer<typeof registryFileSchema>,
+  config: Config,
+  override?: string
+) {
   if (override) {
     return override;
   }
@@ -58,7 +62,9 @@ export async function updateFiles(
     ...opts,
   };
 
-  const filesCreatedSpinner = spinner(`Updating files.`, { silent: options.silent }).start();
+  const filesCreatedSpinner = spinner(`Updating files.`, {
+    silent: options.silent,
+  }).start();
 
   const filesCreated = [];
   const filesUpdated = [];
@@ -120,7 +126,9 @@ export async function updateFiles(
   }
 
   if (filesCreated.length) {
-    filesCreatedSpinner.succeed(`Created ${filesCreated.length} ${filesCreated.length === 1 ? "file" : "files"}:`);
+    filesCreatedSpinner.succeed(
+      `Created ${filesCreated.length} ${filesCreated.length === 1 ? "file" : "files"}:`
+    );
 
     if (!options.silent) {
       for (const file of filesCreated) {

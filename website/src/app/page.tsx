@@ -64,7 +64,13 @@ export default function Page(): React.JSX.Element {
                 })}
               >
                 <StarsIcon color="hsl(var(--color-mutedForeground))" size={16} />
-                <Text className={css({ color: "hsl(var(--color-mutedForeground))" })} size="xs" weight="medium">
+                <Text
+                  className={css({
+                    color: "hsl(var(--color-mutedForeground))",
+                  })}
+                  size="xs"
+                  weight="medium"
+                >
                   New components every week
                 </Text>
               </div>

@@ -19,7 +19,9 @@ export async function addComponents(
     ...opts,
   };
 
-  const treeSpinner = spinner(`Checking registry.`, { silent: options.silent }).start();
+  const treeSpinner = spinner(`Checking registry.`, {
+    silent: options.silent,
+  }).start();
 
   const tree = await resolveRegistryComponentsTree(components, config);
 

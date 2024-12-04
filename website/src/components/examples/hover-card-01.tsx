@@ -3,14 +3,21 @@ import { css } from "@pigment-css/react";
 import { CalendarDaysIcon } from "lucide-react";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/src/components/ui/avatar";
-import { HoverCard, HoverCardContent, HoverCardPositioner, HoverCardTrigger } from "@/src/components/ui/hover-card";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardPositioner,
+  HoverCardTrigger,
+} from "@/src/components/ui/hover-card";
 import { Stack } from "@/src/components/ui/stack";
 import { Text } from "@/src/components/ui/text";
 
 export default function HoverCardDemo() {
   return (
     <HoverCard>
-      <HoverCardTrigger render={<Text className={css({ textDecoration: "underline" })}>@nextjs</Text>} />
+      <HoverCardTrigger
+        render={<Text className={css({ textDecoration: "underline" })}>@nextjs</Text>}
+      />
       <HoverCardPositioner side="bottom">
         <HoverCardContent className={css({ width: "calc(var(--size-unit) * 80)" })}>
           <Stack direction="row" gap={4} justifyContent="space-between">
@@ -33,7 +40,12 @@ export default function HoverCardDemo() {
                     width: "calc(var(--size-unit) * 4)",
                   })}
                 />
-                <Text size="xs" className={css({ color: "hsl(var(--color-mutedForeground))" })}>
+                <Text
+                  size="xs"
+                  className={css({
+                    color: "hsl(var(--color-mutedForeground))",
+                  })}
+                >
                   Joined December 2021
                 </Text>
               </Stack>

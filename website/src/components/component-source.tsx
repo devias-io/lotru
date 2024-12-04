@@ -9,5 +9,9 @@ export interface ComponentSourceProps extends React.HTMLAttributes<HTMLDivElemen
 }
 
 export function ComponentSource({ children }: ComponentSourceProps): React.JSX.Element {
-  return <CodeBlockWrapper className={css({ borderRadius: "var(--borderRadius-md)" })}>{children}</CodeBlockWrapper>;
+  return (
+    <CodeBlockWrapper className={css({ borderRadius: "var(--borderRadius-md)" })}>
+      {children}
+    </CodeBlockWrapper>
+  );
 }

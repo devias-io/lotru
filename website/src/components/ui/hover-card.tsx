@@ -2,9 +2,9 @@ import * as React from "react";
 import * as Primitives from "@base_ui/react/Tooltip";
 import { styled } from "@pigment-css/react";
 
-const HoverCardProvider = (props: React.ComponentProps<typeof Primitives.Provider>): React.JSX.Element => (
-  <Primitives.Provider {...props} />
-);
+const HoverCardProvider = (
+  props: React.ComponentProps<typeof Primitives.Provider>
+): React.JSX.Element => <Primitives.Provider {...props} />;
 HoverCardProvider.displayName = "HoverCardProvider";
 
 const HoverCard = React.forwardRef<
@@ -68,4 +68,11 @@ const HoverCardArrow = styled(Primitives.Arrow, {
   },
 });
 
-export { HoverCardProvider, HoverCard, HoverCardArrow, HoverCardContent, HoverCardTrigger, HoverCardPositioner };
+export {
+  HoverCardProvider,
+  HoverCard,
+  HoverCardArrow,
+  HoverCardContent,
+  HoverCardTrigger,
+  HoverCardPositioner,
+};

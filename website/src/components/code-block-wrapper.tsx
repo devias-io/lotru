@@ -55,7 +55,14 @@ export function CodeBlockWrapper({
           position: "absolute",
         })}
         style={{
-          ...(isOpened ? { bottom: 0, left: 0, right: 0, height: "calc(var(--size-unit) * 13)" } : { inset: 0 }),
+          ...(isOpened
+            ? {
+                bottom: 0,
+                left: 0,
+                right: 0,
+                height: "calc(var(--size-unit) * 13)",
+              }
+            : { inset: 0 }),
         }}
       >
         <Button

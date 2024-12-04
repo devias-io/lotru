@@ -24,21 +24,35 @@ export const Stack = React.forwardRef<
      */
     justifyContent?: React.CSSProperties["justifyContent"];
   }
->(({ alignItems, children, direction = "column", flexWrap, gap = 0, justifyContent, style, ...props }, ref) => (
-  <div
-    ref={ref}
-    style={{
+>(
+  (
+    {
       alignItems,
-      display: "flex",
-      flexDirection: direction,
+      children,
+      direction = "column",
       flexWrap,
-      gap: `calc(var(--spacing-unit) * ${gap})`,
+      gap = 0,
       justifyContent,
-      ...style,
-    }}
-    {...props}
-  >
-    {children}
-  </div>
-));
+      style,
+      ...props
+    },
+    ref
+  ) => (
+    <div
+      ref={ref}
+      style={{
+        alignItems,
+        display: "flex",
+        flexDirection: direction,
+        flexWrap,
+        gap: `calc(var(--spacing-unit) * ${gap})`,
+        justifyContent,
+        ...style,
+      }}
+      {...props}
+    >
+      {children}
+    </div>
+  )
+);
 Stack.displayName = "Stack";

@@ -51,4 +51,11 @@ const TooltipArrow = styled(Primitives.Arrow, {
   },
 });
 
-export { TooltipProvider, Tooltip, TooltipArrow, TooltipContent, TooltipTrigger, TooltipPositioner };
+export {
+  TooltipProvider,
+  Tooltip,
+  TooltipArrow,
+  TooltipContent,
+  TooltipTrigger,
+  TooltipPositioner,
+};

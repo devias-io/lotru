@@ -72,13 +72,14 @@ const SwitchThumb = styled(Primitives.Thumb, {
   },
 });
 
-const Switch = React.forwardRef<React.ElementRef<typeof Primitives.Root>, React.ComponentProps<typeof Primitives.Root>>(
-  (props, ref) => (
-    <SwitchRoot ref={ref} {...props}>
-      <SwitchThumb />
-    </SwitchRoot>
-  )
-);
+const Switch = React.forwardRef<
+  React.ElementRef<typeof Primitives.Root>,
+  React.ComponentProps<typeof Primitives.Root>
+>((props, ref) => (
+  <SwitchRoot ref={ref} {...props}>
+    <SwitchThumb />
+  </SwitchRoot>
+));
 Switch.displayName = "Switch";
 
 export { Switch };

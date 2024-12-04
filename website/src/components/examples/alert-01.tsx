@@ -1,7 +1,13 @@
 import * as React from "react";
 import { InfoIcon } from "lucide-react";
 
-import { Alert, AlertContent, AlertDescription, AlertIcon, AlertTitle } from "@/src/components/ui/alert";
+import {
+  Alert,
+  AlertContent,
+  AlertDescription,
+  AlertIcon,
+  AlertTitle,
+} from "@/src/components/ui/alert";
 
 export default function AlertExample(): React.JSX.Element {
   return (

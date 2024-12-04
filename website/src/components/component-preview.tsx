@@ -9,7 +9,11 @@ export interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivEleme
   id: string;
 }
 
-export function ComponentPreview({ children, id, ...props }: ComponentPreviewProps): React.JSX.Element {
+export function ComponentPreview({
+  children,
+  id,
+  ...props
+}: ComponentPreviewProps): React.JSX.Element {
   const sources = React.Children.toArray(children) as React.ReactElement[];
   const source = sources[0];
 

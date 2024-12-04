@@ -53,7 +53,11 @@ export async function updatePigmentConfig(
   themeSpinner.succeed();
 }
 
-async function transformTheme(input: string, theme: Record<string, unknown>, config: Config): Promise<string> {
+async function transformTheme(
+  input: string,
+  theme: Record<string, unknown>,
+  config: Config
+): Promise<string> {
   const sourceFile = await createThemeSourceFile(input, config);
 
   const configObject = getConfigObject(sourceFile);
@@ -93,7 +97,9 @@ function getConfigObject(sourceFile: SourceFile): ObjectLiteralExpression | null
     return null;
   }
 
-  const exportAssignment = defaultExportSymbol.getDeclarations()[0]?.asKind(SyntaxKind.ExportAssignment);
+  const exportAssignment = defaultExportSymbol
+    .getDeclarations()[0]
+    ?.asKind(SyntaxKind.ExportAssignment);
 
   if (!exportAssignment) {
     return null;
@@ -110,13 +116,18 @@ function getConfigObject(sourceFile: SourceFile): ObjectLiteralExpression | null
   if (expression.getKind() === SyntaxKind.Identifier) {
     const variableName = expression.getText();
     const variableDeclaration = sourceFile.getVariableDeclarationOrThrow(variableName);
-    return variableDeclaration.getInitializerOrThrow()?.asKindOrThrow(SyntaxKind.ObjectLiteralExpression);
+    return variableDeclaration
+      .getInitializerOrThrow()
+      ?.asKindOrThrow(SyntaxKind.ObjectLiteralExpression);
   }
 
   return null;
 }
 
-async function deepMergeObjectLiteral(configObject: ObjectLiteralExpression, pigmentConfig: any): Promise<void> {
+async function deepMergeObjectLiteral(
+  configObject: ObjectLiteralExpression,
+  pigmentConfig: any
+): Promise<void> {
   // Nest all spread properties.
   nestSpreadProperties(configObject);
 
@@ -259,9 +270,13 @@ function parseObjectLiteralExpression(node: ObjectLiteralExpression): any {
     if (property.isKind(SyntaxKind.PropertyAssignment)) {
       const name = property.getName().replace(/\'/g, "");
       if (property.getInitializer()?.isKind(SyntaxKind.ObjectLiteralExpression)) {
-        result[name] = parseObjectLiteralExpression(property.getInitializer() as ObjectLiteralExpression);
+        result[name] = parseObjectLiteralExpression(
+          property.getInitializer() as ObjectLiteralExpression
+        );
       } else if (property.getInitializer()?.isKind(SyntaxKind.ArrayLiteralExpression)) {
-        result[name] = parseArrayLiteralExpression(property.getInitializer() as ArrayLiteralExpression);
+        result[name] = parseArrayLiteralExpression(
+          property.getInitializer() as ArrayLiteralExpression
+        );
       } else {
         result[name] = parseValue(property.getInitializer());
       }
@@ -274,9 +289,13 @@ function parseArrayLiteralExpression(node: ArrayLiteralExpression): any[] {
   const result: any[] = [];
   for (const element of node.getElements()) {
     if (element.isKind(SyntaxKind.ObjectLiteralExpression)) {
-      result.push(parseObjectLiteralExpression(element.asKindOrThrow(SyntaxKind.ObjectLiteralExpression)));
+      result.push(
+        parseObjectLiteralExpression(element.asKindOrThrow(SyntaxKind.ObjectLiteralExpression))
+      );
     } else if (element.isKind(SyntaxKind.ArrayLiteralExpression)) {
-      result.push(parseArrayLiteralExpression(element.asKindOrThrow(SyntaxKind.ArrayLiteralExpression)));
+      result.push(
+        parseArrayLiteralExpression(element.asKindOrThrow(SyntaxKind.ArrayLiteralExpression))
+      );
     } else {
       result.push(parseValue(element));
     }

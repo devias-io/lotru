@@ -36,7 +36,9 @@ const Separator = React.forwardRef<
   React.ComponentPropsWithoutRef<"div"> & {
     orientation?: "vertical" | "horizontal";
   }
->(({ orientation = "horizontal", ...props }, ref) => <SeparatorRoot ref={ref} orientation={orientation} {...props} />);
+>(({ orientation = "horizontal", ...props }, ref) => (
+  <SeparatorRoot ref={ref} orientation={orientation} {...props} />
+));
 Separator.displayName = "Separator";
 
 export { Separator };

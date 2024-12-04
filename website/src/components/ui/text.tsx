@@ -8,7 +8,21 @@ const TextRoot = styled("p", {
   React.ComponentPropsWithoutRef<"p"> & {
     family: "sans" | "mono";
     leading: "normal" | "tight" | "none";
-    size: "2xs" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl" | "7xl" | "8xl" | "9xl";
+    size:
+      | "2xs"
+      | "xs"
+      | "sm"
+      | "md"
+      | "lg"
+      | "xl"
+      | "2xl"
+      | "3xl"
+      | "4xl"
+      | "5xl"
+      | "6xl"
+      | "7xl"
+      | "8xl"
+      | "9xl";
     weight: "regular" | "medium" | "semibold" | "bold";
   }
 >({
@@ -156,7 +170,21 @@ const Text = React.forwardRef<
     as?: "p" | "span" | "div";
     family?: "sans" | "mono";
     leading?: "normal" | "tight" | "none";
-    size?: "2xs" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl" | "7xl" | "8xl" | "9xl";
+    size?:
+      | "2xs"
+      | "xs"
+      | "sm"
+      | "md"
+      | "lg"
+      | "xl"
+      | "2xl"
+      | "3xl"
+      | "4xl"
+      | "5xl"
+      | "6xl"
+      | "7xl"
+      | "8xl"
+      | "9xl";
     weight?: "regular" | "medium" | "semibold" | "bold";
   }
 >(
@@ -185,7 +213,17 @@ const Text = React.forwardRef<
       ...props
     },
     ref
-  ) => <TextRoot as={as} ref={ref} size={size} weight={weight} family={family} leading={leading} {...props} />
+  ) => (
+    <TextRoot
+      as={as}
+      ref={ref}
+      size={size}
+      weight={weight}
+      family={family}
+      leading={leading}
+      {...props}
+    />
+  )
 );
 Text.displayName = "Text";
 

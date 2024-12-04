@@ -35,7 +35,11 @@ export const initOptionsSchema = z.object({
 export const init = new Command()
   .name("init")
   .description("initialize your project and install common dependencies")
-  .option("-c, --cwd <cwd>", "the working directory. defaults to the current directory.", process.cwd())
+  .option(
+    "-c, --cwd <cwd>",
+    "the working directory. defaults to the current directory.",
+    process.cwd()
+  )
   .option("-y, --yes", "skip confirmation prompt.", true)
   .option("-d, --defaults,", "use default configuration.", false)
   .option("-f, --force", "force overwrite of existing configuration.", false)
@@ -49,7 +53,9 @@ export const init = new Command()
 
       await runInit(options);
 
-      logger.log(`${highlighter.success("Success!")} Project initialization completed. You may now add components.`);
+      logger.log(
+        `${highlighter.success("Success!")} Project initialization completed. You may now add components.`
+      );
       logger.log(
         `\n${highlighter.warn("Warning!")} You should import pigment css file in the root layout and pigment.config.ts in the setup.\n`
       );
@@ -196,7 +202,9 @@ async function promptForConfig(defaultConfig: Config | null = null): Promise<Raw
       initial: (_, values) => {
         const value = defaultConfig?.aliases["lib"] ?? DEFAULT_LIB;
 
-        return values.srcDir && !value.startsWith("@/src") ? value.replace(/^@\//, "@/src/") : value;
+        return values.srcDir && !value.startsWith("@/src")
+          ? value.replace(/^@\//, "@/src/")
+          : value;
       },
     },
     {
@@ -206,7 +214,9 @@ async function promptForConfig(defaultConfig: Config | null = null): Promise<Raw
       initial: (_, values) => {
         const value = defaultConfig?.aliases["hooks"] ?? DEFAULT_HOOKS;
 
-        return values.srcDir && !value.startsWith("@/src") ? value.replace(/^@\//, "@/src/") : value;
+        return values.srcDir && !value.startsWith("@/src")
+          ? value.replace(/^@\//, "@/src/")
+          : value;
       },
     },
     {
@@ -216,7 +226,9 @@ async function promptForConfig(defaultConfig: Config | null = null): Promise<Raw
       initial: (_, values) => {
         const value = defaultConfig?.aliases["components"] ?? DEFAULT_COMPONENTS;
 
-        return values.srcDir && !value.startsWith("@/src") ? value.replace(/^@\//, "@/src/") : value;
+        return values.srcDir && !value.startsWith("@/src")
+          ? value.replace(/^@\//, "@/src/")
+          : value;
       },
     },
   ]);

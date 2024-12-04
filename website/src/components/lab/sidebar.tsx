@@ -28,7 +28,9 @@ export function SidebarProvider({ children }: React.PropsWithChildren): React.JS
   const [open, setOpen] = React.useState<boolean>(false);
 
   return (
-    <SidebarContext.Provider value={{ openMobile: open, setOpenMobile: setOpen }}>{children}</SidebarContext.Provider>
+    <SidebarContext.Provider value={{ openMobile: open, setOpenMobile: setOpen }}>
+      {children}
+    </SidebarContext.Provider>
   );
 }
 

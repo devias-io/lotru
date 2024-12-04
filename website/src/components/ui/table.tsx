@@ -92,9 +92,11 @@ const TableCell = styled("td", {
   verticalAlign: "middle",
 });
 
-const Table = React.forwardRef<HTMLTableElement, React.ComponentPropsWithoutRef<"table">>((props, ref) => {
-  return <TableRoot ref={ref} {...props} />;
-});
+const Table = React.forwardRef<HTMLTableElement, React.ComponentPropsWithoutRef<"table">>(
+  (props, ref) => {
+    return <TableRoot ref={ref} {...props} />;
+  }
+);
 Table.displayName = "Table";
 
 const TablePagination = React.forwardRef<

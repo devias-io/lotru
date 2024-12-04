@@ -67,13 +67,14 @@ const RadioIndicator = styled(Primitives.Indicator, {
   },
 });
 
-const Radio = React.forwardRef<React.ElementRef<typeof RadioRoot>, React.ComponentPropsWithoutRef<typeof RadioRoot>>(
-  (props, ref) => (
-    <RadioRoot ref={ref} tabIndex={0} {...props}>
-      <RadioIndicator />
-    </RadioRoot>
-  )
-);
+const Radio = React.forwardRef<
+  React.ElementRef<typeof RadioRoot>,
+  React.ComponentPropsWithoutRef<typeof RadioRoot>
+>((props, ref) => (
+  <RadioRoot ref={ref} tabIndex={0} {...props}>
+    <RadioIndicator />
+  </RadioRoot>
+));
 Radio.displayName = "Radio";
 
 export { Radio };

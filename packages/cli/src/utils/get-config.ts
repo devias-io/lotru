@@ -56,7 +56,9 @@ export async function resolveConfigPaths(cwd: string, config: RawConfig): Promis
   const tsConfig = loadConfig(cwd);
 
   if (tsConfig.resultType === "failed") {
-    throw new Error(`Failed to load ${config.tsx ? "tsconfig" : "jsconfig"}.json. ${tsConfig.message ?? ""}`.trim());
+    throw new Error(
+      `Failed to load ${config.tsx ? "tsconfig" : "jsconfig"}.json. ${tsConfig.message ?? ""}`.trim()
+    );
   }
 
   return configSchema.parse({

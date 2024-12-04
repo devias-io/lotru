@@ -49,9 +49,9 @@ const TextareaRoot = styled("textarea", {
   },
 } as React.CSSProperties);
 
-const Textarea = React.forwardRef<HTMLTextAreaElement, React.ComponentPropsWithoutRef<"textarea">>((props, ref) => (
-  <TextareaRoot ref={ref} {...props} />
-));
+const Textarea = React.forwardRef<HTMLTextAreaElement, React.ComponentPropsWithoutRef<"textarea">>(
+  (props, ref) => <TextareaRoot ref={ref} {...props} />
+);
 Textarea.displayName = "Textarea";
 
 export { Textarea };

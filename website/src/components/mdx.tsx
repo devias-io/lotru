@@ -7,6 +7,7 @@ import { cn } from "@/src/lib/cn";
 import { ComponentPreview } from "@/src/components/component-preview";
 import { ComponentSource } from "@/src/components/component-source";
 import { Tabs, TabsContent, TabsIndicator, TabsList, TabsTrigger } from "@/src/components/ui/tabs";
+import { CopyButton } from "./copy-button";
 
 function H1({ className, ...props }: React.ComponentProps<"h1">): React.JSX.Element {
   return (
@@ -15,8 +16,10 @@ function H1({ className, ...props }: React.ComponentProps<"h1">): React.JSX.Elem
         css({
           fontFamily: "var(--fontFamily-sans)",
           fontSize: "var(--fontSize-4xl)",
-          fontWeight: "var(--fontWeight-medium)",
+          fontWeight: "var(--fontWeight-bold)",
           lineHeight: "var(--lineHeight-normal)",
+          marginBlockEnd: 0,
+          marginBlockStart: "calc(var(--spacing-unit) * 2)",
         }),
         className
       )}
@@ -33,10 +36,9 @@ function H2({ className, ...props }: React.ComponentProps<"h2">): React.JSX.Elem
           fontFamily: "var(--fontFamily-sans)",
           fontSize: "var(--fontSize-2xl)",
           fontWeight: "var(--fontWeight-bold)",
-          lineHeight: "var(--lineHeight-normal)",
+          lineHeight: "var(--lineHeight-tight)",
           marginBlockEnd: 0,
           marginBlockStart: "calc(var(--spacing-unit) * 12)",
-          paddingBlockEnd: "calc(var(--spacing-unit) * 2)",
         }),
         className
       )}
@@ -53,7 +55,86 @@ function H3({ className, ...props }: React.ComponentProps<"h3">): React.JSX.Elem
           fontFamily: "var(--fontFamily-sans)",
           fontSize: "var(--fontSize-xl)",
           fontWeight: "var(--fontWeight-semibold)",
+          lineHeight: "var(--lineHeight-tight)",
+          marginBlockEnd: 0,
+          marginBlockStart: "calc(var(--spacing-unit) * 8)",
+        }),
+        className
+      )}
+      {...props}
+    />
+  );
+}
+
+function H4({ className, ...props }: React.ComponentProps<"h4">): React.JSX.Element {
+  return (
+    <h3
+      className={cn(
+        css({
+          fontFamily: "var(--fontFamily-sans)",
+          fontSize: "var(--fontSize-lg)",
+          fontWeight: "var(--fontWeight-semibold)",
+          lineHeight: "var(--lineHeight-tight)",
+          marginBlockEnd: 0,
+          marginBlockStart: "calc(var(--spacing-unit) * 8)",
+        }),
+        className
+      )}
+      {...props}
+    />
+  );
+}
+
+function H5({ className, ...props }: React.ComponentProps<"h5">): React.JSX.Element {
+  return (
+    <h3
+      className={cn(
+        css({
+          fontFamily: "var(--fontFamily-sans)",
+          fontSize: "var(--fontSize-lg)",
+          fontWeight: "var(--fontWeight-semibold)",
+          lineHeight: "var(--lineHeight-tight)",
+          marginBlockEnd: 0,
+          marginBlockStart: "calc(var(--spacing-unit) * 8)",
+        }),
+        className
+      )}
+      {...props}
+    />
+  );
+}
+
+function H6({ className, ...props }: React.ComponentProps<"h6">): React.JSX.Element {
+  return (
+    <h3
+      className={cn(
+        css({
+          fontFamily: "var(--fontFamily-sans)",
+          fontSize: "var(--fontSize-md)",
+          fontWeight: "var(--fontWeight-semibold)",
+          lineHeight: "var(--lineHeight-tight)",
+          marginBlockEnd: 0,
+          marginBlockStart: "calc(var(--spacing-unit) * 8)",
+        }),
+        className
+      )}
+      {...props}
+    />
+  );
+}
+
+function A({ className, ...props }: React.ComponentProps<"a">): React.JSX.Element {
+  return (
+    <a
+      className={cn(
+        css({
+          color: "var(--color-foreground)",
+          fontFamily: "var(--fontFamily-sans)",
+          fontSize: "var(--fontSize-md)",
+          fontWeight: "var(--fontWeight-medium)",
           lineHeight: "var(--lineHeight-normal)",
+          textDecoration: "underline",
+          textUnderlineOffset: "var(--spacing-unit)",
         }),
         className
       )}
@@ -79,16 +160,65 @@ function Code({ className, ...props }: React.ComponentProps<"code">): React.JSX.
   );
 }
 
-function Pre({ className, ...props }: React.ComponentProps<"pre">): React.JSX.Element {
+function Pre({
+  __src__,
+  __rawString__,
+  className,
+  ...props
+}: React.ComponentProps<"pre"> & {
+  __src__?: string;
+  __rawString__?: string;
+}): React.JSX.Element {
   return (
-    <pre
+    <React.Fragment>
+      <pre
+        className={cn(
+          css({
+            borderRadius: "var(--borderRadius-md)",
+            boxSizing: "border-box",
+            overflowX: "auto",
+            padding: "calc(var(--spacing-unit) * 4)",
+            width: "var(--size-full)",
+          }),
+          className
+        )}
+        {...props}
+      />
+      {__rawString__ ? (
+        <CopyButton
+          className={css({
+            color: "hsl(0 0% 100% / 70%)",
+            position: "absolute",
+            height: "calc(var(--size-unit) * 6)",
+            width: "calc(var(--size-unit) * 6)",
+            right: "calc(var(--spacing-unit) * 4)",
+            top: "calc(var(--spacing-unit) * 4)",
+            minWidth: 0,
+            zIndex: "10",
+            "&:hover:not(:disabled)": {
+              backgroundColor: "hsl(0 0% 100% / 10%)",
+              color: "hsl(0 0% 100% / 100%)",
+            },
+          })}
+          src={__src__}
+          value={__rawString__}
+        />
+      ) : null}
+    </React.Fragment>
+  );
+}
+
+function Figure({ className, ...props }: React.ComponentProps<"figure">): React.JSX.Element {
+  return (
+    <figure
       className={cn(
         css({
-          borderRadius: "var(--borderRadius-md)",
-          boxSizing: "border-box",
-          overflowX: "auto",
-          padding: "calc(var(--spacing-unit) * 4)",
-          width: "var(--size-full)",
+          marginBlockEnd: "calc(var(--spacing-unit) * 12)",
+          marginBlockStart: "calc(var(--spacing-unit) * 12)",
+          "&[data-rehype-pretty-code-figure]": {
+            margin: 0,
+            position: "relative",
+          },
         }),
         className
       )}
@@ -164,8 +294,13 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     h1: H1,
     h2: H2,
     h3: H3,
+    h4: H4,
+    h5: H5,
+    h6: H6,
+    a: A,
     code: Code,
     pre: Pre,
+    figure: Figure,
     ComponentPreview,
     ComponentSource,
     Steps,
@@ -198,6 +333,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         className={cn(
           css({
             "&[data-selected]": {
+              background: "transparent",
               boxShadow: "none",
             },
           }),
@@ -206,7 +342,6 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {...props}
       />
     ),
-    TabsContent,
     TabsIndicator: ({
       className,
       ...props
@@ -221,6 +356,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {...props}
       />
     ),
+    TabsContent,
   };
 }
 

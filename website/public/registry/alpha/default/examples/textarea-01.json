@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/textarea-01.tsx",
-      "content": "import * as React from \"react\";\nimport { css } from \"@pigment-css/react\";\n\nimport { Textarea } from \"@/components/ui/textarea\";\n\nexport default function TextareaExample(): React.JSX.Element {\n  return <Textarea className={css({ maxWidth: \"350px\" })} placeholder=\"Product short description\" />;\n}\n"
+      "content": "import * as React from \"react\";\nimport { css } from \"@pigment-css/react\";\n\nimport { Textarea } from \"@/components/ui/textarea\";\n\nexport default function TextareaExample(): React.JSX.Element {\n  return (\n    <Textarea className={css({ maxWidth: \"350px\" })} placeholder=\"Product short description\" />\n  );\n}\n"
     }
   ]
 }

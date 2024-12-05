@@ -12,9 +12,8 @@ export interface UnistNode extends Node {
   tagName?: string;
   value?: string;
   properties?: {
+    __src__?: string;
     __rawString__?: string;
-    __className__?: string;
-    __event__?: string;
     [key: string]: unknown;
   };
   attributes?: {
@@ -23,28 +22,27 @@ export interface UnistNode extends Node {
     type?: string;
   }[];
   children?: UnistNode[];
+  __src__?: string;
+  __rawString__?: string;
 }
 
 export interface UnistTree extends Node {
   children: UnistNode[];
 }
 
-export function rehypeComponent() {
-  return async (tree: UnistTree) => {
-    visit(tree, (node: UnistNode): void => {
-      // src prop overrides both id and fileName.
-      const { value: srcPath } =
-        (getNodeAttributeByName(node, "src") as {
-          name: string;
-          value?: string;
-          type?: string;
-        }) || {};
+function getNodeAttributeByName(node: UnistNode, name: string) {
+  return node.attributes?.find((attribute) => attribute.name === name);
+}
 
+export function rehypeComponentSource(): (tree: UnistTree) => Promise<void> {
+  return async (tree: UnistTree): Promise<void> => {
+    visit(tree, (node: UnistNode): void => {
       if (node.name === "ComponentSource") {
         const id = getNodeAttributeByName(node, "id")?.value as string;
 
-        if (!id && !srcPath) {
-          return undefined;
+        if (!id) {
+          console.error(`Component id is required for ComponentSource`);
+          return;
         }
 
         try {
@@ -64,19 +62,19 @@ export function rehypeComponent() {
 
           // Read the source file.
           const filePath = path.join("src/components", src.path);
-          let source = fs.readFileSync(filePath, "utf8");
+          let content = fs.readFileSync(filePath, "utf8");
 
           // Replace imports and export.
           // TODO: Use ts-morph to replace this.
-          source = source.replaceAll("@/src/", "@/");
-          source = source.replaceAll("export default", "export");
+          content = content.replaceAll("@/src/", "@/");
+          content = content.replaceAll("export default", "export");
 
           // Add code as children so that rehype can take over at build time.
           node.children?.push(
             u("element", {
               tagName: "pre",
               properties: {
-                __src__: src,
+                __src__: src.path,
               },
               attributes: [],
               children: [
@@ -88,7 +86,7 @@ export function rehypeComponent() {
                   children: [
                     {
                       type: "text",
-                      value: source,
+                      value: content,
                     },
                   ],
                 }),
@@ -99,7 +97,13 @@ export function rehypeComponent() {
           console.error(error);
         }
       }
+    });
+  };
+}
 
+export function rehypeComponentPreview(): (tree: UnistTree) => Promise<void> {
+  return async (tree: UnistTree): Promise<void> => {
+    visit(tree, (node: UnistNode): void => {
       if (node.name === "ComponentPreview") {
         const id = getNodeAttributeByName(node, "id")?.value as string;
 
@@ -125,19 +129,19 @@ export function rehypeComponent() {
 
           // Read the source file.
           const filePath = path.join("src/components", src.path);
-          let source = fs.readFileSync(filePath, "utf8");
+          let content = fs.readFileSync(filePath, "utf8");
 
           // Replace imports and export.
           // TODO: Use ts-morph to replace this.
-          source = source.replaceAll("@/src/", "@/");
-          source = source.replaceAll("export default", "export");
+          content = content.replaceAll("@/src/", "@/");
+          content = content.replaceAll("export default", "export");
 
           // Add code as children so that rehype can take over at build time.
           node.children?.push(
             u("element", {
               tagName: "pre",
               properties: {
-                __src__: src,
+                __src__: src.path,
               },
               children: [
                 u("element", {
@@ -148,7 +152,7 @@ export function rehypeComponent() {
                   children: [
                     {
                       type: "text",
-                      value: source,
+                      value: content,
                     },
                   ],
                 }),
@@ -161,8 +165,4 @@ export function rehypeComponent() {
       }
     });
   };
-}
-
-function getNodeAttributeByName(node: UnistNode, name: string) {
-  return node.attributes?.find((attribute) => attribute.name === name);
 }

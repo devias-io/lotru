@@ -1,8 +1,14 @@
 import { defineCollection, defineConfig } from "@content-collections/core";
 import { compileMDX } from "@content-collections/mdx";
-import rehypeShiki from "@shikijs/rehype";
+import { visit } from "unist-util-visit";
+import rehypePrettyCode from "rehype-pretty-code";
 
-import { rehypeComponent } from "./src/lib/rehype-component";
+import {
+  rehypeComponentPreview,
+  rehypeComponentSource,
+  type UnistNode,
+  type UnistTree,
+} from "./src/lib/rehype";
 
 const components = defineCollection({
   name: "components",
@@ -14,7 +20,51 @@ const components = defineCollection({
   }),
   transform: async (document, context) => {
     const mdx = await compileMDX(context, document, {
-      rehypePlugins: [[rehypeComponent], [rehypeShiki, { theme: "github-dark" }]],
+      remarkPlugins: [],
+      rehypePlugins: [
+        rehypeComponentSource,
+        rehypeComponentPreview,
+        function (): (tree: UnistTree) => Promise<void> {
+          return async (tree: UnistTree): Promise<void> => {
+            visit(tree, (node?: UnistNode): void => {
+              if (node?.type === "element" && node.tagName === "pre") {
+                const [codeElement] = node.children ?? [];
+
+                if (codeElement.tagName !== "code") {
+                  return;
+                }
+
+                node.__rawString__ = codeElement.children?.[0].value;
+                node.__src__ = node.properties?.__src__;
+              }
+            });
+          };
+        },
+        [rehypePrettyCode, { theme: "github-dark" }],
+        function (): (tree: UnistTree) => Promise<void> {
+          return async (tree: UnistTree): Promise<void> => {
+            visit(tree, (node?: UnistNode): void => {
+              if (node?.type === "element" && node.tagName === "figure") {
+                if (!("data-rehype-pretty-code-figure" in (node.properties ?? {}))) {
+                  return;
+                }
+
+                const preElement = node.children?.at(-1);
+
+                if (preElement?.tagName !== "pre") {
+                  return;
+                }
+
+                preElement.properties!["__rawString__"] = node.__rawString__;
+
+                if (node.__src__) {
+                  preElement.properties!["__src__"] = node.__src__;
+                }
+              }
+            });
+          };
+        },
+      ],
     });
 
     return {

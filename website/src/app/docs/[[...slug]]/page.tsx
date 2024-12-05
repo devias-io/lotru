@@ -2,18 +2,20 @@ import * as React from "react";
 import { notFound } from "next/navigation";
 import { css } from "@pigment-css/react";
 
+import { allDocs } from "content-collections";
+
 import { MDX } from "@/src/components/mdx";
 import { Text } from "@/src/components/ui/text";
-import { allComponents } from "content-collections";
 
 interface PageProps {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string[] }>;
 }
 
 export default async function Page({ params }: PageProps): Promise<React.JSX.Element> {
   const { slug } = await params;
-  const component = allComponents.find((component) => {
-    return component._meta.path === slug;
+
+  const component = allDocs.find((component) => {
+    return component._meta.path === (slug?.join("/") ?? "index");
   });
 
   if (!component) {

@@ -10,10 +10,10 @@ import {
   type UnistTree,
 } from "./src/lib/rehype";
 
-const components = defineCollection({
-  name: "components",
-  directory: "src/content/docs/components",
-  include: "*.mdx",
+const docs = defineCollection({
+  name: "docs",
+  directory: "src/content/docs",
+  include: "**/*.mdx",
   schema: (z) => ({
     title: z.string(),
     description: z.string(),
@@ -75,5 +75,5 @@ const components = defineCollection({
 });
 
 export default defineConfig({
-  collections: [components],
+  collections: [docs],
 });

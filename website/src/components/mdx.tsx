@@ -4,10 +4,10 @@ import { css } from "@pigment-css/react";
 import type { MDXComponents } from "mdx/types";
 
 import { cn } from "@/src/lib/cn";
+import { Tabs, TabsContent, TabsIndicator, TabsList, TabsTrigger } from "@/src/components/ui/tabs";
 import { ComponentPreview } from "@/src/components/component-preview";
 import { ComponentSource } from "@/src/components/component-source";
-import { Tabs, TabsContent, TabsIndicator, TabsList, TabsTrigger } from "@/src/components/ui/tabs";
-import { CopyButton } from "./copy-button";
+import { CopyButton } from "@/src/components/copy-button";
 
 function H1({ className, ...props }: React.ComponentProps<"h1">): React.JSX.Element {
   return (
@@ -288,6 +288,25 @@ function Step({ className, ...props }: React.ComponentProps<"h3">) {
   );
 }
 
+function P({ className, ...props }: React.ComponentProps<"p">): React.JSX.Element {
+  return (
+    <p
+      className={cn(
+        css({
+          fontFamily: "var(--fontFamily-sans)",
+          fontSize: "var(--fontSize-md)",
+          fontWeight: "var(--fontWeight-regular)",
+          lineHeight: "var(--lineHeight-normal)",
+          marginBlockEnd: "calc(var(--spacing-unit) * 4)",
+          marginBlockStart: 0,
+        }),
+        className
+      )}
+      {...props}
+    />
+  );
+}
+
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     ...components,
@@ -297,6 +316,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     h4: H4,
     h5: H5,
     h6: H6,
+    p: P,
     a: A,
     code: Code,
     pre: Pre,

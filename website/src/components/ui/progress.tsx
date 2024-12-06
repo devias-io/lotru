@@ -30,16 +30,13 @@ const ProgressIndicator = styled(Primitives.Indicator, {
   transitionTimingFunction: "var(--easing-default)",
 });
 
-const Progress = React.forwardRef<
-  React.ElementRef<typeof ProgressRoot>,
-  React.ComponentPropsWithoutRef<typeof Primitives.Root>
->((props, ref) => (
-  <ProgressRoot ref={ref} {...props}>
+const Progress = (props: React.ComponentProps<typeof Primitives.Root>) => (
+  <ProgressRoot {...props}>
     <ProgressTrack>
       <ProgressIndicator />
     </ProgressTrack>
   </ProgressRoot>
-));
+);
 Progress.displayName = "Progress";
 
 export { Progress };

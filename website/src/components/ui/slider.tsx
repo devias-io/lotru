@@ -58,11 +58,8 @@ const SliderThumb = styled(Primitives.Thumb, {
   },
 } as React.CSSProperties);
 
-const Slider = React.forwardRef<
-  React.ElementRef<typeof SliderRoot>,
-  React.ComponentPropsWithoutRef<typeof Primitives.Root>
->((props, ref) => (
-  <SliderRoot ref={ref} {...props}>
+const Slider = (props: React.ComponentProps<typeof Primitives.Root>) => (
+  <SliderRoot {...props}>
     <Primitives.Control>
       <SliderTrack>
         <SliderIndicator />
@@ -70,7 +67,7 @@ const Slider = React.forwardRef<
       <SliderThumb />
     </Primitives.Control>
   </SliderRoot>
-));
+);
 Slider.displayName = "Slider";
 
 export { Slider };

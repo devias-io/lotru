@@ -49,7 +49,7 @@ const SidebarHeader = styled("div", {
   name: "SidebarHeader",
   slot: "header",
 })<React.ComponentProps<"div">>({
-  backgroundColor: "hsl(var(--color-surface))",
+  backgroundColor: "hsl(var(--color-muted))",
   left: 0,
   position: "sticky",
   top: 0,
@@ -60,19 +60,19 @@ const SidebarBody = styled("div", {
   name: "SidebarBody",
   slot: "body",
 })<React.ComponentProps<"div">>({
-  backgroundColor: "hsl(var(--color-surface))",
   display: "flex",
   flexDirection: "column",
   flexGrow: 1,
   gap: "calc(var(--spacing-unit) * 4)",
   overflowY: "auto",
+  padding: "calc(var(--spacing-unit) * 4)",
 });
 
 const SidebarFooter = styled("div", {
   name: "SidebarFooter",
   slot: "footer",
 })<React.ComponentProps<"div">>({
-  backgroundColor: "hsl(var(--color-surface))",
+  backgroundColor: "hsl(var(--color-muted))",
   bottom: 0,
   left: 0,
   position: "sticky",
@@ -121,7 +121,6 @@ const SidebarMenuItem = styled("div", {
 const SidebarMenuButton = styled("button", {
   name: "SidebarMenuButton",
   slot: "button",
-  shouldForwardProp: (prop) => prop !== "active",
 })<React.ComponentProps<"button"> & { active?: boolean }>({
   appearance: "none",
   background: "transparent",
@@ -178,17 +177,14 @@ function Sidebar({ children, className, side = "left" }: SidebarProps): React.JS
   return (
     <aside
       className={cn(
-        className,
         css({
-          backgroundColor: "hsl(var(--color-surface))",
+          backgroundColor: 'hsl(var(--color-muted))',
           boxSizing: "border-box",
           borderRight: "1px solid hsl(var(--color-border))",
           display: "none",
           flexShrink: 0,
           height: "100%",
           minWidth: "272px",
-          paddingInlineEnd: "calc(var(--spacing-unit) * 8)",
-          paddingInlineStart: "calc(var(--spacing-unit) * 8)",
           position: "fixed",
           top: 0,
           left: 0,
@@ -198,7 +194,8 @@ function Sidebar({ children, className, side = "left" }: SidebarProps): React.JS
           "@media (min-width: 768px)": {
             display: "block",
           },
-        })
+        }),
+        className,
       )}
     >
       {children}

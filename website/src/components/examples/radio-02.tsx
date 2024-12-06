@@ -31,7 +31,7 @@ export default function RadioExample(): React.JSX.Element {
           >
             <Stack alignItems="center" direction="row" gap={2}>
               <FieldControl>
-                <Radio value="all" />
+                <Radio disabled value="all" />
               </FieldControl>
               <Text size="sm">All new messages</Text>
             </Stack>

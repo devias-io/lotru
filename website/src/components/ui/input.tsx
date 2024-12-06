@@ -89,12 +89,12 @@ const InputRoot = styled("input", {
   ],
 } as React.CSSProperties);
 
-const Input = React.forwardRef<
-  HTMLInputElement,
-  Omit<React.ComponentPropsWithoutRef<"input">, "size"> & {
-    size?: "sm" | "md" | "lg" | "xl";
-  }
->(({ size = "md", ...props }, ref) => <InputRoot ref={ref} size={size} {...props} />);
+const Input = ({
+  size = "md",
+  ...props
+}: Omit<React.ComponentProps<"input">, "size"> & {
+  size?: "sm" | "md" | "lg" | "xl";
+}) => <InputRoot size={size} {...props} />;
 Input.displayName = "Input";
 
 export { Input };

@@ -121,24 +121,23 @@ const PromptDescription = styled(Primitives.Description, {
   marginBlock: 0,
 });
 
-const PromptAction = React.forwardRef<
-  HTMLButtonElement,
-  React.PropsWithChildren<{
-    type?: "button" | "submit" | "reset";
-  }>
->(({ children, type, ...props }, ref) => {
-  return <Primitives.Close ref={ref} render={<Button type={type}>{children}</Button>} {...props} />;
-});
+const PromptAction = ({
+  children,
+  type,
+  ...props
+}: React.PropsWithChildren<{
+  type?: "button" | "submit" | "reset";
+}>) => {
+  return <Primitives.Close render={<Button type={type}>{children}</Button>} {...props} />;
+};
 PromptAction.displayName = "PromptAction";
 
-const PromptCancel = React.forwardRef<
-  HTMLButtonElement,
-  React.PropsWithChildren<{
-    type?: "button" | "submit" | "reset";
-  }>
->(({ children, ...props }, ref) => (
-  <Primitives.Close ref={ref} render={<Button variant="outline">{children}</Button>} {...props} />
-));
+const PromptCancel = ({
+  children,
+  ...props
+}: React.PropsWithChildren<{
+  type?: "button" | "submit" | "reset";
+}>) => <Primitives.Close render={<Button variant="outline">{children}</Button>} {...props} />;
 PromptCancel.displayName = "PromptCancel";
 
 export {

@@ -11,7 +11,7 @@ const IconButtonRoot = styled("button", {
   name: "IconButtonRoot",
   slot: "root",
 })<
-  React.ComponentPropsWithoutRef<"button"> & {
+  React.ComponentProps<"button"> & {
     size: "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
     variant: "solid" | "outline" | "ghost";
   }
@@ -155,64 +155,55 @@ const IconButtonRoot = styled("button", {
   ],
 } as React.CSSProperties);
 
-const IconButton = React.forwardRef<
-  HTMLButtonElement,
-  React.ComponentPropsWithoutRef<"button"> & {
-    isLoading?: boolean;
-    size?: "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
-    variant?: "solid" | "outline" | "ghost";
-  }
->(
-  (
-    {
-      children,
-      /**
-       * Whether the button is disabled.
-       */
-      disabled,
-      /**
-       * Whether to show a loading spinner.
-       */
-      isLoading = false,
-      /**
-       * The button's size.
-       */
-      size = "md",
-      /**
-       * The button's style.
-       */
-      variant = "solid",
-      ...props
-    },
-    ref
-  ) => {
-    const renderInner = () => {
-      if (isLoading) {
-        return (
-          <LoaderCircleIcon
-            style={{
-              animation: `${spinKeyFrames} 1s linear infinite`,
-            }}
-          />
-        );
-      }
+const IconButton = ({
+  children,
+  /**
+   * Whether the button is disabled.
+   */
+  disabled,
+  /**
+   * Whether to show a loading spinner.
+   */
+  isLoading = false,
+  /**
+   * The button's size.
+   */
+  size = "md",
+  /**
+   * The button's style.
+   */
+  variant = "solid",
+  ...props
+}: React.ComponentProps<"button"> & {
+  isLoading?: boolean;
+  size?: "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
+  variant?: "solid" | "outline" | "ghost";
+}) => {
+  const renderInner = () => {
+    if (isLoading) {
+      return (
+        <LoaderCircleIcon
+          style={{
+            animation: `${spinKeyFrames} 1s linear infinite`,
+          }}
+        />
+      );
+    }
 
-      return children;
-    };
+    return children;
+  };
 
-    return (
-      <IconButtonRoot
-        ref={ref}
-        variant={variant}
-        size={size}
-        disabled={disabled || isLoading}
-        {...props}
-      >
-        {renderInner()}
-      </IconButtonRoot>
-    );
-  }
-);
+  return (
+    <IconButtonRoot
+      variant={variant}
+      size={size}
+      disabled={disabled || isLoading}
+      {...props}
+    >
+      {renderInner()}
+    </IconButtonRoot>
+  );
+};
 IconButton.displayName = "IconButton";
 
 export { IconButton };

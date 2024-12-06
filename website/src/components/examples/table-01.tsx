@@ -64,7 +64,7 @@ const rows: Row[] = [
   },
 ];
 
-export default function TableExample(): JSX.Element {
+export default function TableExample(): React.JSX.Element {
   return (
     <Table className={css({ marginInline: "auto", maxWidth: "var(--size-3xl)" })}>
       <TableCaption>A list of recent orders</TableCaption>

@@ -10,16 +10,14 @@ const Sheet = (props: React.ComponentProps<typeof Primitives.Root>): React.JSX.E
 );
 Sheet.displayName = "Sheet";
 
-const SheetTrigger = React.forwardRef<
-  React.ElementRef<typeof Primitives.Trigger>,
-  React.ComponentPropsWithoutRef<typeof Primitives.Trigger>
->((props, ref) => <Primitives.Trigger ref={ref} {...props} />);
+const SheetTrigger = (props: React.ComponentProps<typeof Primitives.Trigger>) => (
+  <Primitives.Trigger {...props} />
+);
 SheetTrigger.displayName = "SheetTrigger";
 
-const SheetClose = React.forwardRef<
-  React.ElementRef<typeof Primitives.Close>,
-  React.ComponentPropsWithoutRef<typeof Primitives.Close>
->((props, ref) => <Primitives.Close ref={ref} {...props} />);
+const SheetClose = (props: React.ComponentProps<typeof Primitives.Close>) => (
+  <Primitives.Close {...props} />
+);
 SheetClose.displayName = "SheetClose";
 
 const SheetOverlay = styled(Primitives.Backdrop, {
@@ -132,11 +130,8 @@ const SheedHeaderClose = styled("button", {
   },
 });
 
-const SheetHeader = React.forwardRef<
-  React.ElementRef<typeof SheetHeaderRoot>,
-  React.ComponentPropsWithoutRef<typeof SheetHeaderRoot>
->(({ children, ...props }, ref) => (
-  <SheetHeaderRoot ref={ref} {...props}>
+const SheetHeader = ({ children, ...props }: React.ComponentProps<typeof SheetHeaderRoot>) => (
+  <SheetHeaderRoot {...props}>
     {children}
     <Primitives.Close
       render={
@@ -146,7 +141,7 @@ const SheetHeader = React.forwardRef<
       }
     />
   </SheetHeaderRoot>
-));
+);
 SheetHeader.displayName = "SheetHeader";
 
 const SheetTitle = styled(Primitives.Title, {

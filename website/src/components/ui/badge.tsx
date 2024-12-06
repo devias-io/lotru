@@ -104,40 +104,32 @@ const BadgeRoot = styled("span", {
   ],
 } as React.CSSProperties);
 
-const Badge = React.forwardRef<
-  HTMLSpanElement,
-  React.ComponentPropsWithoutRef<"span"> & {
-    rounded?: boolean;
-    size?: "sm" | "md" | "lg";
-    variant?: "solid" | "subtle" | "outline";
-  }
->(
-  (
-    {
-      children,
-      /**
-       * The size of the badge
-       */
-      size = "md",
-      /**
-       * The border radius of the badge
-       */
-      rounded = true,
-      /**
-       * The color of the badge
-       */
-      variant = "solid",
-      ...props
-    },
-    ref
-  ) => {
-    return (
-      <BadgeRoot ref={ref} size={size} rounded={rounded} variant={variant} {...props}>
-        {children}
-      </BadgeRoot>
-    );
-  }
-);
+const Badge = ({
+  children,
+  /**
+   * The size of the badge
+   */
+  size = "md",
+  /**
+   * The border radius of the badge
+   */
+  rounded = true,
+  /**
+   * The color of the badge
+   */
+  variant = "solid",
+  ...props
+}: React.ComponentProps<"span"> & {
+  rounded?: boolean;
+  size?: "sm" | "md" | "lg";
+  variant?: "solid" | "subtle" | "outline";
+}) => {
+  return (
+    <BadgeRoot size={size} rounded={rounded} variant={variant} {...props}>
+      {children}
+    </BadgeRoot>
+  );
+};
 Badge.displayName = "Badge";
 
 export { Badge };

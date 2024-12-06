@@ -65,43 +65,33 @@ const AlertDescription = styled("p", {
   marginBlock: 0,
 });
 
-const Alert = React.forwardRef<
-  HTMLDivElement,
-  React.ComponentPropsWithoutRef<"div"> & {
-    dismissible?: boolean;
-    onDismiss?: () => void;
-  }
->(
-  (
-    {
-      children,
-      /**
-       * Whether the alert is dismissible
-       */
-      dismissible = false,
-      /**
-       * The callback called on dismiss click
-       */
-      onDismiss,
-      ...props
-    },
-    ref
-  ) => {
-    return (
-      <AlertRoot ref={ref} {...props}>
-        {children}
-        {dismissible && (
-          <IconButton size="xs" variant="ghost" onClick={onDismiss}>
-            <XIcon
-              className={css({
-                color: "hsl(var(--color-mutedForeground))",
-              })}
-            />
-          </IconButton>
-        )}
-      </AlertRoot>
-    );
-  }
+const Alert = ({
+  children,
+  /**
+   * Whether the alert is dismissible
+   */
+  dismissible = false,
+  /**
+   * The callback called on dismiss click
+   */
+  onDismiss,
+  ...props
+}: React.ComponentProps<"div"> & {
+  dismissible?: boolean;
+  onDismiss?: () => void;
+}) => (
+  <AlertRoot {...props}>
+    {children}
+    {dismissible && (
+      <IconButton size="xs" variant="ghost" onClick={onDismiss}>
+        <XIcon
+          className={css({
+            color: "hsl(var(--color-mutedForeground))",
+          })}
+        />
+      </IconButton>
+    )}
+  </AlertRoot>
 );
 Alert.displayName = "Alert";
 

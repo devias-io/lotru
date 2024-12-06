@@ -12,6 +12,7 @@ import {
   type UnistNode,
   type UnistTree,
 } from "./src/lib/rehype";
+import { getTableOfContents } from "./src/lib/toc";
 
 const docs = defineCollection({
   name: "docs",
@@ -24,6 +25,16 @@ const docs = defineCollection({
       .object({
         api: z.string().optional(),
         doc: z.string().optional(),
+      })
+      .optional(),
+    toc: z
+      .object({
+        items: z.array(
+          z.object({
+            title: z.string(),
+            url: z.string().optional(),
+          })
+        ),
       })
       .optional(),
   }),
@@ -78,13 +89,17 @@ const docs = defineCollection({
       ],
     });
 
+    const toc = await getTableOfContents(document.content);
+
     return {
       ...document,
+      toc,
       mdx,
     };
   },
 });
 
 export default defineConfig({
+  // @ts-ignore -- TODO: Fix this
   collections: [docs],
 });

@@ -33,6 +33,7 @@ export default function Layout({ children }: LayoutProps): React.JSX.Element {
           color: "hsl(var(--color-foreground))",
           margin: 0,
           padding: 0,
+          position: "relative",
           ...theme.applyStyles("dark", {
             colorScheme: "dark",
           }),

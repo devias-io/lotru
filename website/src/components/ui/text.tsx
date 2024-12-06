@@ -5,7 +5,7 @@ const TextRoot = styled("p", {
   name: "TextRoot",
   slot: "root",
 })<
-  React.ComponentPropsWithoutRef<"p"> & {
+  React.ComponentProps<"p"> & {
     family: "sans" | "mono";
     leading: "normal" | "tight" | "none";
     size:
@@ -164,66 +164,57 @@ const TextRoot = styled("p", {
   ],
 });
 
-const Text = React.forwardRef<
-  HTMLParagraphElement,
-  React.ComponentPropsWithoutRef<"p"> & {
-    as?: "p" | "span" | "div";
-    family?: "sans" | "mono";
-    leading?: "normal" | "tight" | "none";
-    size?:
-      | "2xs"
-      | "xs"
-      | "sm"
-      | "md"
-      | "lg"
-      | "xl"
-      | "2xl"
-      | "3xl"
-      | "4xl"
-      | "5xl"
-      | "6xl"
-      | "7xl"
-      | "8xl"
-      | "9xl";
-    weight?: "regular" | "medium" | "semibold" | "bold";
-  }
->(
-  (
-    {
-      /**
-       * The wrapper element to use.
-       */
-      as = "p",
-      /**
-       * The text's font family.
-       */
-      family = "sans",
-      /**
-       * The text's line height.
-       */
-      leading = "normal",
-      /**
-       * The text's size.
-       */
-      size = "md",
-      /**
-       * The text's font weight.
-       */
-      weight = "regular",
-      ...props
-    },
-    ref
-  ) => (
-    <TextRoot
-      as={as}
-      ref={ref}
-      size={size}
-      weight={weight}
-      family={family}
-      leading={leading}
-      {...props}
-    />
-  )
+const Text = ({
+  /**
+   * The wrapper element to use.
+   */
+  as = "p",
+  /**
+   * The text's font family.
+   */
+  family = "sans",
+  /**
+   * The text's line height.
+   */
+  leading = "normal",
+  /**
+   * The text's size.
+   */
+  size = "md",
+  /**
+   * The text's font weight.
+   */
+  weight = "regular",
+  ...props
+}: React.ComponentProps<"p"> & {
+  as?: "p" | "span" | "div";
+  family?: "sans" | "mono";
+  leading?: "normal" | "tight" | "none";
+  size?:
+    | "2xs"
+    | "xs"
+    | "sm"
+    | "md"
+    | "lg"
+    | "xl"
+    | "2xl"
+    | "3xl"
+    | "4xl"
+    | "5xl"
+    | "6xl"
+    | "7xl"
+    | "8xl"
+    | "9xl";
+  weight?: "regular" | "medium" | "semibold" | "bold";
+}) => (
+  <TextRoot
+    as={as}
+    size={size}
+    weight={weight}
+    family={family}
+    leading={leading}
+    {...props}
+  />
 );
 Text.displayName = "Text";
 

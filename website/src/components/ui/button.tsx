@@ -177,72 +177,58 @@ const ButtonRoot = styled("button", {
   ],
 } as React.CSSProperties);
 
-const Button = React.forwardRef<
-  HTMLButtonElement,
-  React.ComponentPropsWithoutRef<"button"> & {
-    isLoading?: boolean;
-    loadingText?: React.ReactNode;
-    size?: "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
-    variant?: "solid" | "outline" | "ghost";
-  }
->(
-  (
-    {
-      children,
-      /**
-       * Whether the button is disabled.
-       */
-      disabled,
-      /**
-       * Whether to show a loading spinner.
-       */
-      isLoading = false,
-      /**
-       * The text to show when the button is loading.
-       */
-      loadingText,
-      /**
-       * The button's size.
-       */
-      size = "md",
-      /**
-       * The button's style.
-       */
-      variant = "solid",
-      ...props
-    },
-    ref
-  ) => {
-    const renderInner = () => {
-      if (isLoading) {
-        return (
-          <React.Fragment>
-            <LoaderCircleIcon
-              style={{
-                animation: `${spinKeyFrames} 1s linear infinite`,
-              }}
-            />
-            {loadingText}
-          </React.Fragment>
-        );
-      }
+const Button = ({
+  children,
+  /**
+   * Whether the button is disabled.
+   */
+  disabled,
+  /**
+   * Whether to show a loading spinner.
+   */
+  isLoading = false,
+  /**
+   * The text to show when the button is loading.
+   */
+  loadingText,
+  /**
+   * The button's size.
+   */
+  size = "md",
+  /**
+   * The button's style.
+   */
+  variant = "solid",
+  ...props
+}: React.ComponentProps<"button"> & {
+  isLoading?: boolean;
+  loadingText?: React.ReactNode;
+  size?: "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
+  variant?: "solid" | "outline" | "ghost";
+}) => {
+  const renderInner = () => {
+    if (isLoading) {
+      return (
+        <React.Fragment>
+          <LoaderCircleIcon
+            style={{
+              animation: `${spinKeyFrames} 1s linear infinite`,
+            }}
+          />
+          {loadingText}
+        </React.Fragment>
+      );
+    }
 
-      return children;
-    };
+    return children;
+  };
 
-    return (
-      <ButtonRoot
-        ref={ref}
-        disabled={disabled || isLoading}
-        size={size}
-        variant={variant}
-        {...props}
-      >
-        {renderInner()}
-      </ButtonRoot>
-    );
-  }
-);
+  return (
+    <ButtonRoot disabled={disabled || isLoading} size={size} variant={variant} {...props}>
+      {renderInner()}
+    </ButtonRoot>
+  );
+};
 Button.displayName = "Button";
 
 export { Button };

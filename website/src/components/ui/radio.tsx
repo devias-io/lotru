@@ -36,6 +36,7 @@ const RadioRoot = styled(Primitives.Root, {
   },
   "&[data-disabled]": {
     cursor: "not-allowed",
+    opacity: 0.5,
   },
   "&[data-radio='checked']": {
     backgroundColor: "hsl(var(--color-primary))",
@@ -43,10 +44,6 @@ const RadioRoot = styled(Primitives.Root, {
   },
   "&[data-radio='checked']:hover:not([data-disabled])": {
     backgroundColor: "hsl(var(--color-primary) / 80%)",
-  },
-  "&[data-radio='checked'][data-disabled]": {
-    backgroundColor: "hsl(var(--color-muted))",
-    border: "1px solid hsl(var(--color-border))",
   },
 } as React.CSSProperties);
 
@@ -67,14 +64,11 @@ const RadioIndicator = styled(Primitives.Indicator, {
   },
 });
 
-const Radio = React.forwardRef<
-  React.ElementRef<typeof RadioRoot>,
-  React.ComponentPropsWithoutRef<typeof RadioRoot>
->((props, ref) => (
-  <RadioRoot ref={ref} tabIndex={0} {...props}>
+const Radio = (props: React.ComponentProps<typeof RadioRoot>) => (
+  <RadioRoot {...props}>
     <RadioIndicator />
   </RadioRoot>
-));
+);
 Radio.displayName = "Radio";
 
 export { Radio };

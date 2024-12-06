@@ -7,22 +7,19 @@ const HoverCardProvider = (
 ): React.JSX.Element => <Primitives.Provider {...props} />;
 HoverCardProvider.displayName = "HoverCardProvider";
 
-const HoverCard = React.forwardRef<
-  React.ElementRef<typeof Primitives.Root>,
-  React.ComponentPropsWithoutRef<typeof Primitives.Root>
->((props, ref) => <Primitives.Root ref={ref} {...props} />);
+const HoverCard = (props: React.ComponentProps<typeof Primitives.Root>) => (
+  <Primitives.Root {...props} />
+);
 HoverCard.displayName = "HoverCard";
 
-const HoverCardTrigger = React.forwardRef<
-  React.ElementRef<typeof Primitives.Trigger>,
-  React.ComponentPropsWithoutRef<typeof Primitives.Trigger>
->((props, ref) => <Primitives.Trigger ref={ref} {...props} />);
+const HoverCardTrigger = (props: React.ComponentProps<typeof Primitives.Trigger>) => (
+  <Primitives.Trigger {...props} />
+);
 HoverCardTrigger.displayName = "HoverCardTrigger";
 
-const HoverCardPositioner = React.forwardRef<
-  React.ElementRef<typeof Primitives.Positioner>,
-  React.ComponentPropsWithoutRef<typeof Primitives.Positioner>
->((props, ref) => <Primitives.Positioner ref={ref} {...props} />);
+const HoverCardPositioner = (props: React.ComponentProps<typeof Primitives.Positioner>) => (
+  <Primitives.Positioner {...props} />
+);
 HoverCardPositioner.displayName = "HoverCardPositioner";
 
 const HoverCardContent = styled(Primitives.Popup, {

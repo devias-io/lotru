@@ -92,116 +92,103 @@ const TableCell = styled("td", {
   verticalAlign: "middle",
 });
 
-const Table = React.forwardRef<HTMLTableElement, React.ComponentPropsWithoutRef<"table">>(
-  (props, ref) => {
-    return <TableRoot ref={ref} {...props} />;
-  }
-);
+const Table = (props: React.ComponentProps<"table">) => <TableRoot {...props} />;
 Table.displayName = "Table";
 
-const TablePagination = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & {
-    count: number;
-    pageSize: number;
-    pageIndex: number;
-    pageCount: number;
-    canPreviousPage: boolean;
-    canNextPage: boolean;
-    translations?: {
-      of?: string;
-      results?: string;
-      pages?: string;
-      prev?: string;
-      next?: string;
-    };
-    onPreviousPage: () => void;
-    onNextPage: () => void;
-  }
->(
-  (
-    {
-      className,
-      /**
-       * The total number of items.
-       */
-      count,
-      /**
-       * The number of items per page.
-       */
-      pageSize,
-      /**
-       * The total number of pages.
-       */
-      pageCount,
-      /**
-       * The current page index.
-       */
-      pageIndex,
-      /**
-       * Whether there's a previous page that can be navigated to.
-       */
-      canPreviousPage,
-      /**
-       * Whether there's a next page that can be navigated to.
-       */
-      canNextPage,
-      /**
-       * A function that handles navigating to the next page.
-       * This function should handle retrieving data for the next page.
-       */
-      onNextPage,
-      /**
-       * A function that handles navigating to the previous page.
-       * This function should handle retrieving data for the previous page.
-       */
-      onPreviousPage,
-      /**
-       * An optional object of words to use in the pagination component.
-       * Use this to override the default words, or translate them into another language.
-       */
-      translations = {
-        of: "of",
-        results: "results",
-        pages: "pages",
-        prev: "Prev",
-        next: "Next",
-      },
-      ...props
-    },
-    ref
-  ) => {
-    const { from, to } = React.useMemo(() => {
-      const from = count === 0 ? count : pageIndex * pageSize + 1;
-      const to = Math.min(count, (pageIndex + 1) * pageSize);
+const TablePagination = ({
+  /**
+   * The total number of items.
+   */
+  count,
+  /**
+   * The number of items per page.
+   */
+  pageSize,
+  /**
+   * The total number of pages.
+   */
+  pageCount,
+  /**
+   * The current page index.
+   */
+  pageIndex,
+  /**
+   * Whether there's a previous page that can be navigated to.
+   */
+  canPreviousPage,
+  /**
+   * Whether there's a next page that can be navigated to.
+   */
+  canNextPage,
+  /**
+   * A function that handles navigating to the next page.
+   * This function should handle retrieving data for the next page.
+   */
+  onNextPage,
+  /**
+   * A function that handles navigating to the previous page.
+   * This function should handle retrieving data for the previous page.
+   */
+  onPreviousPage,
+  /**
+   * An optional object of words to use in the pagination component.
+   * Use this to override the default words, or translate them into another language.
+   */
+  translations = {
+    of: "of",
+    results: "results",
+    pages: "pages",
+    prev: "Prev",
+    next: "Next",
+  },
+  ...props
+}: React.HTMLAttributes<HTMLDivElement> & {
+  count: number;
+  pageSize: number;
+  pageIndex: number;
+  pageCount: number;
+  canPreviousPage: boolean;
+  canNextPage: boolean;
+  translations?: {
+    of?: string;
+    results?: string;
+    pages?: string;
+    prev?: string;
+    next?: string;
+  };
+  onPreviousPage: () => void;
+  onNextPage: () => void;
+}) => {
+  const { from, to } = React.useMemo(() => {
+    const from = count === 0 ? count : pageIndex * pageSize + 1;
+    const to = Math.min(count, (pageIndex + 1) * pageSize);
 
-      return { from, to };
-    }, [count, pageIndex, pageSize]);
+    return { from, to };
+  }, [count, pageIndex, pageSize]);
 
-    return (
-      <div ref={ref} className={className} {...props}>
-        <Stack alignItems="center" direction="row" gap={1}>
-          <span>{from}</span>
-          <MinusIcon />
-          <span>
-            {to} {translations.of} {count} {translations.results}
-          </span>
-        </Stack>
-        <Stack alignItems="center" gap={2}>
-          <span>
-            {pageIndex + 1} {translations.of} {Math.max(pageCount, 1)} {translations.pages}
-          </span>
-          <Button variant="ghost" onClick={onPreviousPage} disabled={!canPreviousPage}>
-            {translations.prev}
-          </Button>
-          <Button variant="ghost" onClick={onNextPage} disabled={!canNextPage}>
-            {translations.next}
-          </Button>
-        </Stack>
-      </div>
-    );
-  }
-);
+  return (
+    <div {...props}>
+      <Stack alignItems="center" direction="row" gap={1}>
+        <span>{from}</span>
+        <MinusIcon />
+        <span>
+          {to} {translations.of} {count} {translations.results}
+        </span>
+      </Stack>
+      <Stack alignItems="center" gap={2}>
+        <span>
+          {pageIndex + 1} {translations.of} {Math.max(pageCount, 1)} {translations.pages}
+        </span>
+        <Button variant="ghost" onClick={onPreviousPage} disabled={!canPreviousPage}>
+          {translations.prev}
+        </Button>
+        <Button variant="ghost" onClick={onNextPage} disabled={!canNextPage}>
+          {translations.next}
+        </Button>
+      </Stack>
+    </div>
+  );
+};
 TablePagination.displayName = "TablePagination";
 
 export {

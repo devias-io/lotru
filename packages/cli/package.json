@@ -54,14 +54,14 @@
     "fs-extra": "11.2.0",
     "https-proxy-agent": "7.0.5",
     "kleur": "4.1.5",
-    "lucide-react": "0.462.0",
+    "lucide-react": "0.468.0",
     "node-fetch": "3.3.2",
     "ora": "8.1.1",
     "prompts": "2.4.2",
     "stringify-object": "5.0.0",
     "ts-morph": "24.0.0",
     "tsconfig-paths": "4.2.0",
-    "type-fest": "4.29.1",
+    "type-fest": "4.30.0",
     "zod": "3.23.8"
   },
   "devDependencies": {

@@ -5,7 +5,7 @@ const SelectRoot = styled("select", {
   name: "SelectRoot",
   slot: "root",
 })<
-  Omit<React.ComponentPropsWithoutRef<"select">, "size"> & {
+  Omit<React.ComponentProps<"select">, "size"> & {
     size: "sm" | "md" | "lg" | "xl";
   }
 >({
@@ -89,12 +89,12 @@ const SelectRoot = styled("select", {
   ],
 } as React.CSSProperties);
 
-const Select = React.forwardRef<
-  HTMLSelectElement,
-  Omit<React.ComponentPropsWithoutRef<"select">, "size"> & {
-    size?: "sm" | "md" | "lg" | "xl";
-  }
->(({ size = "md", ...props }, ref) => <SelectRoot ref={ref} size={size} {...props} />);
+const Select = ({
+  size = "md",
+  ...props
+}: Omit<React.ComponentProps<"select">, "size"> & {
+  size?: "sm" | "md" | "lg" | "xl";
+}) => <SelectRoot size={size} {...props} />;
 Select.displayName = "Select";
 
 export { Select };

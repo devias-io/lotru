@@ -71,17 +71,19 @@ const AvatarRoot = styled(Primitives.Root, {
   ],
 } as React.CSSProperties);
 
-const Avatar = React.forwardRef<
-  React.ElementRef<typeof AvatarRoot>,
-  React.ComponentPropsWithoutRef<typeof Primitives.Root> & {
-    size?: "2xs" | "xs" | "sm" | "md" | "lg" | "xl";
-    variant?: "rounded" | "squared";
-  }
->(({ children, size = "md", variant = "rounded", ...props }, ref) => (
-  <AvatarRoot ref={ref} size={size} variant={variant} {...props}>
+const Avatar = ({
+  children,
+  size = "md",
+  variant = "rounded",
+  ...props
+}: React.ComponentProps<typeof Primitives.Root> & {
+  size?: "2xs" | "xs" | "sm" | "md" | "lg" | "xl";
+  variant?: "rounded" | "squared";
+}) => (
+  <AvatarRoot size={size} variant={variant} {...props}>
     {children}
   </AvatarRoot>
-));
+);
 Avatar.displayName = "Avatar";
 
 const AvatarImage = styled(Primitives.Image, {

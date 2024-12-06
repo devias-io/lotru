@@ -46,10 +46,6 @@ const CheckboxRoot = styled(Primitives.Root, {
   "&[data-state='checked']:hover:not([data-disabled])": {
     backgroundColor: "hsl(var(--color-primary) / 80%)",
   },
-  "&[data-state='checked'][data-disabled]": {
-    backgroundColor: "hsl(var(--color-muted))",
-    border: "1px solid hsl(var(--color-border))",
-  },
 } as React.CSSProperties);
 
 const CheckboxIndicator = styled(Primitives.Indicator, {
@@ -77,26 +73,18 @@ const CheckboxIndicator = styled(Primitives.Indicator, {
   },
 });
 
-const Checkbox = React.forwardRef<
-  React.ElementRef<typeof CheckboxRoot>,
-  React.ComponentPropsWithoutRef<typeof Primitives.Root> & {
-    intermediate?: boolean;
-  }
->(
-  (
-    {
-      /**
-       * Whether the checkbox is in an indeterminate state
-       */
-      indeterminate = false,
-      ...props
-    },
-    ref
-  ) => (
-    <CheckboxRoot ref={ref} {...props}>
-      <CheckboxIndicator>{indeterminate ? <MinusIcon /> : <CheckIcon />}</CheckboxIndicator>
-    </CheckboxRoot>
-  )
+const Checkbox = ({
+  /**
+   * Whether the checkbox is in an indeterminate state
+   */
+  indeterminate = false,
+  ...props
+}: React.ComponentProps<typeof Primitives.Root> & {
+  intermediate?: boolean;
+}) => (
+  <CheckboxRoot {...props}>
+    <CheckboxIndicator>{indeterminate ? <MinusIcon /> : <CheckIcon />}</CheckboxIndicator>
+  </CheckboxRoot>
 );
 Checkbox.displayName = "Checkbox";
 

@@ -4,22 +4,19 @@ import * as React from "react";
 import * as Primitives from "@base_ui/react/Menu";
 import { styled } from "@pigment-css/react";
 
-const DropdownMenu = React.forwardRef<
-  React.ElementRef<typeof Primitives.Root>,
-  React.ComponentPropsWithoutRef<typeof Primitives.Root>
->((props, ref) => <Primitives.Root ref={ref} {...props} />);
+const DropdownMenu = (props: React.ComponentProps<typeof Primitives.Root>) => (
+  <Primitives.Root {...props} />
+);
 DropdownMenu.displayName = "DropdownMenu";
 
-const DropdownMenuTrigger = React.forwardRef<
-  React.ElementRef<typeof Primitives.Trigger>,
-  React.ComponentPropsWithoutRef<typeof Primitives.Trigger>
->((props, ref) => <Primitives.Trigger ref={ref} {...props} />);
+const DropdownMenuTrigger = (props: React.ComponentProps<typeof Primitives.Trigger>) => (
+  <Primitives.Trigger {...props} />
+);
 DropdownMenuTrigger.displayName = "DropdownMenuTrigger";
 
-const DropdownMenuPositioner = React.forwardRef<
-  React.ElementRef<typeof Primitives.Positioner>,
-  React.ComponentPropsWithoutRef<typeof Primitives.Positioner>
->((props, ref) => <Primitives.Positioner ref={ref} {...props} />);
+const DropdownMenuPositioner = (props: React.ComponentProps<typeof Primitives.Positioner>) => (
+  <Primitives.Positioner {...props} />
+);
 DropdownMenuPositioner.displayName = "DropdownMenuPositioner";
 
 const DropdownMenuContent = styled(Primitives.Popup, {

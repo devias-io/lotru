@@ -21,7 +21,7 @@ export default function Page(): React.JSX.Element {
       >
         <Logo />
       </div>
-      <header
+      <div
         className={css({
           paddingInline: "calc(var(--spacing-unit) * 2)",
         })}
@@ -143,7 +143,7 @@ export default function Page(): React.JSX.Element {
             </div>
           </div>
         </div>
-      </header>
+      </div>
     </div>
   );
 }

@@ -27,13 +27,7 @@ export function GlobalSidebar(): React.JSX.Element {
   const pathname = usePathname();
 
   return (
-    <Sidebar
-      className={css({
-        paddingInlineStart: "max(32px, calc((100vw - (1440px - 64px)) / 2))",
-        width: "calc((100vw - (1440px - 64px)) / 2 + 272px - 32px)",
-      })}
-      side="left"
-    >
+    <Sidebar side="left">
       <SidebarContent>
         <SidebarHeader
           className={css({
@@ -55,15 +49,7 @@ export function GlobalSidebar(): React.JSX.Element {
             <Logo />
           </Link>
         </SidebarHeader>
-        <SidebarBody
-          className={css({
-            overflowY: "unset",
-            padding: "calc(var(--spacing-unit) * 4)",
-            "@media (min-width: 768px)": {
-              padding: 0,
-            },
-          })}
-        >
+        <SidebarBody>
           {groups.map((group) => (
             <SidebarGroup key={group.label}>
               <SidebarGroupLabel>{group.label}</SidebarGroupLabel>

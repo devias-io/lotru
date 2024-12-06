@@ -31,14 +31,12 @@ const SeparatorRoot = styled(Primitives.Root, {
   ],
 });
 
-const Separator = React.forwardRef<
-  HTMLHRElement,
-  React.ComponentPropsWithoutRef<"div"> & {
-    orientation?: "vertical" | "horizontal";
-  }
->(({ orientation = "horizontal", ...props }, ref) => (
-  <SeparatorRoot ref={ref} orientation={orientation} {...props} />
-));
+const Separator = ({
+  orientation = "horizontal",
+  ...props
+}: React.ComponentProps<"div"> & {
+  orientation?: "vertical" | "horizontal";
+}) => <SeparatorRoot orientation={orientation} {...props} />;
 Separator.displayName = "Separator";
 
 export { Separator };

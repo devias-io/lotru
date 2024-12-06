@@ -40,23 +40,15 @@ const HeadingRoot = styled("h1", {
   ],
 });
 
-const Heading = React.forwardRef<
-  HTMLHeadingElement,
-  React.ComponentPropsWithoutRef<"h1"> & {
-    level?: "h1" | "h2" | "h3";
-  }
->(
-  (
-    {
-      /**
-       * The heading level which specifies which heading element is used.
-       */
-      level = "h1",
-      ...props
-    },
-    ref
-  ) => <HeadingRoot as={level} ref={ref} level={level} {...props} />
-);
+const Heading = ({
+  /**
+   * The heading level which specifies which heading element is used.
+   */
+  level = "h1",
+  ...props
+}: React.ComponentProps<"h1"> & {
+  level?: "h1" | "h2" | "h3";
+}) => <HeadingRoot as={level} level={level} {...props} />;
 Heading.displayName = "Heading";
 
 export { Heading };

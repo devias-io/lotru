@@ -1,7 +1,10 @@
 import { defineCollection, defineConfig } from "@content-collections/core";
 import { compileMDX } from "@content-collections/mdx";
-import { visit } from "unist-util-visit";
+import remarkGfm from "remark-gfm";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";
+import rehypeSlug from "rehype-slug";
+import { visit } from "unist-util-visit";
 
 import {
   rehypeComponentPreview,
@@ -17,11 +20,19 @@ const docs = defineCollection({
   schema: (z) => ({
     title: z.string(),
     description: z.string(),
+    links: z
+      .object({
+        api: z.string().optional(),
+        doc: z.string().optional(),
+      })
+      .optional(),
   }),
   transform: async (document, context) => {
     const mdx = await compileMDX(context, document, {
-      remarkPlugins: [],
+      remarkPlugins: [remarkGfm],
       rehypePlugins: [
+        rehypeSlug,
+        rehypeAutolinkHeadings,
         rehypeComponentSource,
         rehypeComponentPreview,
         function (): (tree: UnistTree) => Promise<void> {

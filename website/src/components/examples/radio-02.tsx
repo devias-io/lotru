@@ -1,25 +1,56 @@
+"use client";
+
 import * as React from "react";
 
+import { Button } from "@/src/components/ui/button";
+import { Field, FieldControl, FieldLabel } from "@/src/components/ui/field";
 import { Radio } from "@/src/components/ui/radio";
 import { RadioGroup } from "@/src/components/ui/radio-group";
 import { Stack } from "@/src/components/ui/stack";
 import { Text } from "@/src/components/ui/text";
 
 export default function RadioExample(): React.JSX.Element {
+  const [value, setValue] = React.useState<string>("all");
+
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    console.log("Form value:", value);
+  };
+
   return (
-    <RadioGroup defaultValue="a">
-      <Stack alignItems="center" direction="row" gap={2}>
-        <Radio value="a" />
-        <Text>Option 1</Text>
+    <form onSubmit={handleSubmit}>
+      <Stack gap={6}>
+        <Field>
+          <FieldLabel>Notify me about...</FieldLabel>
+          <RadioGroup
+            name="notify"
+            onValueChange={(value) => {
+              setValue(value as string);
+            }}
+            value={value}
+          >
+            <Stack alignItems="center" direction="row" gap={2}>
+              <FieldControl>
+                <Radio value="all" />
+              </FieldControl>
+              <Text size="sm">All new messages</Text>
+            </Stack>
+            <Stack alignItems="center" direction="row" gap={2}>
+              <FieldControl>
+                <Radio value="mentions" />
+              </FieldControl>
+              <Text size="sm">Direct messages and mentions</Text>
+            </Stack>
+            <Stack alignItems="center" direction="row" gap={2}>
+              <FieldControl>
+                <Radio value="none" />
+              </FieldControl>
+              <Text size="sm">Nothing</Text>
+            </Stack>
+          </RadioGroup>
+        </Field>
+        <Button type="submit">Submit</Button>
       </Stack>
-      <Stack alignItems="center" direction="row" gap={2}>
-        <Radio value="b" />
-        <Text>Option 2</Text>
-      </Stack>
-      <Stack alignItems="center" direction="row" gap={2}>
-        <Radio disabled value="c" />
-        <Text>Disabled</Text>
-      </Stack>
-    </RadioGroup>
+    </form>
   );
 }

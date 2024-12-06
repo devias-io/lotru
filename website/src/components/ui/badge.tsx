@@ -17,6 +17,27 @@ const BadgeRoot = styled("span", {
   fontFamily: "var(--fontFamily-sans)",
   fontWeight: "var(--fontWeight-medium)",
   gap: "var(--spacing-unit)",
+  "&:focus-visible": {
+    "--ring-offset-width": "2px",
+    "--ring-offset-color": "hsl(var(--color-background))",
+    "--ring-offset-shadow": "0 0 0 var(--ring-offset-width) var(--ring-offset-color)",
+    "--ring-width": "2px",
+    "--ring-color": "hsl(var(--color-ring))",
+    "--ring-shadow": "0 0 0 calc(var(--ring-offset-width) + var(--ring-width)) var(--ring-color)",
+    boxShadow: "var(--ring-offset-shadow), var(--ring-shadow), var(--shadow, 0 0 #0000)",
+    outline: "none",
+  },
+  "&:disabled": {
+    cursor: "not-allowed",
+    opacity: 0.5,
+  },
+  "& svg": {
+    flexShrink: 0,
+    fontSize: "1.1em",
+    height: "1.1em",
+    pointerEvents: "none",
+    width: "1.1em",
+  },
   variants: [
     {
       props: { variant: "solid" },
@@ -81,7 +102,7 @@ const BadgeRoot = styled("span", {
       },
     },
   ],
-});
+} as React.CSSProperties);
 
 const Badge = React.forwardRef<
   HTMLSpanElement,

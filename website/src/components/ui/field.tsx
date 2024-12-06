@@ -14,8 +14,8 @@ const Field = styled(Primitives.Root, {
 const FieldControl = ({
   children,
   ...props
-}: Primitives.ControlProps & {
-  children: React.ReactElement;
+}: Omit<Primitives.ControlProps, "render"> & {
+  children: Primitives.ControlProps["render"];
 }): React.JSX.Element => <Primitives.Control render={children} {...props} />;
 FieldControl.displayName = "FieldControl";
 

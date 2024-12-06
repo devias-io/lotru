@@ -143,7 +143,15 @@ function A({ className, ...props }: React.ComponentProps<"a">): React.JSX.Elemen
   );
 }
 
-function Code({ className, ...props }: React.ComponentProps<"code">): React.JSX.Element {
+function Code({
+  className,
+  style,
+  ...props
+}: React.ComponentProps<"code"> & {
+  "data-language"?: string;
+}): React.JSX.Element {
+  const inline = props["data-language"] === undefined;
+
   return (
     <code
       className={cn(
@@ -155,6 +163,17 @@ function Code({ className, ...props }: React.ComponentProps<"code">): React.JSX.
         }),
         className
       )}
+      style={{
+        ...style,
+        ...(inline
+          ? {
+              backgroundColor: "hsl(var(--color-muted))",
+              borderRadius: "var(--borderRadius-sm)",
+              paddingBlock: "var(--spacing-unit)",
+              paddingInline: "calc(var(--spacing-unit) * 2)",
+            }
+          : {}),
+      }}
       {...props}
     />
   );
@@ -164,6 +183,7 @@ function Pre({
   __src__,
   __rawString__,
   className,
+  style,
   ...props
 }: React.ComponentProps<"pre"> & {
   __src__?: string;
@@ -182,6 +202,10 @@ function Pre({
           }),
           className
         )}
+        style={{
+          ...style,
+          backgroundColor: "hsl(240deg 10% 4%)",
+        }}
         {...props}
       />
       {__rawString__ ? (
@@ -194,7 +218,7 @@ function Pre({
             right: "calc(var(--spacing-unit) * 4)",
             top: "calc(var(--spacing-unit) * 4)",
             minWidth: 0,
-            zIndex: "10",
+            zIndex: "var(--zIndex-docked)",
             "&:hover:not(:disabled)": {
               backgroundColor: "hsl(0 0% 100% / 10%)",
               color: "hsl(0 0% 100% / 100%)",
@@ -213,12 +237,8 @@ function Figure({ className, ...props }: React.ComponentProps<"figure">): React.
     <figure
       className={cn(
         css({
-          marginBlockEnd: "calc(var(--spacing-unit) * 12)",
-          marginBlockStart: "calc(var(--spacing-unit) * 12)",
-          "&[data-rehype-pretty-code-figure]": {
-            margin: 0,
-            position: "relative",
-          },
+          margin: 0,
+          position: "relative",
         }),
         className
       )}

@@ -34,11 +34,8 @@ export default async function Page({ params }: PageProps): Promise<React.JSX.Ele
       className={css({
         boxSizing: "border-box",
         display: "grid",
-        marginInline: "auto",
-        maxWidth: "90rem",
         paddingBlock: "calc(var(--spacing-unit) * 8)",
         position: "relative",
-        width: "100%",
         "@media (min-width: 1280px)": {
           gridTemplateColumns: "1fr 300px",
         },
@@ -47,10 +44,14 @@ export default async function Page({ params }: PageProps): Promise<React.JSX.Ele
       <div
         className={css({
           boxSizing: "border-box",
-          display: "grid",
+          display: "flex",
+          flexDirection: "column",
           gap: "calc(var(--spacing-unit) * 6)",
+          marginInline: "auto",
+          maxWidth: "48rem",
           minWidth: 0,
-          paddingInline: "calc(var(--spacing-unit) * 8)",
+          paddingInline: "calc(var(--size-unit) * 8)",
+          width: "var(--size-full)",
         })}
       >
         <div

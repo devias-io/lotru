@@ -8,6 +8,7 @@ import "@pigment-css/react/styles.css";
 import { cn } from "@/src/lib/cn";
 import { siteConfig } from "@/src/config/site";
 import { fontMono, fontSans } from "@/src/lib/fonts";
+import { Topbar } from "@/src/components/topbar";
 
 export const metadata: Metadata = {
   title: siteConfig.name,
@@ -33,13 +34,15 @@ export default function Layout({ children }: LayoutProps): React.JSX.Element {
           color: "hsl(var(--color-foreground))",
           margin: 0,
           padding: 0,
-          position: "relative",
           ...theme.applyStyles("dark", {
             colorScheme: "dark",
           }),
         }))}
       >
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <Topbar />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

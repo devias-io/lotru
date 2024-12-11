@@ -9,6 +9,9 @@ import { Input } from "@/src/components/ui/input";
 import { Stack } from "@/src/components/ui/stack";
 import { Text } from "@/src/components/ui/text";
 import Block01 from "@/src/components/blocks/block-01";
+import Block02 from "@/src/components/blocks/block-02";
+import Block03 from "@/src/components/blocks/block-03";
+import Block04 from "@/src/components/blocks/block-04";
 
 export default function Page(): React.JSX.Element {
   return (
@@ -104,8 +107,9 @@ export default function Page(): React.JSX.Element {
         <div
           className={css({
             display: "grid",
+            gap: "calc(var(--spacing-unit) * 6)",
             gridTemplateColumns: "repeat(var(--columns), minmax(0, 1fr))",
-            paddingBlock: "calc(var(--spacing-unit) * 8)",
+            paddingBlock: "calc(var(--spacing-unit) * 6)",
             "@media (min-width: 768px)": {
               "--columns": 2,
             },
@@ -114,8 +118,15 @@ export default function Page(): React.JSX.Element {
             },
           } as React.CSSProperties)}
         >
-          <Stack gap={8}>
+          <Stack gap={6}>
             <Block01 />
+          </Stack>
+          <Stack gap={6}>
+            <Block02 />
+            <Block04 />
+          </Stack>
+          <Stack gap={6}>
+            <Block03 />
           </Stack>
         </div>
       </div>

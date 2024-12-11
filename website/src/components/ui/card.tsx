@@ -45,7 +45,7 @@ const CardTitle = styled("div", {
   slot: "title",
 })<React.ComponentProps<"div">>({
   fontFamily: "var(--fontFamily-sans)",
-  fontSize: "var(--fontSize-2xl)",
+  fontSize: "var(--fontSize-xl)",
   lineHeight: "var(--lineHeight-none)",
   fontWeight: "var(--fontWeight-semibold)",
 });

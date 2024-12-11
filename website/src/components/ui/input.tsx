@@ -15,6 +15,7 @@ const InputRoot = styled("input", {
   borderRadius: "var(--borderRadius-md)",
   boxSizing: "border-box",
   color: "hsl(var(--color-foreground))",
+  fontFamily: "var(--fontFamily-sans)",
   maxWidth: "var(--size-xs)",
   position: "relative",
   width: "var(--size-full)",
@@ -49,11 +50,14 @@ const InputRoot = styled("input", {
     {
       props: { size: "sm" },
       style: {
-        fontSize: "var(--fontSize-sm)",
+        fontSize: "var(--fontSize-md)",
         height: "calc(var(--size-unit) * 9)",
         minWidth: "calc(var(--size-unit) * 9)",
         paddingBlock: "calc(var(--spacing-unit) * 1.5)",
         paddingInline: "calc(var(--spacing-unit) * 2.5)",
+        "@media (min-width: 768px)": {
+          fontSize: "var(--fontSize-sm)",
+        },
       },
     },
     {
@@ -64,6 +68,9 @@ const InputRoot = styled("input", {
         minWidth: "calc(var(--size-unit) * 10)",
         paddingBlock: "calc(var(--spacing-unit) * 2)",
         paddingInline: "calc(var(--spacing-unit) * 3)",
+        "@media (min-width: 768px)": {
+          fontSize: "var(--fontSize-sm)",
+        },
       },
     },
     {
@@ -74,16 +81,22 @@ const InputRoot = styled("input", {
         minWidth: "calc(var(--size-unit) * 11)",
         paddingBlock: "calc(var(--spacing-unit) * 2.5)",
         paddingInline: "calc(var(--spacing-unit) * 3.5)",
+        "@media (min-width: 768px)": {
+          fontSize: "var(--fontSize-lg)",
+        },
       },
     },
     {
       props: { size: "xl" },
       style: {
-        fontSize: "var(--fontSize-lg)",
+        fontSize: "var(--fontSize-md)",
         height: "calc(var(--size-unit) * 12)",
         minWidth: "calc(var(--size-unit) * 12)",
         paddingBlock: "calc(var(--spacing-unit) * 3)",
         paddingInline: "calc(var(--spacing-unit) * 4)",
+        "@media (min-width: 768px)": {
+          fontSize: "var(--fontSize-lg)",
+        },
       },
     },
   ],

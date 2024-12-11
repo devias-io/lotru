@@ -1,15 +1,15 @@
 import * as React from "react";
 import { css } from "@pigment-css/react";
+import { ArrowRightIcon } from "lucide-react";
 
 import { Button } from "@/src/components/ui/button";
 import { Card, CardContent } from "@/src/components/ui/card";
+import { Checkbox } from "@/src/components/ui/checkbox";
 import { Field, FieldLabel } from "@/src/components/ui/field";
 import { Input } from "@/src/components/ui/input";
 import { Stack } from "@/src/components/ui/stack";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/src/components/ui/tabs";
 import { Text } from "@/src/components/ui/text";
-import { ArrowRightIcon } from "lucide-react";
-import { Checkbox } from "../ui/checkbox";
 
 export default function Block(): React.JSX.Element {
   return (

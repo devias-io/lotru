@@ -7,7 +7,7 @@ const AvatarRoot = styled(Primitives.Root, {
   slot: "root",
 })<
   React.ComponentProps<typeof Primitives.Root> & {
-    size: "2xs" | "xs" | "sm" | "md" | "lg" | "xl";
+    size: "2xs" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
     variant: "rounded" | "squared";
   }
 >({
@@ -53,7 +53,13 @@ const AvatarRoot = styled(Primitives.Root, {
     {
       props: { size: "xl" },
       style: {
-        "--avatar-size": "calc(var(--size-unit) * 14)",
+        "--avatar-size": "calc(var(--size-unit) * 16)",
+      },
+    },
+    {
+      props: { size: "2xl" },
+      style: {
+        "--avatar-size": "calc(var(--size-unit) * 20)",
       },
     },
     {
@@ -77,7 +83,7 @@ const Avatar = ({
   variant = "rounded",
   ...props
 }: React.ComponentProps<typeof Primitives.Root> & {
-  size?: "2xs" | "xs" | "sm" | "md" | "lg" | "xl";
+  size?: "2xs" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
   variant?: "rounded" | "squared";
 }) => (
   <AvatarRoot size={size} variant={variant} {...props}>

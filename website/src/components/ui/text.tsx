@@ -206,16 +206,7 @@ const Text = ({
     | "8xl"
     | "9xl";
   weight?: "regular" | "medium" | "semibold" | "bold";
-}) => (
-  <TextRoot
-    as={as}
-    size={size}
-    weight={weight}
-    family={family}
-    leading={leading}
-    {...props}
-  />
-);
+}) => <TextRoot as={as} size={size} weight={weight} family={family} leading={leading} {...props} />;
 Text.displayName = "Text";
 
 export { Text };

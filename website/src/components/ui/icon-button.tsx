@@ -194,12 +194,7 @@ const IconButton = ({
   };
 
   return (
-    <IconButtonRoot
-      variant={variant}
-      size={size}
-      disabled={disabled || isLoading}
-      {...props}
-    >
+    <IconButtonRoot variant={variant} size={size} disabled={disabled || isLoading} {...props}>
       {renderInner()}
     </IconButtonRoot>
   );

@@ -6,8 +6,7 @@ const Field = styled(Primitives.Root, {
   name: "Field",
   slot: "root",
 })<React.ComponentProps<typeof Primitives.Root>>({
-  display: "flex",
-  flexDirection: "column",
+  display: "grid",
   gap: "calc(var(--spacing-unit) * 2)",
 });
 

@@ -6,7 +6,9 @@ import { SquareArrowOutUpRightIcon } from "lucide-react";
 import { Badge } from "@/src/components/ui/badge";
 import { Button } from "@/src/components/ui/button";
 import { Input } from "@/src/components/ui/input";
+import { Stack } from "@/src/components/ui/stack";
 import { Text } from "@/src/components/ui/text";
+import Block01 from "@/src/components/blocks/block-01";
 
 export default function Page(): React.JSX.Element {
   return (
@@ -98,7 +100,25 @@ export default function Page(): React.JSX.Element {
             paddingInline: "calc(var(--size-unit) * 8)",
           },
         })}
-      ></div>
+      >
+        <div
+          className={css({
+            display: "grid",
+            gridTemplateColumns: "repeat(var(--columns), minmax(0, 1fr))",
+            paddingBlock: "calc(var(--spacing-unit) * 8)",
+            "@media (min-width: 768px)": {
+              "--columns": 2,
+            },
+            "@media (min-width: 1024px)": {
+              "--columns": 3,
+            },
+          } as React.CSSProperties)}
+        >
+          <Stack gap={8}>
+            <Block01 />
+          </Stack>
+        </div>
+      </div>
     </div>
   );
 }

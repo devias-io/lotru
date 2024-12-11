@@ -178,7 +178,7 @@ function Sidebar({ children, className, side = "left" }: SidebarProps): React.JS
     <aside
       className={cn(
         css({
-          backgroundColor: 'hsl(var(--color-muted))',
+          backgroundColor: "hsl(var(--color-muted))",
           boxSizing: "border-box",
           borderRight: "1px solid hsl(var(--color-border))",
           display: "none",
@@ -195,7 +195,7 @@ function Sidebar({ children, className, side = "left" }: SidebarProps): React.JS
             display: "block",
           },
         }),
-        className,
+        className
       )}
     >
       {children}

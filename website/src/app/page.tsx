@@ -12,6 +12,9 @@ import Block01 from "@/src/components/blocks/block-01";
 import Block02 from "@/src/components/blocks/block-02";
 import Block03 from "@/src/components/blocks/block-03";
 import Block04 from "@/src/components/blocks/block-04";
+import Block05 from "@/src/components/blocks/block-05";
+import Block06 from "@/src/components/blocks/block-06";
+import Block07 from "@/src/components/blocks/block-07";
 
 export default function Page(): React.JSX.Element {
   return (
@@ -120,13 +123,16 @@ export default function Page(): React.JSX.Element {
         >
           <Stack gap={6}>
             <Block01 />
+            <Block05 />
           </Stack>
           <Stack gap={6}>
             <Block02 />
             <Block04 />
+            <Block06 />
           </Stack>
           <Stack gap={6}>
             <Block03 />
+            <Block07 />
           </Stack>
         </div>
       </div>

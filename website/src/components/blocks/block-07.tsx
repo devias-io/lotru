@@ -45,7 +45,7 @@ export default function Block(): React.JSX.Element {
         })}
       >
         <Button variant="outline">Cancel</Button>
-        <Button>Confirm</Button>
+        <Button variant="danger">Confirm</Button>
       </CardFooter>
     </Card>
   );

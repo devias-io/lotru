@@ -13,7 +13,7 @@ const ButtonRoot = styled("button", {
 })<
   React.ComponentProps<"button"> & {
     size: "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
-    variant: "solid" | "outline" | "ghost";
+    variant: "solid" | "outline" | "ghost" | "danger";
   }
 >({
   alignItems: "center",
@@ -102,6 +102,23 @@ const ButtonRoot = styled("button", {
           backgroundColor: "transparent",
         },
       },
+    },
+    {
+      props: { variant: "danger" },
+      style: {
+        backgroundColor: "hsl(var(--color-danger))",
+        border: "none",
+        color: "hsl(var(--color-dangerForeground))",
+        transitionDuration: "var(--duration-normal)",
+        transitionProperty: "background-color",
+        transitionTimingFunction: "var(--easing-default)",
+        "&:hover:not(:disabled)": {
+          backgroundColor: "hsl(var(--color-danger) / 80%)",
+        },
+        "&:active": {
+          backgroundColor: "hsl(var(--color-danger))",
+        },
+      }
     },
     {
       props: { size: "xs" },
@@ -204,7 +221,7 @@ const Button = ({
   isLoading?: boolean;
   loadingText?: React.ReactNode;
   size?: "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
-  variant?: "solid" | "outline" | "ghost";
+  variant?: "solid" | "outline" | "ghost" | "danger";
 }) => {
   const renderInner = () => {
     if (isLoading) {

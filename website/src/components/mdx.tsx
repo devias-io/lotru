@@ -122,11 +122,8 @@ function A({ className, ...props }: React.ComponentProps<"a">): React.JSX.Elemen
     <a
       className={cn(
         css({
-          color: "var(--color-foreground)",
-          fontSize: "var(--fontSize-md)",
-          fontWeight: "var(--fontWeight-medium)",
+          color: "inherit",
           textDecoration: "underline",
-          textUnderlineOffset: "var(--spacing-unit)",
         }),
         className
       )}
@@ -263,7 +260,6 @@ function Step({ className, ...props }: React.ComponentProps<"h3">) {
         css({
           boxSizing: "border-box",
           counterIncrement: "step",
-          fontSize: "var(--fontSize-md)",
           fontWeight: "var(--fontWeight-semibold)",
           lineHeight: "var(--lineHeight-tight)",
           marginBlockStart: "calc(var(--spacing-unit) * 8)",
@@ -276,8 +272,6 @@ function Step({ className, ...props }: React.ComponentProps<"h3">) {
             boxSizing: "border-box",
             content: "counter(step)",
             display: "inline-flex",
-            fontFamily: "var(--fontFamily-mono)",
-            fontSize: "var(--fontSize-md)",
             fontWeight: "var(--fontWeight-medium)",
             height: "2.25rem",
             justifyContent: "center",

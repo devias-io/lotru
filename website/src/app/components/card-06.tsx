@@ -27,7 +27,7 @@ const songs = [
   },
 ] as const;
 
-export default function Block(): React.JSX.Element {
+export default function Example(): React.JSX.Element {
   return (
     <Card className={css({ padding: "calc(var(--spacing-unit) * 2)" })}>
       <div
@@ -64,7 +64,7 @@ export default function Block(): React.JSX.Element {
               <PlayIcon />
             </IconButton>
             <Select defaultValue="likes" className={css({ width: "120px" })}>
-              <option value="likes">Most Linked</option>
+              <option value="likes">Most Liked</option>
               <option value="recent">Recent</option>
               <option value="oldest">Oldest</option>
             </Select>

@@ -8,7 +8,7 @@ const RadioGroup = styled(Primitives.Root, {
 })<React.ComponentProps<typeof Primitives.Root>>({
   display: "flex",
   flexDirection: "column",
-  gap: "calc(var(--size-unit) * 2)",
+  gap: "calc(var(--spacing-unit) * 2)",
 });
 
 export { RadioGroup };

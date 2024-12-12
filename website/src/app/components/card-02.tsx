@@ -15,7 +15,7 @@ import {
 import { Field, FieldLabel } from "@/src/components/ui/field";
 import { Input } from "@/src/components/ui/input";
 
-export default function Block(): React.JSX.Element {
+export default function Example(): React.JSX.Element {
   return (
     <Card>
       <CardHeader>

@@ -47,6 +47,9 @@ const TextareaRoot = styled("textarea", {
   "&::placeholder:disabled": {
     color: "hsl(var(--color-mutedForeground))",
   },
+  "@media (min-width: 768px)": {
+    fontSize: "var(--fontSize-sm)",
+  },
 } as React.CSSProperties);
 
 const Textarea = (props: React.ComponentProps<"textarea">) => <TextareaRoot {...props} />;

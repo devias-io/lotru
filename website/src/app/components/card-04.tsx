@@ -31,7 +31,7 @@ const members = [
   },
 ] as const;
 
-export default function Block(): React.JSX.Element {
+export default function Example(): React.JSX.Element {
   return (
     <Card>
       <CardHeader>

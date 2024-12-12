@@ -11,7 +11,7 @@ import { Stack } from "@/src/components/ui/stack";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/src/components/ui/tabs";
 import { Text } from "@/src/components/ui/text";
 
-export default function Block(): React.JSX.Element {
+export default function Example(): React.JSX.Element {
   return (
     <Card>
       <div

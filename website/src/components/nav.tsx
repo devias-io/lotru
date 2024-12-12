@@ -39,7 +39,7 @@ export function Nav(): React.JSX.Element {
       className={css({
         alignItems: "center",
         display: "none",
-        gap: "calc(var(--size-unit) * 4)",
+        gap: "calc(var(--spacing-unit) * 4)",
         "@media (min-width: 768px)": {
           display: "flex",
         },

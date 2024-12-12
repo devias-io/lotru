@@ -12,10 +12,10 @@ import {
 } from "@/src/components/ui/card";
 import { Input } from "@/src/components/ui/input";
 import { Separator } from "@/src/components/ui/separator";
-import { Text } from "@/src/components/ui/text";
 import { Stack } from "@/src/components/ui/stack";
+import { Text } from "@/src/components/ui/text";
 
-export default function Block(): React.JSX.Element {
+export default function Example(): React.JSX.Element {
   return (
     <Card>
       <CardHeader>

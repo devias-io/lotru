@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/switch-01.tsx",
-      "content": "import * as React from \"react\";\n\nimport { Switch } from \"@/components/ui/switch\";\nimport { Stack } from \"@/components/ui/stack\";\nimport { Text } from \"@/components/ui/text\";\n\nexport default function SwitchExample(): React.JSX.Element {\n  return (\n    <Stack alignItems=\"center\" direction=\"row\" gap={2}>\n      <Switch />\n      <Text>Label</Text>\n    </Stack>\n  );\n}\n"
+      "content": "import * as React from \"react\";\n\nimport { Switch } from \"@/components/ui/switch\";\nimport { Stack } from \"@/components/ui/stack\";\n\nexport default function SwitchExample(): React.JSX.Element {\n  return (\n    <Stack alignItems=\"center\" direction=\"row\" gap={2}>\n      <Switch />\n      <span>Label</span>\n    </Stack>\n  );\n}\n"
     }
   ]
 }

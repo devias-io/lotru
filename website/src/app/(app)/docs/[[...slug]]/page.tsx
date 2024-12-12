@@ -62,13 +62,13 @@ export default async function Page({ params }: PageProps): Promise<React.JSX.Ele
           })}
         >
           <Stack alignItems="center" direction="row" gap={1}>
-            <Text size="sm" className={css({ color: "hsl(var(--color-mutedForeground))" })}>
+            <Text fontSize="sm" className={css({ color: "hsl(var(--color-mutedForeground))" })}>
               Docs
             </Text>
             <ChevronRightIcon size={14} />
-            <Text size="sm">{doc.title}</Text>
+            <Text fontSize="sm">{doc.title}</Text>
           </Stack>
-          <Text size="3xl" weight="bold">
+          <Text fontSize="3xl" fontWeight="bold">
             {doc.title}
           </Text>
           {doc.description ? (

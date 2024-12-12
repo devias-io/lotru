@@ -27,11 +27,10 @@ const AlertIcon = styled("div", {
   fontSize: "var(--fontSize-lg)",
   justifyContent: "center",
   "& svg": {
-    color: "hsl(var(--color-foreground))",
     flexShrink: 0,
-    fontSize: "1.1em",
-    height: "1.1em",
-    width: "1.1em",
+    fontSize: "1em",
+    height: "1em",
+    width: "1em",
   },
 });
 
@@ -39,6 +38,8 @@ const AlertContent = styled("div", {
   name: "AlertContent",
   slot: "content",
 })<React.ComponentProps<"div">>({
+  display: "grid",
+  gap: "var(--spacing-unit)",
   flexGrow: 1,
 });
 
@@ -46,11 +47,8 @@ const AlertTitle = styled("p", {
   name: "AlertTitle",
   slot: "title",
 })<React.ComponentProps<"p">>({
-  color: "hsl(var(--color-foreground))",
-  fontFamily: "var(--fontFamily-sans)",
-  fontSize: "var(--fontSize-md)",
-  lineHeight: "var(--lineHeight-normal)",
   fontWeight: "var(--fontWeight-medium)",
+  lineHeight: "var(--lineHeight-none)",
   marginBlock: 0,
 });
 
@@ -59,9 +57,7 @@ const AlertDescription = styled("p", {
   slot: "title",
 })<React.ComponentProps<"p">>({
   color: "hsl(var(--color-mutedForeground))",
-  fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
-  lineHeight: "var(--lineHeight-normal)",
   marginBlock: 0,
 });
 

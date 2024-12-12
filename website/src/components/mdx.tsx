@@ -14,10 +14,9 @@ function H1({ className, ...props }: React.ComponentProps<"h1">): React.JSX.Elem
     <h1
       className={cn(
         css({
-          fontFamily: "var(--fontFamily-sans)",
           fontSize: "var(--fontSize-4xl)",
           fontWeight: "var(--fontWeight-bold)",
-          lineHeight: "var(--lineHeight-normal)",
+          lineHeight: "var(--lineHeight-tight)",
           marginBlockEnd: 0,
           marginBlockStart: "calc(var(--spacing-unit) * 2)",
         }),
@@ -33,7 +32,6 @@ function H2({ className, ...props }: React.ComponentProps<"h2">): React.JSX.Elem
     <h2
       className={cn(
         css({
-          fontFamily: "var(--fontFamily-sans)",
           fontSize: "var(--fontSize-2xl)",
           fontWeight: "var(--fontWeight-bold)",
           lineHeight: "var(--lineHeight-tight)",
@@ -52,7 +50,6 @@ function H3({ className, ...props }: React.ComponentProps<"h3">): React.JSX.Elem
     <h3
       className={cn(
         css({
-          fontFamily: "var(--fontFamily-sans)",
           fontSize: "var(--fontSize-xl)",
           fontWeight: "var(--fontWeight-semibold)",
           lineHeight: "var(--lineHeight-tight)",
@@ -71,7 +68,6 @@ function H4({ className, ...props }: React.ComponentProps<"h4">): React.JSX.Elem
     <h3
       className={cn(
         css({
-          fontFamily: "var(--fontFamily-sans)",
           fontSize: "var(--fontSize-lg)",
           fontWeight: "var(--fontWeight-semibold)",
           lineHeight: "var(--lineHeight-tight)",
@@ -90,7 +86,6 @@ function H5({ className, ...props }: React.ComponentProps<"h5">): React.JSX.Elem
     <h3
       className={cn(
         css({
-          fontFamily: "var(--fontFamily-sans)",
           fontSize: "var(--fontSize-lg)",
           fontWeight: "var(--fontWeight-semibold)",
           lineHeight: "var(--lineHeight-tight)",
@@ -109,7 +104,6 @@ function H6({ className, ...props }: React.ComponentProps<"h6">): React.JSX.Elem
     <h3
       className={cn(
         css({
-          fontFamily: "var(--fontFamily-sans)",
           fontSize: "var(--fontSize-md)",
           fontWeight: "var(--fontWeight-semibold)",
           lineHeight: "var(--lineHeight-tight)",
@@ -129,10 +123,8 @@ function A({ className, ...props }: React.ComponentProps<"a">): React.JSX.Elemen
       className={cn(
         css({
           color: "var(--color-foreground)",
-          fontFamily: "var(--fontFamily-sans)",
           fontSize: "var(--fontSize-md)",
           fontWeight: "var(--fontWeight-medium)",
-          lineHeight: "var(--lineHeight-normal)",
           textDecoration: "underline",
           textUnderlineOffset: "var(--spacing-unit)",
         }),
@@ -159,7 +151,7 @@ function Code({
           fontFamily: "var(--fontFamily-mono)",
           fontSize: "var(--fontSize-sm)",
           fontWeight: "var(--fontWeight-regular)",
-          lineHeight: "var(--lineHeight-normal)",
+          lineHeight: "var(--lineHeight-tight)",
         }),
         className
       )}
@@ -204,7 +196,7 @@ function Pre({
         )}
         style={{
           ...style,
-          backgroundColor: "hsl(240deg 10% 4%)",
+          backgroundColor: "hsl(240 10% 4%)",
         }}
         {...props}
       />
@@ -273,7 +265,6 @@ function Step({ className, ...props }: React.ComponentProps<"h3">) {
         css({
           boxSizing: "border-box",
           counterIncrement: "step",
-          fontFamily: "var(--fontFamily-sans)",
           fontSize: "var(--fontSize-md)",
           fontWeight: "var(--fontWeight-semibold)",
           lineHeight: "var(--lineHeight-tight)",
@@ -292,7 +283,6 @@ function Step({ className, ...props }: React.ComponentProps<"h3">) {
             fontWeight: "var(--fontWeight-medium)",
             height: "2.25rem",
             justifyContent: "center",
-            lineHeight: "var(--lineHeight-normal)",
             marginLeft: "-50px",
             marginTop: "-4px",
             position: "absolute",
@@ -313,10 +303,6 @@ function P({ className, ...props }: React.ComponentProps<"p">): React.JSX.Elemen
     <p
       className={cn(
         css({
-          fontFamily: "var(--fontFamily-sans)",
-          fontSize: "var(--fontSize-md)",
-          fontWeight: "var(--fontWeight-regular)",
-          lineHeight: "var(--lineHeight-normal)",
           marginBlockEnd: "calc(var(--spacing-unit) * 4)",
           marginBlockStart: 0,
         }),

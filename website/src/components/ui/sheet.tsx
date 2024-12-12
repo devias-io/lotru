@@ -111,7 +111,7 @@ const SheedHeaderClose = styled("button", {
   border: "none",
   borderRadius: "var(--borderRadius-md)",
   boxSizing: "border-box",
-  color: "hsl(var(--color-foreground))",
+  color: "inherit",
   cursor: "pointer",
   opacity: 0.7,
   padding: 0,
@@ -148,10 +148,7 @@ const SheetTitle = styled(Primitives.Title, {
   name: "SheetTitle",
   slot: "title",
 })<React.ComponentProps<typeof Primitives.Title>>({
-  color: "hsl(var(--color-foreground))",
-  fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-lg)",
-  lineHeight: "var(--lineHeight-normal)",
   fontWeight: "var(--fontWeight-semibold)",
   marginBlock: 0,
 });
@@ -161,9 +158,8 @@ const SheetDescription = styled(Primitives.Description, {
   slot: "description",
 })<React.ComponentProps<typeof Primitives.Description>>({
   color: "hsl(var(--color-mutedForeground))",
-  fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
-  lineHeight: "var(--lineHeight-compact)",
+  lineHeight: "var(--lineHeight-tight)",
   marginBlock: 0,
 });
 

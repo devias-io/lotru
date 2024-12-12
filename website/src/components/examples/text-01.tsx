@@ -14,37 +14,37 @@ export default function TextExample(): React.JSX.Element {
         textAlign: "center",
       })}
     >
-      <Text size="md" weight="regular" family="sans">
+      <Text fontSize="md" fontWeight="regular" fontFamily="sans">
         Medium Size, Regular Weight, Sans-Serif
       </Text>
-      <Text size="md" weight="medium" family="sans">
+      <Text fontSize="md" fontWeight="medium" fontFamily="sans">
         Medium Size, Medium Weight, Sans-Serif
       </Text>
-      <Text size="lg" weight="regular" family="sans">
+      <Text fontSize="lg" fontWeight="regular" fontFamily="sans">
         Large Size, Regular Weight, Sans-Serif
       </Text>
-      <Text size="lg" weight="medium" family="sans">
+      <Text fontSize="lg" fontWeight="medium" fontFamily="sans">
         Large Size, Medium Weight, Sans-Serif
       </Text>
-      <Text size="xl" weight="regular" family="sans">
+      <Text fontSize="xl" fontWeight="regular" fontFamily="sans">
         XLarge Size, Regular Weight, Sans-Serif
       </Text>
-      <Text size="xl" weight="medium" family="sans">
+      <Text fontSize="xl" fontWeight="medium" fontFamily="sans">
         XLarge Size, Medium Weight, Sans-Serif
       </Text>
-      <Text size="md" weight="regular" family="mono">
+      <Text fontSize="md" fontWeight="regular" fontFamily="mono">
         Base Size, Regular Weight, Mono
       </Text>
-      <Text size="lg" weight="regular" family="mono">
+      <Text fontSize="lg" fontWeight="regular" fontFamily="mono">
         Large Size, Regular Weight, Mono
       </Text>
-      <Text size="lg" weight="medium" family="mono">
+      <Text fontSize="lg" fontWeight="medium" fontFamily="mono">
         Large Size, Medium Weight, Mono
       </Text>
-      <Text size="xl" weight="regular" family="mono">
+      <Text fontSize="xl" fontWeight="regular" fontFamily="mono">
         XLarge Size, Regular Weight, Mono
       </Text>
-      <Text size="xl" weight="medium" family="mono">
+      <Text fontSize="xl" fontWeight="medium" fontFamily="mono">
         XLarge Size, Medium Weight, Mono
       </Text>
     </div>

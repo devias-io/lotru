@@ -70,15 +70,15 @@ export default function Example(): React.JSX.Element {
               placeholder="Email"
             />
           </Field>
-          <div
+          <Stack
             className={css({
               border: "1px solid hsl(var(--color-border))",
               borderRadius: "var(--borderRadius-md)",
               boxShadow: "var(--shadow-xs)",
-              display: "flex",
-              gap: "calc(var(--spacing-unit) * 2)",
               padding: "calc(var(--spacing-unit) * 2)",
             })}
+            direction="row"
+            gap={2}
           >
             <Switch defaultChecked name="analytics" />
             <div
@@ -87,21 +87,21 @@ export default function Example(): React.JSX.Element {
                 gap: "var(--spacing-unit)",
               })}
             >
-              <Text size="sm" weight="medium">
+              <Text fontSize="sm" fontWeight="medium" lineHeight="none">
                 Usage Analytics{" "}
                 <Text
                   as="span"
                   className={css({ color: "hsl(var(--color-mutedForeground))" })}
-                  size="sm"
+                  fontSize="sm"
                 >
                   (Optional)
                 </Text>
               </Text>
-              <Text className={css({ color: "hsl(var(--color-mutedForeground))" })} size="sm">
+              <Text className={css({ color: "hsl(var(--color-mutedForeground))" })} fontSize="sm">
                 We use the data to improve the user experience.
               </Text>
             </div>
-          </div>
+          </Stack>
         </Stack>
       </CardContent>
       <CardFooter

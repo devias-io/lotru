@@ -12,7 +12,7 @@ const ButtonRoot = styled("button", {
   slot: "root",
 })<
   React.ComponentProps<"button"> & {
-    size: "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
+    size: "xs" | "sm" | "md" | "lg" | "xl";
     variant: "solid" | "outline" | "ghost" | "danger";
   }
 >({
@@ -23,12 +23,13 @@ const ButtonRoot = styled("button", {
   cursor: "pointer",
   display: "inline-flex",
   flexShrink: 0,
-  fontFamily: "var(--fontFamily-sans)",
+  fontFamily: "inherit",
   fontWeight: "var(--fontWeight-medium)",
   justifyContent: "center",
   overflow: "hidden",
   position: "relative",
   userSelect: "none",
+  whiteSpace: "nowrap",
   width: "var(--size-fit)",
   "&:focus-visible": {
     "--ring-offset-width": "2px",
@@ -184,31 +185,29 @@ const ButtonRoot = styled("button", {
 
 const Button = ({
   children,
-  /**
-   * Whether the button is disabled.
-   */
   disabled,
-  /**
-   * Whether to show a loading spinner.
-   */
   isLoading = false,
-  /**
-   * The text to show when the button is loading.
-   */
   loadingText,
-  /**
-   * The button's size.
-   */
   size = "md",
-  /**
-   * The button's style.
-   */
   variant = "solid",
   ...props
 }: React.ComponentProps<"button"> & {
+  as?: React.ElementType;
+  /**
+   * Whether to show a loading spinner.
+   */
   isLoading?: boolean;
+  /**
+   * The text to show when the button is loading.
+   */
   loadingText?: React.ReactNode;
-  size?: "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
+  /**
+   * The button's size.
+   */
+  size?: "xs" | "sm" | "md" | "lg" | "xl";
+  /**
+   * The button's style.
+   */
   variant?: "solid" | "outline" | "ghost" | "danger";
 }) => {
   const renderInner = () => {

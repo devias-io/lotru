@@ -46,12 +46,12 @@ export default function Example(): React.JSX.Element {
           <AvatarImage src="https://images.unsplash.com/photo-1511485977113-f34c92461ad9?&w=128&h=128&dpr=2&q=80" />
         </Avatar>
         <div>
-          <Text>Focus Mix</Text>
+          <div>Focus Mix</div>
           <Text
             className={css({
               color: "hsl(var(--color-primaryForeground) / 60%)",
             })}
-            size="sm"
+            fontSize="sm"
           >
             12 songs • 314 minutes
           </Text>
@@ -94,10 +94,13 @@ export default function Example(): React.JSX.Element {
                     <Music2Icon />
                   </Avatar>
                   <div>
-                    <Text size="sm" weight="medium">
+                    <Text fontSize="sm" fontWeight="medium">
                       {song.title}
                     </Text>
-                    <Text className={css({ color: "hsl(var(--color-mutedForeground))" })} size="sm">
+                    <Text
+                      className={css({ color: "hsl(var(--color-mutedForeground))" })}
+                      fontSize="sm"
+                    >
                       {song.artist}
                     </Text>
                   </div>
@@ -106,7 +109,7 @@ export default function Example(): React.JSX.Element {
                   <IconButton variant="ghost">
                     <HeartIcon />
                   </IconButton>
-                  <Text size="sm">{song.timestamp}</Text>
+                  <Text fontSize="sm">{song.timestamp}</Text>
                   <IconButton size="sm" variant="ghost">
                     <MoreVerticalIcon />
                   </IconButton>

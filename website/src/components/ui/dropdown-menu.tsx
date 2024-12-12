@@ -28,7 +28,6 @@ const DropdownMenuContent = styled(Primitives.Popup, {
   borderRadius: "var(--borderRadius-lg)",
   boxShadow: "var(--shadow-md)",
   boxSizing: "border-box",
-  color: "hsl(var(--color-foreground))",
   minWidth: "8rem",
   padding: "var(--spacing-unit)",
   zIndex: "var(--zIndex-popover)",
@@ -41,8 +40,6 @@ const DropdownMenuLabel = styled("div", {
   name: "DropdownMenuLabel",
   slot: "label",
 })<React.ComponentProps<"div">>({
-  color: "hsl(var(--color-foreground))",
-  fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
   fontWeight: "var(--fontWeight-semibold)",
   paddingBlock: "calc(var(--spacing-unit) * 1.5)",
@@ -58,7 +55,6 @@ const DropdownMenuItem = styled(Primitives.Item, {
   boxSizing: "border-box",
   cursor: "pointer",
   display: "flex",
-  fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
   gap: "calc(var(--spacing-unit) * 2)",
   lineHeight: "var(--lineHeight-tight)",
@@ -113,8 +109,6 @@ const DropdownMenuGroupLabel = styled(Primitives.GroupLabel, {
   slot: "groupLabel",
 })<React.ComponentProps<typeof Primitives.GroupLabel>>({
   boxSizing: "border-box",
-  color: "hsl(var(--color-foreground))",
-  fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
   fontWeight: "var(--fontWeight-medium)",
   paddingBlock: "calc(var(--spacing-unit) * 1.5)",

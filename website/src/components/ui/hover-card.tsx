@@ -30,7 +30,6 @@ const HoverCardContent = styled(Primitives.Popup, {
   border: "1px solid hsl(var(--color-border))",
   borderRadius: "var(--borderRadius-md)",
   boxSizing: "border-box",
-  color: "hsl(var(--color-foreground))",
   filter: "drop-shadow(0px 2px 4px hsl(0 0% 0% / 6%))",
   maxWidth: "var(--size-md)",
   padding: "calc(var(--size-unit) * 4)",

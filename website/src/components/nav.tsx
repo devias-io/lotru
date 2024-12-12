@@ -13,7 +13,6 @@ const NavItem = styled(Link, {
   alignItems: "center",
   color: "hsl(var(--color-foreground) / 80%)",
   display: "inline-flex",
-  fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
   fontWeight: "var(--fontWeight-medium)",
   gap: "calc(var(--spacing-unit) * 2)",
@@ -52,6 +51,7 @@ export function Nav(): React.JSX.Element {
       <Link
         className={css({
           alignItems: "center",
+          color: "inherit",
           display: "none",
           gap: "calc(var(--spacing-unit) * 2)",
           textDecoration: "none",
@@ -65,8 +65,6 @@ export function Nav(): React.JSX.Element {
         <Logo width={24} height={24} />
         <span
           className={css({
-            color: "hsl(var(--color-foreground))",
-            fontFamily: "var(--fontFamily-sans)",
             fontSize: "var(--fontSize-lg)",
             fontWeight: "var(--fontWeight-semibold)",
           })}

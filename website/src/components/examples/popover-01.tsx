@@ -20,10 +20,10 @@ export default function PopoverExample(): React.JSX.Element {
         <PopoverContent>
           <PopoverArrow />
           <Stack gap={2}>
-            <Text size="sm" weight="semibold">
+            <Text fontSize="sm" fontWeight="semibold">
               Project Configuration
             </Text>
-            <Text size="sm" className={css({ color: "var(--color-mutedForeground)" })}>
+            <Text fontSize="sm" className={css({ color: "var(--color-mutedForeground)" })}>
               Set the project configuration.
             </Text>
           </Stack>

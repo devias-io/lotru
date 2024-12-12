@@ -25,7 +25,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/src/components/ui/tooltip";
-import type { Mail } from "@/src/app/examples/mail/data";
+import type { Mail } from "@/src/app/(app)/examples/mail/data";
 
 export interface MailDisplayProps {
   mail: Mail | null;
@@ -144,7 +144,7 @@ export function MailDisplay({ mail }: MailDisplayProps): React.JSX.Element {
           paddingBlock: "calc(var(--size-unit) * 4)",
         })}
       >
-        <Text size="3xl" weight="medium">
+        <Text fontSize="3xl" fontWeight="medium">
           {mail.subject}
         </Text>
       </div>
@@ -172,19 +172,19 @@ export function MailDisplay({ mail }: MailDisplayProps): React.JSX.Element {
               </AvatarFallback>
             </Avatar>
             <div>
-              <Text size="sm" weight="medium">
+              <Text fontSize="sm" fontWeight="medium">
                 {mail.name}{" "}
-                <Text as="span" size="sm" weight="regular">
+                <Text as="span" fontSize="sm" fontWeight="regular">
                   {`<${mail.email}>`}
                 </Text>
               </Text>
-              <Text className={css({ color: "hsl(var(--color-mutedForeground))" })} size="xs">
+              <Text className={css({ color: "hsl(var(--color-mutedForeground))" })} fontSize="xs">
                 To: {mail.email}
               </Text>
             </div>
           </Stack>
           {mail.date ? (
-            <Text className={css({ color: "hsl(var(--color-mutedForeground)))" })} size="xs">
+            <Text className={css({ color: "hsl(var(--color-mutedForeground)))" })} fontSize="xs">
               {format(new Date(mail.date), "PPpp")}
             </Text>
           ) : null}
@@ -197,7 +197,7 @@ export function MailDisplay({ mail }: MailDisplayProps): React.JSX.Element {
             paddingInline: "calc(var(--size-unit) * 6)",
           })}
         >
-          <Text className={css({ whiteSpace: "pre-wrap" })} size="sm">
+          <Text className={css({ whiteSpace: "pre-wrap" })} fontSize="sm">
             {mail.text}
           </Text>
         </div>
@@ -240,7 +240,7 @@ export function MailDisplay({ mail }: MailDisplayProps): React.JSX.Element {
               <Stack alignItems="center" direction="row" gap={2}>
                 <Switch />
                 <Stack alignItems="center" direction="row" gap={1}>
-                  <Text size="sm" weight="medium">
+                  <Text fontSize="sm" fontWeight="medium">
                     Schedule sending
                   </Text>
                   <AlertCircleIcon color="hsl(var(--color-mutedForeground))" size={16} />

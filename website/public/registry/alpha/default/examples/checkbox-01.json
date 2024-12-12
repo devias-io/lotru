@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "examples/checkbox-01.tsx",
-      "content": "import * as React from \"react\";\n\nimport { Checkbox } from \"@/components/ui/checkbox\";\nimport { Stack } from \"@/components/ui/stack\";\nimport { Text } from \"@/components/ui/text\";\n\nexport default function CheckboxExample(): React.JSX.Element {\n  return (\n    <Stack alignItems=\"center\" direction=\"row\" gap={2}>\n      <Checkbox />\n      <Text>Label</Text>\n    </Stack>\n  );\n}\n"
+      "content": "import * as React from \"react\";\n\nimport { Checkbox } from \"@/components/ui/checkbox\";\nimport { Stack } from \"@/components/ui/stack\";\n\nexport default function CheckboxExample(): React.JSX.Element {\n  return (\n    <Stack alignItems=\"center\" direction=\"row\" gap={2}>\n      <Checkbox />\n      <span>Label</span>\n    </Stack>\n  );\n}\n"
     }
   ]
 }

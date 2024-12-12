@@ -61,9 +61,7 @@ const DialogTitle = styled(Primitives.Title, {
   name: "DialogTitle",
   slot: "title",
 })<React.ComponentProps<typeof Primitives.Title>>({
-  fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-lg)",
-  lineHeight: "var(--lineHeight-normal)",
   fontWeight: "var(--fontWeight-semibold)",
   marginBlock: 0,
 });
@@ -73,7 +71,6 @@ const DialogDescription = styled(Primitives.Description, {
   slot: "description",
 })<React.ComponentProps<typeof Primitives.Description>>({
   color: "hsl(var(--color-mutedForeground))",
-  fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
   lineHeight: "var(--lineHeight-compact)",
   marginBlock: 0,

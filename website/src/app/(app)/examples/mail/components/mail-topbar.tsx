@@ -51,10 +51,10 @@ export function MailTopbar(): React.JSX.Element {
               />
             </svg>
           </div>
-          <Text weight="medium">Lotru Mail</Text>
+          <Text fontWeight="medium">Lotru Mail</Text>
         </Stack>
         <Stack alignItems="center" direction="row" gap={4}>
-          <Text size="sm" weight="medium">
+          <Text fontSize="sm" fontWeight="medium">
             Mail
           </Text>
           <Stack
@@ -65,7 +65,7 @@ export function MailTopbar(): React.JSX.Element {
             direction="row"
             gap={1}
           >
-            <Text size="sm" weight="medium">
+            <Text fontSize="sm" fontWeight="medium">
               AI Automation
             </Text>
             <Badge size="sm" variant="outline">

@@ -12,8 +12,8 @@ const IconButtonRoot = styled("button", {
   slot: "root",
 })<
   React.ComponentProps<"button"> & {
-    size: "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
-    variant: "solid" | "outline" | "ghost";
+    size: "xs" | "sm" | "md" | "lg" | "xl";
+    variant: "solid" | "outline" | "ghost" | "danger";
   }
 >({
   alignItems: "center",
@@ -23,6 +23,7 @@ const IconButtonRoot = styled("button", {
   cursor: "pointer",
   display: "inline-flex",
   justifyContent: "center",
+  lineHeight: "var(--lineHeight-none)",
   overflow: "hidden",
   position: "relative",
   width: "var(--size-fit)",
@@ -99,57 +100,60 @@ const IconButtonRoot = styled("button", {
       },
     },
     {
+      props: { variant: "danger" },
+      style: {
+        backgroundColor: "hsl(var(--color-danger))",
+        border: "none",
+        color: "hsl(var(--color-dangerForeground))",
+        transitionDuration: "var(--duration-normal)",
+        transitionProperty: "background-color",
+        transitionTimingFunction: "var(--easing-default)",
+        "&:hover:not(:disabled)": {
+          backgroundColor: "hsl(var(--color-danger) / 80%)",
+        },
+        "&:active": {
+          backgroundColor: "hsl(var(--color-danger))",
+        },
+      },
+    },
+    {
       props: { size: "xs" },
       style: {
         fontSize: "var(--fontSize-xs)",
-        gap: "calc(var(--spacing-unit) * 2)",
-        height: "calc(var(--size-unit) * 8)",
-        minWidth: "calc(var(--size-unit) * 8)",
+        height: "calc(var(--size-unit) * 7)",
+        minWidth: "calc(var(--size-unit) * 7)",
       },
     },
     {
       props: { size: "sm" },
       style: {
-        gap: "calc(var(--spacing-unit) * 2)",
-        height: "calc(var(--size-unit) * 9)",
         fontSize: "var(--fontSize-sm)",
-        minWidth: "calc(var(--size-unit) * 9)",
+        height: "calc(var(--size-unit) * 8)",
+        minWidth: "calc(var(--size-unit) * 8)",
       },
     },
     {
       props: { size: "md" },
       style: {
         fontSize: "var(--fontSize-sm)",
-        gap: "calc(var(--spacing-unit) * 2)",
-        height: "calc(var(--size-unit) * 10)",
-        minWidth: "calc(var(--size-unit) * 10)",
+        height: "calc(var(--size-unit) * 9)",
+        minWidth: "calc(var(--size-unit) * 9)",
       },
     },
     {
       props: { size: "lg" },
       style: {
         fontSize: "var(--fontSize-md)",
-        gap: "calc(var(--spacing-unit) * 2)",
-        height: "calc(var(--size-unit) * 11)",
-        minWidth: "calc(var(--size-unit) * 11)",
+        height: "calc(var(--size-unit) * 10)",
+        minWidth: "calc(var(--size-unit) * 10)",
       },
     },
     {
       props: { size: "xl" },
       style: {
         fontSize: "var(--fontSize-md)",
-        gap: "calc(var(--spacing-unit) * 2.5)",
-        height: "calc(var(--size-unit) * 12)",
-        minWidth: "calc(var(--size-unit) * 12)",
-      },
-    },
-    {
-      props: { size: "2xl" },
-      style: {
-        fontSize: "var(--fontSize-lg)",
-        gap: "calc(var(--spacing-unit) * 3)",
-        height: "calc(var(--size-unit) * 16)",
-        minWidth: "calc(var(--size-unit) * 16)",
+        height: "calc(var(--size-unit) * 11)",
+        minWidth: "calc(var(--size-unit) * 11)",
       },
     },
   ],
@@ -157,27 +161,24 @@ const IconButtonRoot = styled("button", {
 
 const IconButton = ({
   children,
-  /**
-   * Whether the button is disabled.
-   */
   disabled,
-  /**
-   * Whether to show a loading spinner.
-   */
   isLoading = false,
-  /**
-   * The button's size.
-   */
   size = "md",
-  /**
-   * The button's style.
-   */
   variant = "solid",
   ...props
 }: React.ComponentProps<"button"> & {
+  /**
+   * Whether to show a loading spinner.
+   */
   isLoading?: boolean;
-  size?: "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
-  variant?: "solid" | "outline" | "ghost";
+  /**
+   * The button's size.
+   */
+  size?: "xs" | "sm" | "md" | "lg" | "xl";
+  /**
+   * The button's style.
+   */
+  variant?: "solid" | "outline" | "ghost" | "danger";
 }) => {
   const renderInner = () => {
     if (isLoading) {

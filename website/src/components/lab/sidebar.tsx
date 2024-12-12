@@ -92,8 +92,6 @@ const SidebarGroupLabel = styled("div", {
   name: "MenuGroupLabel",
   slot: "label",
 })<React.ComponentProps<"div">>({
-  color: "hsl(var(--color-foreground))",
-  fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
   fontWeight: "var(--fontWeight-semibold)",
 });
@@ -130,7 +128,6 @@ const SidebarMenuButton = styled("button", {
   color: "hsl(var(--color-mutedForeground))",
   cursor: "pointer",
   flexGrow: 1,
-  fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
   fontWeight: "var(--fontWeight-medium)",
   paddingBlock: "calc(var(--spacing-unit) * 2)",

@@ -12,7 +12,7 @@ export interface TocProps {
 export function Toc({ tree }: TocProps): React.JSX.Element {
   return (
     <Stack gap={2}>
-      <Text weight="medium">On this page</Text>
+      <Text fontWeight="medium">On this page</Text>
       <Tree tree={tree} />
     </Stack>
   );
@@ -45,12 +45,10 @@ function Tree({ tree, level = 1 }: TreeProps): React.JSX.Element | null {
           <a
             className={css({
               color: "hsl(var(--color-mutedForeground))",
-              fontFamily: "var(--fontFamily-sans)",
               fontSize: "var(--fontSize-sm)",
-              lineHeight: "var(--lineHeight-normal)",
               textDecoration: "none",
               "&:hover": {
-                color: "hsl(var(--color-foreground))",
+                color: "inherit",
               },
             })}
             href={item.url}

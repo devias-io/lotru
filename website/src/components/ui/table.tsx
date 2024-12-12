@@ -46,9 +46,7 @@ const TableCaption = styled("caption", {
   slot: "caption",
 })<React.ComponentProps<"caption">>({
   color: "hsl(var(--color-mutedForeground))",
-  fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
-  lineHeight: "var(--lineHeight-normal)",
   padding: "calc(var(--spacing-unit) * 4)",
   textAlign: "center",
   verticalAlign: "middle",
@@ -69,11 +67,9 @@ const TableHeaderCell = styled("th", {
   slot: "headerCell",
 })<React.ComponentProps<"th">>({
   color: "hsl(var(--color-mutedForeground))",
-  fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
   fontWeight: "var(--fontWeight-medium)",
   height: "calc(var(--spacing-unit) * 12)",
-  lineHeight: "var(--lineHeight-normal)",
   paddingInline: "calc(var(--spacing-unit) * 4)",
   textAlign: "left",
   verticalAlign: "middle",
@@ -83,10 +79,7 @@ const TableCell = styled("td", {
   name: "TableCell",
   slot: "cell",
 })<React.ComponentProps<"td">>({
-  color: "hsl(var(--color-foreground))",
-  fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
-  lineHeight: "var(--lineHeight-normal)",
   padding: "calc(var(--spacing-unit) * 4)",
   textAlign: "left",
   verticalAlign: "middle",

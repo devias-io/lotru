@@ -9,10 +9,10 @@ export default function SeparatorExample(): React.JSX.Element {
   return (
     <Stack gap={4}>
       <Stack gap={1}>
-        <Text size="sm" leading="none" weight="medium">
+        <Text fontSize="sm" fontWeight="medium" lineHeight="none">
           Base UI Primitives
         </Text>
-        <Text size="sm" className={css({ color: "var(--color-mutedForeground)" })}>
+        <Text fontSize="sm" className={css({ color: "var(--color-mutedForeground)" })}>
           An open-source UI component library.
         </Text>
       </Stack>
@@ -23,11 +23,11 @@ export default function SeparatorExample(): React.JSX.Element {
         gap={4}
         className={css({ height: "calc(var(--size-unit) * 5)" })}
       >
-        <Text size="sm">Blog</Text>
+        <Text fontSize="sm">Blog</Text>
         <Separator orientation="vertical" />
-        <Text size="sm">Docs</Text>
+        <Text fontSize="sm">Docs</Text>
         <Separator orientation="vertical" />
-        <Text size="sm">Source</Text>
+        <Text fontSize="sm">Source</Text>
       </Stack>
     </Stack>
   );

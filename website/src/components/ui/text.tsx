@@ -6,9 +6,8 @@ const TextRoot = styled("p", {
   slot: "root",
 })<
   React.ComponentProps<"p"> & {
-    family: "sans" | "mono";
-    leading: "normal" | "tight" | "none";
-    size:
+    fontFamily?: "sans" | "mono";
+    fontSize?:
       | "2xs"
       | "xs"
       | "sm"
@@ -23,174 +22,120 @@ const TextRoot = styled("p", {
       | "7xl"
       | "8xl"
       | "9xl";
-    weight: "regular" | "medium" | "semibold" | "bold";
+    fontWeight?: "regular" | "medium" | "semibold" | "bold";
+    lineHeight?: "normal" | "tight" | "none";
   }
 >({
   boxSizing: "border-box",
   marginBlock: 0,
   variants: [
     {
-      props: { size: "xs" },
-      style: {
-        fontSize: "var(--fontSize-xs)",
-      },
+      props: { fontSize: "xs" },
+      style: { fontSize: "var(--fontSize-xs)" },
     },
     {
-      props: { size: "sm" },
-      style: {
-        fontSize: "var(--fontSize-sm)",
-      },
+      props: { fontSize: "sm" },
+      style: { fontSize: "var(--fontSize-sm)" },
     },
     {
-      props: { size: "md" },
-      style: {
-        fontSize: "var(--fontSize-md)",
-      },
+      props: { fontSize: "md" },
+      style: { fontSize: "var(--fontSize-md)" },
     },
     {
-      props: { size: "lg" },
-      style: {
-        fontSize: "var(--fontSize-lg)",
-      },
+      props: { fontSize: "lg" },
+      style: { fontSize: "var(--fontSize-lg)" },
     },
     {
-      props: { size: "xl" },
-      style: {
-        fontSize: "var(--fontSize-xl)",
-      },
+      props: { fontSize: "xl" },
+      style: { fontSize: "var(--fontSize-xl)" },
     },
     {
-      props: { size: "2xl" },
-      style: {
-        fontSize: "var(--fontSize-2xl)",
-      },
+      props: { fontSize: "2xl" },
+      style: { fontSize: "var(--fontSize-2xl)" },
     },
     {
-      props: { size: "3xl" },
-      style: {
-        fontSize: "var(--fontSize-3xl)",
-      },
+      props: { fontSize: "3xl" },
+      style: { fontSize: "var(--fontSize-3xl)" },
     },
     {
-      props: { size: "4xl" },
-      style: {
-        fontSize: "var(--fontSize-4xl)",
-      },
+      props: { fontSize: "4xl" },
+      style: { fontSize: "var(--fontSize-4xl)" },
     },
     {
-      props: { size: "5xl" },
-      style: {
-        fontSize: "var(--fontSize-5xl)",
-      },
+      props: { fontSize: "5xl" },
+      style: { fontSize: "var(--fontSize-5xl)" },
     },
     {
-      props: { size: "6xl" },
-      style: {
-        fontSize: "var(--fontSize-6xl)",
-      },
+      props: { fontSize: "6xl" },
+      style: { fontSize: "var(--fontSize-6xl)" },
     },
     {
-      props: { size: "7xl" },
-      style: {
-        fontSize: "var(--fontSize-7xl)",
-      },
+      props: { fontSize: "7xl" },
+      style: { fontSize: "var(--fontSize-7xl)" },
     },
     {
-      props: { size: "8xl" },
-      style: {
-        fontSize: "var(--fontSize-8xl)",
-      },
+      props: { fontSize: "8xl" },
+      style: { fontSize: "var(--fontSize-8xl)" },
     },
     {
-      props: { size: "9xl" },
-      style: {
-        fontSize: "var(--fontSize-9xl)",
-      },
+      props: { fontSize: "9xl" },
+      style: { fontSize: "var(--fontSize-9xl)" },
     },
     {
-      props: { weight: "regular" },
-      style: {
-        fontWeight: "var(--fontWeight-regular)",
-      },
+      props: { fontWeight: "regular" },
+      style: { fontWeight: "var(--fontWeight-regular)" },
     },
     {
-      props: { weight: "medium" },
-      style: {
-        fontWeight: "var(--fontWeight-medium)",
-      },
+      props: { fontWeight: "medium" },
+      style: { fontWeight: "var(--fontWeight-medium)" },
     },
     {
-      props: { weight: "semibold" },
-      style: {
-        fontWeight: "var(--fontWeight-semibold)",
-      },
+      props: { fontWeight: "semibold" },
+      style: { fontWeight: "var(--fontWeight-semibold)" },
     },
     {
-      props: { weight: "bold" },
-      style: {
-        fontWeight: "var(--fontWeight-bold)",
-      },
+      props: { fontWeight: "bold" },
+      style: { fontWeight: "var(--fontWeight-bold)" },
     },
     {
-      props: { family: "sans" },
-      style: {
-        fontFamily: "var(--fontFamily-sans)",
-      },
+      props: { fontFamily: "sans" },
+      style: { fontFamily: "var(--fontFamily-sans)" },
     },
     {
-      props: { family: "mono" },
-      style: {
-        fontFamily: "var(--fontFamily-mono)",
-      },
+      props: { fontFamily: "mono" },
+      style: { fontFamily: "var(--fontFamily-mono)" },
     },
     {
-      props: { leading: "normal" },
-      style: {
-        lineHeight: "var(--lineHeight-normal)",
-      },
+      props: { lineHeight: "none" },
+      style: { lineHeight: "var(--lineHeight-none)" },
     },
     {
-      props: { leading: "tight" },
-      style: {
-        lineHeight: "var(--lineHeight-tight)",
-      },
+      props: { lineHeight: "tight" },
+      style: { lineHeight: "var(--lineHeight-tight)" },
     },
     {
-      props: { leading: "none" },
-      style: {
-        lineHeight: "var(--lineHeight-none)",
-      },
+      props: { lineHeight: "normal" },
+      style: { lineHeight: "var(--lineHeight-normal)" },
     },
   ],
 });
 
 const Text = ({
+  as = "p",
+  ...props
+}: React.ComponentProps<"p"> & {
   /**
    * The wrapper element to use.
    */
-  as = "p",
+  as?: "p" | "span" | "div";
   /**
    * The text's font family.
    */
-  family = "sans",
-  /**
-   * The text's line height.
-   */
-  leading = "normal",
+  fontFamily?: "sans" | "mono";
   /**
    * The text's size.
    */
-  size = "md",
-  /**
-   * The text's font weight.
-   */
-  weight = "regular",
-  ...props
-}: React.ComponentProps<"p"> & {
-  as?: "p" | "span" | "div";
-  family?: "sans" | "mono";
-  leading?: "normal" | "tight" | "none";
-  size?:
+  fontSize?:
     | "2xs"
     | "xs"
     | "sm"
@@ -205,8 +150,15 @@ const Text = ({
     | "7xl"
     | "8xl"
     | "9xl";
-  weight?: "regular" | "medium" | "semibold" | "bold";
-}) => <TextRoot as={as} size={size} weight={weight} family={family} leading={leading} {...props} />;
+  /**
+   * The text's font weight.
+   */
+  fontWeight?: "regular" | "medium" | "semibold" | "bold";
+  /**
+   * The text's line height.
+   */
+  lineHeight?: "normal" | "tight" | "none";
+}) => <TextRoot as={as} {...props} />;
 Text.displayName = "Text";
 
 export { Text };

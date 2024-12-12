@@ -22,9 +22,7 @@ const FieldLabel = styled(Primitives.Label, {
   name: "FieldLabel",
   slot: "label",
 })<React.ComponentProps<typeof Primitives.Label>>({
-  color: "hsl(var(--color-foreground))",
   display: "block",
-  fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
   fontWeight: "var(--fontWeight-medium)",
   lineHeight: "var(--lineHeight-none)",
@@ -36,9 +34,7 @@ const FieldDescription = styled(Primitives.Description, {
 })<React.ComponentProps<typeof Primitives.Description>>({
   color: "hsl(var(--color-mutedForeground))",
   display: "block",
-  fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
-  lineHeight: "var(--lineHeight-normal)",
   marginBlock: 0,
 });
 
@@ -48,9 +44,7 @@ const FieldError = styled(Primitives.Error, {
 })<React.ComponentProps<typeof Primitives.Error>>({
   color: "hsl(var(--color-danger))",
   display: "block",
-  fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
-  lineHeight: "var(--lineHeight-normal)",
   marginBlock: 0,
 });
 

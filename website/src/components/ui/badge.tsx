@@ -14,7 +14,6 @@ const BadgeRoot = styled("span", {
   alignItems: "center",
   boxSizing: "border-box",
   display: "inline-flex",
-  fontFamily: "var(--fontFamily-sans)",
   fontWeight: "var(--fontWeight-medium)",
   gap: "var(--spacing-unit)",
   "&:focus-visible": {

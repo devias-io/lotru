@@ -27,10 +27,10 @@ export default function HoverCardDemo() {
             </Avatar>
             <Stack gap={4}>
               <Stack gap={1}>
-                <Text size="sm" weight="semibold">
+                <Text fontSize="sm" fontWeight="semibold">
                   @nextjs
                 </Text>
-                <Text size="sm">The React Framework - created and maintained by @vercel.</Text>
+                <Text fontSize="sm">The React Framework - created and maintained by @vercel.</Text>
               </Stack>
               <Stack alignItems="center" direction="row" gap={2}>
                 <CalendarDaysIcon
@@ -41,7 +41,7 @@ export default function HoverCardDemo() {
                   })}
                 />
                 <Text
-                  size="xs"
+                  fontSize="xs"
                   className={css({
                     color: "hsl(var(--color-mutedForeground))",
                   })}

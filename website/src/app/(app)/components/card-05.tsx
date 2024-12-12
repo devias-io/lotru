@@ -69,18 +69,18 @@ export default function Example(): React.JSX.Element {
                   textAlign: "center",
                 })}
               >
-                <Text className={css({ color: "hsl(var(--color-mutedForeground))" })} size="xs">
+                <Text className={css({ color: "hsl(var(--color-mutedForeground))" })} fontSize="xs">
                   {event.month}
                 </Text>
-                <Text size="xl" leading="tight" weight="medium">
+                <Text fontSize="xl" fontWeight="medium" lineHeight="tight">
                   {event.day}
                 </Text>
               </div>
               <div>
-                <Text size="sm" weight="medium">
+                <Text fontSize="sm" fontWeight="medium">
                   {event.title}
                 </Text>
-                <Text className={css({ color: "hsl(var(--color-mutedForeground))" })} size="sm">
+                <Text className={css({ color: "hsl(var(--color-mutedForeground))" })} fontSize="sm">
                   {event.description}
                 </Text>
               </div>

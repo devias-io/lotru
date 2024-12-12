@@ -44,7 +44,6 @@ const CardTitle = styled("div", {
   name: "CardTitle",
   slot: "title",
 })<React.ComponentProps<"div">>({
-  fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-xl)",
   lineHeight: "var(--lineHeight-none)",
   fontWeight: "var(--fontWeight-semibold)",
@@ -55,7 +54,6 @@ const CardDescription = styled("div", {
   slot: "description",
 })<React.ComponentProps<"div">>({
   color: "hsl(var(--color-mutedForeground))",
-  fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
   lineHeight: "var(--lineHeight-tight)",
 });

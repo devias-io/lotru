@@ -18,7 +18,6 @@ const TooltipContent = styled(Primitives.Popup, {
   borderRadius: "var(--borderRadius-md)",
   color: "hsl(var(--color-primaryForeground))",
   filter: "drop-shadow(0px 2px 4px hsl(0 0% 0% / 6%))",
-  fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-xs)",
   lineHeight: "var(--lineHeight-tight)",
   outline: "none",

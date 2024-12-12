@@ -2,7 +2,6 @@ import * as React from "react";
 import { css } from "@pigment-css/react";
 
 import { index } from "@/src/__registry__";
-import { Text } from "@/src/components/ui/text";
 import { CodeBlockWrapper } from "@/src/components/code-block-wrapper";
 
 export interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -21,7 +20,7 @@ export function ComponentPreview({
     const Component = index[id]?.component;
 
     if (!Component) {
-      return <Text>Component {id} not found</Text>;
+      return <div>Component {id} not found</div>;
     }
 
     return <Component />;

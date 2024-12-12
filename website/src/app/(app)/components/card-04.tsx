@@ -52,9 +52,9 @@ export default function Example(): React.JSX.Element {
           <Separator />
           <Stack gap={3}>
             <Text
-              size="sm"
               className={css({ color: "hsl(var(--color-mutedForeground))" })}
-              weight="medium"
+              fontSize="sm"
+              fontWeight="medium"
             >
               Project members
             </Text>
@@ -77,10 +77,10 @@ export default function Example(): React.JSX.Element {
                       <AvatarImage src={member.avatar} />
                     </Avatar>
                     <div>
-                      <Text>{member.name}</Text>
+                      <div>{member.name}</div>
                       <Text
                         className={css({ color: "hsl(var(--color-mutedForeground))" })}
-                        size="sm"
+                        fontSize="sm"
                       >
                         {member.email}
                       </Text>

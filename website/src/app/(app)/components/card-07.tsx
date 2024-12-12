@@ -25,13 +25,13 @@ export default function Example(): React.JSX.Element {
       <Separator />
       <CardContent className={css({ paddingBlock: "calc(var(--spacing-unit) * 4)" })}>
         <Stack gap={2}>
-          <Text>
+          <div>
             Type{" "}
-            <Text as="span" weight="semibold">
+            <Text as="span" fontWeight="semibold">
               delete
             </Text>{" "}
             to confirm your action.
-          </Text>
+          </div>
           <Input className={css({ maxWidth: "var(--size-full)" })} />
         </Stack>
       </CardContent>

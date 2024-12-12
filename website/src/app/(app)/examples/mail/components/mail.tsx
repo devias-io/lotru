@@ -18,11 +18,11 @@ import { Progress } from "@/src/components/ui/progress";
 import { Stack } from "@/src/components/ui/stack";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/src/components/ui/tabs";
 import { Text } from "@/src/components/ui/text";
-import type { Mail } from "@/src/app/examples/mail/data";
-import { MailDisplay } from "@/src/app/examples/mail/components/mail-display";
-import { MailList } from "@/src/app/examples/mail/components/mail-list";
-import { MailNav } from "@/src/app/examples/mail/components/mail-nav";
-import { MailTopbar } from "@/src/app/examples/mail/components/mail-topbar";
+import type { Mail } from "@/src/app/(app)/examples/mail/data";
+import { MailDisplay } from "@/src/app/(app)/examples/mail/components/mail-display";
+import { MailList } from "@/src/app/(app)/examples/mail/components/mail-list";
+import { MailNav } from "@/src/app/(app)/examples/mail/components/mail-nav";
+import { MailTopbar } from "@/src/app/(app)/examples/mail/components/mail-topbar";
 
 export interface MailProps {
   mails: Mail[];
@@ -136,21 +136,21 @@ export function Mail({ mails }: MailProps): React.JSX.Element {
             })}
             gap={2}
           >
-            <Text weight="medium">Storage</Text>
+            <Text fontWeight="medium">Storage</Text>
             <Progress value={30} />
             <Stack alignItems="center" direction="row" justifyContent="space-between">
-              <Text size="xs" weight="bold">
+              <Text fontSize="xs" fontWeight="bold">
                 3.2 GB{" "}
                 <Text
                   as="span"
                   className={css({ color: "hsl(var(--color-mutedForeground))" })}
-                  size="xs"
-                  weight="regular"
+                  fontSize="xs"
+                  fontWeight="regular"
                 >
                   of 10 GB used
                 </Text>
               </Text>
-              <Text className={css({ color: "hsl(var(--color-mutedForeground))" })} size="xs">
+              <Text className={css({ color: "hsl(var(--color-mutedForeground))" })} fontSize="xs">
                 30%
               </Text>
             </Stack>

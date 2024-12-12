@@ -43,10 +43,10 @@ export default function Example(): React.JSX.Element {
             />
           </svg>
         </div>
-        <Text size="xl" weight="medium">
+        <Text fontSize="xl" fontWeight="medium">
           Welcome to Lotru UI
         </Text>
-        <Text className={css({ color: "hsl(var(--color-mutedForeground))" })} size="sm">
+        <Text className={css({ color: "hsl(var(--color-mutedForeground))" })} fontSize="sm">
           Sign in and continue where you&apos;ve left off.
         </Text>
       </div>
@@ -82,7 +82,7 @@ export default function Example(): React.JSX.Element {
               </Field>
               <Stack alignItems="center" direction="row" gap={2}>
                 <Checkbox id="remember" defaultChecked />
-                <Text size="sm" weight="medium">
+                <Text fontSize="sm" fontWeight="medium">
                   Remember this device
                 </Text>
               </Stack>
@@ -92,7 +92,7 @@ export default function Example(): React.JSX.Element {
               </Button>
               <Text
                 className={css({ color: "hsl(var(--color-mutedForeground))", textAlign: "center" })}
-                size="sm"
+                fontSize="sm"
               >
                 Don&apos;t have an account?{" "}
                 <Text
@@ -101,7 +101,7 @@ export default function Example(): React.JSX.Element {
                     color: "hsl(var(--color-foreground))",
                     fontWeight: "var(--fontWeight-medium)",
                   })}
-                  size="sm"
+                  fontSize="sm"
                 >
                   Sign up
                 </Text>

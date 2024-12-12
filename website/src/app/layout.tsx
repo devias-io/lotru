@@ -8,7 +8,6 @@ import "@pigment-css/react/styles.css";
 import { cn } from "@/src/lib/cn";
 import { siteConfig } from "@/src/config/site";
 import { fontMono, fontSans } from "@/src/lib/fonts";
-import { Topbar } from "@/src/components/topbar";
 
 export const metadata: Metadata = {
   title: siteConfig.name,
@@ -22,27 +21,28 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps): React.JSX.Element {
   return (
     <html
-      className={cn(fontSans.variable, fontMono.variable)}
+      className={cn(
+        css({
+          "-webkit-font-smoothing": "antialiased",
+          fontFamily: "var(--fontFamily-sans)",
+          fontSize: "var(--fontSize-md)",
+          lineHeight: "var(--lineHeight-normal)",
+        } as React.CSSProperties),
+        fontSans.variable,
+        fontMono.variable
+      )}
       dir="ltr"
       lang="en"
       suppressHydrationWarning
     >
       <body
-        className={css(({ theme }) => ({
-          "-webkit-font-smoothing": "antialiased",
+        className={css({
           backgroundColor: "hsl(var(--color-background))",
           color: "hsl(var(--color-foreground))",
           margin: 0,
-          padding: 0,
-          ...theme.applyStyles("dark", {
-            colorScheme: "dark",
-          }),
-        }))}
+        })}
       >
-        <ThemeProvider>
-          <Topbar />
-          {children}
-        </ThemeProvider>
+        <ThemeProvider defaultTheme="system">{children}</ThemeProvider>
       </body>
     </html>
   );

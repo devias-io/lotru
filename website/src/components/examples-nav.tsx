@@ -23,11 +23,11 @@ export function ExamplesNav(): React.JSX.Element {
         gap: "calc(var(--spacing-unit) * 4)",
       })}
     >
-      <Text className={css({ textAlign: "center" })} size="2xl" weight="medium">
+      <Text className={css({ textAlign: "center" })} fontSize="2xl" fontWeight="medium">
         Live examples
       </Text>
       <Stack alignItems="center" direction="row" gap={2}>
-        <Text className={css({ color: "hsl(var(--color-mutedForeground))" })} size="sm">
+        <Text className={css({ color: "hsl(var(--color-mutedForeground))" })} fontSize="sm">
           As simple as
         </Text>
         <Badge variant="outline">
@@ -38,12 +38,21 @@ export function ExamplesNav(): React.JSX.Element {
       <Tabs
         value={getActiveTab(pathname)}
         onValueChange={(value) => {
-          router.push(value === "all" ? "/" : "/examples/mail");
+          if (value === "forms") {
+            return router.push("/examples/forms");
+          }
+
+          if (value === "mail") {
+            return router.push("/examples/mail");
+          }
+
+          router.push("/");
         }}
       >
         <TabsList>
           <TabsTrigger value="all">Cards</TabsTrigger>
           <TabsTrigger value="mail">Mail</TabsTrigger>
+          <TabsTrigger value="forms">Forms</TabsTrigger>
         </TabsList>
       </Tabs>
     </div>
@@ -51,12 +60,12 @@ export function ExamplesNav(): React.JSX.Element {
 }
 
 function getActiveTab(pathname: string): string {
-  if (pathname === "/") {
-    return "all";
-  }
-
   if (pathname.startsWith("/examples/mail")) {
     return "mail";
+  }
+
+  if (pathname.startsWith("/examples/forms")) {
+    return "forms";
   }
 
   return "all";

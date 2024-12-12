@@ -109,7 +109,6 @@ const AvatarFallback = styled(Primitives.Fallback, {
   backgroundColor: "hsl(var(--color-muted))",
   color: "hsl(var(--color-mutedForeground))",
   display: "flex",
-  fontFamily: "var(--fontFamily-sans)",
   fontSize: "calc(var(--avatar-size) / 2.5)",
   height: "var(--size-full)",
   justifyContent: "center",

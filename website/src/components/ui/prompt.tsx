@@ -103,9 +103,7 @@ const PromptTitle = styled(Primitives.Title, {
   name: "PromptTitle",
   slot: "title",
 })<React.ComponentProps<typeof Primitives.Title>>({
-  fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-lg)",
-  lineHeight: "var(--lineHeight-normal)",
   fontWeight: "var(--fontWeight-semibold)",
   marginBlock: 0,
 });
@@ -115,7 +113,6 @@ const PromptDescription = styled(Primitives.Description, {
   slot: "description",
 })<React.ComponentProps<typeof Primitives.Description>>({
   color: "hsl(var(--color-mutedForeground))",
-  fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
   lineHeight: "var(--lineHeight-tight)",
   marginBlock: 0,

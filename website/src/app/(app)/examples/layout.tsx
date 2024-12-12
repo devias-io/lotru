@@ -1,24 +1,20 @@
 import * as React from "react";
 import Link from "next/link";
 import { css } from "@pigment-css/react";
-import { TerminalIcon, SquareArrowOutUpRightIcon } from "lucide-react";
+import { SquareArrowOutUpRightIcon, TerminalIcon } from "lucide-react";
 
 import { Badge } from "@/src/components/ui/badge";
 import { Button } from "@/src/components/ui/button";
 import { Input } from "@/src/components/ui/input";
-import { Stack } from "@/src/components/ui/stack";
 import { Text } from "@/src/components/ui/text";
 import { CopyButton } from "@/src/components/copy-button";
 import { ExamplesNav } from "@/src/components/examples-nav";
-import Card01 from "@/src/app/components/card-01";
-import Card02 from "@/src/app/components/card-02";
-import Card03 from "@/src/app/components/card-03";
-import Card04 from "@/src/app/components/card-04";
-import Card05 from "@/src/app/components/card-05";
-import Card06 from "@/src/app/components/card-06";
-import Card07 from "@/src/app/components/card-07";
 
-export default function Page(): React.JSX.Element {
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+export default function Layout({ children }: LayoutProps): React.JSX.Element {
   return (
     <div>
       <div
@@ -39,7 +35,7 @@ export default function Page(): React.JSX.Element {
             maxWidth: "700px",
           })}
         >
-          <Text className={css({ textAlign: "center" })} size="3xl" weight="medium">
+          <Text className={css({ textAlign: "center" })} fontSize="3xl" fontWeight="medium">
             Desining Stunning Apps Has Never Been Easier.
           </Text>
           <div
@@ -48,14 +44,11 @@ export default function Page(): React.JSX.Element {
               textAlign: "center",
             })}
           >
-            <Text size="md" weight="regular">
+            <Text fontSize="md" fontWeight="regular">
               Copy-paste pre-built components, powered by{" "}
               <a href="https://base-ui.com" target="_blank" rel="noreferrer">
                 <Badge
-                  className={css({
-                    backgroundColor: "hsl(var(--color-background))",
-                    color: "hsl(var(--color-foreground))",
-                  })}
+                  className={css({ backgroundColor: "hsl(var(--color-background))" })}
                   variant="outline"
                 >
                   Base UI
@@ -65,10 +58,7 @@ export default function Page(): React.JSX.Element {
               and{" "}
               <a href="https://github.com/mui/pigment-css" target="_blank" rel="noreferrer">
                 <Badge
-                  className={css({
-                    backgroundColor: "hsl(var(--color-background))",
-                    color: "hsl(var(--color-foreground))",
-                  })}
+                  className={css({ backgroundColor: "hsl(var(--color-background))" })}
                   variant="outline"
                 >
                   Pigment CSS
@@ -140,30 +130,13 @@ export default function Page(): React.JSX.Element {
         <ExamplesNav />
         <div
           className={css({
-            display: "grid",
-            gap: "calc(var(--spacing-unit) * 6)",
-            gridTemplateColumns: "repeat(var(--columns), minmax(0, 1fr))",
-            "@media (min-width: 768px)": {
-              "--columns": 2,
-            },
-            "@media (min-width: 1024px)": {
-              "--columns": 3,
-            },
-          } as React.CSSProperties)}
+            border: "1px solid hsl(var(--color-border))",
+            borderRadius: "var(--borderRadius-xl)",
+            boxShadow: "var(--shadow-md)",
+            overflow: "hidden",
+          })}
         >
-          <Stack gap={6}>
-            <Card01 />
-            <Card05 />
-          </Stack>
-          <Stack gap={6}>
-            <Card02 />
-            <Card04 />
-            <Card06 />
-          </Stack>
-          <Stack gap={6}>
-            <Card03 />
-            <Card07 />
-          </Stack>
+          {children}
         </div>
       </div>
     </div>

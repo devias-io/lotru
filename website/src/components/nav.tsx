@@ -51,7 +51,10 @@ export function Nav(): React.JSX.Element {
     >
       <Link
         className={css({
+          alignItems: "center",
           display: "none",
+          gap: "calc(var(--spacing-unit) * 2)",
+          textDecoration: "none",
           "@media (min-width: 768px)": {
             display: "inline-flex",
           },
@@ -59,7 +62,17 @@ export function Nav(): React.JSX.Element {
         href="/"
         prefetch={false}
       >
-        <Logo />
+        <Logo width={24} height={24} />
+        <span
+          className={css({
+            color: "hsl(var(--color-foreground))",
+            fontFamily: "var(--fontFamily-sans)",
+            fontSize: "var(--fontSize-lg)",
+            fontWeight: "var(--fontWeight-semibold)",
+          })}
+        >
+          Lotru
+        </span>
       </Link>
       <NavItem active={pathname === "/docs"} href="/docs" prefetch={false}>
         Documentation

@@ -21,7 +21,7 @@ export default function Example(): React.JSX.Element {
       <CardHeader>
         <div>
           <Avatar>
-            <PackageIcon />
+            <PackageIcon color="hsl(var(--color-mutedForeground))" size={16} />
           </Avatar>
         </div>
         <CardTitle>Create new project</CardTitle>

@@ -12,10 +12,12 @@ export default function Layout({ children }: LayoutProps): React.JSX.Element {
     <div
       className={css({
         boxSizing: "border-box",
-        maxWidth: "1536px",
         marginInline: "auto",
         "@media (min-width: 768px)": {
           paddingInline: "calc(var(--size-unit) * 8)",
+        },
+        "@media (min-width: 1800px)": {
+          maxWidth: "1536px",
         },
       })}
     >

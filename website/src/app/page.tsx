@@ -50,7 +50,7 @@ export default function Page(): React.JSX.Element {
           >
             <Text size="md" weight="regular">
               Copy-paste pre-built components, powered by{" "}
-              <a href="https:/base-ui.com" target="_blank" rel="noreferrer">
+              <a href="https://base-ui.com" target="_blank" rel="noreferrer">
                 <Badge
                   className={css({
                     backgroundColor: "hsl(var(--color-background))",
@@ -63,7 +63,7 @@ export default function Page(): React.JSX.Element {
                 </Badge>
               </a>{" "}
               and{" "}
-              <a href="https:/github.com/mui/pigment-css" target="_blank" rel="noreferrer">
+              <a href="https://github.com/mui/pigment-css" target="_blank" rel="noreferrer">
                 <Badge
                   className={css({
                     backgroundColor: "hsl(var(--color-background))",

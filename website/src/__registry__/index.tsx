@@ -97,15 +97,6 @@ export const index: Record<
     }],
     
   },
-  "ui/heading": {
-    id: "ui/heading",
-    name: "Heading",
-    description: "",
-    files: [{
-      path: "ui/heading.tsx",
-    }],
-    
-  },
   "ui/hover-card": {
     id: "ui/hover-card",
     name: "Hover Card",
@@ -402,15 +393,6 @@ export const index: Record<
       path: "examples/field-02.tsx",
     }],
     component: React.lazy(() => import("@/src/components/examples/field-02.tsx"))
-  },
-  "examples/heading-01": {
-    id: "examples/heading-01",
-    name: "Heading 01",
-    description: "",
-    files: [{
-      path: "examples/heading-01.tsx",
-    }],
-    component: React.lazy(() => import("@/src/components/examples/heading-01.tsx"))
   },
   "examples/hover-card-01": {
     id: "examples/hover-card-01",

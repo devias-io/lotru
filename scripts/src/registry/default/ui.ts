@@ -91,15 +91,6 @@ export const ui: RegistryComponent[] = [
     ],
   },
   {
-    id: "ui/heading",
-    name: "Heading",
-    files: [
-      {
-        path: "ui/heading.tsx",
-      },
-    ],
-  },
-  {
     id: "ui/hover-card",
     name: "Hover Card",
     dependencies: ["@base_ui/react"],

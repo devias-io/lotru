@@ -36,10 +36,6 @@
     "name": "Field"
   },
   {
-    "id": "ui/heading",
-    "name": "Heading"
-  },
-  {
     "id": "ui/hover-card",
     "name": "Hover Card"
   },

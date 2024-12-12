@@ -104,8 +104,8 @@ export default function Page(): React.JSX.Element {
               <CopyButton
                 className={css({
                   position: "absolute",
-                  right: "calc(var(--spacing-unit) * 0.5)",
-                  top: "calc(var(--spacing-unit) * 0.5)",
+                  right: "calc(var(--spacing-unit) * 1)",
+                  top: "calc(var(--spacing-unit) * 1)",
                 })}
                 size="xs"
                 value="npx lotru@latest init"

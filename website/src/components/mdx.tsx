@@ -150,8 +150,6 @@ function Code({
         css({
           fontFamily: "var(--fontFamily-mono)",
           fontSize: "var(--fontSize-sm)",
-          fontWeight: "var(--fontWeight-regular)",
-          lineHeight: "var(--lineHeight-tight)",
         }),
         className
       )}

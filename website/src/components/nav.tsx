@@ -3,16 +3,20 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { css, styled } from "@pigment-css/react";
 
-import { Logo } from "@/src/components/logo";
+import { Badge } from "@/src/components/ui/badge";
 import { Stack } from "@/src/components/ui/stack";
+import { Logo } from "@/src/components/logo";
 
 const NavItem = styled(Link, {
   shouldForwardProp: (prop) => prop !== "active",
 })<{ active?: boolean; disabled?: boolean }>({
+  alignItems: "center",
   color: "hsl(var(--color-foreground) / 80%)",
+  display: "inline-flex",
   fontFamily: "var(--fontFamily-sans)",
   fontSize: "var(--fontSize-sm)",
   fontWeight: "var(--fontWeight-medium)",
+  gap: "calc(var(--spacing-unit) * 2)",
   textDecoration: "none",
   "&:hover:not([data-disabled])": {
     color: "hsl(var(--color-foreground))",
@@ -71,21 +75,10 @@ export function Nav(): React.JSX.Element {
           }}
         >
           Blocks
+          <Badge size="sm" variant="outline">
+            Coming soon
+          </Badge>
         </NavItem>
-        <span
-          className={css({
-            border: "1px solid hsl(var(--color-border))",
-            borderRadius: "var(--borderRadius-md)",
-            color: "hsl(var(--color-foreground))",
-            fontFamily: "var(--fontFamily-sans)",
-            fontSize: "var(--fontSize-xs)",
-            fontWeight: "var(--fontWeight-medium)",
-            opacity: 0.5,
-            padding: "var(--spacing-unit)",
-          })}
-        >
-          Coming soon
-        </span>
       </Stack>
     </div>
   );

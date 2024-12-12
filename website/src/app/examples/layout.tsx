@@ -1,12 +1,13 @@
 import * as React from "react";
 import Link from "next/link";
 import { css } from "@pigment-css/react";
-import { SquareArrowOutUpRightIcon } from "lucide-react";
+import { SquareArrowOutUpRightIcon, TerminalIcon } from "lucide-react";
 
 import { Badge } from "@/src/components/ui/badge";
 import { Button } from "@/src/components/ui/button";
 import { Input } from "@/src/components/ui/input";
 import { Text } from "@/src/components/ui/text";
+import { CopyButton } from "@/src/components/copy-button";
 import { ExamplesNav } from "@/src/components/examples-nav";
 
 interface LayoutProps {
@@ -22,6 +23,7 @@ export default function Layout({ children }: LayoutProps): React.JSX.Element {
           borderBottom: "1px solid hsl(var(--color-border))",
           boxSizing: "border-box",
           paddingBlock: "calc(var(--spacing-unit) * 24)",
+          paddingInline: "calc(var(--size-unit) * 6)",
         })}
       >
         <div
@@ -44,26 +46,26 @@ export default function Layout({ children }: LayoutProps): React.JSX.Element {
           >
             <Text size="md" weight="regular">
               Copy-paste pre-built components, powered by{" "}
-              <a href="https://base-ui.com" target="_blank" rel="noreferrer">
+              <a href="https:/base-ui.com" target="_blank" rel="noreferrer">
                 <Badge
                   className={css({
                     backgroundColor: "hsl(var(--color-background))",
-                    border: "1px solid hsl(var(--color-border))",
                     color: "hsl(var(--color-foreground))",
                   })}
+                  variant="outline"
                 >
                   Base UI
                   <SquareArrowOutUpRightIcon color="hsl(var(--color-mutedForeground))" size={12} />
                 </Badge>
               </a>{" "}
               and{" "}
-              <a href="https://github.com/mui/pigment-css" target="_blank" rel="noreferrer">
+              <a href="https:/github.com/mui/pigment-css" target="_blank" rel="noreferrer">
                 <Badge
                   className={css({
                     backgroundColor: "hsl(var(--color-background))",
-                    border: "1px solid hsl(var(--color-border))",
                     color: "hsl(var(--color-foreground))",
                   })}
+                  variant="outline"
                 >
                   Pigment CSS
                   <SquareArrowOutUpRightIcon color="hsl(var(--color-mutedForeground))" size={12} />
@@ -78,16 +80,39 @@ export default function Layout({ children }: LayoutProps): React.JSX.Element {
               display: "flex",
               gap: "calc(var(--spacing-unit) * 2)",
               justifyContent: "center",
+              flexWrap: "wrap",
             })}
           >
-            <Input
-              className={css({
-                backgroundColor: "hsl(var(--color-background))",
-                flex: "0 1 320px",
-              })}
-              readOnly
-              value="npx lotru@latest init"
-            />
+            <div className={css({ position: "relative" })}>
+              <Input
+                className={css({
+                  backgroundColor: "hsl(var(--color-background))",
+                  maxWidth: "calc(var(--size-unit) * 80)",
+                  paddingInlineStart: "calc(var(--spacing-unit) * 8)",
+                })}
+                readOnly
+                value="npx lotru@latest init"
+              />
+              <TerminalIcon
+                className={css({
+                  left: "calc(var(--spacing-unit) * 2)",
+                  pointerEvents: "none",
+                  position: "absolute",
+                  top: "calc(var(--spacing-unit) * 2.5)",
+                })}
+                color="hsl(var(--color-mutedForeground))"
+                size={16}
+              />
+              <CopyButton
+                className={css({
+                  position: "absolute",
+                  right: "calc(var(--spacing-unit) * 0.5)",
+                  top: "calc(var(--spacing-unit) * 0.5)",
+                })}
+                size="xs"
+                value="npx lotru@latest init"
+              />
+            </div>
             <Link href="/docs">
               <Button>Get Started</Button>
             </Link>

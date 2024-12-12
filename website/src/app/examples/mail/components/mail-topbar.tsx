@@ -1,6 +1,6 @@
 import * as React from "react";
 import { css } from "@pigment-css/react";
-import { CircleHelpIcon, RefreshCcwIcon, SettingsIcon } from "lucide-react";
+import { CircleHelpIcon, RefreshCcwIcon, SearchIcon, SettingsIcon } from "lucide-react";
 
 import { Avatar, AvatarImage } from "@/src/components/ui/avatar";
 import { Badge } from "@/src/components/ui/badge";
@@ -68,14 +68,29 @@ export function MailTopbar(): React.JSX.Element {
             <Text size="sm" weight="medium">
               AI Automation
             </Text>
-            <Badge size="sm" variant="subtle">
+            <Badge size="sm" variant="outline">
               Coming soon
             </Badge>
           </Stack>
         </Stack>
       </Stack>
       <Stack alignItems="center" direction="row" gap={2}>
-        <Input placeholder="Search" />
+        <div className={css({ position: "relative" })}>
+          <Input
+            className={css({ paddingInlineStart: "calc(var(--spacing-unit) * 8)" })}
+            placeholder="Search"
+          />
+          <SearchIcon
+            className={css({
+              left: "calc(var(--size-unit) * 2)",
+              pointerEvents: "none",
+              position: "absolute",
+              top: "calc(var(--size-unit) * 2.5)",
+            })}
+            color="hsl(var(--color-mutedForeground))"
+            size={16}
+          />
+        </div>
         <IconButton size="sm" variant="ghost">
           <RefreshCcwIcon />
         </IconButton>

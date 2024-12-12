@@ -51,8 +51,8 @@ const InputRoot = styled("input", {
       props: { size: "sm" },
       style: {
         fontSize: "var(--fontSize-md)",
-        height: "calc(var(--size-unit) * 9)",
-        minWidth: "calc(var(--size-unit) * 9)",
+        height: "calc(var(--size-unit) * 8)",
+        minWidth: "calc(var(--size-unit) * 8)",
         paddingBlock: "calc(var(--spacing-unit) * 1.5)",
         paddingInline: "calc(var(--spacing-unit) * 2.5)",
         "@media (min-width: 768px)": {
@@ -64,8 +64,8 @@ const InputRoot = styled("input", {
       props: { size: "md" },
       style: {
         fontSize: "var(--fontSize-md)",
-        height: "calc(var(--size-unit) * 10)",
-        minWidth: "calc(var(--size-unit) * 10)",
+        height: "calc(var(--size-unit) * 9)",
+        minWidth: "calc(var(--size-unit) * 9)",
         paddingBlock: "calc(var(--spacing-unit) * 2)",
         paddingInline: "calc(var(--spacing-unit) * 3)",
         "@media (min-width: 768px)": {
@@ -77,8 +77,8 @@ const InputRoot = styled("input", {
       props: { size: "lg" },
       style: {
         fontSize: "var(--fontSize-md)",
-        height: "calc(var(--size-unit) * 11)",
-        minWidth: "calc(var(--size-unit) * 11)",
+        height: "calc(var(--size-unit) * 10)",
+        minWidth: "calc(var(--size-unit) * 10)",
         paddingBlock: "calc(var(--spacing-unit) * 2.5)",
         paddingInline: "calc(var(--spacing-unit) * 3.5)",
         "@media (min-width: 768px)": {

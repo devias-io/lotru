@@ -27,7 +27,9 @@ export function ExamplesNav(): React.JSX.Element {
         Live examples
       </Text>
       <Stack alignItems="center" direction="row" gap={2}>
-        <Text>As simple as</Text>
+        <Text className={css({ color: "hsl(var(--color-mutedForeground))" })} size="sm">
+          As simple as
+        </Text>
         <Badge variant="outline">
           <TerminalIcon />
           npx lotru add examples/card-01

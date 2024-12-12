@@ -15,6 +15,7 @@ const MailItem = styled(
   border: "none",
   borderRadius: "var(--borderRadius-md)",
   boxSizing: "border-box",
+  color: "hsl(var(--color-foreground))",
   display: "grid",
   gap: "calc(var(--spacing-unit) * 2)",
   padding: "calc(var(--size-unit) * 3)",
@@ -116,5 +117,5 @@ function getBadgeVariantFromLabel(label: string): React.ComponentProps<typeof Ba
     return "solid";
   }
 
-  return "subtle";
+  return "outline";
 }

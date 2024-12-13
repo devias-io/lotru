@@ -13,7 +13,7 @@ const ButtonRoot = styled("button", {
 })<
   React.ComponentProps<"button"> & {
     size: "xs" | "sm" | "md" | "lg" | "xl";
-    variant: "solid" | "outline" | "ghost" | "danger";
+    variant: "solid" | "outline" | "ghost" | "link" | "danger";
   }
 >({
   alignItems: "center",
@@ -101,6 +101,17 @@ const ButtonRoot = styled("button", {
         },
         "&:active": {
           backgroundColor: "transparent",
+        },
+      },
+    },
+    {
+      props: { variant: "link" },
+      style: {
+        backgroundColor: "transparent",
+        border: "none",
+        color: "hsl(var(--color-primary))",
+        "&:hover:not(:disabled)": {
+          textDecoration: "underline",
         },
       },
     },
@@ -208,7 +219,7 @@ const Button = ({
   /**
    * The button's style.
    */
-  variant?: "solid" | "outline" | "ghost" | "danger";
+  variant?: "solid" | "outline" | "ghost" | "link" | "danger";
 }) => {
   const renderInner = () => {
     if (isLoading) {

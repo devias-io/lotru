@@ -141,26 +141,38 @@ function Code({
 }): React.JSX.Element {
   const inline = props["data-language"] === undefined;
 
+  if (inline) {
+    return (
+      <code
+        className={cn(
+          css({
+            backgroundColor: "hsl(var(--color-muted))",
+            borderRadius: "var(--borderRadius-sm)",
+            fontFamily: "var(--fontFamily-mono)",
+            fontSize: "var(--fontSize-sm)",
+            paddingBlock: "var(--spacing-unit)",
+            paddingInline: "calc(var(--spacing-unit) * 2)",
+          })
+        )}
+        style={{ ...style, backgroundColor: undefined }}
+        {...props}
+      />
+    );
+  }
+
   return (
     <code
       className={cn(
         css({
           fontFamily: "var(--fontFamily-mono)",
           fontSize: "var(--fontSize-sm)",
+          "& [data-line]": {
+            paddingInline: "calc(var(--spacing-unit) * 4)",
+          },
         }),
         className
       )}
-      style={{
-        ...style,
-        ...(inline
-          ? {
-              backgroundColor: "hsl(var(--color-muted))",
-              borderRadius: "var(--borderRadius-sm)",
-              paddingBlock: "var(--spacing-unit)",
-              paddingInline: "calc(var(--spacing-unit) * 2)",
-            }
-          : {}),
-      }}
+      style={{ ...style, backgroundColor: undefined }}
       {...props}
     />
   );
@@ -181,17 +193,18 @@ function Pre({
       <pre
         className={cn(
           css({
+            backgroundColor: "hsl(240 10% 4%)",
             borderRadius: "var(--borderRadius-md)",
             boxSizing: "border-box",
             overflowX: "auto",
-            padding: "calc(var(--spacing-unit) * 4)",
+            paddingBlock: "calc(var(--spacing-unit) * 4)",
             width: "var(--size-full)",
           }),
           className
         )}
         style={{
           ...style,
-          backgroundColor: "hsl(240 10% 4%)",
+          backgroundColor: undefined,
         }}
         {...props}
       />

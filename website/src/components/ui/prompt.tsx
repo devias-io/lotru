@@ -125,7 +125,18 @@ const PromptAction = ({
 }: React.PropsWithChildren<{
   type?: "button" | "submit" | "reset";
 }>) => {
-  return <Primitives.Close render={<Button type={type}>{children}</Button>} {...props} />;
+  const { variant } = usePromptContext();
+
+  return (
+    <Primitives.Close
+      render={
+        <Button type={type} variant={variant === "danger" ? "danger" : "solid"}>
+          {children}
+        </Button>
+      }
+      {...props}
+    />
+  );
 };
 PromptAction.displayName = "PromptAction";
 

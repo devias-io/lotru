@@ -16,7 +16,7 @@ import {
 
 export default function PromptExample(): React.JSX.Element {
   return (
-    <Prompt>
+    <Prompt variant="danger">
       <PromptTrigger render={<Button variant="outline">Show Dialog</Button>} />
       <PromptOverlay />
       <PromptContent>

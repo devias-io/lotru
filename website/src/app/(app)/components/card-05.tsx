@@ -91,13 +91,8 @@ export default function Example(): React.JSX.Element {
           </Stack>
         ))}
       </div>
-      <CardFooter
-        className={css({
-          display: "flex",
-          justifyContent: "flex-end",
-        })}
-      >
-        <Button size="sm" variant="ghost">
+      <CardFooter className={css({ display: "flex", justifyContent: "flex-end" })}>
+        <Button size="sm" variant="link">
           View all
           <ArrowRightIcon />
         </Button>

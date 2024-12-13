@@ -21,7 +21,13 @@ export default function Page(): React.JSX.Element {
         position: "relative",
       })}
     >
-      <div className={css({ display: "grid", placeItems: "center" })}>
+      <div
+        className={css({
+          display: "grid",
+          padding: "calc(var(--spacing-unit) * 4)",
+          placeItems: "center",
+        })}
+      >
         <Stack className={css({ maxWidth: "400px", width: "var(--size-full)" })} gap={4}>
           <div>
             <svg
@@ -103,10 +109,10 @@ export default function Page(): React.JSX.Element {
                     as="span"
                     className={css({
                       color: "hsl(var(--color-foreground))",
-                      fontWeight: "var(--fontWeight-medium)",
                       textDecoration: "underline",
                     })}
                     fontSize="sm"
+                    fontWeight="medium"
                   >
                     Recover
                   </Text>
@@ -122,6 +128,7 @@ export default function Page(): React.JSX.Element {
           borderRadius: "var(--borderRadius-2xl)",
           color: "hsl(var(--color-primaryForeground))",
           display: "grid",
+          padding: "calc(var(--spacing-unit) * 4)",
           placeItems: "center",
         })}
       >

@@ -33,12 +33,7 @@ export function ProfileForm(): React.JSX.Element {
       }}
     >
       <Stack gap={6}>
-        <div
-          className={css({
-            display: "grid",
-            gridTemplateColumns: "300px 1fr",
-          })}
-        >
+        <div className={css({ display: "grid", gridTemplateColumns: "300px 1fr" })}>
           <div>
             <Text fontSize="lg" fontWeight="medium">
               Avatar
@@ -54,12 +49,7 @@ export function ProfileForm(): React.JSX.Element {
           </Stack>
         </div>
         <Separator />
-        <div
-          className={css({
-            display: "grid",
-            gridTemplateColumns: "300px 1fr",
-          })}
-        >
+        <div className={css({ display: "grid", gridTemplateColumns: "300px 1fr" })}>
           <div>
             <Text fontSize="lg" fontWeight="medium">
               Account
@@ -103,12 +93,7 @@ export function ProfileForm(): React.JSX.Element {
           </Stack>
         </div>
         <Separator />
-        <div
-          className={css({
-            display: "grid",
-            gridTemplateColumns: "300px 1fr",
-          })}
-        >
+        <div className={css({ display: "grid", gridTemplateColumns: "300px 1fr" })}>
           <div>
             <Text fontSize="lg" fontWeight="medium">
               Notifications
@@ -117,28 +102,18 @@ export function ProfileForm(): React.JSX.Element {
           <Stack gap={4}>
             <Stack direction="row" gap={2}>
               <Switch checked name="system" />
-              <div
-                className={css({
-                  display: "grid",
-                  gap: "var(--spacing-unit)",
-                })}
-              >
+              <Stack gap={1}>
                 <Text fontSize="sm" fontWeight="medium" lineHeight="none">
                   System
                 </Text>
                 <Text className={css({ color: "hsl(var(--color-mutedForeground))" })} fontSize="sm">
                   Sensitive alerts that cannot be disabled due to severity.
                 </Text>
-              </div>
+              </Stack>
             </Stack>
             <Stack direction="row" gap={2}>
               <Switch defaultChecked name="marketing" />
-              <div
-                className={css({
-                  display: "grid",
-                  gap: "var(--spacing-unit)",
-                })}
-              >
+              <Stack gap={1}>
                 <Text fontSize="sm" fontWeight="medium" lineHeight="none">
                   Marketing{" "}
                   <Text
@@ -154,16 +129,11 @@ export function ProfileForm(): React.JSX.Element {
                 <Text className={css({ color: "hsl(var(--color-mutedForeground))" })} fontSize="sm">
                   Limited time offers we usually send once a month.
                 </Text>
-              </div>
+              </Stack>
             </Stack>
             <Stack direction="row" gap={2}>
               <Switch name="member" />
-              <div
-                className={css({
-                  display: "grid",
-                  gap: "var(--spacing-unit)",
-                })}
-              >
+              <Stack gap={1}>
                 <Text fontSize="sm" fontWeight="medium" lineHeight="none">
                   Member joining organization{" "}
                   <Text
@@ -179,17 +149,12 @@ export function ProfileForm(): React.JSX.Element {
                 <Text className={css({ color: "hsl(var(--color-mutedForeground))" })} fontSize="sm">
                   When an user joins your team.
                 </Text>
-              </div>
+              </Stack>
             </Stack>
           </Stack>
         </div>
         <Separator />
-        <div
-          className={css({
-            display: "grid",
-            gridTemplateColumns: "300px 1fr",
-          })}
-        >
+        <div className={css({ display: "grid", gridTemplateColumns: "300px 1fr" })}>
           <div>
             <Text fontSize="lg" fontWeight="medium">
               Appearance

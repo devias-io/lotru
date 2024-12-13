@@ -38,36 +38,33 @@ export default function Layout({ children }: LayoutProps): React.JSX.Element {
           <Text className={css({ textAlign: "center" })} fontSize="3xl" fontWeight="medium">
             Desining Stunning Apps Has Never Been Easier.
           </Text>
-          <div
-            className={css({
-              color: "hsl(var(--color-mutedForeground))",
-              textAlign: "center",
-            })}
+          <Text
+            className={css({ color: "hsl(var(--color-mutedForeground))", textAlign: "center" })}
+            fontSize="md"
+            fontWeight="regular"
           >
-            <Text fontSize="md" fontWeight="regular">
-              Copy-paste pre-built components, powered by{" "}
-              <a href="https://base-ui.com" target="_blank" rel="noreferrer">
-                <Badge
-                  className={css({ backgroundColor: "hsl(var(--color-background))" })}
-                  variant="outline"
-                >
-                  Base UI
-                  <SquareArrowOutUpRightIcon color="hsl(var(--color-mutedForeground))" size={12} />
-                </Badge>
-              </a>{" "}
-              and{" "}
-              <a href="https://github.com/mui/pigment-css" target="_blank" rel="noreferrer">
-                <Badge
-                  className={css({ backgroundColor: "hsl(var(--color-background))" })}
-                  variant="outline"
-                >
-                  Pigment CSS
-                  <SquareArrowOutUpRightIcon color="hsl(var(--color-mutedForeground))" size={12} />
-                </Badge>
-              </a>{" "}
-              to effortlessly create stunning, inclusive user interfaces.
-            </Text>
-          </div>
+            Copy-paste pre-built components, powered by{" "}
+            <a href="https://base-ui.com" target="_blank" rel="noreferrer">
+              <Badge
+                className={css({ backgroundColor: "hsl(var(--color-background))" })}
+                variant="outline"
+              >
+                Base UI
+                <SquareArrowOutUpRightIcon color="hsl(var(--color-mutedForeground))" size={12} />
+              </Badge>
+            </a>{" "}
+            and{" "}
+            <a href="https://github.com/mui/pigment-css" target="_blank" rel="noreferrer">
+              <Badge
+                className={css({ backgroundColor: "hsl(var(--color-background))" })}
+                variant="outline"
+              >
+                Pigment CSS
+                <SquareArrowOutUpRightIcon color="hsl(var(--color-mutedForeground))" size={12} />
+              </Badge>
+            </a>{" "}
+            to effortlessly create stunning, inclusive user interfaces.
+          </Text>
           <div
             className={css({
               alignItems: "center",

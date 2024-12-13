@@ -91,19 +91,23 @@ export default function Example(): React.JSX.Element {
                 <ArrowRightIcon />
               </Button>
               <Text
-                className={css({ color: "hsl(var(--color-mutedForeground))", textAlign: "center" })}
+                className={css({
+                  color: "hsl(var(--color-mutedForeground))",
+                  textAlign: "center",
+                })}
                 fontSize="sm"
               >
-                Don&apos;t have an account?{" "}
+                Don&apos;t remember your password?{" "}
                 <Text
                   as="span"
                   className={css({
                     color: "hsl(var(--color-foreground))",
-                    fontWeight: "var(--fontWeight-medium)",
+                    textDecoration: "underline",
                   })}
                   fontSize="sm"
+                  fontWeight="medium"
                 >
-                  Sign up
+                  Recover
                 </Text>
               </Text>
             </Stack>

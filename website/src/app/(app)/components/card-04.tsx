@@ -1,5 +1,6 @@
 import * as React from "react";
 import { css } from "@pigment-css/react";
+import { MailIcon } from "lucide-react";
 
 import { Avatar, AvatarImage } from "@/src/components/ui/avatar";
 import { Button } from "@/src/components/ui/button";
@@ -40,14 +41,28 @@ export default function Example(): React.JSX.Element {
       </CardHeader>
       <CardContent>
         <Stack gap={4}>
-          <Stack alignItems="center" direction="row" gap={4}>
-            <Input
-              className={css({ maxWidth: "var(--size-full)" })}
-              name="email"
-              placeholder="Email"
-              size="sm"
-            />
-            <Button size="sm">Send Invite</Button>
+          <Stack alignItems="center" direction="row" gap={2}>
+            <div className={css({ flexGrow: 1, position: "relative" })}>
+              <Input
+                className={css({
+                  maxWidth: "var(--size-full)",
+                  paddingInlineStart: "calc(var(--spacing-unit) * 8)",
+                })}
+                name="email"
+                placeholder="Email"
+              />
+              <MailIcon
+                className={css({
+                  color: "hsl(var(--color-mutedForeground))",
+                  left: "calc(var(--spacing-unit) * 2)",
+                  pointerEvents: "none",
+                  position: "absolute",
+                  top: "calc(var(--spacing-unit) * 2.5)",
+                })}
+                size={16}
+              />
+            </div>
+            <Button>Send Invite</Button>
           </Stack>
           <Separator />
           <Stack gap={3}>
@@ -77,7 +92,9 @@ export default function Example(): React.JSX.Element {
                       <AvatarImage src={member.avatar} />
                     </Avatar>
                     <div>
-                      <div>{member.name}</div>
+                      <Text fontSize="sm" fontWeight="medium" lineHeight="none">
+                        {member.name}
+                      </Text>
                       <Text
                         className={css({ color: "hsl(var(--color-mutedForeground))" })}
                         fontSize="sm"

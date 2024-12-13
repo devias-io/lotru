@@ -3,12 +3,12 @@
 import * as React from "react";
 import { css } from "@pigment-css/react";
 
-import { Stack } from "@/src/components/ui/stack";
-import { Text } from "@/src/components/ui/text";
 import { Button } from "@/src/components/ui/button";
 import { Field, FieldLabel } from "@/src/components/ui/field";
 import { Input } from "@/src/components/ui/input";
 import { Separator } from "@/src/components/ui/separator";
+import { Stack } from "@/src/components/ui/stack";
+import { Text } from "@/src/components/ui/text";
 
 export function SecurityForm(): React.JSX.Element {
   return (
@@ -18,12 +18,7 @@ export function SecurityForm(): React.JSX.Element {
       }}
     >
       <Stack gap={6}>
-        <div
-          className={css({
-            display: "grid",
-            gridTemplateColumns: "300px 1fr",
-          })}
-        >
+        <div className={css({ display: "grid", gridTemplateColumns: "300px 1fr" })}>
           <div>
             <Text fontSize="lg" fontWeight="medium">
               Change Password
@@ -55,12 +50,7 @@ export function SecurityForm(): React.JSX.Element {
           </Stack>
         </div>
         <Separator />
-        <div
-          className={css({
-            display: "grid",
-            gridTemplateColumns: "300px 1fr",
-          })}
-        >
+        <div className={css({ display: "grid", gridTemplateColumns: "300px 1fr" })}>
           <div>
             <Text fontSize="lg" fontWeight="medium">
               System

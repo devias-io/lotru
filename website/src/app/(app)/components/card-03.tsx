@@ -81,18 +81,14 @@ export default function Example(): React.JSX.Element {
             gap={2}
           >
             <Switch defaultChecked name="analytics" />
-            <div
-              className={css({
-                display: "grid",
-                gap: "var(--spacing-unit)",
-              })}
-            >
+            <Stack gap={1}>
               <Text fontSize="sm" fontWeight="medium" lineHeight="none">
                 Usage Analytics{" "}
                 <Text
                   as="span"
                   className={css({ color: "hsl(var(--color-mutedForeground))" })}
                   fontSize="sm"
+                  fontWeight="regular"
                 >
                   (Optional)
                 </Text>
@@ -100,7 +96,7 @@ export default function Example(): React.JSX.Element {
               <Text className={css({ color: "hsl(var(--color-mutedForeground))" })} fontSize="sm">
                 We use the data to improve the user experience.
               </Text>
-            </div>
+            </Stack>
           </Stack>
         </Stack>
       </CardContent>

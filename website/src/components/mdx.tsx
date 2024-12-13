@@ -146,7 +146,10 @@ function Code({
       className={cn(
         css({
           fontFamily: "var(--fontFamily-mono)",
-          fontSize: "var(--fontSize-sm)",
+          fontSize: "var(--fontSize-md)",
+          "@media (min-width: 768px)": {
+            fontSize: "var(--fontSize-sm)",
+          },
         }),
         className
       )}

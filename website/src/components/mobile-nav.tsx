@@ -43,15 +43,15 @@ export function MobileNav(): React.JSX.Element {
         >
           <div className={css({ overflowY: "auto", padding: "calc(var(--spacing-unit) * 6)" })}>
             {groups.map((group) => (
-              <SidebarGroup key={group.label}>
-                <SidebarGroupLabel>{group.label}</SidebarGroupLabel>
+              <SidebarGroup key={group.title}>
+                <SidebarGroupLabel>{group.title}</SidebarGroupLabel>
                 <SidebarGroupContent>
                   <SidebarMenu>
                     {group.items.map((item) => {
                       const active = pathname === item.href;
 
                       return (
-                        <SidebarMenuItem key={item.label}>
+                        <SidebarMenuItem key={item.title}>
                           <Link
                             className={css({
                               display: "flex",
@@ -65,7 +65,7 @@ export function MobileNav(): React.JSX.Element {
                             prefetch={false}
                           >
                             <SidebarMenuButton active={active} as="div">
-                              {item.label}
+                              {item.title}
                             </SidebarMenuButton>
                           </Link>
                         </SidebarMenuItem>

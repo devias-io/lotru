@@ -9,6 +9,7 @@ import { allDocs, type Doc } from "content-collections";
 import { Text } from "@/src/components/ui/text";
 import { Stack } from "@/src/components/ui/stack";
 import { Badge } from "@/src/components/ui/badge";
+import { DocsPager } from "@/src/components/docs-pager";
 import { MDX } from "@/src/components/mdx";
 import { Toc } from "@/src/components/toc";
 
@@ -100,6 +101,7 @@ export default async function Page({ params }: PageProps): Promise<React.JSX.Ele
         <div className={css({ minWidth: 0 })}>
           <MDX code={doc.mdx} />
         </div>
+        <DocsPager doc={doc} />
       </div>
       <div
         className={css({

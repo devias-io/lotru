@@ -15,7 +15,7 @@ export default function Page(): React.JSX.Element {
     <div
       className={css({
         display: "grid",
-        gridTemplateColumns: "1fr 1fr",
+        gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
         height: "800px",
         padding: "calc(var(--spacing-unit) * 2)",
         position: "relative",

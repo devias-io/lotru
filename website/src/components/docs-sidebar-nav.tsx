@@ -21,15 +21,15 @@ export function DocsSidebarNav(): React.JSX.Element {
   return (
     <div>
       {groups.map((group) => (
-        <SidebarGroup key={group.label}>
-          <SidebarGroupLabel>{group.label}</SidebarGroupLabel>
+        <SidebarGroup key={group.title}>
+          <SidebarGroupLabel>{group.title}</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {group.items.map((item) => {
                 const active = pathname === item.href;
 
                 return (
-                  <SidebarMenuItem key={item.label}>
+                  <SidebarMenuItem key={item.title}>
                     <Link
                       className={css({
                         display: "flex",
@@ -40,7 +40,7 @@ export function DocsSidebarNav(): React.JSX.Element {
                       prefetch={false}
                     >
                       <SidebarMenuButton active={active} as="div">
-                        {item.label}
+                        {item.title}
                       </SidebarMenuButton>
                     </Link>
                   </SidebarMenuItem>

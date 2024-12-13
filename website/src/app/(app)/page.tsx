@@ -54,7 +54,7 @@ export default function Page(): React.JSX.Element {
                 variant="outline"
               >
                 Base UI
-                <SquareArrowOutUpRightIcon color="hsl(var(--color-mutedForeground))" size={12} />
+                <SquareArrowOutUpRightIcon color="hsl(var(--color-mutedForeground))" />
               </Badge>
             </a>{" "}
             and{" "}
@@ -64,7 +64,7 @@ export default function Page(): React.JSX.Element {
                 variant="outline"
               >
                 Pigment CSS
-                <SquareArrowOutUpRightIcon color="hsl(var(--color-mutedForeground))" size={12} />
+                <SquareArrowOutUpRightIcon color="hsl(var(--color-mutedForeground))" />
               </Badge>
             </a>{" "}
             to effortlessly create stunning, inclusive user interfaces.

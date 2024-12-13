@@ -1,129 +1,132 @@
 export interface Group {
-  label: string;
+  title: string;
   items: Item[];
 }
 
 export interface Item {
-  label: string;
+  title: string;
   href: string;
+  disabled?: boolean;
+  external?: boolean;
+  items?: Item[];
   match?: (pathname: string) => boolean;
 }
 
 export const groups: Group[] = [
   {
-    label: "Getting Started",
+    title: "Getting Started",
     items: [
       {
-        label: "Introduction",
+        title: "Introduction",
         href: "/docs",
       },
     ],
   },
   {
-    label: "Components",
+    title: "Components",
     items: [
       {
-        label: "Alert",
+        title: "Alert",
         href: "/docs/components/alert",
       },
       {
-        label: "Avatar",
+        title: "Avatar",
         href: "/docs/components/avatar",
       },
       {
-        label: "Badge",
+        title: "Badge",
         href: "/docs/components/badge",
       },
       {
-        label: "Button",
+        title: "Button",
         href: "/docs/components/button",
       },
       {
-        label: "Card",
+        title: "Card",
         href: "/docs/components/card",
       },
       {
-        label: "Checkbox",
+        title: "Checkbox",
         href: "/docs/components/checkbox",
       },
       {
-        label: "Dialog",
+        title: "Dialog",
         href: "/docs/components/dialog",
       },
       {
-        label: "Dropdown Menu",
+        title: "Dropdown Menu",
         href: "/docs/components/dropdown-menu",
       },
       {
-        label: "Field",
+        title: "Field",
         href: "/docs/components/field",
       },
       {
-        label: "Hover Card",
+        title: "Hover Card",
         href: "/docs/components/hover-card",
       },
       {
-        label: "Icon Button",
+        title: "Icon Button",
         href: "/docs/components/icon-button",
       },
       {
-        label: "Input",
+        title: "Input",
         href: "/docs/components/input",
       },
       {
-        label: "Popover",
+        title: "Popover",
         href: "/docs/components/popover",
       },
       {
-        label: "Progress",
+        title: "Progress",
         href: "/docs/components/progress",
       },
       {
-        label: "Prompt",
+        title: "Prompt",
         href: "/docs/components/prompt",
       },
       {
-        label: "Radio",
+        title: "Radio",
         href: "/docs/components/radio",
       },
       {
-        label: "Select",
+        title: "Select",
         href: "/docs/components/select",
       },
       {
-        label: "Separator",
+        title: "Separator",
         href: "/docs/components/separator",
       },
       {
-        label: "Sheet",
+        title: "Sheet",
         href: "/docs/components/sheet",
       },
       {
-        label: "Slider",
+        title: "Slider",
         href: "/docs/components/slider",
       },
       {
-        label: "Switch",
+        title: "Switch",
         href: "/docs/components/switch",
       },
       {
-        label: "Table",
+        title: "Table",
         href: "/docs/components/table",
       },
       {
-        label: "Tabs",
+        title: "Tabs",
         href: "/docs/components/tabs",
       },
       {
-        label: "Text",
+        title: "Text",
         href: "/docs/components/text",
       },
       {
-        label: "Textarea",
+        title: "Textarea",
         href: "/docs/components/textarea",
       },
       {
-        label: "Tooltip",
+        title: "Tooltip",
         href: "/docs/components/tooltip",
       },
     ],

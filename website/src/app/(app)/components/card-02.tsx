@@ -30,7 +30,7 @@ export default function Example(): React.JSX.Element {
       <CardContent>
         <Field>
           <FieldLabel>Project name</FieldLabel>
-          <Input id="name" className={css({ maxWidth: "var(--size-full)" })} placeholder="Name" />
+          <Input className={css({ maxWidth: "var(--size-full)" })} name="name" placeholder="Name" />
         </Field>
       </CardContent>
       <CardFooter

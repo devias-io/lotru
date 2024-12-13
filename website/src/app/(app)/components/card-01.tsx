@@ -66,22 +66,22 @@ export default function Example(): React.JSX.Element {
               <Field>
                 <FieldLabel>Email</FieldLabel>
                 <Input
-                  id="email"
                   className={css({ maxWidth: "var(--size-full)" })}
+                  name="email"
                   placeholder="Email"
                 />
               </Field>
               <Field>
                 <FieldLabel>Password</FieldLabel>
                 <Input
-                  id="password"
                   className={css({ maxWidth: "var(--size-full)" })}
+                  name="password"
                   placeholder="Password"
                   type="password"
                 />
               </Field>
               <Stack alignItems="center" direction="row" gap={2}>
-                <Checkbox id="remember" defaultChecked />
+                <Checkbox defaultChecked name="remember" />
                 <Text fontSize="sm" fontWeight="medium">
                   Remember this device
                 </Text>

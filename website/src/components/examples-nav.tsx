@@ -38,21 +38,18 @@ export function ExamplesNav(): React.JSX.Element {
       <Tabs
         value={getActiveTab(pathname)}
         onValueChange={(value) => {
-          if (value === "forms") {
-            return router.push("/examples/forms");
+          if (value === "cards") {
+            return router.push("/");
           }
 
-          if (value === "mail") {
-            return router.push("/examples/mail");
-          }
-
-          router.push("/");
+          router.push(`/examples/${value}`);
         }}
       >
         <TabsList>
-          <TabsTrigger value="all">Cards</TabsTrigger>
+          <TabsTrigger value="cards">Cards</TabsTrigger>
           <TabsTrigger value="mail">Mail</TabsTrigger>
           <TabsTrigger value="forms">Forms</TabsTrigger>
+          <TabsTrigger value="authentication">Authentication</TabsTrigger>
         </TabsList>
       </Tabs>
     </div>
@@ -60,13 +57,9 @@ export function ExamplesNav(): React.JSX.Element {
 }
 
 function getActiveTab(pathname: string): string {
-  if (pathname.startsWith("/examples/mail")) {
-    return "mail";
+  if (pathname === "/") {
+    return "cards";
   }
 
-  if (pathname.startsWith("/examples/forms")) {
-    return "forms";
-  }
-
-  return "all";
+  return pathname.replace("/examples/", "");
 }

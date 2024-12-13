@@ -39,11 +39,11 @@ export default function TabsExample(): React.JSX.Element {
             <Stack gap={2}>
               <Field>
                 <FieldLabel>Name</FieldLabel>
-                <Input id="name" defaultValue="John Doe" />
+                <Input defaultValue="John Doe" name="name" />
               </Field>
               <Field>
                 <FieldLabel>Username</FieldLabel>
-                <Input id="username" defaultValue="@john.doe" />
+                <Input defaultValue="@john.doe" name="username" />
               </Field>
             </Stack>
           </CardContent>
@@ -64,11 +64,11 @@ export default function TabsExample(): React.JSX.Element {
             <Stack gap={2}>
               <Field>
                 <FieldLabel>Current password</FieldLabel>
-                <Input id="current" type="password" />
+                <Input type="password" name="current" />
               </Field>
               <Field>
                 <FieldLabel>New password</FieldLabel>
-                <Input id="new" type="password" />
+                <Input type="password" name="new" />
               </Field>
             </Stack>
           </CardContent>

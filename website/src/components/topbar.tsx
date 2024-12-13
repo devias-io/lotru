@@ -33,11 +33,9 @@ export function Topbar(): React.JSX.Element {
           height: "calc(var(--size-unit) * 14)",
           marginInline: "auto",
           paddingInline: "calc(var(--size-unit) * 4)",
-          "@media (min-width: 768px)": {
-            paddingInline: "calc(var(--size-unit) * 8)",
-          },
           "@media (min-width: 1800px)": {
             maxWidth: "1536px",
+            paddingInline: "calc(var(--size-unit) * 8)",
           },
         })}
       >

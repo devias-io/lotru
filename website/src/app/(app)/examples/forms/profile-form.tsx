@@ -4,15 +4,15 @@ import * as React from "react";
 import { css } from "@pigment-css/react";
 import { MoonIcon, SettingsIcon, SunIcon } from "lucide-react";
 
-import { Stack } from "@/src/components/ui/stack";
-import { Text } from "@/src/components/ui/text";
 import { Avatar, AvatarImage } from "@/src/components/ui/avatar";
 import { Button } from "@/src/components/ui/button";
 import { Field, FieldLabel } from "@/src/components/ui/field";
 import { Input } from "@/src/components/ui/input";
 import { Select } from "@/src/components/ui/select";
 import { Separator } from "@/src/components/ui/separator";
+import { Stack } from "@/src/components/ui/stack";
 import { Switch } from "@/src/components/ui/switch";
+import { Text } from "@/src/components/ui/text";
 
 export function ProfileForm(): React.JSX.Element {
   const [values, setValues] = React.useState({

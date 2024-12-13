@@ -77,35 +77,43 @@ export default function Layout({ children }: LayoutProps): React.JSX.Element {
               flexWrap: "wrap",
             })}
           >
-            <div className={css({ position: "relative" })}>
-              <Input
+            <div className={css({ alignItems: "center", display: "inline-flex" })}>
+              <div className={css({ position: "relative" })}>
+                <Input
+                  className={css({
+                    backgroundColor: "hsl(var(--color-background))",
+                    borderBottomRightRadius: 0,
+                    borderTopRightRadius: 0,
+                    maxWidth: "calc(var(--size-unit) * 60)",
+                    paddingInlineStart: "calc(var(--spacing-unit) * 8)",
+                  })}
+                  readOnly
+                  value="npx lotru@latest init"
+                />
+                <TerminalIcon
+                  className={css({
+                    left: "calc(var(--spacing-unit) * 2)",
+                    pointerEvents: "none",
+                    position: "absolute",
+                    top: "calc(var(--spacing-unit) * 3)",
+                  })}
+                  color="hsl(var(--color-mutedForeground))"
+                  size={16}
+                />
+              </div>
+              <div
                 className={css({
-                  backgroundColor: "hsl(var(--color-background))",
-                  maxWidth: "calc(var(--size-unit) * 80)",
-                  paddingInlineStart: "calc(var(--spacing-unit) * 8)",
+                  border: "1px solid hsl(var(--color-border))",
+                  borderLeft: 0,
+                  borderBottomRightRadius: "var(--borderRadius-md)",
+                  borderTopRightRadius: "var(--borderRadius-md)",
+                  boxSizing: "border-box",
+                  height: "calc(var(--size-unit) * 9)",
+                  overflow: "hidden",
                 })}
-                readOnly
-                value="npx lotru@latest init"
-              />
-              <TerminalIcon
-                className={css({
-                  left: "calc(var(--spacing-unit) * 2)",
-                  pointerEvents: "none",
-                  position: "absolute",
-                  top: "calc(var(--spacing-unit) * 2.5)",
-                })}
-                color="hsl(var(--color-mutedForeground))"
-                size={16}
-              />
-              <CopyButton
-                className={css({
-                  position: "absolute",
-                  right: "calc(var(--spacing-unit) * 1)",
-                  top: "calc(var(--spacing-unit) * 1)",
-                })}
-                size="xs"
-                value="npx lotru@latest init"
-              />
+              >
+                <CopyButton className={css({ borderRadius: 0 })} value="npx lotru@latest init" />
+              </div>
             </div>
             <Link href="/docs">
               <Button>Get Started</Button>

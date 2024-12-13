@@ -24,9 +24,12 @@ export default function Layout({ children }: LayoutProps): React.JSX.Element {
       className={cn(
         css({
           "-webkit-font-smoothing": "antialiased",
+          "-webkit-text-size-adjust": "100%",
           fontFamily: "var(--fontFamily-sans)",
           fontSize: "var(--fontSize-md)",
+          fontSynthesisWeight: "none",
           lineHeight: "var(--lineHeight-normal)",
+          textRendering: "optimizeLegibility",
         } as React.CSSProperties),
         fontSans.variable,
         fontMono.variable

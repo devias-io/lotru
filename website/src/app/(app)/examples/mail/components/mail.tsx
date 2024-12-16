@@ -53,7 +53,7 @@ export function Mail({ mails }: MailProps): React.JSX.Element {
       >
         <div
           className={css({
-            borderRight: "1px solid hsl(var(--color-border))",
+            borderInlineEnd: "1px solid hsl(var(--color-border))",
             display: "flex",
             flexDirection: "column",
           })}
@@ -70,9 +70,12 @@ export function Mail({ mails }: MailProps): React.JSX.Element {
               Compose mail
             </Button>
           </div>
-          <div className={css({ paddingInline: "calc(var(--size-unit) * 3)" })}>
-            <div className={css({ borderTop: "1px dashed hsl(var(--color-border))" })} />
-          </div>
+          <div
+            className={css({
+              borderBlockStart: "1px dashed hsl(var(--color-border))",
+              marginInline: "calc(var(--size-unit) * 3)",
+            })}
+          />
           <MailNav
             items={[
               {
@@ -113,9 +116,12 @@ export function Mail({ mails }: MailProps): React.JSX.Element {
               },
             ]}
           />
-          <div className={css({ paddingInline: "calc(var(--size-unit) * 3)" })}>
-            <div className={css({ borderTop: "1px dashed hsl(var(--color-border))" })} />
-          </div>
+          <div
+            className={css({
+              borderBlockStart: "1px dashed hsl(var(--color-border))",
+              marginInline: "calc(var(--size-unit) * 3)",
+            })}
+          />
           <MailNav
             items={[
               {
@@ -126,9 +132,13 @@ export function Mail({ mails }: MailProps): React.JSX.Element {
               },
             ]}
           />
-          <div className={css({ paddingInline: "calc(var(--size-unit) * 3)", marginTop: "auto" })}>
-            <div className={css({ borderTop: "1px dashed hsl(var(--color-border))" })} />
-          </div>
+          <div
+            className={css({
+              borderBlockStart: "1px dashed hsl(var(--color-border))",
+              marginBlockStart: "auto",
+              marginInline: "calc(var(--size-unit) * 3)",
+            })}
+          />
           <Stack
             className={css({
               paddingBlock: "calc(var(--size-unit) * 4)",
@@ -158,7 +168,7 @@ export function Mail({ mails }: MailProps): React.JSX.Element {
         </div>
         <div
           className={css({
-            borderRight: "1px solid hsl(var(--color-border))",
+            borderInlineEnd: "1px solid hsl(var(--color-border))",
             display: "flex",
             flexDirection: "column",
             minHeight: 0,

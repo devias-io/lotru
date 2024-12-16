@@ -304,7 +304,7 @@ function Steps({ className, ...props }: React.ComponentProps<"div">) {
     <div
       className={cn(
         css({
-          borderLeft: "1px solid hsl(var(--color-border))",
+          borderInlineStart: "1px solid hsl(var(--color-border))",
           boxSizing: "border-box",
           counterReset: "step",
           marginBlockEnd: "calc(var(--spacing-unit) * 12)",
@@ -341,8 +341,8 @@ function Step({ className, ...props }: React.ComponentProps<"h3">) {
             fontWeight: "var(--fontWeight-medium)",
             height: "2.25rem",
             justifyContent: "center",
-            marginLeft: "-50px",
-            marginTop: "-4px",
+            marginBlockStart: "-4px",
+            marginInlineStart: "-50px",
             position: "absolute",
             textAlign: "center",
             textIndent: "-1px",
@@ -383,7 +383,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         className={cn(
           css({
             backgroundColor: "transparent",
-            borderBottom: "1px solid hsl(var(--color-border))",
+            borderBlockEnd: "1px solid hsl(var(--color-border))",
             borderRadius: 0,
             justifyContent: "flex-start",
             padding: 0,

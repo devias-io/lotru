@@ -25,7 +25,7 @@ const TableBody = styled("tbody", {
   slot: "body",
 })<React.ComponentProps<"tbody">>({
   "& > tr:last-child": {
-    borderBottom: "none",
+    borderBlockEnd: "none",
   },
 });
 
@@ -34,10 +34,10 @@ const TableFooter = styled("tfoot", {
   slot: "footer",
 })<React.ComponentProps<"tfoot">>({
   backgroundColor: "hsl(var(--color-muted) / 50%)",
-  borderTop: "1px solid hsl(var(--color-border))",
+  borderBlockStart: "1px solid hsl(var(--color-border))",
   fontWeight: "var(--fontWeight-medium)",
   "&:last-child > tr": {
-    borderBottom: "none",
+    borderBlockEnd: "none",
   },
 });
 
@@ -56,7 +56,7 @@ const TableRow = styled("tr", {
   name: "TableRow",
   slot: "row",
 })<React.ComponentProps<"tr">>({
-  borderBottom: "1px solid hsl(var(--color-border))",
+  borderBlockEnd: "1px solid hsl(var(--color-border))",
   "&:hover": {
     backgroundColor: "hsl(var(--color-muted) / 50%)",
   },

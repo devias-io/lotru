@@ -191,8 +191,8 @@ export function MailDisplay({ mail }: MailDisplayProps): React.JSX.Element {
         </div>
         <div
           className={css({
-            borderBottom: "1px dashed hsl(var(--color-border))",
-            borderTop: "1px dashed hsl(var(--color-border))",
+            borderBlockEnd: "1px dashed hsl(var(--color-border))",
+            borderBlockStart: "1px dashed hsl(var(--color-border))",
             paddingBlock: "calc(var(--size-unit) * 4)",
             paddingInline: "calc(var(--size-unit) * 6)",
           })}

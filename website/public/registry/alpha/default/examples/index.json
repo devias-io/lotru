@@ -76,6 +76,10 @@
     "name": "Input 01"
   },
   {
+    "id": "examples/kbd-01",
+    "name": "Kbd 01"
+  },
+  {
     "id": "examples/popover-01",
     "name": "Popover 01"
   },

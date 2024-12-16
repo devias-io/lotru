@@ -35,7 +35,9 @@ export function MailNav({ items }: MailNavProps): React.JSX.Element {
         >
           <item.icon />
           {item.title}
-          {item.label ? <span className={css({ marginLeft: "auto" })}>{item.label}</span> : null}
+          {item.label ? (
+            <span className={css({ marginInlineStart: "auto" })}>{item.label}</span>
+          ) : null}
         </Button>
       ))}
     </nav>

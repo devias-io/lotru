@@ -103,6 +103,10 @@ export const groups: Group[] = [
         href: "/docs/components/input",
       },
       {
+        title: "Kbd",
+        href: "/docs/components/kbd",
+      },
+      {
         title: "Popover",
         href: "/docs/components/popover",
       },

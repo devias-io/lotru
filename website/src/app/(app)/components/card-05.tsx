@@ -50,7 +50,7 @@ export default function Example(): React.JSX.Element {
               paddingBlock: "calc(var(--spacing-unit) * 2)",
               paddingInline: "calc(var(--spacing-unit) * 6)",
               "&:not(:last-child)": {
-                borderBottom: "1px solid hsl(var(--color-border))",
+                borderBlockEnd: "1px solid hsl(var(--color-border))",
               },
             })}
             direction="row"

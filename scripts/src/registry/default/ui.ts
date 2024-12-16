@@ -120,6 +120,15 @@ export const ui: RegistryComponent[] = [
     ],
   },
   {
+    id: "ui/kbd",
+    name: "Kbd",
+    files: [
+      {
+        path: "ui/kbd.tsx",
+      },
+    ],
+  },
+  {
     id: "ui/popover",
     name: "Popover",
     dependencies: ["@base_ui/react"],

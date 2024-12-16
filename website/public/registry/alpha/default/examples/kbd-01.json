@@ -1,0 +1,13 @@
+{
+  "id": "examples/kbd-01",
+  "name": "Kbd 01",
+  "registryDependencies": [
+    "ui/kbd"
+  ],
+  "files": [
+    {
+      "path": "examples/kbd-01.tsx",
+      "content": "import * as React from \"react\";\n\nimport { Kbd } from \"@/components/ui/kbd\";\n\nexport default function KbdExample(): React.JSX.Element {\n  return <Kbd>Shift + Alt</Kbd>;\n}\n"
+    }
+  ]
+}

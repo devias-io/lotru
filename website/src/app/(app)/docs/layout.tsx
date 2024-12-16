@@ -32,7 +32,7 @@ export default function Layout({ children }: LayoutProps): React.JSX.Element {
       >
         <aside
           className={css({
-            borderRight: "1px solid hsl(var(--color-border))",
+            borderInlineEnd: "1px solid hsl(var(--color-border))",
             boxSizing: "border-box",
             display: "none",
             flexShrink: 0,

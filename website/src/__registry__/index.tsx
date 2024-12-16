@@ -124,6 +124,15 @@ export const index: Record<
     }],
     
   },
+  "ui/kbd": {
+    id: "ui/kbd",
+    name: "Kbd",
+    description: "",
+    files: [{
+      path: "ui/kbd.tsx",
+    }],
+    
+  },
   "ui/popover": {
     id: "ui/popover",
     name: "Popover",
@@ -429,6 +438,15 @@ export const index: Record<
       path: "examples/input-01.tsx",
     }],
     component: React.lazy(() => import("@/src/components/examples/input-01.tsx"))
+  },
+  "examples/kbd-01": {
+    id: "examples/kbd-01",
+    name: "Kbd 01",
+    description: "",
+    files: [{
+      path: "examples/kbd-01.tsx",
+    }],
+    component: React.lazy(() => import("@/src/components/examples/kbd-01.tsx"))
   },
   "examples/popover-01": {
     id: "examples/popover-01",

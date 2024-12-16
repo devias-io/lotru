@@ -192,6 +192,16 @@ export const examples: RegistryComponent[] = [
     ],
   },
   {
+    id: "examples/kbd-01",
+    name: "Kbd 01",
+    registryDependencies: ["ui/kbd"],
+    files: [
+      {
+        path: "examples/kbd-01.tsx",
+      },
+    ],
+  },
+  {
     id: "examples/popover-01",
     name: "Popover 01",
     registryDependencies: ["ui/popover"],

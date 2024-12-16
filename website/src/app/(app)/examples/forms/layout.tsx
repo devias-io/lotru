@@ -22,7 +22,7 @@ export default function Layout({ children }: LayoutProps): React.JSX.Element {
       <aside
         className={css({
           backgroundColor: "hsl(var(--color-muted))",
-          borderRight: "1px solid hsl(var(--color-border))",
+          borderInlineEnd: "1px solid hsl(var(--color-border))",
         })}
       >
         <Stack
@@ -45,7 +45,7 @@ export default function Layout({ children }: LayoutProps): React.JSX.Element {
         </Stack>
         <div
           className={css({
-            borderBottom: "1px dashed hsl(var(--color-border))",
+            borderBlockEnd: "1px dashed hsl(var(--color-border))",
             marginInline: "calc(var(--spacing-unit) * 6)",
           })}
         />

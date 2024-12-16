@@ -82,7 +82,7 @@ export default function Example(): React.JSX.Element {
                 className={css({
                   padding: "calc(var(--spacing-unit) * 4)",
                   "&:not(:last-child)": {
-                    borderBottom: "1px solid hsl(var(--color-border))",
+                    borderBlockEnd: "1px solid hsl(var(--color-border))",
                   },
                 })}
                 direction="row"

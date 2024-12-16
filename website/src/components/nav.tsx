@@ -73,7 +73,14 @@ export function Nav(): React.JSX.Element {
         </span>
       </Link>
       <NavItem active={pathname === "/docs"} href="/docs" prefetch={false}>
-        Documentation
+        Docs
+      </NavItem>
+      <NavItem
+        active={pathname === "/docs/components/alert"}
+        href="/docs/components/alert"
+        prefetch={false}
+      >
+        Components
       </NavItem>
       <Stack alignItems="center" direction="row" gap={2}>
         <NavItem

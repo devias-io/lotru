@@ -1,0 +1,10 @@
+{
+  "id": "ui/kbd",
+  "name": "Kbd",
+  "files": [
+    {
+      "path": "ui/kbd.tsx",
+      "content": "import * as React from \"react\";\n\nimport { styled } from \"@pigment-css/react\";\n\nconst KbdRoot = styled(\"kbd\", {\n  name: \"KbdRoot\",\n  slot: \"root\",\n})<\n  React.ComponentProps<\"kbd\"> & {\n    size: \"sm\" | \"md\" | \"lg\";\n  }\n>({\n  alignItems: \"center\",\n  backgroundColor: \"hsl(var(--color-muted))\",\n  borderRadius: \"var(--borderRadius-sm)\",\n  boxSizing: \"border-box\",\n  boxShadow: \"0 2px 0 0 hsl(var(--color-border)), 0 0 0 1px hsl(var(--color-border))\",\n  display: \"inline-flex\",\n  fontFamily: \"var(--fontFamily-mono)\",\n  fontWeight: \"var(--fontWeight-medium)\",\n  whiteSpace: \"pre\",\n  variants: [\n    {\n      props: { size: \"sm\" },\n      style: {\n        fontSize: \"var(--fontSize-xs)\",\n        lineHeight: \"var(--lineHeight-tighter)\",\n        minHeight: \"calc(var(--spacing-unit) * 5)\",\n        paddingBlock: \"calc(var(--spacing-unit) * 0.5)\",\n        paddingInline: \"calc(var(--spacing-unit) * 0.5)\",\n      },\n    },\n    {\n      props: { size: \"md\" },\n      style: {\n        fontSize: \"var(--fontSize-sm)\",\n        lineHeight: \"var(--lineHeight-tight)\",\n        minHeight: \"calc(var(--spacing-unit) * 6)\",\n        paddingBlock: \"calc(var(--spacing-unit) * 0.5)\",\n        paddingInline: \"calc(var(--spacing-unit) * 1)\",\n      },\n    },\n    {\n      props: { size: \"lg\" },\n      style: {\n        fontSize: \"var(--fontSize-md)\",\n        lineHeight: \"var(--lineHeight-normal)\",\n        minHeight: \"calc(var(--spacing-unit) * 7)\",\n        paddingBlock: \"calc(var(--spacing-unit) * 0.5)\",\n        paddingInline: \"calc(var(--spacing-unit) * 1.5)\",\n      },\n    },\n  ],\n});\n\nconst Kbd = ({\n  size = \"md\",\n  ...props\n}: React.ComponentProps<\"kbd\"> & {\n  size?: \"sm\" | \"md\" | \"lg\";\n}) => <KbdRoot size={size} {...props} />;\nKbd.displayName = \"Kbd\";\n\nexport { Kbd };\n"
+    }
+  ]
+}

@@ -48,6 +48,10 @@
     "name": "Input"
   },
   {
+    "id": "ui/kbd",
+    "name": "Kbd"
+  },
+  {
     "id": "ui/popover",
     "name": "Popover"
   },

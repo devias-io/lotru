@@ -24,7 +24,7 @@ export default function Page(): React.JSX.Element {
       <div
         className={css({
           backgroundColor: "hsl(var(--color-muted))",
-          borderBottom: "1px solid hsl(var(--color-border))",
+          borderBlockEnd: "1px solid hsl(var(--color-border))",
           boxSizing: "border-box",
           paddingBlock: "calc(var(--spacing-unit) * 24)",
           paddingInline: "calc(var(--size-unit) * 6)",
@@ -105,7 +105,7 @@ export default function Page(): React.JSX.Element {
               <div
                 className={css({
                   border: "1px solid hsl(var(--color-border))",
-                  borderLeft: 0,
+                  borderInlineStart: 0,
                   borderBottomRightRadius: "var(--borderRadius-md)",
                   borderTopRightRadius: "var(--borderRadius-md)",
                   boxSizing: "border-box",

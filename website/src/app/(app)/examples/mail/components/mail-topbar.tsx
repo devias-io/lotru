@@ -14,7 +14,7 @@ export function MailTopbar(): React.JSX.Element {
   return (
     <div
       className={css({
-        borderBottom: "1px solid hsl(var(--color-border))",
+        borderBlockEnd: "1px solid hsl(var(--color-border))",
         boxSizing: "border-box",
         display: "flex",
         flexShrink: 0,

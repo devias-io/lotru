@@ -176,18 +176,18 @@ function Sidebar({ children, className, side = "left" }: SidebarProps): React.JS
       className={cn(
         css({
           backgroundColor: "hsl(var(--color-muted))",
+          borderInlineEnd: "1px solid hsl(var(--color-border))",
           boxSizing: "border-box",
-          borderRight: "1px solid hsl(var(--color-border))",
           display: "none",
           flexShrink: 0,
-          height: "100%",
+          height: "var(--size-full)",
+          left: 0,
           minWidth: "272px",
+          overflowY: "auto",
           position: "fixed",
           top: 0,
-          left: 0,
-          zIndex: "var(--zIndex-sticky)",
-          overflowY: "auto",
           width: "272px",
+          zIndex: "var(--zIndex-sticky)",
           "@media (min-width: 768px)": {
             display: "block",
           },

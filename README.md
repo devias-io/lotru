@@ -8,7 +8,7 @@ The foundation for creating your own component library.
 
 ## Documentation
 
-Visit http://lotru-ui/docs to view the documentation.
+Visit http://lotru-ui.com/docs to view the documentation.
 
 ## Contributing
 

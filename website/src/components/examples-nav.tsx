@@ -26,13 +26,13 @@ export function ExamplesNav(): React.JSX.Element {
       <Text className={css({ textAlign: "center" })} fontSize="2xl" fontWeight="medium">
         Live examples
       </Text>
-      <Stack alignItems="center" direction="row" gap={2}>
+      <Stack alignItems="center" direction="row" gap={2} flexWrap="wrap">
         <Text className={css({ color: "hsl(var(--color-mutedForeground))" })} fontSize="sm">
           As simple as
         </Text>
         <Badge variant="outline">
           <TerminalIcon />
-          npx lotru add examples/card-01
+          npx lotru@latest add examples/card-01
         </Badge>
       </Stack>
       <Tabs

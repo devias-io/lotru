@@ -132,7 +132,7 @@ const SidebarMenuButton = styled("button", {
   fontWeight: "var(--fontWeight-medium)",
   paddingBlock: "calc(var(--spacing-unit) * 2)",
   paddingInline: 0,
-  textAlign: "left",
+  textAlign: "start",
   textDecoration: "none",
   width: "var(--size-full)",
   "&:hover:not(:disabled)": {

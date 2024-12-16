@@ -23,7 +23,7 @@
     "ui",
     "blocks",
     "base_ui",
-    "pigmentcss",
+    "pigment-css",
     "lotru"
   ],
   "type": "module",

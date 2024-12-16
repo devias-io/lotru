@@ -20,6 +20,31 @@ export const groups: Group[] = [
         title: "Introduction",
         href: "/docs",
       },
+      {
+        title: "CLI",
+        href: "/docs/cli",
+      },
+      {
+        title: "Figma",
+        href: "/docs/figma",
+      },
+      {
+        title: "Changelog",
+        href: "/docs/changelog",
+      },
+    ],
+  },
+  {
+    title: "Installation",
+    items: [
+      {
+        title: "Next.js",
+        href: "/docs/installation/next",
+      },
+      {
+        title: "Manual",
+        href: "/docs/installation/manual",
+      },
     ],
   },
   {

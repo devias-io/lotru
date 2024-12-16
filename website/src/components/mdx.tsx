@@ -17,8 +17,10 @@ function H1({ className, ...props }: React.ComponentProps<"h1">): React.JSX.Elem
           fontSize: "var(--fontSize-4xl)",
           fontWeight: "var(--fontWeight-bold)",
           lineHeight: "var(--lineHeight-tight)",
-          marginBlockEnd: 0,
-          marginBlockStart: "calc(var(--spacing-unit) * 2)",
+          marginBlock: 0,
+          "&:not(:first-child)": {
+            marginBlockStart: "calc(var(--spacing-unit) * 16)",
+          },
         }),
         className
       )}
@@ -35,8 +37,10 @@ function H2({ className, ...props }: React.ComponentProps<"h2">): React.JSX.Elem
           fontSize: "var(--fontSize-2xl)",
           fontWeight: "var(--fontWeight-bold)",
           lineHeight: "var(--lineHeight-tight)",
-          marginBlockEnd: 0,
-          marginBlockStart: "calc(var(--spacing-unit) * 12)",
+          marginBlock: 0,
+          "&:not(:first-child)": {
+            marginBlockStart: "calc(var(--spacing-unit) * 12)",
+          },
         }),
         className
       )}
@@ -53,8 +57,10 @@ function H3({ className, ...props }: React.ComponentProps<"h3">): React.JSX.Elem
           fontSize: "var(--fontSize-xl)",
           fontWeight: "var(--fontWeight-semibold)",
           lineHeight: "var(--lineHeight-tight)",
-          marginBlockEnd: 0,
-          marginBlockStart: "calc(var(--spacing-unit) * 8)",
+          marginBlock: 0,
+          "&:not(:first-child)": {
+            marginBlockStart: "calc(var(--spacing-unit) * 8)",
+          },
         }),
         className
       )}
@@ -71,8 +77,10 @@ function H4({ className, ...props }: React.ComponentProps<"h4">): React.JSX.Elem
           fontSize: "var(--fontSize-lg)",
           fontWeight: "var(--fontWeight-semibold)",
           lineHeight: "var(--lineHeight-tight)",
-          marginBlockEnd: 0,
-          marginBlockStart: "calc(var(--spacing-unit) * 8)",
+          marginBlock: 0,
+          "&:not(:first-child)": {
+            marginBlockStart: "calc(var(--spacing-unit) * 8)",
+          },
         }),
         className
       )}
@@ -89,8 +97,10 @@ function H5({ className, ...props }: React.ComponentProps<"h5">): React.JSX.Elem
           fontSize: "var(--fontSize-lg)",
           fontWeight: "var(--fontWeight-semibold)",
           lineHeight: "var(--lineHeight-tight)",
-          marginBlockEnd: 0,
-          marginBlockStart: "calc(var(--spacing-unit) * 8)",
+          marginBlock: 0,
+          "&:not(:first-child)": {
+            marginBlockStart: "calc(var(--spacing-unit) * 8)",
+          },
         }),
         className
       )}
@@ -107,8 +117,27 @@ function H6({ className, ...props }: React.ComponentProps<"h6">): React.JSX.Elem
           fontSize: "var(--fontSize-md)",
           fontWeight: "var(--fontWeight-semibold)",
           lineHeight: "var(--lineHeight-tight)",
-          marginBlockEnd: 0,
-          marginBlockStart: "calc(var(--spacing-unit) * 8)",
+          marginBlock: 0,
+          "&:not(:first-child)": {
+            marginBlockStart: "calc(var(--spacing-unit) * 8)",
+          },
+        }),
+        className
+      )}
+      {...props}
+    />
+  );
+}
+
+function P({ className, ...props }: React.ComponentProps<"p">): React.JSX.Element {
+  return (
+    <p
+      className={cn(
+        css({
+          marginBlock: 0,
+          "&:not(:first-child)": {
+            marginBlockStart: "calc(var(--spacing-unit) * 6)",
+          },
         }),
         className
       )}
@@ -169,6 +198,28 @@ function Code({
           "& [data-line]": {
             paddingInline: "calc(var(--spacing-unit) * 4)",
           },
+          "&[data-line-numbers]": {
+            counterReset: "line",
+          },
+          "&[data-line-numbers] > [data-line]::before": {
+            color: "gray",
+            content: "counter(line)",
+            counterIncrement: "line",
+            display: "inline-block",
+            fontSize: "var(--fontSize-xs)",
+            marginInlineEnd: "2rem",
+            textAlign: "end",
+            width: "0.75rem",
+          },
+          '&[data-line-numbers-max-digits="2"] > [data-line]::before': {
+            width: "1.25rem",
+          },
+          '&[data-line-numbers-max-digits="3"] > [data-line]::before': {
+            width: "1.75rem",
+          },
+          '&[data-line-numbers-max-digits="4"] > [data-line]::before': {
+            width: "2.25rem",
+          },
         }),
         className
       )}
@@ -196,6 +247,7 @@ function Pre({
             backgroundColor: "hsl(240 10% 4%)",
             borderRadius: "var(--borderRadius-md)",
             boxSizing: "border-box",
+            maxHeight: "650px",
             overflowX: "auto",
             paddingBlock: "calc(var(--spacing-unit) * 4)",
             width: "var(--size-full)",
@@ -273,6 +325,7 @@ function Step({ className, ...props }: React.ComponentProps<"h3">) {
         css({
           boxSizing: "border-box",
           counterIncrement: "step",
+          fontSize: "var(--fontSize-md)",
           fontWeight: "var(--fontWeight-semibold)",
           lineHeight: "var(--lineHeight-tight)",
           marginBlockStart: "calc(var(--spacing-unit) * 8)",
@@ -295,21 +348,6 @@ function Step({ className, ...props }: React.ComponentProps<"h3">) {
             textIndent: "-1px",
             width: "2.25rem",
           },
-        }),
-        className
-      )}
-      {...props}
-    />
-  );
-}
-
-function P({ className, ...props }: React.ComponentProps<"p">): React.JSX.Element {
-  return (
-    <p
-      className={cn(
-        css({
-          marginBlockEnd: "calc(var(--spacing-unit) * 4)",
-          marginBlockStart: 0,
         }),
         className
       )}

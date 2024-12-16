@@ -1,0 +1,48 @@
+---
+title: "Next.js Installation"
+description: "Install and configure Next.js."
+---
+
+<Steps>
+
+<Step>Create a project</Step>
+
+Create a new Next.js project:
+
+```bash
+npx create-next-app@latest my-app
+```
+
+<Step>Add Pigment CSS</Step>
+
+Components are styled using Pigment CSS and you need to install it in your project.
+
+Follow the [Pigment CSS](https://github.com/mui/pigment-css?tab=readme-ov-file#manual-installation-1) installation instructions to get started.
+
+<Step>Initialize Lotru setup</Step>
+
+Run the init command to setup your Next.js project:
+
+```bash
+pnpm dlx lotru@latest init
+```
+
+<Step>Configure `lotru.config.json`</Step>
+
+You will be asked a few questions to configure.
+
+```txt
+- What framework are you using?
+- Would you like to use TypeScript?
+- Is your source code located in a src directory?
+```
+
+<Step>Add your first component</Step>
+
+You can now add components to your project:
+
+```bash
+npx lotru@latest add ui/button
+```
+
+</Steps>

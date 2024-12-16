@@ -1,0 +1,59 @@
+---
+title: "CLI"
+description: "Use the CLI to add components to your project."
+---
+
+## init
+
+Use the `init` command to initialize configuration and dependencies for your existing project.
+
+The `init` command installs dependencies, adds a `theme.ts` file with all the CSS variables, and configures `lotru.config.json` file with your project settings.
+
+```bash
+npx lotru@latest init
+```
+
+You will be asked a few questions to configure `lotru.config.json`:
+
+```txt
+- What framework are you using?
+- Would you like to use TypeScript?
+- Is your source code located in a src directory?
+```
+
+## add
+
+Use the add command to add components and dependencies to your project.
+
+```bash
+npx lotru@latest add [component]
+```
+
+If a component has dependencies, they will be installed automatically.
+
+If you do not provide a component, you will be prompted to select one from a list.
+
+```text
+Which components would you like to add?
+› Space to select. A to toggle all. Enter to submit.
+
+◯  alert
+◯  avatar
+◯  badge
+◯  button
+◯  card
+◯  checkbox
+◯  dialog
+```
+
+If you want to add multiple components at once, you can separate them with a space:
+
+```bash
+npx lotru@latest add [component] [component]
+```
+
+Or use the `--all` flag to add all components:
+
+```bash
+npx lotru@latest add --all
+```

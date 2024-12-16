@@ -39,7 +39,8 @@ export function DocsPager({ doc }: DocsPagerProps): React.JSX.Element | null {
             flexDirection: "column",
             gap: "calc(var(--spacing-unit) * 1.5)",
             marginInlineStart: "auto",
-            padding: "calc(var(--spacing-unit) * 4)",
+            paddingBlock: "calc(var(--spacing-unit) * 2)",
+            paddingInline: "calc(var(--spacing-unit) * 4)",
             textDecoration: "none",
             width: "var(--size-full)",
             "&:hover": {
@@ -53,7 +54,7 @@ export function DocsPager({ doc }: DocsPagerProps): React.JSX.Element | null {
             fontSize="sm"
             fontWeight="medium"
           >
-            Previous page
+            Previous
           </Text>
           <Stack alignItems="center" direction="row" gap={1}>
             <ArrowLeftIcon size={18} />
@@ -75,7 +76,8 @@ export function DocsPager({ doc }: DocsPagerProps): React.JSX.Element | null {
             flexDirection: "column",
             gap: "calc(var(--spacing-unit) * 1.5)",
             marginInlineStart: "auto",
-            padding: "calc(var(--spacing-unit) * 4)",
+            paddingBlock: "calc(var(--spacing-unit) * 2)",
+            paddingInline: "calc(var(--spacing-unit) * 4)",
             textDecoration: "none",
             width: "var(--size-full)",
             "&:hover": {
@@ -89,7 +91,7 @@ export function DocsPager({ doc }: DocsPagerProps): React.JSX.Element | null {
             fontSize="sm"
             fontWeight="medium"
           >
-            Next page
+            Next
           </Text>
           <Stack alignItems="center" direction="row" gap={1}>
             <Text fontWeight="medium">{pager.next.title}</Text>

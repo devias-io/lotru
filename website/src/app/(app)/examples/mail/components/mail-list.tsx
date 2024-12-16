@@ -20,7 +20,7 @@ const MailItem = styled(
   display: "grid",
   gap: "calc(var(--spacing-unit) * 2)",
   padding: "calc(var(--size-unit) * 3)",
-  textAlign: "left",
+  textAlign: "start",
   "&:hover": {
     backgroundColor: "hsl(var(--color-muted))",
   },

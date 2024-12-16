@@ -73,7 +73,7 @@ export default function TableExample(): React.JSX.Element {
           <TableHeaderCell>#</TableHeaderCell>
           <TableHeaderCell>Customer</TableHeaderCell>
           <TableHeaderCell>Email</TableHeaderCell>
-          <TableHeaderCell className={css({ textAlign: "right" })}>Amount</TableHeaderCell>
+          <TableHeaderCell className={css({ textAlign: "end" })}>Amount</TableHeaderCell>
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -83,7 +83,7 @@ export default function TableExample(): React.JSX.Element {
               <TableCell>{order.displayId}</TableCell>
               <TableCell>{order.customer}</TableCell>
               <TableCell>{order.email}</TableCell>
-              <TableCell className={css({ textAlign: "right" })}>
+              <TableCell className={css({ textAlign: "end" })}>
                 {new Intl.NumberFormat("en-US", {
                   style: "currency",
                   currency: order.currency,
@@ -96,7 +96,7 @@ export default function TableExample(): React.JSX.Element {
       <TableFooter>
         <TableRow>
           <TableCell colSpan={3}>Total</TableCell>
-          <TableCell className={css({ textAlign: "right" })}>$2,500.00</TableCell>
+          <TableCell className={css({ textAlign: "end" })}>$2,500.00</TableCell>
         </TableRow>
       </TableFooter>
     </Table>

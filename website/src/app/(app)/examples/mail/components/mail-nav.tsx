@@ -28,7 +28,7 @@ export function MailNav({ items }: MailNavProps): React.JSX.Element {
           key={item.title}
           className={css({
             justifyContent: "flex-start",
-            textAlign: "left",
+            textAlign: "start",
             width: "var(--size-full)",
           })}
           variant={item.variant}

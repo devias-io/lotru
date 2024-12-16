@@ -33,7 +33,7 @@ export function SidebarNav(): React.JSX.Element {
             as="div"
             className={css({
               justifyContent: "flex-start",
-              textAlign: "left",
+              textAlign: "start",
               width: "var(--size-full)",
             })}
             variant={pathname === item.href ? "solid" : "ghost"}

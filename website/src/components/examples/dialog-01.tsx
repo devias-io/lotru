@@ -42,7 +42,7 @@ export default function DialogExample(): React.JSX.Element {
               gridTemplateColumns: "1fr 3fr",
             })}
           >
-            <FieldLabel className={css({ textAlign: "right" })}>Name</FieldLabel>
+            <FieldLabel className={css({ textAlign: "end" })}>Name</FieldLabel>
             <Input defaultValue="John Doe" />
           </Field>
           <Field
@@ -52,7 +52,7 @@ export default function DialogExample(): React.JSX.Element {
               gridTemplateColumns: "1fr 3fr",
             })}
           >
-            <FieldLabel className={css({ textAlign: "right" })}>Username</FieldLabel>
+            <FieldLabel className={css({ textAlign: "end" })}>Username</FieldLabel>
             <Input defaultValue="@john.doe" />
           </Field>
         </div>

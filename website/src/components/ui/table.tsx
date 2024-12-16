@@ -71,7 +71,7 @@ const TableHeaderCell = styled("th", {
   fontWeight: "var(--fontWeight-medium)",
   height: "calc(var(--spacing-unit) * 12)",
   paddingInline: "calc(var(--spacing-unit) * 4)",
-  textAlign: "left",
+  textAlign: "start",
   verticalAlign: "middle",
 });
 
@@ -81,7 +81,7 @@ const TableCell = styled("td", {
 })<React.ComponentProps<"td">>({
   fontSize: "var(--fontSize-sm)",
   padding: "calc(var(--spacing-unit) * 4)",
-  textAlign: "left",
+  textAlign: "start",
   verticalAlign: "middle",
 });
 

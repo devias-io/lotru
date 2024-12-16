@@ -29,6 +29,7 @@ export default function Layout({ children }: LayoutProps): React.JSX.Element {
           fontSize: "var(--fontSize-md)",
           fontSynthesisWeight: "none",
           lineHeight: "var(--lineHeight-normal)",
+          tabSize: 2,
           textRendering: "optimizeLegibility",
         } as React.CSSProperties),
         fontSans.variable,

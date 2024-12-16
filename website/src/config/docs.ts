@@ -42,6 +42,10 @@ export const groups: Group[] = [
         href: "/docs/installation/next",
       },
       {
+        title: "Vite",
+        href: "/docs/installation/vite",
+      },
+      {
         title: "Manual",
         href: "/docs/installation/manual",
       },

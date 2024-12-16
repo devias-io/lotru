@@ -1,16 +1,33 @@
 ---
-title: "Next.js Installation"
-description: "Install and configure Next.js."
+title: "Vite Installation"
+description: "Install and configure Vite."
 ---
 
 <Steps>
 
 <Step>Create a project</Step>
 
-Create a new Next.js project:
+Create a new React project using Vite:
 
 ```bash
-npx create-next-app@latest
+npm create vite@latest
+```
+
+<Step>Edit `tsconfig.app.json` file</Step>
+
+Add the following code to the `tsconfig.app.json` file to resolve paths:
+
+```json
+{
+  "compilerOptions": {
+    // ...
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+    // ...
+  }
+}
 ```
 
 <Step>Add Pigment CSS</Step>

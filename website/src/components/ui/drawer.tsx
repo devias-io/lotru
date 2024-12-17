@@ -61,9 +61,9 @@ const DrawerContent = styled(Primitives.Popup, {
     {
       props: { side: "bottom" },
       style: {
-        bottom: 0,
         borderTopLeftRadius: "var(--borderRadius-lg)",
         borderTopRightRadius: "var(--borderRadius-lg)",
+        bottom: 0,
         marginBlockStart: "calc(var(--spacing-unit) * 24)",
         transform: "translateY(100%)",
         "&[data-entering]": {
@@ -74,10 +74,10 @@ const DrawerContent = styled(Primitives.Popup, {
     {
       props: { side: "top" },
       style: {
-        top: 0,
-        marginBlockEnd: "calc(var(--spacing-unit) * 24)",
         borderBottomLeftRadius: "var(--borderRadius-lg)",
         borderBottomRightRadius: "var(--borderRadius-lg)",
+        marginBlockEnd: "calc(var(--spacing-unit) * 24)",
+        top: 0,
         transform: "translateY(-100%)",
         "&[data-entering]": {
           transform: "translateY(-100%)",
@@ -125,6 +125,7 @@ const DrawerFooter = styled("div", {
   name: "DrawerFooter",
   slot: "footer",
 })<React.ComponentProps<"div">>({
+  boxSizing: "border-box",
   display: "flex",
   flexDirection: "column",
   gap: "calc(var(--spacing-unit) * 2)",

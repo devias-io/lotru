@@ -167,6 +167,7 @@ const SheetFooter = styled("div", {
   name: "SheetFooter",
   slot: "footer",
 })<React.ComponentProps<"div">>({
+  boxSizing: "border-box",
   display: "flex",
   justifyContent: "flex-end",
 });

@@ -29,69 +29,128 @@ export function SidebarProvider({ children }: React.PropsWithChildren): React.JS
 
   return (
     <SidebarContext.Provider value={{ openMobile: open, setOpenMobile: setOpen }}>
-      {children}
+      <div
+        className={css({
+          "--sidebar-width": "272px",
+          display: "flex",
+          minHeight: "100svh",
+          width: "var(--size-full)",
+        } as React.CSSProperties)}
+      >
+        {children}
+      </div>
     </SidebarContext.Provider>
   );
 }
 
-const SidebarContent = styled("div", {
-  name: "SidebarContent",
-  slot: "content",
-})<React.ComponentProps<"div">>({
-  boxSizing: "border-box",
-  display: "flex",
-  flexDirection: "column",
-  height: "var(--size-full)",
-  position: "relative",
-});
+type SidebarProps = React.ComponentPropsWithoutRef<"aside"> & {
+  side?: "left" | "right";
+};
+
+function Sidebar({ children, className, side = "left" }: SidebarProps): React.JSX.Element {
+  const isMobile = useIsMobile();
+  const { openMobile, setOpenMobile } = useSidebarContext();
+
+  if (isMobile) {
+    return (
+      <Sheet onOpenChange={setOpenMobile} open={openMobile}>
+        <SheetOverlay />
+        <SheetContent className={css({ width: "var(--sidebar-width)" })} side={side}>
+          <div>{children}</div>
+        </SheetContent>
+      </Sheet>
+    );
+  }
+
+  return (
+    <div
+      className={css({
+        display: "none",
+        "@media (min-width: 768px)": {
+          display: "block",
+        },
+      })}
+    >
+      <div className={css({ width: "var(--sidebar-width)" })} />
+      <div
+        className={cn(
+          css({
+            backgroundColor: "hsl(var(--color-background))",
+            boxSizing: "border-box",
+            flexShrink: 0,
+            height: "100svh",
+            position: "fixed",
+            top: 0,
+            width: "var(--sidebar-width)",
+            zIndex: "var(--zIndex-sticky)",
+          }),
+          className
+        )}
+        style={{
+          ...(side === "left"
+            ? {
+                borderInlineEnd: "1px solid hsl(var(--color-border))",
+                left: 0,
+              }
+            : {
+                borderInlineStart: "1px solid hsl(var(--color-border))",
+                right: 0,
+              }),
+        }}
+      >
+        {children}
+      </div>
+    </div>
+  );
+}
 
 const SidebarHeader = styled("div", {
   name: "SidebarHeader",
   slot: "header",
 })<React.ComponentProps<"div">>({
-  backgroundColor: "hsl(var(--color-muted))",
-  left: 0,
-  position: "sticky",
-  top: 0,
-  width: "var(--size-full)",
+  boxSizing: "border-box",
+  padding: "calc(var(--spacing-unit) * 2)",
 });
 
-const SidebarBody = styled("div", {
-  name: "SidebarBody",
+const SidebarContent = styled("div", {
+  name: "SidebarContent",
   slot: "body",
 })<React.ComponentProps<"div">>({
+  boxSizing: "border-box",
   display: "flex",
   flexDirection: "column",
   flexGrow: 1,
-  gap: "calc(var(--spacing-unit) * 4)",
+  gap: "calc(var(--spacing-unit) * 2)",
   overflowY: "auto",
-  padding: "calc(var(--spacing-unit) * 4)",
+  minHeight: 0,
 });
 
 const SidebarFooter = styled("div", {
   name: "SidebarFooter",
   slot: "footer",
 })<React.ComponentProps<"div">>({
-  backgroundColor: "hsl(var(--color-muted))",
-  bottom: 0,
-  left: 0,
-  position: "sticky",
-  width: "var(--size-full)",
+  boxSizing: "border-box",
+  padding: "calc(var(--spacing-unit) * 2)",
 });
 
 const SidebarGroup = styled("div", {
-  name: "MenuGroup",
+  name: "SidebarGroup",
   slot: "group",
 })<React.ComponentProps<"div">>({
+  boxSizing: "border-box",
   display: "flex",
   flexDirection: "column",
-  paddingBlock: "calc(var(--spacing-unit) * 3)",
+  minWidth: 0,
+  padding: "calc(var(--spacing-unit) * 2)",
+  position: "relative",
+  width: "var(--size-full)",
 });
 
 const SidebarGroupLabel = styled("div", {
-  name: "MenuGroupLabel",
+  name: "SidebarGroupLabel",
   slot: "label",
 })<React.ComponentProps<"div">>({
+  boxSizing: "border-box",
   fontSize: "var(--fontSize-sm)",
   fontWeight: "var(--fontWeight-semibold)",
   paddingBlock: "var(--spacing-unit)",
@@ -99,24 +158,26 @@ const SidebarGroupLabel = styled("div", {
 });
 
 const SidebarGroupContent = styled("div", {
-  name: "MenuGroupContent",
+  name: "SidebarGroupContent",
   slot: "content",
-})<React.ComponentProps<"div">>({});
+})<React.ComponentProps<"div">>({
+  boxSizing: "border-box",
+});
 
 const SidebarMenu = styled("div", {
   name: "SidebarMenu",
   slot: "menu",
 })<React.ComponentProps<"div">>({
+  boxSizing: "border-box",
   display: "flex",
   flexDirection: "column",
+  gap: "var(--spacing-unit)",
 });
 
 const SidebarMenuItem = styled("div", {
   name: "SidebarMenuItem",
   slot: "item",
-})<React.ComponentProps<"div">>({
-  display: "flex",
-});
+})<React.ComponentProps<"div">>({});
 
 const SidebarMenuButton = styled("button", {
   name: "SidebarMenuButton",
@@ -131,13 +192,12 @@ const SidebarMenuButton = styled("button", {
   cursor: "pointer",
   flexGrow: 1,
   fontSize: "var(--fontSize-sm)",
-  paddingBlock: "var(--spacing-unit)",
-  paddingInline: "calc(var(--spacing-unit) * 2)",
+  padding: "calc(var(--spacing-unit) * 2)",
   textAlign: "start",
   textDecoration: "none",
   width: "var(--size-full)",
   "&:hover:not(:disabled)": {
-    color: "hsl(var(--color-foreground))",
+    backgroundColor: "hsl(var(--color-muted))",
   },
   "&:disabled": {
     color: "hsl(var(--color-mutedForeground))",
@@ -154,66 +214,29 @@ const SidebarMenuButton = styled("button", {
   ],
 });
 
-interface SidebarProps extends React.ComponentPropsWithoutRef<"aside"> {
-  side?: "left" | "right";
-}
-
-function Sidebar({ children, className, side = "left" }: SidebarProps): React.JSX.Element {
-  const isMobile = useIsMobile();
-  const { openMobile, setOpenMobile } = useSidebarContext();
-
-  if (isMobile) {
-    return (
-      <Sheet onOpenChange={setOpenMobile} open={openMobile}>
-        <SheetOverlay />
-        <SheetContent className={css({ maxWidth: "300px", overflow: "hidden" })} side={side}>
-          <div className={css({ overflowY: "auto" })}>{children}</div>
-        </SheetContent>
-      </Sheet>
-    );
-  }
-
-  return (
-    <aside
-      className={cn(
-        css({
-          backgroundColor: "hsl(var(--color-muted))",
-          borderInlineEnd: "1px solid hsl(var(--color-border))",
-          boxSizing: "border-box",
-          display: "none",
-          flexShrink: 0,
-          height: "var(--size-full)",
-          left: 0,
-          minWidth: "272px",
-          overflowY: "auto",
-          position: "fixed",
-          top: 0,
-          width: "272px",
-          zIndex: "var(--zIndex-sticky)",
-          "@media (min-width: 768px)": {
-            display: "block",
-          },
-        }),
-        className
-      )}
-    >
-      {children}
-    </aside>
-  );
-}
+const SidebarInset = styled("main", {
+  name: "SidebarInset",
+  slot: "inset",
+})<React.ComponentProps<"main">>({
+  backgroundColor: "hsl(var(--color-background))",
+  display: "flex",
+  flexDirection: "column",
+  flexGrow: 1,
+  position: "relative",
+});
 
 export {
   type SidebarContextValue,
   type SidebarProps,
   Sidebar,
   SidebarContent,
-  SidebarHeader,
-  SidebarBody,
   SidebarFooter,
   SidebarGroup,
-  SidebarGroupLabel,
   SidebarGroupContent,
+  SidebarGroupLabel,
+  SidebarHeader,
+  SidebarInset,
   SidebarMenu,
-  SidebarMenuItem,
   SidebarMenuButton,
+  SidebarMenuItem,
 };

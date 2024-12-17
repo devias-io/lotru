@@ -1,12 +1,12 @@
 import * as React from "react";
 import { styled } from "@pigment-css/react";
-import * as Primitives from "@radix-ui/react-avatar";
+import * as Primitive from "@radix-ui/react-avatar";
 
-const AvatarRoot = styled(Primitives.Root, {
+const AvatarRoot = styled(Primitive.Root, {
   name: "AvatarRoot",
   slot: "root",
 })<
-  React.ComponentProps<typeof Primitives.Root> & {
+  React.ComponentProps<typeof Primitive.Root> & {
     size: "2xs" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
     variant: "rounded" | "squared";
   }
@@ -82,7 +82,7 @@ const Avatar = ({
   size = "md",
   variant = "rounded",
   ...props
-}: React.ComponentProps<typeof Primitives.Root> & {
+}: React.ComponentProps<typeof Primitive.Root> & {
   size?: "2xs" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
   variant?: "rounded" | "squared";
 }) => (
@@ -92,19 +92,19 @@ const Avatar = ({
 );
 Avatar.displayName = "Avatar";
 
-const AvatarImage = styled(Primitives.Image, {
+const AvatarImage = styled(Primitive.Image, {
   name: "AvatarImage",
   slot: "image",
-})<React.ComponentProps<typeof Primitives.Image>>({
+})<React.ComponentProps<typeof Primitive.Image>>({
   height: "var(--size-full)",
   objectFit: "cover",
   width: "var(--size-full)",
 });
 
-const AvatarFallback = styled(Primitives.Fallback, {
+const AvatarFallback = styled(Primitive.Fallback, {
   name: "AvatarFallback",
   slot: "fallback",
-})<React.ComponentProps<typeof Primitives.Fallback>>({
+})<React.ComponentProps<typeof Primitive.Fallback>>({
   alignItems: "center",
   backgroundColor: "hsl(var(--color-muted))",
   color: "hsl(var(--color-mutedForeground))",

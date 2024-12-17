@@ -1,23 +1,31 @@
 import * as React from "react";
-import { styled } from "@pigment-css/react";
+import { Select as Primitive } from "@base-ui-components/react/select";
+import { css, styled } from "@pigment-css/react";
+import { CheckIcon, ChevronDownIcon } from "lucide-react";
 
-const SelectRoot = styled("select", {
-  name: "SelectRoot",
-  slot: "root",
+import { cn } from "@/src/lib/cn";
+
+const Select = Primitive.Root;
+
+const SelectTriggerRoot = styled(Primitive.Trigger, {
+  name: "SelectTriggerRoot",
+  slot: "trigger",
 })<
-  Omit<React.ComponentProps<"select">, "size"> & {
+  React.ComponentProps<typeof Primitive.Trigger> & {
     size: "sm" | "md" | "lg" | "xl";
   }
 >({
-  appearance: "none",
+  alignItems: "center",
   backgroundColor: "var(--color-background)",
   border: "1px solid hsl(var(--color-border))",
   borderRadius: "var(--borderRadius-md)",
   boxSizing: "border-box",
   color: "inherit",
-  fontFamily: "inherit",
+  display: "flex",
+  justifyContent: "space-between",
   maxWidth: "var(--size-xs)",
   position: "relative",
+  whiteSpace: "nowrap",
   width: "var(--size-full)",
   "&:focus-visible": {
     "--ring-offset-width": "0px",
@@ -34,17 +42,11 @@ const SelectRoot = styled("select", {
     cursor: "not-allowed",
     opacity: 0.5,
   },
-  '&[data-field="invalid"]': {
+  "&[data-invalid]": {
     borderColor: "hsl(var(--color-danger))",
   },
-  '&[data-field="invalid"]:focus-visible': {
+  "&[data-invalid]:focus-visible": {
     "--ring-color": "hsl(var(--color-danger) / 20%)",
-  },
-  "&::placeholder": {
-    color: "hsl(var(--color-mutedForeground))",
-  },
-  "&::placeholder:disabled": {
-    color: "hsl(var(--color-mutedForeground))",
   },
   variants: [
     {
@@ -102,12 +104,137 @@ const SelectRoot = styled("select", {
   ],
 } as React.CSSProperties);
 
-const Select = ({
+const SelectTrigger = ({
+  children,
   size = "md",
   ...props
-}: Omit<React.ComponentProps<"select">, "size"> & {
+}: React.ComponentProps<typeof SelectTriggerRoot> & {
+  className?: string;
   size?: "sm" | "md" | "lg" | "xl";
-}) => <SelectRoot size={size} {...props} />;
-Select.displayName = "Select";
+}): React.JSX.Element => (
+  <SelectTriggerRoot size={size} {...props}>
+    {children}
+    <Primitive.Icon
+      className={css({
+        alignItems: "center",
+        display: "flex",
+        justifyContent: "center",
+      })}
+    >
+      <ChevronDownIcon
+        className={css({
+          height: "calc(var(--size-unit) * 4)",
+          opacity: 0.5,
+          width: "calc(var(--size-unit) * 4)",
+        })}
+      />
+    </Primitive.Icon>
+  </SelectTriggerRoot>
+);
+SelectTrigger.displayName = "SelectTrigger";
 
-export { Select };
+const SelectValue = Primitive.Value;
+
+const SelectContent = ({
+  children,
+  className,
+}: React.ComponentProps<typeof Primitive.Popup>): React.JSX.Element => {
+  return (
+    <Primitive.Portal>
+      <Primitive.Positioner side="bottom">
+        <Primitive.Popup
+          className={cn(
+            css({
+              backgroundColor: "hsl(var(--color-surface))",
+              border: "1px solid hsl(var(--color-border))",
+              borderRadius: "var(--borderRadius-md)",
+              boxShadow: "var(--shadow-md)",
+              boxSizing: "border-box",
+              minWidth: "calc(var(--size-unit) * 32)",
+              padding: "var(--spacing-unit)",
+              width: "var(--size-full)",
+              zIndex: "var(--zIndex-dropdown)",
+              "&:focus-within": {
+                outline: "none",
+              },
+            }),
+            className as string
+          )}
+        >
+          {children}
+        </Primitive.Popup>
+      </Primitive.Positioner>
+    </Primitive.Portal>
+  );
+};
+
+const SelectGroup = Primitive.Group;
+
+const SelectGroupLabel = Primitive.GroupLabel;
+
+const SelectItem = ({
+  children,
+  className,
+  ...props
+}: React.ComponentProps<typeof Primitive.Item>): React.JSX.Element => {
+  return (
+    <Primitive.Item
+      className={cn(
+        css({
+          alignItems: "center",
+          borderRadius: "var(--borderRadius-sm)",
+          boxSizing: "border-box",
+          display: "grid",
+          gap: "var(--spacing-unit)",
+          gridTemplateColumns: "1fr auto",
+          paddingBlock: "var(--spacing-unit)",
+          paddingInline: "calc(var(--spacing-unit) * 2)",
+          userSelect: "none",
+          "&:focus-visible": {
+            backgroundColor: "hsl(var(--color-muted))",
+            outline: "none",
+          },
+          "&[data-selected]": {
+            backgroundColor: "hsl(var(--color-muted))",
+          },
+        } as React.CSSProperties),
+        className as string
+      )}
+      {...props}
+    >
+      <Primitive.ItemText
+        className={css({
+          fontSize: "var(--fontSize-sm)",
+          gridColumnStart: 1,
+        })}
+      >
+        {children}
+      </Primitive.ItemText>
+      <Primitive.ItemIndicator
+        className={css({
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gridColumnStart: 2,
+        })}
+      >
+        <CheckIcon
+          className={css({
+            height: "calc(var(--size-unit) * 4)",
+            width: "calc(var(--size-unit) * 4)",
+          })}
+        />
+      </Primitive.ItemIndicator>
+    </Primitive.Item>
+  );
+};
+
+export {
+  Select,
+  SelectTrigger,
+  SelectContent,
+  SelectGroup,
+  SelectGroupLabel,
+  SelectItem,
+  SelectValue,
+};

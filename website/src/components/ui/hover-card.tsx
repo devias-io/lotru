@@ -1,31 +1,31 @@
 import * as React from "react";
-import { Tooltip as Primitives } from "@base-ui-components/react/tooltip";
+import { Tooltip as Primitive } from "@base-ui-components/react/tooltip";
 import { styled } from "@pigment-css/react";
 
 const HoverCardProvider = (
-  props: React.ComponentProps<typeof Primitives.Provider>
-): React.JSX.Element => <Primitives.Provider {...props} />;
+  props: React.ComponentProps<typeof Primitive.Provider>
+): React.JSX.Element => <Primitive.Provider {...props} />;
 HoverCardProvider.displayName = "HoverCardProvider";
 
-const HoverCard = (props: React.ComponentProps<typeof Primitives.Root>) => (
-  <Primitives.Root {...props} />
+const HoverCard = (props: React.ComponentProps<typeof Primitive.Root>) => (
+  <Primitive.Root {...props} />
 );
 HoverCard.displayName = "HoverCard";
 
-const HoverCardTrigger = (props: React.ComponentProps<typeof Primitives.Trigger>) => (
-  <Primitives.Trigger {...props} />
+const HoverCardTrigger = (props: React.ComponentProps<typeof Primitive.Trigger>) => (
+  <Primitive.Trigger {...props} />
 );
 HoverCardTrigger.displayName = "HoverCardTrigger";
 
-const HoverCardPositioner = (props: React.ComponentProps<typeof Primitives.Positioner>) => (
-  <Primitives.Positioner {...props} />
+const HoverCardPositioner = (props: React.ComponentProps<typeof Primitive.Positioner>) => (
+  <Primitive.Positioner {...props} />
 );
 HoverCardPositioner.displayName = "HoverCardPositioner";
 
-const HoverCardContent = styled(Primitives.Popup, {
+const HoverCardContent = styled(Primitive.Popup, {
   name: "HoverCardContent",
   slot: "content",
-})<React.ComponentProps<typeof Primitives.Popup>>({
+})<React.ComponentProps<typeof Primitive.Popup>>({
   backgroundColor: "hsl(var(--color-surface))",
   border: "1px solid hsl(var(--color-border))",
   borderRadius: "var(--borderRadius-md)",
@@ -41,10 +41,10 @@ const HoverCardContent = styled(Primitives.Popup, {
   },
 });
 
-const HoverCardArrow = styled(Primitives.Arrow, {
+const HoverCardArrow = styled(Primitive.Arrow, {
   name: "HoverCardArrow",
   slot: "arrow",
-})<React.ComponentProps<typeof Primitives.Arrow>>({
+})<React.ComponentProps<typeof Primitive.Arrow>>({
   backgroundColor: "hsl(var(--color-surface))",
   height: "10px",
   transform: "rotate(45deg)",

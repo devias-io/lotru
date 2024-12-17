@@ -5,7 +5,13 @@ import { HeartIcon, MoreVerticalIcon, Music2Icon, PlayIcon } from "lucide-react"
 import { Avatar, AvatarImage } from "@/src/components/ui/avatar";
 import { Card } from "@/src/components/ui/card";
 import { IconButton } from "@/src/components/ui/icon-button";
-import { Select } from "@/src/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/src/components/ui/select";
 import { Stack } from "@/src/components/ui/stack";
 import { Text } from "@/src/components/ui/text";
 
@@ -63,10 +69,15 @@ export default function Example(): React.JSX.Element {
             <IconButton>
               <PlayIcon />
             </IconButton>
-            <Select defaultValue="likes" className={css({ width: "120px" })}>
-              <option value="likes">Most Liked</option>
-              <option value="recent">Recent</option>
-              <option value="oldest">Oldest</option>
+            <Select defaultValue="likes">
+              <SelectTrigger className={css({ width: "140px" })}>
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent className={css({ width: "140px" })}>
+                <SelectItem value="likes">Most Liked</SelectItem>
+                <SelectItem value="recent">Recent</SelectItem>
+                <SelectItem value="oldest">Oldest</SelectItem>
+              </SelectContent>
             </Select>
           </Stack>
           <div

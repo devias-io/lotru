@@ -12,7 +12,13 @@ import {
   CardTitle,
 } from "@/src/components/ui/card";
 import { Input } from "@/src/components/ui/input";
-import { Select } from "@/src/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/src/components/ui/select";
 import { Separator } from "@/src/components/ui/separator";
 import { Stack } from "@/src/components/ui/stack";
 import { Text } from "@/src/components/ui/text";
@@ -103,9 +109,14 @@ export default function Example(): React.JSX.Element {
                       </Text>
                     </div>
                   </Stack>
-                  <Select className={css({ width: "120px" })} defaultValue={member.role} size="sm">
-                    <option value="owner">Owner</option>
-                    <option value="member">Member</option>
+                  <Select defaultValue={member.role}>
+                    <SelectTrigger className={css({ width: "140px" })}>
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent className={css({ width: "140px" })}>
+                      <SelectItem value="owner">Owner</SelectItem>
+                      <SelectItem value="member">Member</SelectItem>
+                    </SelectContent>
                   </Select>
                 </Stack>
               ))}

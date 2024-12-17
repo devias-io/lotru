@@ -8,7 +8,13 @@ import { Avatar, AvatarImage } from "@/src/components/ui/avatar";
 import { Button } from "@/src/components/ui/button";
 import { Field, FieldLabel } from "@/src/components/ui/field";
 import { Input } from "@/src/components/ui/input";
-import { Select } from "@/src/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/src/components/ui/select";
 import { Separator } from "@/src/components/ui/separator";
 import { Stack } from "@/src/components/ui/stack";
 import { Switch } from "@/src/components/ui/switch";
@@ -76,14 +82,14 @@ export function ProfileForm(): React.JSX.Element {
             </Field>
             <Field>
               <FieldLabel>Email</FieldLabel>
-              <Select
-                className={css({ maxWidth: "var(--size-full)" })}
-                defaultValue=""
-                name="email"
-              >
-                <option disabled>Select a verified email to display</option>
-                <option value="sanchez@example.com">sanchez@example.com</option>
-                <option value="sanchez@domain.com">sanchez@domain.com</option>
+              <Select defaultValue="" name="email">
+                <SelectTrigger className={css({ maxWidth: "var(--size-full)" })}>
+                  <SelectValue placeholder="Select a verified email to display" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="sanchez@example.com">sanchez@example.com</SelectItem>
+                  <SelectItem value="sanchez@domain.com">sanchez@domain.com</SelectItem>
+                </SelectContent>
               </Select>
             </Field>
             <Stack direction="row" gap={4} justifyContent="flex-end">
@@ -163,19 +169,25 @@ export function ProfileForm(): React.JSX.Element {
           <div>
             <div className={css({ position: "relative" })}>
               <Select
-                className={css({ paddingInlineStart: "calc(var(--spacing-unit) * 8)" })}
                 value={values.theme}
                 name="theme"
-                onChange={(event) => {
+                onValueChange={(value) => {
                   setValues((prevValues) => ({
                     ...prevValues,
-                    theme: event.target.value,
+                    theme: value,
                   }));
                 }}
               >
-                <option value="light">Light</option>
-                <option value="dark">Dark</option>
-                <option value="system">System</option>
+                <SelectTrigger
+                  className={css({ paddingInlineStart: "calc(var(--spacing-unit) * 8)" })}
+                >
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="light">Light</SelectItem>
+                  <SelectItem value="dark">Dark</SelectItem>
+                  <SelectItem value="system">System</SelectItem>
+                </SelectContent>
               </Select>
               <ThemeIcon
                 className={css({

@@ -48,6 +48,10 @@
     "name": "Dialog 01"
   },
   {
+    "id": "examples/drawer-01",
+    "name": "Drawer 01"
+  },
+  {
     "id": "examples/dropdown-menu-01",
     "name": "Menu 01"
   },

@@ -376,6 +376,15 @@ export const index: Record<
     }],
     component: React.lazy(() => import("@/src/components/examples/dialog-01.tsx"))
   },
+  "examples/drawer-01": {
+    id: "examples/drawer-01",
+    name: "Drawer 01",
+    description: "",
+    files: [{
+      path: "examples/drawer-01.tsx",
+    }],
+    component: React.lazy(() => import("@/src/components/examples/drawer-01.tsx"))
+  },
   "examples/dropdown-menu-01": {
     id: "examples/dropdown-menu-01",
     name: "Menu 01",

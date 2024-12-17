@@ -30,7 +30,6 @@ const ButtonRoot = styled("button", {
   position: "relative",
   userSelect: "none",
   whiteSpace: "nowrap",
-  width: "var(--size-fit)",
   "&:focus-visible": {
     "--ring-offset-width": "2px",
     "--ring-offset-color": "hsl(var(--color-background))",

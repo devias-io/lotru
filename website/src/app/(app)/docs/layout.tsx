@@ -53,6 +53,7 @@ export default function Layout({ children }: LayoutProps): React.JSX.Element {
               height: "var(--size-full)",
               overflow: "auto",
               paddingBlock: "calc(var(--size-unit) * 8)",
+              paddingInlineEnd: "calc(var(--size-unit) * 4)",
               scrollbarWidth: "none",
             })}
           >

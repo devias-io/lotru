@@ -1,12 +1,12 @@
 ---
-title: "Sheet"
+title: "Drawer"
 description: "Extends the Dialog component to display content that complements the main content of the screen."
 links:
   doc: https://base-ui.com/components/react-dialog
   api: https://base-ui.com/components/react-dialog#api-reference
 ---
 
-<ComponentPreview id="examples/sheet-01" />
+<ComponentPreview id="examples/drawer-01" />
 
 ## Installation
 
@@ -21,7 +21,7 @@ links:
 <TabsContent value="cli">
 
 ```bash
-npx lotru@latest add ui/sheet
+npx lotru@latest add ui/drawer
 ```
 
 </TabsContent>
@@ -38,7 +38,7 @@ npm install @base_ui/react
 
 ### Copy and paste the following code into your project.
 
-<ComponentSource id="ui/sheet" />
+<ComponentSource id="ui/drawer" />
 
 ### Update the import paths to match your project setup.
 
@@ -52,31 +52,31 @@ npm install @base_ui/react
 
 ```tsx
 import {
-  Sheet,
-  SheetClose,
-  SheetContent,
-  SheetDescription,
-  SheetFooter,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
 ```
 
 ```tsx
-<Sheet>
-  <SheetTrigger>Open</SheetTrigger>
-  <SheetContent>
-    <SheetHeader>
-      <SheetTitle>Are you absolutely sure?</SheetTitle>
-      <SheetDescription>This action cannot be undone.</SheetDescription>
-    </SheetHeader>
-    <SheetFooter>
+<Drawer>
+  <DrawerTrigger>Open</DrawerTrigger>
+  <DrawerContent>
+    <DrawerHeader>
+      <DrawerTitle>Are you absolutely sure?</DrawerTitle>
+      <DrawerDescription>This action cannot be undone.</DrawerDescription>
+    </DrawerHeader>
+    <DrawerFooter>
       <Button>Submit</Button>
-      <SheetClose>
+      <DrawerClose>
         <Button variant="outline">Cancel</Button>
-      </SheetClose>
-    </SheetFooter>
-  </SheetContent>
-</Sheet>
+      </DrawerClose>
+    </DrawerFooter>
+  </DrawerContent>
+</Drawer>
 ```

@@ -94,6 +94,8 @@ const SidebarGroupLabel = styled("div", {
 })<React.ComponentProps<"div">>({
   fontSize: "var(--fontSize-sm)",
   fontWeight: "var(--fontWeight-semibold)",
+  paddingBlock: "var(--spacing-unit)",
+  paddingInline: "calc(var(--spacing-unit) * 2)",
 });
 
 const SidebarGroupContent = styled("div", {
@@ -125,13 +127,12 @@ const SidebarMenuButton = styled("button", {
   border: "none",
   borderRadius: "var(--borderRadius-md)",
   boxSizing: "border-box",
-  color: "hsl(var(--color-mutedForeground))",
+  color: "hsl(var(--color-foreground))",
   cursor: "pointer",
   flexGrow: 1,
   fontSize: "var(--fontSize-sm)",
-  fontWeight: "var(--fontWeight-medium)",
-  paddingBlock: "calc(var(--spacing-unit) * 2)",
-  paddingInline: 0,
+  paddingBlock: "var(--spacing-unit)",
+  paddingInline: "calc(var(--spacing-unit) * 2)",
   textAlign: "start",
   textDecoration: "none",
   width: "var(--size-full)",
@@ -146,7 +147,8 @@ const SidebarMenuButton = styled("button", {
     {
       props: { active: true },
       style: {
-        color: "hsl(var(--color-foreground))",
+        backgroundColor: "hsl(var(--color-muted))",
+        fontWeight: "var(--fontWeight-medium)",
       },
     },
   ],

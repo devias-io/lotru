@@ -310,43 +310,31 @@ function Steps({ className, ...props }: React.ComponentProps<"div">) {
           marginBlockEnd: "calc(var(--spacing-unit) * 12)",
           marginInlineStart: "calc(var(--spacing-unit) * 4)",
           paddingInlineStart: "calc(var(--spacing-unit) * 8)",
-        }),
-        className
-      )}
-      {...props}
-    />
-  );
-}
-
-function Step({ className, ...props }: React.ComponentProps<"h3">) {
-  return (
-    <h3
-      className={cn(
-        css({
-          boxSizing: "border-box",
-          counterIncrement: "step",
-          fontSize: "var(--fontSize-md)",
-          fontWeight: "var(--fontWeight-semibold)",
-          lineHeight: "var(--lineHeight-tight)",
-          marginBlockStart: "calc(var(--spacing-unit) * 8)",
-          position: "relative",
-          "&::before": {
-            alignItems: "center",
-            backgroundColor: "hsl(var(--color-muted))",
-            border: "4px solid hsl(var(--color-background))",
-            borderRadius: "var(--borderRadius-full)",
-            boxSizing: "border-box",
-            content: "counter(step)",
-            display: "inline-flex",
-            fontWeight: "var(--fontWeight-medium)",
-            height: "2.25rem",
-            justifyContent: "center",
-            marginBlockStart: "-4px",
-            marginInlineStart: "-50px",
-            position: "absolute",
-            textAlign: "center",
-            textIndent: "-1px",
-            width: "2.25rem",
+          "& > h3": {
+            counterIncrement: "step",
+            fontSize: "var(--fontSize-md)",
+            fontWeight: "var(--fontWeight-semibold)",
+            lineHeight: "var(--lineHeight-tight)",
+            marginBlockEnd: "calc(var(--spacing-unit) * 8)",
+            position: "relative",
+            "&::before": {
+              alignItems: "center",
+              backgroundColor: "hsl(var(--color-muted))",
+              border: "4px solid hsl(var(--color-background))",
+              borderRadius: "var(--borderRadius-full)",
+              boxSizing: "border-box",
+              content: "counter(step)",
+              display: "inline-flex",
+              fontWeight: "var(--fontWeight-medium)",
+              height: "2.25rem",
+              justifyContent: "center",
+              marginBlockStart: "-8px",
+              marginInlineStart: "-50px",
+              position: "absolute",
+              textAlign: "center",
+              textIndent: "-1px",
+              width: "2.25rem",
+            },
           },
         }),
         className
@@ -373,7 +361,6 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ComponentPreview,
     ComponentSource,
     Steps,
-    Step,
     Tabs,
     TabsList: ({
       className,

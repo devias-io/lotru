@@ -5,13 +5,13 @@ description: "How to install dependencies and structure your app."
 
 <Steps>
 
-<Step>Add Pigment CSS</Step>
+### Add Pigment CSS
 
 Components are styled using Pigment CSS and you need to install it in your project.
 
 Follow the [Pigment CSS](https://github.com/mui/pigment-css?tab=readme-ov-file#manual-installation-1) installation instructions to get started.
 
-<Step>Add dependencies</Step>
+### Add dependencies
 
 Add the following dependencies to your project:
 
@@ -19,7 +19,7 @@ Add the following dependencies to your project:
 npm install lucide-react
 ```
 
-<Step>Configure path aliases</Step>
+### Configure path aliases
 
 Configure the path aliases in your `tsconfig.json` file.
 
@@ -34,7 +34,7 @@ Configure the path aliases in your `tsconfig.json` file.
 }
 ```
 
-<Step>Create a `theme.ts` file</Step>
+### Create a theme.ts file
 
 Create a `theme.ts` file in the root of your project and add the following code:
 
@@ -172,7 +172,7 @@ const theme = {
 export default theme;
 ```
 
-<Step>Create a `pigment.config.ts` file</Step>
+### Create a pigment.config.ts file
 
 Create a `pigment.config.ts` file in the root of your project.
 
@@ -188,7 +188,7 @@ const config = {
 export default config;
 ```
 
-<Step>Import Pigment CSS configuration</Step>
+### Import Pigment CSS configuration
 
 Import the Pigment CSS configuration in your `next.config.ts` file.
 
@@ -223,7 +223,7 @@ export default defineConfig({
 
 Change `"@pigment-css/nextjs-plugin"` with `"@pigment-css/vite-plugin"` if you are using Vite.
 
-<Step>Create a `lotru.config.json` file</Step>
+### Create a lotru.config.json file
 
 Create a `lotru.config.json` file in the root of your project.
 
@@ -244,7 +244,7 @@ Create a `lotru.config.json` file in the root of your project.
 
 Change `"framework": "nextjs"` with `"framework": "vite"` if you are using Vite.
 
-<Step>Add your first component</Step>
+### Add your first component
 
 You can now add components to your project:
 

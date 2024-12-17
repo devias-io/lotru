@@ -8,7 +8,7 @@ import { Input } from "@/src/components/ui/input";
 
 export default function FieldExample(): React.JSX.Element {
   return (
-    <Field invalid className={css({ maxWidth: "var(--size-sm)", width: "var(--size-full)" })}>
+    <Field className={css({ maxWidth: "var(--size-sm)", width: "var(--size-full)" })} invalid>
       <FieldLabel>Name</FieldLabel>
       <FieldControl>
         <Input />

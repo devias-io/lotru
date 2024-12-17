@@ -1,5 +1,5 @@
 export interface Group {
-  title: string;
+  title?: string;
   items: Item[];
 }
 
@@ -81,6 +81,10 @@ export const groups: Group[] = [
       {
         title: "Dialog",
         href: "/docs/components/dialog",
+      },
+      {
+        title: "Drawer",
+        href: "/docs/components/drawer",
       },
       {
         title: "Dropdown Menu",

@@ -32,10 +32,12 @@ export default function Layout({ children }: LayoutProps): React.JSX.Element {
           })}
           gap={1}
         >
-          <Button className={css({ paddingInline: 0 })} size="sm" variant="link">
-            <ArrowLeftIcon />
-            Back
-          </Button>
+          <div>
+            <Button className={css({ paddingInline: 0 })} size="sm" variant="link">
+              <ArrowLeftIcon />
+              Back
+            </Button>
+          </div>
           <Text fontSize="xl" fontWeight="medium">
             Account Settings
           </Text>

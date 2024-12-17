@@ -1,11 +1,11 @@
 import * as React from "react";
-import * as Primitives from "@base_ui/react/RadioGroup";
+import { RadioGroup as Primitive } from "@base-ui-components/react/radio-group";
 import { styled } from "@pigment-css/react";
 
-const RadioGroup = styled(Primitives.Root, {
+const RadioGroup = styled(Primitive, {
   name: "RadioGroup",
   slot: "root",
-})<React.ComponentProps<typeof Primitives.Root>>({
+})<React.ComponentProps<typeof Primitive>>({
   display: "flex",
   flexDirection: "column",
   gap: "calc(var(--spacing-unit) * 2)",

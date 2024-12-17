@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import * as Primitives from "@base_ui/react/AlertDialog";
+import { AlertDialog as Primitive } from "@base-ui-components/react/alert-dialog";
 import { styled } from "@pigment-css/react";
 
 import { Button } from "@/src/components/ui/button";
@@ -42,27 +42,27 @@ const Prompt = ({
   variant?: PromptVariant;
 }>): React.JSX.Element => (
   <PromptProvider variant={variant}>
-    <Primitives.Root {...props} />
+    <Primitive.Root {...props} />
   </PromptProvider>
 );
 Prompt.displayName = "Prompt";
 
-const PromptTrigger = Primitives.Trigger;
+const PromptTrigger = Primitive.Trigger;
 
-const PromptOverlay = styled(Primitives.Backdrop, {
+const PromptOverlay = styled(Primitive.Backdrop, {
   name: "PromptOverlay",
   slot: "overlay",
-})<React.ComponentProps<typeof Primitives.Backdrop>>({
+})<React.ComponentProps<typeof Primitive.Backdrop>>({
   backgroundColor: "hsl(var(--color-overlay))",
   position: "fixed",
   inset: 0,
   zIndex: "var(--zIndex-overlay)",
 });
 
-const PromptContent = styled(Primitives.Popup, {
+const PromptContent = styled(Primitive.Popup, {
   name: "PromptContent",
   slot: "content",
-})<React.ComponentProps<typeof Primitives.Popup>>({
+})<React.ComponentProps<typeof Primitive.Popup>>({
   backgroundColor: "hsl(var(--color-surface))",
   border: "1px solid hsl(var(--color-border))",
   borderRadius: "var(--borderRadius-md)",
@@ -99,19 +99,19 @@ const PromptFooter = styled("div", {
   gap: "calc(var(--spacing-unit) * 2)",
 });
 
-const PromptTitle = styled(Primitives.Title, {
+const PromptTitle = styled(Primitive.Title, {
   name: "PromptTitle",
   slot: "title",
-})<React.ComponentProps<typeof Primitives.Title>>({
+})<React.ComponentProps<typeof Primitive.Title>>({
   fontSize: "var(--fontSize-lg)",
   fontWeight: "var(--fontWeight-semibold)",
   marginBlock: 0,
 });
 
-const PromptDescription = styled(Primitives.Description, {
+const PromptDescription = styled(Primitive.Description, {
   name: "PromptDescription",
   slot: "description",
-})<React.ComponentProps<typeof Primitives.Description>>({
+})<React.ComponentProps<typeof Primitive.Description>>({
   color: "hsl(var(--color-mutedForeground))",
   fontSize: "var(--fontSize-sm)",
   lineHeight: "var(--lineHeight-tight)",
@@ -128,7 +128,7 @@ const PromptAction = ({
   const { variant } = usePromptContext();
 
   return (
-    <Primitives.Close
+    <Primitive.Close
       render={
         <Button type={type} variant={variant === "danger" ? "danger" : "solid"}>
           {children}
@@ -145,7 +145,7 @@ const PromptCancel = ({
   ...props
 }: React.PropsWithChildren<{
   type?: "button" | "submit" | "reset";
-}>) => <Primitives.Close render={<Button variant="outline">{children}</Button>} {...props} />;
+}>) => <Primitive.Close render={<Button variant="outline">{children}</Button>} {...props} />;
 PromptCancel.displayName = "PromptCancel";
 
 export {

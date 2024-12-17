@@ -1,11 +1,11 @@
 import * as React from "react";
-import * as Primitives from "@base_ui/react/Radio";
+import { Radio as Primitive } from "@base-ui-components/react/radio";
 import { styled } from "@pigment-css/react";
 
-const RadioRoot = styled(Primitives.Root, {
+const RadioRoot = styled(Primitive.Root, {
   name: "RadioRoot",
   slot: "root",
-})<React.ComponentProps<typeof Primitives.Root>>({
+})<React.ComponentProps<typeof Primitive.Root>>({
   alignItems: "center",
   border: "1px solid hsl(var(--color-border))",
   backgroundColor: "hsl(var(--color-muted))",
@@ -38,28 +38,28 @@ const RadioRoot = styled(Primitives.Root, {
     cursor: "not-allowed",
     opacity: 0.5,
   },
-  "&[data-radio='checked']": {
+  "&[data-checked]": {
     backgroundColor: "hsl(var(--color-primary))",
     border: "none",
   },
-  "&[data-radio='checked']:hover:not([data-disabled])": {
+  "&[data-checked]:hover:not([data-disabled])": {
     backgroundColor: "hsl(var(--color-primary) / 80%)",
   },
 } as React.CSSProperties);
 
-const RadioIndicator = styled(Primitives.Indicator, {
+const RadioIndicator = styled(Primitive.Indicator, {
   name: "RadioIndicator",
   slot: "indicator",
-})<React.ComponentProps<typeof Primitives.Indicator>>({
+})<React.ComponentProps<typeof Primitive.Indicator>>({
   borderRadius: "var(--borderRadius-full)",
   boxSizing: "border-box",
   flexShrink: 0,
   height: "calc(var(--size-unit) * 2)",
   width: "calc(var(--size-unit) * 2)",
-  "&[data-radio='unchecked']": {
+  "&[data-unchecked]": {
     display: "none",
   },
-  "&[data-radio='checked']": {
+  "&[data-checked]": {
     backgroundColor: "hsl(var(--color-primaryForeground))",
   },
 });

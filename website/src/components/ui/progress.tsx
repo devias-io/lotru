@@ -1,13 +1,13 @@
 import * as React from "react";
-import * as Primitives from "@base_ui/react/Progress";
+import { Progress as Primitive } from "@base-ui-components/react/progress";
 import { styled } from "@pigment-css/react";
 
-const ProgressRoot = Primitives.Root;
+const ProgressRoot = Primitive.Root;
 
-const ProgressTrack = styled(Primitives.Track, {
+const ProgressTrack = styled(Primitive.Track, {
   name: "ProgressTrack",
   slot: "track",
-})<React.ComponentProps<typeof Primitives.Track>>({
+})<React.ComponentProps<typeof Primitive.Track>>({
   backgroundColor: "hsl(var(--color-muted))",
   borderRadius: "var(--borderRadius-full)",
   boxSizing: "border-box",
@@ -18,10 +18,10 @@ const ProgressTrack = styled(Primitives.Track, {
   width: "var(--size-full)",
 });
 
-const ProgressIndicator = styled(Primitives.Indicator, {
+const ProgressIndicator = styled(Primitive.Indicator, {
   name: "ProgressIndicator",
   slot: "indicator",
-})<React.ComponentProps<typeof Primitives.Indicator>>({
+})<React.ComponentProps<typeof Primitive.Indicator>>({
   backgroundColor: "hsl(var(--color-primary))",
   boxSizing: "border-box",
   position: "absolute",
@@ -30,7 +30,7 @@ const ProgressIndicator = styled(Primitives.Indicator, {
   transitionTimingFunction: "var(--easing-default)",
 });
 
-const Progress = (props: React.ComponentProps<typeof Primitives.Root>) => (
+const Progress = (props: React.ComponentProps<typeof Primitive.Root>) => (
   <ProgressRoot {...props}>
     <ProgressTrack>
       <ProgressIndicator />

@@ -1,20 +1,20 @@
 import * as React from "react";
-import * as Primitives from "@base_ui/react/Slider";
+import { Slider as Primitive } from "@base-ui-components/react/slider";
 import { styled } from "@pigment-css/react";
 
-const SliderRoot = styled(Primitives.Root, {
+const SliderRoot = styled(Primitive.Root, {
   name: "SliderRoot",
   slot: "root",
-})<React.ComponentProps<typeof Primitives.Root>>({
+})<React.ComponentProps<typeof Primitive.Root>>({
   userSelect: "none",
   touchAction: "none",
   position: "relative",
 });
 
-const SliderTrack = styled(Primitives.Track, {
+const SliderTrack = styled(Primitive.Track, {
   name: "SliderTrack",
   slot: "track",
-})<React.ComponentProps<typeof Primitives.Track>>({
+})<React.ComponentProps<typeof Primitive.Track>>({
   backgroundColor: "hsl(var(--color-muted))",
   borderRadius: "var(--borderRadius-full)",
   boxSizing: "border-box",
@@ -25,19 +25,19 @@ const SliderTrack = styled(Primitives.Track, {
   width: "var(--size-full)",
 });
 
-const SliderIndicator = styled(Primitives.Indicator, {
+const SliderIndicator = styled(Primitive.Indicator, {
   name: "SliderIndicator",
   slot: "indicator",
-})<React.ComponentProps<typeof Primitives.Indicator>>({
+})<React.ComponentProps<typeof Primitive.Indicator>>({
   backgroundColor: "hsl(var(--color-primary))",
 });
 
-const SliderThumb = styled(Primitives.Thumb, {
+const SliderThumb = styled(Primitive.Thumb, {
   name: "SliderThumb",
   slot: "thumb",
-})<React.ComponentProps<typeof Primitives.Thumb>>({
-  backgroundColor: "hsl(var(--color-background))",
-  border: "2px solid hsl(var(--color-primary))",
+})<React.ComponentProps<typeof Primitive.Thumb>>({
+  backgroundColor: "hsl(var(--color-primary))",
+  border: "2px solid hsl(var(--color-background))",
   borderRadius: "var(--borderRadius-full)",
   boxSizing: "border-box",
   display: "block",
@@ -58,14 +58,14 @@ const SliderThumb = styled(Primitives.Thumb, {
   },
 } as React.CSSProperties);
 
-const Slider = (props: React.ComponentProps<typeof Primitives.Root>) => (
+const Slider = (props: React.ComponentProps<typeof Primitive.Root>) => (
   <SliderRoot {...props}>
-    <Primitives.Control>
+    <Primitive.Control>
       <SliderTrack>
         <SliderIndicator />
       </SliderTrack>
       <SliderThumb />
-    </Primitives.Control>
+    </Primitive.Control>
   </SliderRoot>
 );
 Slider.displayName = "Slider";

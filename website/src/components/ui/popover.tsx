@@ -1,17 +1,17 @@
 import * as React from "react";
-import * as Primitives from "@base_ui/react/Popover";
+import { Popover as Primitive } from "@base-ui-components/react/popover";
 import { styled } from "@pigment-css/react";
 
-const Popover = Primitives.Root;
+const Popover = Primitive.Root;
 
-const PopoverTrigger = Primitives.Trigger;
+const PopoverTrigger = Primitive.Trigger;
 
-const PopoverPositioner = Primitives.Positioner;
+const PopoverPositioner = Primitive.Positioner;
 
-const PopoverContent = styled(Primitives.Popup, {
+const PopoverContent = styled(Primitive.Popup, {
   name: "PopoverContent",
   slot: "content",
-})<React.ComponentProps<typeof Primitives.Popup>>({
+})<React.ComponentProps<typeof Primitive.Popup>>({
   backgroundColor: "hsl(var(--color-surface))",
   border: "1px solid hsl(var(--color-border))",
   borderRadius: "var(--borderRadius-md)",
@@ -27,10 +27,10 @@ const PopoverContent = styled(Primitives.Popup, {
   },
 });
 
-const PopoverArrow = styled(Primitives.Arrow, {
+const PopoverArrow = styled(Primitive.Arrow, {
   name: "PopoverArrow",
   slot: "arrow",
-})<React.ComponentProps<typeof Primitives.Arrow>>({
+})<React.ComponentProps<typeof Primitive.Arrow>>({
   backgroundColor: "hsl(var(--color-surface))",
   height: "10px",
   transform: "rotate(45deg)",

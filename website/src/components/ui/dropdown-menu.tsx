@@ -1,28 +1,33 @@
 "use client";
 
 import * as React from "react";
-import * as Primitives from "@base_ui/react/Menu";
+import { Menu as Primitive } from "@base-ui-components/react/menu";
 import { styled } from "@pigment-css/react";
 
-const DropdownMenu = (props: React.ComponentProps<typeof Primitives.Root>) => (
-  <Primitives.Root {...props} />
+const DropdownMenu = (props: React.ComponentProps<typeof Primitive.Root>) => (
+  <Primitive.Root {...props} />
 );
 DropdownMenu.displayName = "DropdownMenu";
 
-const DropdownMenuTrigger = (props: React.ComponentProps<typeof Primitives.Trigger>) => (
-  <Primitives.Trigger {...props} />
+const DropdownMenuTrigger = (props: React.ComponentProps<typeof Primitive.Trigger>) => (
+  <Primitive.Trigger {...props} />
 );
 DropdownMenuTrigger.displayName = "DropdownMenuTrigger";
 
-const DropdownMenuPositioner = (props: React.ComponentProps<typeof Primitives.Positioner>) => (
-  <Primitives.Positioner {...props} />
+const DropdownMenuPortal = (props: React.ComponentProps<typeof Primitive.Portal>) => (
+  <Primitive.Portal {...props} />
+);
+DropdownMenuPortal.displayName = "DropdownMenuPortal";
+
+const DropdownMenuPositioner = (props: React.ComponentProps<typeof Primitive.Positioner>) => (
+  <Primitive.Positioner {...props} />
 );
 DropdownMenuPositioner.displayName = "DropdownMenuPositioner";
 
-const DropdownMenuContent = styled(Primitives.Popup, {
+const DropdownMenuContent = styled(Primitive.Popup, {
   name: "DropdownMenuContent",
   slot: "content",
-})<React.ComponentProps<typeof Primitives.Popup>>({
+})<React.ComponentProps<typeof Primitive.Popup>>({
   backgroundColor: "hsl(var(--color-surface))",
   border: "1px solid hsl(var(--color-border))",
   borderRadius: "var(--borderRadius-lg)",
@@ -46,10 +51,10 @@ const DropdownMenuLabel = styled("div", {
   paddingInline: "calc(var(--spacing-unit) * 2)",
 });
 
-const DropdownMenuItem = styled(Primitives.Item, {
+const DropdownMenuItem = styled(Primitive.Item, {
   name: "DropdownMenuItem",
   slot: "item",
-})<React.ComponentProps<typeof Primitives.Item>>({
+})<React.ComponentProps<typeof Primitive.Item>>({
   alignItems: "center",
   borderRadius: "var(--borderRadius-md)",
   boxSizing: "border-box",
@@ -91,10 +96,10 @@ const DropdownMenuShortcut = styled("span", {
   marginInlineStart: "auto",
 });
 
-const DropdownMenuSeparator = styled(Primitives.Separator, {
+const DropdownMenuSeparator = styled(Primitive.Separator, {
   name: "MenuSeparator",
   slot: "separator",
-})<React.ComponentProps<typeof Primitives.Separator>>({
+})<React.ComponentProps<typeof Primitive.Separator>>({
   backgroundColor: "hsl(var(--color-border))",
   boxSizing: "border-box",
   height: "1px",
@@ -102,12 +107,12 @@ const DropdownMenuSeparator = styled(Primitives.Separator, {
   marginInline: "calc(var(--spacing-unit) * -1)",
 });
 
-const DropdownMenuGroup = Primitives.Group;
+const DropdownMenuGroup = Primitive.Group;
 
-const DropdownMenuGroupLabel = styled(Primitives.GroupLabel, {
+const DropdownMenuGroupLabel = styled(Primitive.GroupLabel, {
   name: "MenuGroupLabel",
   slot: "groupLabel",
-})<React.ComponentProps<typeof Primitives.GroupLabel>>({
+})<React.ComponentProps<typeof Primitive.GroupLabel>>({
   boxSizing: "border-box",
   fontSize: "var(--fontSize-sm)",
   fontWeight: "var(--fontWeight-medium)",
@@ -122,6 +127,7 @@ export {
   DropdownMenuGroupLabel,
   DropdownMenuItem,
   DropdownMenuLabel,
+  DropdownMenuPortal,
   DropdownMenuPositioner,
   DropdownMenuSeparator,
   DropdownMenuShortcut,

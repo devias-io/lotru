@@ -1,40 +1,40 @@
 "use client";
 
 import * as React from "react";
-import * as Primitives from "@base_ui/react/Dialog";
+import { Dialog as Primitive } from "@base-ui-components/react/dialog";
 import { styled } from "@pigment-css/react";
 import { XIcon } from "lucide-react";
 
-const Sheet = (props: React.ComponentProps<typeof Primitives.Root>): React.JSX.Element => (
-  <Primitives.Root {...props} />
+const Sheet = (props: React.ComponentProps<typeof Primitive.Root>): React.JSX.Element => (
+  <Primitive.Root {...props} />
 );
 Sheet.displayName = "Sheet";
 
-const SheetTrigger = (props: React.ComponentProps<typeof Primitives.Trigger>) => (
-  <Primitives.Trigger {...props} />
+const SheetTrigger = (props: React.ComponentProps<typeof Primitive.Trigger>) => (
+  <Primitive.Trigger {...props} />
 );
 SheetTrigger.displayName = "SheetTrigger";
 
-const SheetClose = (props: React.ComponentProps<typeof Primitives.Close>) => (
-  <Primitives.Close {...props} />
+const SheetClose = (props: React.ComponentProps<typeof Primitive.Close>) => (
+  <Primitive.Close {...props} />
 );
 SheetClose.displayName = "SheetClose";
 
-const SheetOverlay = styled(Primitives.Backdrop, {
+const SheetOverlay = styled(Primitive.Backdrop, {
   name: "SheetOverlay",
   slot: "overlay",
-})<React.ComponentProps<typeof Primitives.Backdrop>>({
+})<React.ComponentProps<typeof Primitive.Backdrop>>({
   backgroundColor: "hsl(var(--color-overlay))",
   inset: 0,
   position: "fixed",
   zIndex: "var(--zIndex-overlay)",
 });
 
-const SheetContent = styled(Primitives.Popup, {
+const SheetContent = styled(Primitive.Popup, {
   name: "SheetContent",
   slot: "content",
 })<
-  React.ComponentProps<typeof Primitives.Popup> & {
+  React.ComponentProps<typeof Primitive.Popup> & {
     side: "left" | "right";
   }
 >({
@@ -45,23 +45,22 @@ const SheetContent = styled(Primitives.Popup, {
   flexDirection: "column",
   insetBlockEnd: 0,
   insetBlockStart: 0,
-  maxWidth: "70%",
-  opacity: 0,
+  maxWidth: "70svw",
   padding: "calc(var(--spacing-unit) * 6)",
   position: "fixed",
   transitionDuration: "var(--duration-normal)",
-  transitionProperty: "transform, opacity",
+  transitionProperty: "opacity, transform",
   transitionTimingFunction: "var(--easing-default)",
   width: "var(--size-full)",
   zIndex: "var(--zIndex-modal)",
   "&:focus-visible": {
     outline: "none",
   },
-  "&[data-state='open']": {
+  "&[data-open]": {
     opacity: 1,
     transform: "translateX(0)",
   },
-  "&[data-entering]": {
+  "&[data-starting-style], &[data-ending-style]": {
     opacity: 0,
   },
   "@media (min-width: 768px)": {
@@ -73,7 +72,7 @@ const SheetContent = styled(Primitives.Popup, {
       style: {
         insetInlineStart: 0,
         transform: "translateX(-100%)",
-        "&[data-entering]": {
+        "&[data-starting-style], &[data-ending-style]": {
           transform: "translateX(-100%)",
         },
       },
@@ -83,7 +82,7 @@ const SheetContent = styled(Primitives.Popup, {
       style: {
         insetInlineEnd: 0,
         transform: "translateX(100%)",
-        "&[data-entering]": {
+        "&[data-starting-style], &[data-ending-style]": {
           transform: "translateX(100%)",
         },
       },
@@ -132,7 +131,7 @@ const SheedHeaderClose = styled("button", {
 const SheetHeader = ({ children, ...props }: React.ComponentProps<typeof SheetHeaderRoot>) => (
   <SheetHeaderRoot {...props}>
     {children}
-    <Primitives.Close
+    <Primitive.Close
       render={
         <SheedHeaderClose>
           <XIcon />
@@ -143,19 +142,19 @@ const SheetHeader = ({ children, ...props }: React.ComponentProps<typeof SheetHe
 );
 SheetHeader.displayName = "SheetHeader";
 
-const SheetTitle = styled(Primitives.Title, {
+const SheetTitle = styled(Primitive.Title, {
   name: "SheetTitle",
   slot: "title",
-})<React.ComponentProps<typeof Primitives.Title>>({
+})<React.ComponentProps<typeof Primitive.Title>>({
   fontSize: "var(--fontSize-lg)",
   fontWeight: "var(--fontWeight-semibold)",
   marginBlock: 0,
 });
 
-const SheetDescription = styled(Primitives.Description, {
+const SheetDescription = styled(Primitive.Description, {
   name: "SheetDescription",
   slot: "description",
-})<React.ComponentProps<typeof Primitives.Description>>({
+})<React.ComponentProps<typeof Primitive.Description>>({
   color: "hsl(var(--color-mutedForeground))",
   fontSize: "var(--fontSize-sm)",
   lineHeight: "var(--lineHeight-tight)",

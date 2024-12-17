@@ -1,12 +1,12 @@
 import * as React from "react";
-import * as Primitives from "@base_ui/react/Checkbox";
+import { Checkbox as Primitive } from "@base-ui-components/react/checkbox";
 import { styled } from "@pigment-css/react";
 import { CheckIcon, MinusIcon } from "lucide-react";
 
-const CheckboxRoot = styled(Primitives.Root, {
+const CheckboxRoot = styled(Primitive.Root, {
   name: "CheckboxRoot",
   slot: "root",
-})<React.ComponentProps<typeof Primitives.Root>>({
+})<React.ComponentProps<typeof Primitive.Root>>({
   alignItems: "center",
   backgroundColor: "hsl(var(--color-muted))",
   border: "1px solid hsl(var(--color-border))",
@@ -39,30 +39,30 @@ const CheckboxRoot = styled(Primitives.Root, {
     cursor: "not-allowed",
     opacity: 0.5,
   },
-  "&[data-state='checked']": {
+  "&[data-checked]": {
     backgroundColor: "hsl(var(--color-primary))",
     border: "none",
   },
-  "&[data-state='checked']:hover:not([data-disabled])": {
+  "&[data-checked]:hover:not([data-disabled])": {
     backgroundColor: "hsl(var(--color-primary) / 80%)",
   },
 } as React.CSSProperties);
 
-const CheckboxIndicator = styled(Primitives.Indicator, {
+const CheckboxIndicator = styled(Primitive.Indicator, {
   name: "CheckboxIndicator",
   slot: "indicator",
-})<React.ComponentProps<typeof Primitives.Indicator>>({
+})<React.ComponentProps<typeof Primitive.Indicator>>({
   alignItems: "center",
   boxSizing: "border-box",
   display: "none",
   justifyContent: "center",
-  '&[data-state="checked"]': {
+  "&[data-checked]": {
     display: "inline-flex",
   },
-  '&[data-state="checked"]:not([data-disabled])': {
+  "&[data-checked]:not([data-disabled])": {
     color: "hsl(var(--color-primaryForeground))",
   },
-  '&[data-state="checked"][data-disabled]': {
+  "&[data-checked][data-disabled]": {
     color: "hsl(var(--color-mutedForeground))",
   },
   "& svg": {
@@ -79,7 +79,7 @@ const Checkbox = ({
    */
   indeterminate = false,
   ...props
-}: React.ComponentProps<typeof Primitives.Root> & {
+}: React.ComponentProps<typeof Primitive.Root> & {
   intermediate?: boolean;
 }) => (
   <CheckboxRoot {...props}>

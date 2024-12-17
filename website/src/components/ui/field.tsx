@@ -1,53 +1,47 @@
 import * as React from "react";
-import * as Primitives from "@base_ui/react/Field";
+import { Field as Primitive } from "@base-ui-components/react/field";
 import { styled } from "@pigment-css/react";
 
-const Field = styled(Primitives.Root, {
+const Field = styled(Primitive.Root, {
   name: "Field",
   slot: "root",
-})<React.ComponentProps<typeof Primitives.Root>>({
+})<React.ComponentProps<typeof Primitive.Root>>({
   display: "grid",
   gap: "calc(var(--spacing-unit) * 2)",
 });
 
-const FieldControl = ({
-  children,
-  ...props
-}: Omit<Primitives.ControlProps, "render"> & {
-  children: Primitives.ControlProps["render"];
-}): React.JSX.Element => <Primitives.Control render={children} {...props} />;
-FieldControl.displayName = "FieldControl";
-
-const FieldLabel = styled(Primitives.Label, {
+const FieldLabel = styled(Primitive.Label, {
   name: "FieldLabel",
   slot: "label",
-})<React.ComponentProps<typeof Primitives.Label>>({
+})<React.ComponentProps<typeof Primitive.Label>>({
   display: "block",
   fontSize: "var(--fontSize-sm)",
   fontWeight: "var(--fontWeight-medium)",
   lineHeight: "var(--lineHeight-none)",
 });
 
-const FieldDescription = styled(Primitives.Description, {
+const FieldControl = Primitive.Control;
+
+const FieldDescription = styled(Primitive.Description, {
   name: "FieldDescription",
   slot: "description",
-})<React.ComponentProps<typeof Primitives.Description>>({
+})<React.ComponentProps<typeof Primitive.Description>>({
   color: "hsl(var(--color-mutedForeground))",
   display: "block",
   fontSize: "var(--fontSize-sm)",
   marginBlock: 0,
 });
 
-const FieldError = styled(Primitives.Error, {
+const FieldError = styled(Primitive.Error, {
   name: "FieldError",
   slot: "error",
-})<React.ComponentProps<typeof Primitives.Error>>({
+})<React.ComponentProps<typeof Primitive.Error>>({
   color: "hsl(var(--color-danger))",
   display: "block",
   fontSize: "var(--fontSize-sm)",
   marginBlock: 0,
 });
 
-const FieldValidity = Primitives.Validity;
+const FieldValidity = Primitive.Validity;
 
-export { Field, FieldControl, FieldDescription, FieldError, FieldValidity, FieldLabel };
+export { Field, FieldControl, FieldDescription, FieldError, FieldLabel, FieldValidity };

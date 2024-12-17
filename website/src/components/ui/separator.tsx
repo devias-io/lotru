@@ -1,12 +1,12 @@
 import * as React from "react";
-import * as Primitives from "@base_ui/react/Separator";
+import { Separator as Primitive } from "@base-ui-components/react/separator";
 import { styled } from "@pigment-css/react";
 
-const SeparatorRoot = styled(Primitives.Root, {
+const SeparatorRoot = styled(Primitive, {
   name: "SeparatorRoot",
   slot: "root",
 })<
-  React.ComponentProps<typeof Primitives.Root> & {
+  React.ComponentProps<typeof Primitive> & {
     orientation: "vertical" | "horizontal";
   }
 >({

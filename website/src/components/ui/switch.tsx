@@ -1,11 +1,11 @@
 import * as React from "react";
-import * as Primitives from "@base_ui/react/Switch";
+import { Switch as Primitive } from "@base-ui-components/react/switch";
 import { styled } from "@pigment-css/react";
 
-const SwitchRoot = styled(Primitives.Root, {
+const SwitchRoot = styled(Primitive.Root, {
   name: "SwitchRoot",
   slot: "root",
-})<React.ComponentProps<typeof Primitives.Root>>({
+})<React.ComponentProps<typeof Primitive.Root>>({
   backgroundColor: "hsl(var(--color-muted))",
   border: "1px solid hsl(var(--color-border))",
   borderRadius: "calc(var(--size-unit) * 2.5)",
@@ -37,19 +37,19 @@ const SwitchRoot = styled(Primitives.Root, {
     cursor: "not-allowed",
     opacity: 0.5,
   },
-  "&[data-state='checked']": {
+  "&[data-checked]": {
     backgroundColor: "hsl(var(--color-primary))",
     border: "none",
   },
-  "&[data-state='checked']:hover:not([data-disabled])": {
+  "&[data-checked]:hover:not([data-disabled])": {
     backgroundColor: "hsl(var(--color-primary) / 80%)",
   },
 } as React.CSSProperties);
 
-const SwitchThumb = styled(Primitives.Thumb, {
+const SwitchThumb = styled(Primitive.Thumb, {
   name: "SwitchThumb",
   slot: "thumb",
-})<React.ComponentProps<typeof Primitives.Thumb>>({
+})<React.ComponentProps<typeof Primitive.Thumb>>({
   backgroundColor: "hsl(var(--color-background))",
   border: "1px solid hsl(var(--color-border))",
   borderRadius: "50%",
@@ -60,15 +60,15 @@ const SwitchThumb = styled(Primitives.Thumb, {
   insetInlineStart: "1px",
   position: "relative",
   transitionDuration: "var(--duration-normal)",
-  transitionProperty: "left",
+  transitionProperty: "inset-inline-start",
   transitionTimingFunction: "var(--easing-default)",
   width: "calc(var(--size-unit) * 4)",
-  "&[data-state='checked']": {
+  "&[data-checked]": {
     insetInlineStart: "calc(calc(var(--size-unit) * 5) - 2px)",
   },
 });
 
-const Switch = (props: React.ComponentProps<typeof Primitives.Root>) => (
+const Switch = (props: React.ComponentProps<typeof Primitive.Root>) => (
   <SwitchRoot {...props}>
     <SwitchThumb />
   </SwitchRoot>

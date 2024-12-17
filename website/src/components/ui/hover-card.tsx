@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as Primitives from "@base_ui/react/Tooltip";
+import { Tooltip as Primitives } from "@base-ui-components/react/tooltip";
 import { styled } from "@pigment-css/react";
 
 const HoverCardProvider = (
@@ -65,10 +65,10 @@ const HoverCardArrow = styled(Primitives.Arrow, {
 });
 
 export {
-  HoverCardProvider,
   HoverCard,
   HoverCardArrow,
   HoverCardContent,
-  HoverCardTrigger,
   HoverCardPositioner,
+  HoverCardProvider,
+  HoverCardTrigger,
 };

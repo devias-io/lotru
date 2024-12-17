@@ -1,19 +1,19 @@
 import * as React from "react";
-import * as Primitives from "@base_ui/react/Tooltip";
+import { Tooltip as Primitive } from "@base-ui-components/react/tooltip";
 import { styled } from "@pigment-css/react";
 
-const TooltipProvider = Primitives.Provider;
+const TooltipProvider = Primitive.Provider;
 
-const Tooltip = Primitives.Root;
+const Tooltip = Primitive.Root;
 
-const TooltipTrigger = Primitives.Trigger;
+const TooltipTrigger = Primitive.Trigger;
 
-const TooltipPositioner = Primitives.Positioner;
+const TooltipPositioner = Primitive.Positioner;
 
-const TooltipContent = styled(Primitives.Popup, {
+const TooltipContent = styled(Primitive.Popup, {
   name: "TooltipContent",
   slot: "content",
-})<React.ComponentProps<typeof Primitives.Popup>>({
+})<React.ComponentProps<typeof Primitive.Popup>>({
   backgroundColor: "hsl(var(--color-primary))",
   borderRadius: "var(--borderRadius-md)",
   color: "hsl(var(--color-primaryForeground))",
@@ -26,10 +26,10 @@ const TooltipContent = styled(Primitives.Popup, {
   zIndex: "var(--zIndex-popover)",
 });
 
-const TooltipArrow = styled(Primitives.Arrow, {
+const TooltipArrow = styled(Primitive.Arrow, {
   name: "TooltipArrow",
   slot: "arrow",
-})<React.ComponentProps<typeof Primitives.Arrow>>({
+})<React.ComponentProps<typeof Primitive.Arrow>>({
   backgroundColor: "hsl(var(--color-primary))",
   height: "10px",
   transform: "rotate(45deg)",

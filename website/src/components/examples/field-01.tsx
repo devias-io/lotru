@@ -10,9 +10,7 @@ export default function FieldExample(): React.JSX.Element {
   return (
     <Field className={css({ maxWidth: "var(--size-sm)", width: "var(--size-full)" })}>
       <FieldLabel>Name</FieldLabel>
-      <FieldControl>
-        <Input />
-      </FieldControl>
+      <FieldControl render={<Input />} />
       <FieldDescription>We will use this name to personalize your experience.</FieldDescription>
     </Field>
   );

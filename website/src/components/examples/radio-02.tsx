@@ -30,21 +30,15 @@ export default function RadioExample(): React.JSX.Element {
             value={value}
           >
             <Stack alignItems="center" direction="row" gap={2}>
-              <FieldControl>
-                <Radio disabled value="all" />
-              </FieldControl>
+              <FieldControl render={<Radio disabled value="all" />} />
               <Text fontSize="sm">All new messages</Text>
             </Stack>
             <Stack alignItems="center" direction="row" gap={2}>
-              <FieldControl>
-                <Radio value="mentions" />
-              </FieldControl>
+              <FieldControl render={<Radio value="mentions" />} />
               <Text fontSize="sm">Direct messages and mentions</Text>
             </Stack>
             <Stack alignItems="center" direction="row" gap={2}>
-              <FieldControl>
-                <Radio value="none" />
-              </FieldControl>
+              <FieldControl render={<Radio value="none" />} />
               <Text fontSize="sm">Nothing</Text>
             </Stack>
           </RadioGroup>

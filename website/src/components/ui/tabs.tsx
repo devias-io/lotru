@@ -1,13 +1,13 @@
 import * as React from "react";
-import * as Primitives from "@base_ui/react/Tabs";
+import { Tabs as Primitive } from "@base-ui-components/react/tabs";
 import { styled } from "@pigment-css/react";
 
-const Tabs = Primitives.Root;
+const Tabs = Primitive.Root;
 
-const TabsList = styled(Primitives.List, {
+const TabsList = styled(Primitive.List, {
   name: "TabsList",
   slot: "list",
-})<React.ComponentProps<typeof Primitives.List>>({
+})<React.ComponentProps<typeof Primitive.List>>({
   alignItems: "center",
   backgroundColor: "hsl(var(--color-muted))",
   borderRadius: "var(--borderRadius-md)",
@@ -20,10 +20,10 @@ const TabsList = styled(Primitives.List, {
   position: "relative",
 });
 
-const TabsTrigger = styled(Primitives.Tab, {
+const TabsTrigger = styled(Primitive.Tab, {
   name: "TabsTrigger",
   slot: "trigger",
-})<React.ComponentProps<typeof Primitives.Tab>>({
+})<React.ComponentProps<typeof Primitive.Tab>>({
   alignItems: "center",
   appearance: "none",
   background: "none",
@@ -66,10 +66,10 @@ const TabsTrigger = styled(Primitives.Tab, {
   },
 } as React.CSSProperties);
 
-const TabsContent = styled(Primitives.Panel, {
+const TabsContent = styled(Primitive.Panel, {
   name: "TabsContent",
   slot: "content",
-})<React.ComponentProps<typeof Primitives.Panel>>({
+})<React.ComponentProps<typeof Primitive.Panel>>({
   boxSizing: "border-box",
   marginBlockStart: "calc(var(--spacing-unit) * 2)",
   "&:focus-visible": {
@@ -77,10 +77,10 @@ const TabsContent = styled(Primitives.Panel, {
   },
 });
 
-const TabsIndicator = styled(Primitives.Indicator, {
+const TabsIndicator = styled(Primitive.Indicator, {
   name: "TabsIndicator",
   slot: "indicator",
-})<React.ComponentProps<typeof Primitives.Indicator>>({
+})<React.ComponentProps<typeof Primitive.Indicator>>({
   backgroundColor: "hsl(var(--color-primary))",
   borderRadius: "var(--borderRadius-md)",
   height: "2px",

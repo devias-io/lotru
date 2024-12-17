@@ -34,10 +34,10 @@ const InputRoot = styled("input", {
     cursor: "not-allowed",
     opacity: 0.5,
   },
-  '&[data-invalid]': {
+  "&[data-invalid]": {
     borderColor: "hsl(var(--color-danger))",
   },
-  '&[data-invalid]:focus-visible': {
+  "&[data-invalid]:focus-visible": {
     "--ring-color": "hsl(var(--color-danger) / 20%)",
   },
   "&::placeholder": {

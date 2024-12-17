@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "examples/field-01.tsx",
-      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { css } from \"@pigment-css/react\";\n\nimport { Field, FieldControl, FieldDescription, FieldLabel } from \"@/components/ui/field\";\nimport { Input } from \"@/components/ui/input\";\n\nexport default function FieldExample(): React.JSX.Element {\n  return (\n    <Field className={css({ maxWidth: \"var(--size-sm)\", width: \"var(--size-full)\" })}>\n      <FieldLabel>Name</FieldLabel>\n      <FieldControl>\n        <Input />\n      </FieldControl>\n      <FieldDescription>We will use this name to personalize your experience.</FieldDescription>\n    </Field>\n  );\n}\n"
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { css } from \"@pigment-css/react\";\n\nimport { Field, FieldControl, FieldDescription, FieldLabel } from \"@/components/ui/field\";\nimport { Input } from \"@/components/ui/input\";\n\nexport default function FieldExample(): React.JSX.Element {\n  return (\n    <Field className={css({ maxWidth: \"var(--size-sm)\", width: \"var(--size-full)\" })}>\n      <FieldLabel>Name</FieldLabel>\n      <FieldControl render={<Input />} />\n      <FieldDescription>We will use this name to personalize your experience.</FieldDescription>\n    </Field>\n  );\n}\n"
     }
   ]
 }

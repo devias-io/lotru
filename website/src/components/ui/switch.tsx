@@ -57,14 +57,14 @@ const SwitchThumb = styled(Primitives.Thumb, {
   boxSizing: "border-box",
   display: "block",
   height: "calc(var(--size-unit) * 4)",
-  left: "1px",
+  insetInlineStart: "1px",
   position: "relative",
   transitionDuration: "var(--duration-normal)",
   transitionProperty: "left",
   transitionTimingFunction: "var(--easing-default)",
   width: "calc(var(--size-unit) * 4)",
   "&[data-state='checked']": {
-    left: "calc(calc(var(--size-unit) * 5) - 2px)",
+    insetInlineStart: "calc(calc(var(--size-unit) * 5) - 2px)",
   },
 });
 

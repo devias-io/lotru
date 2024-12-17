@@ -39,17 +39,16 @@ const SheetContent = styled(Primitives.Popup, {
   }
 >({
   backgroundColor: "hsl(var(--color-surface))",
-  bottom: 0,
   boxShadow: "var(--shadow-xl)",
   boxSizing: "border-box",
   display: "flex",
-  flex: "1 1 auto",
   flexDirection: "column",
+  insetBlockEnd: 0,
+  insetBlockStart: 0,
   maxWidth: "70%",
   opacity: 0,
   padding: "calc(var(--spacing-unit) * 6)",
   position: "fixed",
-  top: 0,
   transitionDuration: "var(--duration-normal)",
   transitionProperty: "transform, opacity",
   transitionTimingFunction: "var(--easing-default)",
@@ -72,7 +71,7 @@ const SheetContent = styled(Primitives.Popup, {
     {
       props: { side: "left" },
       style: {
-        left: 0,
+        insetInlineStart: 0,
         transform: "translateX(-100%)",
         "&[data-entering]": {
           transform: "translateX(-100%)",
@@ -82,7 +81,7 @@ const SheetContent = styled(Primitives.Popup, {
     {
       props: { side: "right" },
       style: {
-        right: 0,
+        insetInlineEnd: 0,
         transform: "translateX(100%)",
         "&[data-entering]": {
           transform: "translateX(100%)",
@@ -113,11 +112,11 @@ const SheedHeaderClose = styled("button", {
   boxSizing: "border-box",
   color: "inherit",
   cursor: "pointer",
+  insetBlockStart: "calc(var(--spacing-unit) * 4)",
+  insetInlineEnd: "calc(var(--spacing-unit) * 4)",
   opacity: 0.7,
   padding: 0,
   position: "absolute",
-  right: "calc(var(--spacing-unit) * 4)",
-  top: "calc(var(--spacing-unit) * 4)",
   transitionDuration: "var(--duration-normal)",
   transitionProperty: "background-color",
   transitionTimingFunction: "var(--easing-default)",

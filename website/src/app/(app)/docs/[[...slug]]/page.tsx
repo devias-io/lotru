@@ -113,9 +113,9 @@ export default async function Page({ params }: PageProps): Promise<React.JSX.Ele
       >
         <div
           className={css({
-            left: 0,
+            insetBlockStart: "calc(var(--spacing-unit) * 20)",
+            insetInlineStart: 0,
             position: "sticky",
-            top: "calc(var(--spacing-unit) * 20)",
             zIndex: "var(--zIndex-sticky)",
           })}
         >

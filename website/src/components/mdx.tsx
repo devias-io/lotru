@@ -254,22 +254,19 @@ function Pre({
           }),
           className
         )}
-        style={{
-          ...style,
-          backgroundColor: undefined,
-        }}
+        style={{ ...style, backgroundColor: undefined }}
         {...props}
       />
       {__rawString__ ? (
         <CopyButton
           className={css({
             color: "hsl(0 0% 100% / 70%)",
-            position: "absolute",
             height: "calc(var(--size-unit) * 6)",
-            width: "calc(var(--size-unit) * 6)",
-            right: "calc(var(--spacing-unit) * 4)",
-            top: "calc(var(--spacing-unit) * 4)",
+            insetBlockStart: "calc(var(--spacing-unit) * 4)",
+            insetInlineEnd: "calc(var(--spacing-unit) * 4)",
             minWidth: 0,
+            position: "absolute",
+            width: "calc(var(--size-unit) * 6)",
             zIndex: "var(--zIndex-docked)",
             "&:hover:not(:disabled)": {
               backgroundColor: "hsl(0 0% 100% / 10%)",
@@ -402,15 +399,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       className,
       ...props
     }: React.ComponentProps<typeof TabsIndicator>): React.JSX.Element => (
-      <TabsIndicator
-        className={cn(
-          css({
-            bottom: 0,
-          }),
-          className as string
-        )}
-        {...props}
-      />
+      <TabsIndicator className={cn(css({ insetBlockEnd: 0 }), className as string)} {...props} />
     ),
     TabsContent,
   };

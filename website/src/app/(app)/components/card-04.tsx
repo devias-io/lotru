@@ -54,10 +54,10 @@ export default function Example(): React.JSX.Element {
               <MailIcon
                 className={css({
                   color: "hsl(var(--color-mutedForeground))",
-                  left: "calc(var(--spacing-unit) * 2)",
+                  insetBlockStart: "calc(var(--spacing-unit) * 2.5)",
+                  insetInlineStart: "calc(var(--spacing-unit) * 2)",
                   pointerEvents: "none",
                   position: "absolute",
-                  top: "calc(var(--spacing-unit) * 2.5)",
                 })}
                 size={16}
               />

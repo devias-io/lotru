@@ -18,9 +18,9 @@ export function Topbar(): React.JSX.Element {
         borderBlockEnd: "1px solid hsl(var(--color-border))",
         boxSizing: "border-box",
         flexShrink: 0,
-        left: 0,
+        insetBlockStart: 0,
+        insetInlineStart: 0,
         position: "sticky",
-        top: 0,
         width: "var(--size-full)",
         zIndex: "50",
       })}

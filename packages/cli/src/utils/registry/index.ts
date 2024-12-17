@@ -159,26 +159,17 @@ export async function resolveRegistryComponentsTree(
   const componentsRaw = await fetchRegistryComponents(uniqueRegistryDependencies);
   const components_ = z.array(registryComponentSchema).parse(componentsRaw);
 
-  const dependencies = components_.reduce(
-    (acc, component) => {
-      return acc.concat(component.dependencies ?? []);
-    },
-    [] as NonNullable<RegistryComponent["dependencies"]>
-  );
+  const dependencies = components_.reduce((acc, component) => {
+    return acc.concat(component.dependencies ?? []);
+  }, [] as NonNullable<RegistryComponent["dependencies"]>);
 
-  const devDependencies = components_.reduce(
-    (acc, component) => {
-      return acc.concat(component.devDependencies ?? []);
-    },
-    [] as NonNullable<RegistryComponent["devDependencies"]>
-  );
+  const devDependencies = components_.reduce((acc, component) => {
+    return acc.concat(component.devDependencies ?? []);
+  }, [] as NonNullable<RegistryComponent["devDependencies"]>);
 
-  const files = components_.reduce(
-    (acc, component) => {
-      return acc.concat(component.files ?? []);
-    },
-    [] as NonNullable<RegistryComponent["files"]>
-  );
+  const files = components_.reduce((acc, component) => {
+    return acc.concat(component.files ?? []);
+  }, [] as NonNullable<RegistryComponent["files"]>);
 
   let pigment: NonNullable<RegistryComponent["pigment"]> = {};
 

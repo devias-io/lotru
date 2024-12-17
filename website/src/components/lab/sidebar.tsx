@@ -43,7 +43,7 @@ export function SidebarProvider({ children }: React.PropsWithChildren): React.JS
   );
 }
 
-type SidebarProps = React.ComponentPropsWithoutRef<"aside"> & {
+type SidebarProps = React.ComponentPropsWithoutRef<"div"> & {
   side?: "left" | "right";
 };
 
@@ -55,7 +55,7 @@ function Sidebar({ children, className, side = "left" }: SidebarProps): React.JS
     return (
       <Sheet onOpenChange={setOpenMobile} open={openMobile}>
         <SheetOverlay />
-        <SheetContent className={css({ width: "var(--sidebar-width)" })} side={side}>
+        <SheetContent className={css({ width: "18rem" })} side={side}>
           <div>{children}</div>
         </SheetContent>
       </Sheet>
@@ -73,30 +73,27 @@ function Sidebar({ children, className, side = "left" }: SidebarProps): React.JS
     >
       <div className={css({ width: "var(--sidebar-width)" })} />
       <div
+        data-side={side}
         className={cn(
           css({
             backgroundColor: "hsl(var(--color-background))",
             boxSizing: "border-box",
-            flexShrink: 0,
             height: "100svh",
+            insetBlockStart: 0,
             position: "fixed",
-            top: 0,
             width: "var(--sidebar-width)",
             zIndex: "var(--zIndex-sticky)",
+            "&[data-side='start']": {
+              borderInlineEnd: "1px solid hsl(var(--color-border))",
+              insetInlineStart: 0,
+            },
+            "&[data-side='end']": {
+              borderInlineStart: "1px solid hsl(var(--color-border))",
+              insetInlineEnd: 0,
+            },
           }),
           className
         )}
-        style={{
-          ...(side === "left"
-            ? {
-                borderInlineEnd: "1px solid hsl(var(--color-border))",
-                left: 0,
-              }
-            : {
-                borderInlineStart: "1px solid hsl(var(--color-border))",
-                right: 0,
-              }),
-        }}
       >
         {children}
       </div>

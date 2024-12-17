@@ -93,10 +93,10 @@ export default function Page(): React.JSX.Element {
                 />
                 <TerminalIcon
                   className={css({
-                    left: "calc(var(--spacing-unit) * 2)",
+                    insetBlockStart: "calc(var(--spacing-unit) * 3)",
+                    insetInlineStart: "calc(var(--spacing-unit) * 2)",
                     pointerEvents: "none",
                     position: "absolute",
-                    top: "calc(var(--spacing-unit) * 3)",
                   })}
                   color="hsl(var(--color-mutedForeground))"
                   size={16}

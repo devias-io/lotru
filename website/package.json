@@ -13,6 +13,7 @@
     "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache"
   },
   "dependencies": {
+    "@base-ui-components/react": "1.0.0-alpha.4",
     "@base_ui/react": "1.0.0-alpha.3",
     "@pigment-css/react": "latest",
     "@radix-ui/react-avatar": "1.1.2",

@@ -83,11 +83,11 @@ const TabsIndicator = styled(Primitives.Indicator, {
 })<React.ComponentProps<typeof Primitives.Indicator>>({
   backgroundColor: "hsl(var(--color-primary))",
   borderRadius: "var(--borderRadius-md)",
-  bottom: "var(--active-tab-bottom)",
   height: "2px",
-  left: "var(--active-tab-left)",
+  insetBlockEnd: "var(--active-tab-bottom)",
+  insetInlineEnd: "var(--active-tab-right)",
+  insetInlineStart: "var(--active-tab-left)",
   position: "absolute",
-  right: "var(--active-tab-right)",
 });
 
 export { Tabs, TabsTrigger, TabsList, TabsContent, TabsIndicator };

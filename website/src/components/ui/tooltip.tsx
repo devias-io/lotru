@@ -36,16 +36,16 @@ const TooltipArrow = styled(Primitives.Arrow, {
   width: "10px",
   zIndex: "var(--zIndex-hide)",
   "&[data-side='top']": {
-    bottom: "-5px",
+    insetBlockEnd: "-5px",
   },
   "&[data-side='right']": {
-    left: "-5px",
+    insetInlineStart: "-5px",
   },
   "&[data-side='bottom']": {
-    top: "-5px",
+    insetBlockStart: "-5px",
   },
   "&[data-side='left']": {
-    right: "-5px",
+    insetInlineEnd: "-5px",
   },
 });
 

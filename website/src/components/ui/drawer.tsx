@@ -42,9 +42,9 @@ const DrawerContent = styled(Primitives.Popup, {
   display: "flex",
   flexDirection: "column",
   height: "auto",
-  left: 0,
+  insetInlineEnd: 0,
+  insetInlineStart: 0,
   position: "fixed",
-  right: 0,
   transitionDuration: "var(--duration-normal)",
   transitionProperty: "transform",
   transitionTimingFunction: "var(--easing-default)",
@@ -63,7 +63,7 @@ const DrawerContent = styled(Primitives.Popup, {
       style: {
         borderTopLeftRadius: "var(--borderRadius-lg)",
         borderTopRightRadius: "var(--borderRadius-lg)",
-        bottom: 0,
+        insetBlockEnd: 0,
         marginBlockStart: "calc(var(--spacing-unit) * 24)",
         transform: "translateY(100%)",
         "&[data-entering]": {
@@ -76,8 +76,8 @@ const DrawerContent = styled(Primitives.Popup, {
       style: {
         borderBottomLeftRadius: "var(--borderRadius-lg)",
         borderBottomRightRadius: "var(--borderRadius-lg)",
+        insetBlockStart: 0,
         marginBlockEnd: "calc(var(--spacing-unit) * 24)",
-        top: 0,
         transform: "translateY(-100%)",
         "&[data-entering]": {
           transform: "translateY(-100%)",

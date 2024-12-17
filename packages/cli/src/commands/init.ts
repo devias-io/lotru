@@ -54,10 +54,14 @@ export const init = new Command()
       await runInit(options);
 
       logger.log(
-        `${highlighter.success("Success!")} Project initialization completed. You may now add components.`
+        `${highlighter.success(
+          "Success!"
+        )} Project initialization completed. You may now add components.`
       );
       logger.log(
-        `\n${highlighter.warn("Warning!")} You should import pigment css file in the root layout and pigment.config.ts in the setup.\n`
+        `\n${highlighter.warn(
+          "Warning!"
+        )} You should import pigment css file in the root layout and pigment.config.ts in the setup.\n`
       );
     } catch (error) {
       handleError(error);

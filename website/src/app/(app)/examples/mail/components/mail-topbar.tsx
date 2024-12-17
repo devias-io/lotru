@@ -82,10 +82,10 @@ export function MailTopbar(): React.JSX.Element {
           />
           <SearchIcon
             className={css({
-              left: "calc(var(--size-unit) * 2)",
+              insetBlockStart: "calc(var(--size-unit) * 2.5)",
+              insetInlineStart: "calc(var(--size-unit) * 2)",
               pointerEvents: "none",
               position: "absolute",
-              top: "calc(var(--size-unit) * 2.5)",
             })}
             color="hsl(var(--color-mutedForeground))"
             size={16}

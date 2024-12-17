@@ -87,7 +87,9 @@ export async function updateFiles(
       const { overwrite } = await prompts({
         type: "confirm",
         name: "overwrite",
-        message: `The file ${highlighter.info(fileName)} already exists. Would you like to overwrite?`,
+        message: `The file ${highlighter.info(
+          fileName
+        )} already exists. Would you like to overwrite?`,
         initial: false,
       });
 

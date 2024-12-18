@@ -45,7 +45,7 @@ const AccordionTrigger = ({
             justifyContent: "space-between",
             paddingBlock: "calc(var(--size-unit) * 4)",
             paddingInline: 0,
-            textAlign: "left",
+            textAlign: "start",
             "&:focus-visible": {
               "--ring-offset-width": "2px",
               "--ring-offset-color": "hsl(var(--color-background))",

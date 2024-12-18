@@ -72,6 +72,10 @@
     "name": "Radio"
   },
   {
+    "id": "ui/scroll-area",
+    "name": "Scroll Area"
+  },
+  {
     "id": "ui/select",
     "name": "Select"
   },

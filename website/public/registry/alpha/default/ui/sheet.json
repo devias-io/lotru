@@ -2,7 +2,7 @@
   "id": "ui/sheet",
   "name": "Sheet",
   "dependencies": [
-    "@base_ui/react",
+    "@base-ui-components/react",
     "lucide-react"
   ],
   "registryDependencies": [

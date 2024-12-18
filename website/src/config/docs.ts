@@ -131,6 +131,10 @@ export const groups: Group[] = [
         href: "/docs/components/radio",
       },
       {
+        title: "Scroll Area",
+        href: "/docs/components/scroll-area",
+      },
+      {
         title: "Select",
         href: "/docs/components/select",
       },

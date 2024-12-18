@@ -2,7 +2,7 @@
   "id": "ui/checkbox",
   "name": "Checkbox",
   "dependencies": [
-    "@base_ui/react"
+    "@base-ui-components/react"
   ],
   "files": [
     {

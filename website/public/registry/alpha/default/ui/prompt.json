@@ -2,7 +2,7 @@
   "id": "ui/prompt",
   "name": "Prompt",
   "dependencies": [
-    "@base_ui/react"
+    "@base-ui-components/react"
   ],
   "files": [
     {

@@ -2,7 +2,7 @@
   "id": "ui/field",
   "name": "Field",
   "dependencies": [
-    "@base_ui/react"
+    "@base-ui-components/react"
   ],
   "files": [
     {

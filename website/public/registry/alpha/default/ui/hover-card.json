@@ -2,7 +2,7 @@
   "id": "ui/hover-card",
   "name": "Hover Card",
   "dependencies": [
-    "@base_ui/react"
+    "@base-ui-components/react"
   ],
   "files": [
     {

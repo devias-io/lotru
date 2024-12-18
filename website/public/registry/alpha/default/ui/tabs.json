@@ -2,7 +2,7 @@
   "id": "ui/tabs",
   "name": "Tabs",
   "dependencies": [
-    "@base_ui/react"
+    "@base-ui-components/react"
   ],
   "files": [
     {

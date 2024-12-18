@@ -178,6 +178,15 @@ export const index: Record<
     }],
     
   },
+  "ui/scroll-area": {
+    id: "ui/scroll-area",
+    name: "Scroll Area",
+    description: "",
+    files: [{
+      path: "ui/scroll-area.tsx",
+    }],
+    
+  },
   "ui/select": {
     id: "ui/select",
     name: "Select",
@@ -519,6 +528,15 @@ export const index: Record<
       path: "examples/radio-02.tsx",
     }],
     component: React.lazy(() => import("@/src/components/examples/radio-02.tsx"))
+  },
+  "examples/scroll-area-01": {
+    id: "examples/scroll-area-01",
+    name: "Scroll Area 01",
+    description: "",
+    files: [{
+      path: "examples/scroll-area-01.tsx",
+    }],
+    component: React.lazy(() => import("@/src/components/examples/scroll-area-01.tsx"))
   },
   "examples/sheet-01": {
     id: "examples/sheet-01",

@@ -2,7 +2,7 @@
   "id": "ui/tooltip",
   "name": "Tooltip",
   "dependencies": [
-    "@base_ui/react"
+    "@base-ui-components/react"
   ],
   "files": [
     {

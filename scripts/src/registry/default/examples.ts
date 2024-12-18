@@ -271,6 +271,16 @@ export const examples: RegistryComponent[] = [
     ],
   },
   {
+    id: "examples/scroll-area-01",
+    name: "Scroll Area 01",
+    registryDependencies: ["ui/scroll-area"],
+    files: [
+      {
+        path: "examples/scroll-area-01.tsx",
+      },
+    ],
+  },
+  {
     id: "examples/sheet-01",
     name: "Sheet 01",
     registryDependencies: ["ui/button", "ui/sheet", "ui/text"],

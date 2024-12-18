@@ -108,6 +108,10 @@
     "name": "Radio 02"
   },
   {
+    "id": "examples/scroll-area-01",
+    "name": "Scroll Area 01"
+  },
+  {
     "id": "examples/sheet-01",
     "name": "Sheet 01"
   },

@@ -1,0 +1,13 @@
+{
+  "id": "ui/scroll-area",
+  "name": "Scroll Area",
+  "dependencies": [
+    "@base-ui-components/react"
+  ],
+  "files": [
+    {
+      "path": "ui/scroll-area.tsx",
+      "content": "import * as React from \"react\";\nimport { ScrollArea as Primitive } from \"@base-ui-components/react/scroll-area\";\nimport { css, styled } from \"@pigment-css/react\";\n\nimport { cn } from \"@/lib/cn\";\n\nconst ScrollArea = ({\n  children,\n  className,\n  orientation,\n  ...props\n}: React.ComponentProps<typeof Primitive.Root> & {\n  orientation?: React.ComponentProps<typeof Primitive.Scrollbar>[\"orientation\"];\n}) => {\n  return (\n    <Primitive.Root\n      className={cn(css({ boxSizing: \"border-box\" }), className as string)}\n      {...props}\n    >\n      <Primitive.Viewport\n        className={css({\n          boxSizing: \"border-box\",\n          height: \"var(--size-full)\",\n          overscrollBehavior: \"contain\",\n        })}\n      >\n        {children}\n        <Scrollbar orientation={orientation}>\n          <Thumb />\n        </Scrollbar>\n      </Primitive.Viewport>\n    </Primitive.Root>\n  );\n};\n\nconst Scrollbar = styled(Primitive.Scrollbar, {\n  name: \"Scrollbar\",\n  slot: \"scrollbar\",\n})<React.ComponentProps<typeof Primitive.Scrollbar>>({\n  borderRadius: \"inherit\",\n  boxSizing: \"border-box\",\n  display: \"flex\",\n  opacity: 0,\n  padding: \"1px\",\n  touchAction: \"none\",\n  transitionDelay: \"var(--duration-fast)\",\n  transitionDuration: \"var(--duration-fast)\",\n  transitionProperty: \"opacity\",\n  transitionTimingFunction: \"var(--easing-default)\",\n  userSelect: \"none\",\n  \"&[data-hovering], &[data-scrolling]\": {\n    opacity: 1,\n    transitionDuration: \"var(--duration-faster)\",\n    transitionDelay: \"0ms\",\n  },\n  \"&[data-orientation='horizontal']\": {\n    height: \"calc(var(--size-unit) * 2)\",\n  },\n  \"&[data-orientation='vertical']\": {\n    width: \"calc(var(--size-unit) * 2)\",\n  },\n});\n\nconst Thumb = styled(Primitive.Thumb, {\n  name: \"Thumb\",\n  slot: \"thumb\",\n})<React.ComponentProps<typeof Primitive.Thumb>>({\n  backgroundColor: \"hsl(var(--color-border))\",\n  borderRadius: \"var(--borderRadius-full)\",\n  boxSizing: \"border-box\",\n  \"&[data-orientation='horizontal']\": {\n    height: \"var(--size-full)\",\n  },\n  \"&[data-orientation='vertical']\": {\n    width: \"var(--size-full)\",\n  },\n});\n\nexport { ScrollArea };\n"
+    }
+  ]
+}

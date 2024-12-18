@@ -98,7 +98,7 @@ const DrawerHeader = styled("div", {
   padding: "calc(var(--spacing-unit) * 4)",
   textAlign: "center",
   "@media (min-width: 768px)": {
-    textAlign: "left",
+    textAlign: "start",
   },
 });
 

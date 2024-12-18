@@ -2,7 +2,7 @@
   "id": "ui/dropdown-menu",
   "name": "Dropdown Menu",
   "dependencies": [
-    "@base_ui/react"
+    "@base-ui-components/react"
   ],
   "files": [
     {

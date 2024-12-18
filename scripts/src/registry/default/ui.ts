@@ -63,7 +63,7 @@ export const ui: RegistryComponent[] = [
   {
     id: "ui/checkbox",
     name: "Checkbox",
-    dependencies: ["@base_ui/react"],
+    dependencies: ["@base-ui-components/react"],
     files: [
       {
         path: "ui/checkbox.tsx",
@@ -73,7 +73,7 @@ export const ui: RegistryComponent[] = [
   {
     id: "ui/dialog",
     name: "Dialog",
-    dependencies: ["@base_ui/react"],
+    dependencies: ["@base-ui-components/react"],
     files: [
       {
         path: "ui/dialog.tsx",
@@ -83,7 +83,7 @@ export const ui: RegistryComponent[] = [
   {
     id: "ui/dropdown-menu",
     name: "Dropdown Menu",
-    dependencies: ["@base_ui/react"],
+    dependencies: ["@base-ui-components/react"],
     files: [
       {
         path: "ui/dropdown-menu.tsx",
@@ -93,7 +93,7 @@ export const ui: RegistryComponent[] = [
   {
     id: "ui/field",
     name: "Field",
-    dependencies: ["@base_ui/react"],
+    dependencies: ["@base-ui-components/react"],
     files: [
       {
         path: "ui/field.tsx",
@@ -103,7 +103,7 @@ export const ui: RegistryComponent[] = [
   {
     id: "ui/hover-card",
     name: "Hover Card",
-    dependencies: ["@base_ui/react"],
+    dependencies: ["@base-ui-components/react"],
     files: [
       {
         path: "ui/hover-card.tsx",
@@ -141,7 +141,7 @@ export const ui: RegistryComponent[] = [
   {
     id: "ui/popover",
     name: "Popover",
-    dependencies: ["@base_ui/react"],
+    dependencies: ["@base-ui-components/react"],
     files: [
       {
         path: "ui/popover.tsx",
@@ -151,7 +151,7 @@ export const ui: RegistryComponent[] = [
   {
     id: "ui/progress",
     name: "Progress",
-    dependencies: ["@base_ui/react"],
+    dependencies: ["@base-ui-components/react"],
     files: [
       {
         path: "ui/progress.tsx",
@@ -161,7 +161,7 @@ export const ui: RegistryComponent[] = [
   {
     id: "ui/prompt",
     name: "Prompt",
-    dependencies: ["@base_ui/react"],
+    dependencies: ["@base-ui-components/react"],
     files: [
       {
         path: "ui/prompt.tsx",
@@ -171,10 +171,20 @@ export const ui: RegistryComponent[] = [
   {
     id: "ui/radio",
     name: "Radio",
-    dependencies: ["@base_ui/react"],
+    dependencies: ["@base-ui-components/react"],
     files: [
       {
         path: "ui/radio.tsx",
+      },
+    ],
+  },
+  {
+    id: "ui/scroll-area",
+    name: "Scroll Area",
+    dependencies: ["@base-ui-components/react"],
+    files: [
+      {
+        path: "ui/scroll-area.tsx",
       },
     ],
   },
@@ -199,7 +209,7 @@ export const ui: RegistryComponent[] = [
   {
     id: "ui/sheet",
     name: "Sheet",
-    dependencies: ["@base_ui/react", "lucide-react"],
+    dependencies: ["@base-ui-components/react", "lucide-react"],
     registryDependencies: ["ui/icon-button"],
     files: [
       {
@@ -228,7 +238,7 @@ export const ui: RegistryComponent[] = [
   {
     id: "ui/switch",
     name: "Switch",
-    dependencies: ["@base_ui/react"],
+    dependencies: ["@base-ui-components/react"],
     files: [
       {
         path: "ui/switch.tsx",
@@ -238,7 +248,7 @@ export const ui: RegistryComponent[] = [
   {
     id: "ui/tabs",
     name: "Tabs",
-    dependencies: ["@base_ui/react"],
+    dependencies: ["@base-ui-components/react"],
     files: [
       {
         path: "ui/tabs.tsx",
@@ -276,7 +286,7 @@ export const ui: RegistryComponent[] = [
   {
     id: "ui/tooltip",
     name: "Tooltip",
-    dependencies: ["@base_ui/react"],
+    dependencies: ["@base-ui-components/react"],
     files: [
       {
         path: "ui/tooltip.tsx",

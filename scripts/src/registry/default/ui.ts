@@ -4,7 +4,7 @@ export const ui: RegistryComponent[] = [
   {
     id: "ui/accordion",
     name: "Accordion",
-    dependencies: ["lucide-react"],
+    dependencies: ["@base-ui-components/react", "lucide-react"],
     files: [
       {
         path: "ui/accordion.tsx",
@@ -191,6 +191,7 @@ export const ui: RegistryComponent[] = [
   {
     id: "ui/select",
     name: "Select",
+    dependencies: ["@base-ui-components/react"],
     files: [
       {
         path: "ui/select.tsx",
@@ -200,6 +201,7 @@ export const ui: RegistryComponent[] = [
   {
     id: "ui/separator",
     name: "Separator",
+    dependencies: ["@base-ui-components/react"],
     files: [
       {
         path: "ui/separator.tsx",
@@ -220,6 +222,7 @@ export const ui: RegistryComponent[] = [
   {
     id: "ui/slider",
     name: "Slider",
+    dependencies: ["@base-ui-components/react"],
     files: [
       {
         path: "ui/slider.tsx",
@@ -280,6 +283,16 @@ export const ui: RegistryComponent[] = [
     files: [
       {
         path: "ui/textarea.tsx",
+      },
+    ],
+  },
+  {
+    id: "ui/toggle",
+    name: "Toggle",
+    dependencies: ["@base-ui-components/react"],
+    files: [
+      {
+        path: "ui/toggle.tsx",
       },
     ],
   },

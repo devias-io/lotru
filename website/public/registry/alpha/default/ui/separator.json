@@ -1,6 +1,9 @@
 {
   "id": "ui/separator",
   "name": "Separator",
+  "dependencies": [
+    "@base-ui-components/react"
+  ],
   "files": [
     {
       "path": "ui/separator.tsx",

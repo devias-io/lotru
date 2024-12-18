@@ -1,0 +1,13 @@
+{
+  "id": "examples/toggle-01",
+  "name": "Toggle 01",
+  "registryDependencies": [
+    "ui/toggle"
+  ],
+  "files": [
+    {
+      "path": "examples/toggle-01.tsx",
+      "content": "import * as React from \"react\";\n\nimport { Toggle } from \"@/components/ui/toggle\";\nimport { BoldIcon } from \"lucide-react\";\n\nexport default function TooltipExample(): React.JSX.Element {\n  return (\n    <Toggle>\n      <BoldIcon />\n    </Toggle>\n  );\n}\n"
+    }
+  ]
+}

@@ -371,6 +371,16 @@ export const examples: RegistryComponent[] = [
     ],
   },
   {
+    id: "examples/toggle-01",
+    name: "Toggle 01",
+    registryDependencies: ["ui/toggle"],
+    files: [
+      {
+        path: "examples/toggle-01.tsx",
+      },
+    ],
+  },
+  {
     id: "examples/tooltip-01",
     name: "Tooltip 01",
     registryDependencies: ["ui/tooltip"],

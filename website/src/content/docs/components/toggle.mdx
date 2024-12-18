@@ -1,0 +1,56 @@
+---
+title: "Toggle"
+description: "A two-state button that can be either on or off."
+---
+
+<ComponentPreview id="examples/toggle-01" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsIndicator />
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx lotru@latest add ui/toggle
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+### Install the following dependencies:
+
+```bash
+npm install @base-ui-components/react
+```
+
+### Copy and paste the following code into your project.
+
+<ComponentSource id="ui/toggle" />
+
+### Update the import paths to match your project setup.
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx
+import { Toggle } from "@/components/ui/toggle";
+```
+
+```tsx
+<Toggle>Toggle</Toggle>
+```

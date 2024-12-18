@@ -1,6 +1,9 @@
 {
   "id": "ui/slider",
   "name": "Slider",
+  "dependencies": [
+    "@base-ui-components/react"
+  ],
   "files": [
     {
       "path": "ui/slider.tsx",

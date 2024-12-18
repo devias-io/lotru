@@ -1,6 +1,9 @@
 {
   "id": "ui/select",
   "name": "Select",
+  "dependencies": [
+    "@base-ui-components/react"
+  ],
   "files": [
     {
       "path": "ui/select.tsx",

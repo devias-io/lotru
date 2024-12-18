@@ -2,6 +2,7 @@
   "id": "ui/accordion",
   "name": "Accordion",
   "dependencies": [
+    "@base-ui-components/react",
     "lucide-react"
   ],
   "files": [

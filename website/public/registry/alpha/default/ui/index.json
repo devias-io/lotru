@@ -116,6 +116,10 @@
     "name": "Textarea"
   },
   {
+    "id": "ui/toggle",
+    "name": "Toggle"
+  },
+  {
     "id": "ui/tooltip",
     "name": "Tooltip"
   }

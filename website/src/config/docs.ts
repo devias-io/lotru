@@ -171,6 +171,10 @@ export const groups: Group[] = [
         href: "/docs/components/textarea",
       },
       {
+        title: "Toggle",
+        href: "/docs/components/toggle",
+      },
+      {
         title: "Tooltip",
         href: "/docs/components/tooltip",
       },

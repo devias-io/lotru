@@ -148,6 +148,10 @@
     "name": "Textarea 01"
   },
   {
+    "id": "examples/toggle-01",
+    "name": "Toggle 01"
+  },
+  {
     "id": "examples/tooltip-01",
     "name": "Tooltip 01"
   }

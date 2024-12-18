@@ -277,6 +277,15 @@ export const index: Record<
     }],
     
   },
+  "ui/toggle": {
+    id: "ui/toggle",
+    name: "Toggle",
+    description: "",
+    files: [{
+      path: "ui/toggle.tsx",
+    }],
+    
+  },
   "ui/tooltip": {
     id: "ui/tooltip",
     name: "Tooltip",
@@ -618,6 +627,15 @@ export const index: Record<
       path: "examples/textarea-01.tsx",
     }],
     component: React.lazy(() => import("@/src/components/examples/textarea-01.tsx"))
+  },
+  "examples/toggle-01": {
+    id: "examples/toggle-01",
+    name: "Toggle 01",
+    description: "",
+    files: [{
+      path: "examples/toggle-01.tsx",
+    }],
+    component: React.lazy(() => import("@/src/components/examples/toggle-01.tsx"))
   },
   "examples/tooltip-01": {
     id: "examples/tooltip-01",

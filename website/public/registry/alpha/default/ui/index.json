@@ -28,6 +28,10 @@
     "name": "Checkbox"
   },
   {
+    "id": "ui/collapsible",
+    "name": "Collapsible"
+  },
+  {
     "id": "ui/dialog",
     "name": "Dialog"
   },

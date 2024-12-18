@@ -48,6 +48,10 @@
     "name": "Checkbox 02"
   },
   {
+    "id": "examples/collapsible-01",
+    "name": "Collapsible 02"
+  },
+  {
     "id": "examples/dialog-01",
     "name": "Dialog 01"
   },

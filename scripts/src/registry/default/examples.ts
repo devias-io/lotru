@@ -121,6 +121,17 @@ export const examples: RegistryComponent[] = [
     ],
   },
   {
+    id: "examples/collapsible-01",
+    name: "Collapsible 02",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["ui/collapsible", "ui/icon-button", "ui/text"],
+    files: [
+      {
+        path: "examples/collapsible-01.tsx",
+      },
+    ],
+  },
+  {
     id: "examples/dialog-01",
     name: "Dialog 01",
     registryDependencies: ["ui/button", "ui/dialog"],

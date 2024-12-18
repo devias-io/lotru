@@ -1,0 +1,18 @@
+{
+  "id": "examples/collapsible-01",
+  "name": "Collapsible 02",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "ui/collapsible",
+    "ui/icon-button",
+    "ui/text"
+  ],
+  "files": [
+    {
+      "path": "examples/collapsible-01.tsx",
+      "content": "import * as React from \"react\";\nimport { css } from \"@pigment-css/react\";\nimport { ChevronsUpDownIcon } from \"lucide-react\";\n\nimport {\n  Collapsible,\n  CollapsibleContent,\n  CollapsibleTrigger,\n} from \"@/components/ui/collapsible\";\nimport { IconButton } from \"@/components/ui/icon-button\";\nimport { Text } from \"@/components/ui/text\";\n\nexport default function AccordionExample(): React.JSX.Element {\n  return (\n    <Collapsible\n      className={css({\n        border: \"1px solid hsl(var(--color-border))\",\n        borderRadius: \"var(--borderRadius-md)\",\n        maxWidth: \"200px\",\n        paddingBlock: \"calc(var(--size-unit) * 2)\",\n        paddingInlineEnd: \"calc(var(--size-unit) * 2)\",\n        paddingInlineStart: \"calc(var(--size-unit) * 4)\",\n        width: \"var(--size-full)\",\n      })}\n    >\n      <div\n        className={css({\n          alignItems: \"center\",\n          display: \"flex\",\n          justifyContent: \"space-between\",\n        })}\n      >\n        <Text fontSize=\"sm\" fontWeight=\"medium\">\n          Recovery keys\n        </Text>\n        <CollapsibleTrigger\n          render={\n            <IconButton variant=\"ghost\" size=\"sm\">\n              <ChevronsUpDownIcon />\n            </IconButton>\n          }\n        />\n      </div>\n      <CollapsibleContent\n        className={css({\n          height: \"var(--collapsible-panel-height)\",\n          overflow: \"hidden\",\n          transitionDuration: \"var(--duration-fast)\",\n          transitionProperty: \"height\",\n          transitionTimingFunction: \"var(--easing-default)\",\n          \"&[data-starting-style], &[data-ending-style]\": {\n            height: 0,\n          },\n        })}\n      >\n        <div\n          className={css({\n            display: \"flex\",\n            flexDirection: \"column\",\n            fontSize: \"var(--fontSize-sm)\",\n            gap: \"var(--size-unit)\",\n          })}\n        >\n          <div>alien-bean-pasta</div>\n          <div>wild-irish-burrito</div>\n          <div>horse-battery-staple</div>\n        </div>\n      </CollapsibleContent>\n    </Collapsible>\n  );\n}\n"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "ui/collapsible",
+  "name": "Collapsible",
+  "dependencies": [
+    "@base-ui-components/react"
+  ],
+  "files": [
+    {
+      "path": "ui/collapsible.tsx",
+      "content": "import { Collapsible as Primitive } from \"@base-ui-components/react/collapsible\";\n\nconst Collapsible = Primitive.Root;\n\nconst CollapsibleTrigger = Primitive.Trigger;\n\nconst CollapsibleContent = Primitive.Panel;\n\nexport { Collapsible, CollapsibleTrigger, CollapsibleContent };\n"
+    }
+  ]
+}

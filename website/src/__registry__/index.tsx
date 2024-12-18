@@ -79,6 +79,15 @@ export const index: Record<
     }],
     
   },
+  "ui/collapsible": {
+    id: "ui/collapsible",
+    name: "Collapsible",
+    description: "",
+    files: [{
+      path: "ui/collapsible.tsx",
+    }],
+    
+  },
   "ui/dialog": {
     id: "ui/dialog",
     name: "Dialog",
@@ -402,6 +411,15 @@ export const index: Record<
       path: "examples/checkbox-02.tsx",
     }],
     component: React.lazy(() => import("@/src/components/examples/checkbox-02.tsx"))
+  },
+  "examples/collapsible-01": {
+    id: "examples/collapsible-01",
+    name: "Collapsible 02",
+    description: "",
+    files: [{
+      path: "examples/collapsible-01.tsx",
+    }],
+    component: React.lazy(() => import("@/src/components/examples/collapsible-01.tsx"))
   },
   "examples/dialog-01": {
     id: "examples/dialog-01",

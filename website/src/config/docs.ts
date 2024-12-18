@@ -83,6 +83,10 @@ export const groups: Group[] = [
         href: "/docs/components/checkbox",
       },
       {
+        title: "Collapsible",
+        href: "/docs/components/collapsible",
+      },
+      {
         title: "Dialog",
         href: "/docs/components/dialog",
       },

@@ -71,6 +71,16 @@ export const ui: RegistryComponent[] = [
     ],
   },
   {
+    id: "ui/collapsible",
+    name: "Collapsible",
+    dependencies: ["@base-ui-components/react"],
+    files: [
+      {
+        path: "ui/collapsible.tsx",
+      },
+    ],
+  },
+  {
     id: "ui/dialog",
     name: "Dialog",
     dependencies: ["@base-ui-components/react"],

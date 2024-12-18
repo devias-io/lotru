@@ -1,0 +1,76 @@
+---
+title: "Accordion"
+description: "A vertically stacked set of interactive headings that each reveal a section of content."
+---
+
+<ComponentPreview id="examples/accordion-01" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsIndicator />
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx lotru@latest add ui/accordion
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+### Install the following dependencies:
+
+```bash
+npm install @base-ui-components/react lucide-react
+```
+
+### Copy and paste the following code into your project.
+
+<ComponentSource id="ui/accordion" />
+
+### Update the import paths to match your project setup.
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+```
+
+```tsx
+<Accordion>
+  <AccordionItem value="item-1">
+    <AccordionTrigger>Is it responsive?</AccordionTrigger>
+    <AccordionContent>Yes. It adapts seamlessly to different screen sizes.</AccordionContent>
+  </AccordionItem>
+</Accordion>
+```
+
+## Examples
+
+### Default
+
+<ComponentPreview id="examples/accordion-01" />
+
+### Dismissible
+
+<ComponentPreview id="examples/accordion-02" />

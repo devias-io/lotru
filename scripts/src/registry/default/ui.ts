@@ -2,6 +2,16 @@ import type { RegistryComponent } from "../schema";
 
 export const ui: RegistryComponent[] = [
   {
+    id: "ui/accordion",
+    name: "Accordion",
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: "ui/accordion.tsx",
+      },
+    ],
+  },
+  {
     id: "ui/alert",
     name: "Alert",
     dependencies: ["lucide-react"],

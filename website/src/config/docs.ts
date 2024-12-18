@@ -55,6 +55,10 @@ export const groups: Group[] = [
     title: "Components",
     items: [
       {
+        title: "Accordion",
+        href: "/docs/components/accordion",
+      },
+      {
         title: "Alert",
         href: "/docs/components/alert",
       },

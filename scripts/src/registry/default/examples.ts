@@ -2,6 +2,15 @@ import type { RegistryComponent } from "../schema";
 
 export const examples: RegistryComponent[] = [
   {
+    id: "examples/accordion-01",
+    name: "Accordion 01",
+    files: [
+      {
+        path: "examples/accordion-01.tsx",
+      },
+    ],
+  },
+  {
     id: "examples/alert-01",
     name: "Alert 01",
     registryDependencies: ["ui/alert"],

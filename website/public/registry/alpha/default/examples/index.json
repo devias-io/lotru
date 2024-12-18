@@ -1,5 +1,9 @@
 [
   {
+    "id": "examples/accordion-01",
+    "name": "Accordion 01"
+  },
+  {
     "id": "examples/alert-01",
     "name": "Alert 01"
   },

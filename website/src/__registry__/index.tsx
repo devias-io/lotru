@@ -16,6 +16,15 @@ export const index: Record<
     component?: React.LazyExoticComponent<() => React.JSX.Element>;
   }
 > = {
+  "ui/accordion": {
+    id: "ui/accordion",
+    name: "Accordion",
+    description: "",
+    files: [{
+      path: "ui/accordion.tsx",
+    }],
+    
+  },
   "ui/alert": {
     id: "ui/alert",
     name: "Alert",
@@ -267,6 +276,15 @@ export const index: Record<
       path: "ui/tooltip.tsx",
     }],
     
+  },
+  "examples/accordion-01": {
+    id: "examples/accordion-01",
+    name: "Accordion 01",
+    description: "",
+    files: [{
+      path: "examples/accordion-01.tsx",
+    }],
+    component: React.lazy(() => import("@/src/components/examples/accordion-01.tsx"))
   },
   "examples/alert-01": {
     id: "examples/alert-01",

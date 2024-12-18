@@ -1,5 +1,9 @@
 [
   {
+    "id": "ui/accordion",
+    "name": "Accordion"
+  },
+  {
     "id": "ui/alert",
     "name": "Alert"
   },

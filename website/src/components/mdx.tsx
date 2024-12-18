@@ -368,6 +368,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ComponentPreview,
     ComponentSource,
     Steps,
+    StepTitle: H3,
     Tabs,
     TabsList: ({
       className,

@@ -4,6 +4,12 @@ import { css } from "@pigment-css/react";
 import type { MDXComponents } from "mdx/types";
 
 import { cn } from "@/src/lib/cn";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/src/components/ui/accordion";
 import { Tabs, TabsContent, TabsIndicator, TabsList, TabsTrigger } from "@/src/components/ui/tabs";
 import { ComponentPreview } from "@/src/components/component-preview";
 import { ComponentSource } from "@/src/components/component-source";
@@ -355,6 +361,10 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     code: Code,
     pre: Pre,
     figure: Figure,
+    Accordion,
+    AccordionItem,
+    AccordionTrigger,
+    AccordionContent,
     ComponentPreview,
     ComponentSource,
     Steps,

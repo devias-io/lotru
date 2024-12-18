@@ -36,7 +36,7 @@ export default function Layout({ children }: LayoutProps): React.JSX.Element {
           })}
         >
           <Text className={css({ textAlign: "center" })} fontSize="3xl" fontWeight="medium">
-            Desining Stunning Apps Has Never Been Easier.
+            Designing Stunning Apps Has Never Been Easier.
           </Text>
           <Text
             className={css({ color: "hsl(var(--color-mutedForeground))", textAlign: "center" })}

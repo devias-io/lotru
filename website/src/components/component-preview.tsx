@@ -3,6 +3,7 @@ import { css } from "@pigment-css/react";
 
 import { index } from "@/src/__registry__";
 import { CodeBlockWrapper } from "@/src/components/code-block-wrapper";
+import { cn } from "../lib/cn";
 
 export interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
   id: string;
@@ -10,6 +11,7 @@ export interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivEleme
 
 export function ComponentPreview({
   children,
+  className,
   id,
   ...props
 }: ComponentPreviewProps): React.JSX.Element {
@@ -27,7 +29,15 @@ export function ComponentPreview({
   }, [id]);
 
   return (
-    <div {...props}>
+    <div
+      className={cn(
+        css({
+          marginBlock: "calc(var(--spacing-unit) * 4)",
+        }),
+        className
+      )}
+      {...props}
+    >
       <div
         className={css({
           border: "1px solid hsl(var(--color-border))",

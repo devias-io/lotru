@@ -24,6 +24,7 @@ function H1({ className, ...props }: React.ComponentProps<"h1">): React.JSX.Elem
           fontWeight: "var(--fontWeight-bold)",
           lineHeight: "var(--lineHeight-tight)",
           marginBlock: 0,
+          scrollMarginBlock: "calc(var(--spacing-unit) * 20)",
           "&:not(:first-child)": {
             marginBlockStart: "calc(var(--spacing-unit) * 16)",
           },
@@ -44,6 +45,7 @@ function H2({ className, ...props }: React.ComponentProps<"h2">): React.JSX.Elem
           fontWeight: "var(--fontWeight-bold)",
           lineHeight: "var(--lineHeight-tight)",
           marginBlock: 0,
+          scrollMarginBlock: "calc(var(--spacing-unit) * 20)",
           "&:not(:first-child)": {
             marginBlockStart: "calc(var(--spacing-unit) * 12)",
           },
@@ -64,6 +66,7 @@ function H3({ className, ...props }: React.ComponentProps<"h3">): React.JSX.Elem
           fontWeight: "var(--fontWeight-semibold)",
           lineHeight: "var(--lineHeight-tight)",
           marginBlock: 0,
+          scrollMarginBlock: "calc(var(--spacing-unit) * 20)",
           "&:not(:first-child)": {
             marginBlockStart: "calc(var(--spacing-unit) * 8)",
           },
@@ -84,6 +87,7 @@ function H4({ className, ...props }: React.ComponentProps<"h4">): React.JSX.Elem
           fontWeight: "var(--fontWeight-semibold)",
           lineHeight: "var(--lineHeight-tight)",
           marginBlock: 0,
+          scrollMarginBlock: "calc(var(--spacing-unit) * 20)",
           "&:not(:first-child)": {
             marginBlockStart: "calc(var(--spacing-unit) * 8)",
           },
@@ -104,6 +108,7 @@ function H5({ className, ...props }: React.ComponentProps<"h5">): React.JSX.Elem
           fontWeight: "var(--fontWeight-semibold)",
           lineHeight: "var(--lineHeight-tight)",
           marginBlock: 0,
+          scrollMarginBlock: "calc(var(--spacing-unit) * 20)",
           "&:not(:first-child)": {
             marginBlockStart: "calc(var(--spacing-unit) * 8)",
           },
@@ -124,6 +129,7 @@ function H6({ className, ...props }: React.ComponentProps<"h6">): React.JSX.Elem
           fontWeight: "var(--fontWeight-semibold)",
           lineHeight: "var(--lineHeight-tight)",
           marginBlock: 0,
+          scrollMarginBlock: "calc(var(--spacing-unit) * 20)",
           "&:not(:first-child)": {
             marginBlockStart: "calc(var(--spacing-unit) * 8)",
           },

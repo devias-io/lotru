@@ -19,10 +19,12 @@ const DropdownMenuPortal = (props: React.ComponentProps<typeof Primitive.Portal>
 );
 DropdownMenuPortal.displayName = "DropdownMenuPortal";
 
-const DropdownMenuPositioner = (props: React.ComponentProps<typeof Primitive.Positioner>) => (
-  <Primitive.Positioner {...props} />
-);
-DropdownMenuPositioner.displayName = "DropdownMenuPositioner";
+const DropdownMenuPositioner = styled(Primitive.Positioner, {
+  name: "DropdownMenuPositioner",
+  slot: "positioner",
+})({
+  zIndex: "var(--zIndex-popover)",
+});
 
 const DropdownMenuContent = styled(Primitive.Popup, {
   name: "DropdownMenuContent",
@@ -35,7 +37,6 @@ const DropdownMenuContent = styled(Primitive.Popup, {
   boxSizing: "border-box",
   minWidth: "8rem",
   padding: "var(--spacing-unit)",
-  zIndex: "var(--zIndex-popover)",
   "&:focus-visible": {
     outline: "none",
   },

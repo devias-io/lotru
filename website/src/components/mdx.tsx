@@ -346,7 +346,8 @@ function Steps({ className, ...props }: React.ComponentProps<"div">) {
             fontSize: "var(--fontSize-md)",
             fontWeight: "var(--fontWeight-semibold)",
             lineHeight: "var(--lineHeight-tight)",
-            marginBlockEnd: "calc(var(--spacing-unit) * 8)",
+            marginBlockEnd: "calc(var(--spacing-unit) * 4)",
+            marginBlockStart: "calc(var(--spacing-unit) * 8)",
             position: "relative",
             "&::before": {
               alignItems: "center",

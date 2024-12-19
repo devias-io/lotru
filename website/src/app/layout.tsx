@@ -46,7 +46,9 @@ export default function Layout({ children }: LayoutProps): React.JSX.Element {
           margin: 0,
         })}
       >
-        <ThemeProvider defaultTheme="system">{children}</ThemeProvider>
+        <ThemeProvider defaultTheme="system" disableTransitionOnChange>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -1,0 +1,285 @@
+---
+title: "Dark Mode"
+description: "Adding dark mode to your app."
+---
+
+## Next.js
+
+<Steps>
+
+### Install next-themes
+
+First, install the `next-themes` package:
+
+```bash
+npm install next-themes
+```
+
+### Wrap your root layout
+
+Add the `ThemeProvider` to your root layout.
+
+```tsx title="app/layout.tsx"
+import { ThemeProvider } from "next-themes";
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <head />
+      <body>
+        <ThemeProvider defaultTheme="system" disableTransitionOnChange>
+          {children}
+        </ThemeProvider>
+      </body>
+    </html>
+  );
+}
+```
+
+### Update theme.ts
+
+Update your `theme.ts` file to include a `getSelector` method.
+
+```tsx title="theme.ts"
+const theme = {
+  // ...
+  getSelector(colorScheme) {
+    return colorScheme ? `[data-theme="${colorScheme}"]` : ":root";
+  },
+};
+```
+
+### Add a mode toggle
+
+Place a mode toggle on your site to toggle between light and dark mode.
+
+```tsx
+"use client";
+
+import * as React from "react";
+import { css } from "@pigment-css/react";
+import { SunIcon, MoonIcon } from "lucide-react";
+import { useTheme } from "next-themes";
+
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuPortal,
+  DropdownMenuPositioner,
+  DropdownMenuTrigger,
+} from "@/src/components/ui/dropdown-menu";
+import { IconButton } from "@/src/components/ui/icon-button";
+
+export function ThemeSwitch(): React.JSX.Element {
+  const { setTheme } = useTheme();
+
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger
+        render={
+          <IconButton variant="ghost">
+            <SunIcon
+              className={css(({ theme }) =>
+                theme.applyStyles("dark", {
+                  display: "none",
+                })
+              )}
+            />
+            <MoonIcon
+              className={css(({ theme }) =>
+                theme.applyStyles("light", {
+                  display: "none",
+                })
+              )}
+            />
+          </IconButton>
+        }
+      />
+      <DropdownMenuPortal>
+        <DropdownMenuPositioner align="start" side="bottom" sideOffset={4}>
+          <DropdownMenuContent>
+            <DropdownMenuItem onClick={() => setTheme("light")}>Light</DropdownMenuItem>
+            <DropdownMenuItem onClick={() => setTheme("dark")}>Dark</DropdownMenuItem>
+            <DropdownMenuItem onClick={() => setTheme("system")}>System</DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenuPositioner>
+      </DropdownMenuPortal>
+    </DropdownMenu>
+  );
+}
+```
+
+</Steps>
+
+## Vite
+
+<Steps>
+
+### Create a theme provider
+
+```tsx title="components/theme-provider.tsx"
+import * as React from "react";
+
+type Theme = "dark" | "light" | "system";
+
+type ThemeProviderProps = {
+  children: React.ReactNode;
+  defaultTheme?: Theme;
+  storageKey?: string;
+};
+
+type ThemeProviderState = {
+  theme: Theme;
+  setTheme: (theme: Theme) => void;
+};
+
+const initialState: ThemeProviderState = {
+  theme: "system",
+  setTheme: () => null,
+};
+
+const ThemeProviderContext = React.createContext<ThemeProviderState>(initialState);
+
+export function ThemeProvider({
+  children,
+  defaultTheme = "system",
+  storageKey = "theme",
+  ...props
+}: ThemeProviderProps) {
+  const [theme, setTheme] = React.useState<Theme>(
+    () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
+  );
+
+  React.useEffect(() => {
+    const root = window.document.documentElement;
+
+    if (theme === "system") {
+      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light";
+
+      root.setAttribute("data-theme", systemTheme);
+      return;
+    }
+
+    root.setAttribute("data-theme", theme);
+  }, [theme]);
+
+  const value = {
+    theme,
+    setTheme: (theme: Theme) => {
+      localStorage.setItem(storageKey, theme);
+      setTheme(theme);
+    },
+  };
+
+  return (
+    <ThemeProviderContext.Provider {...props} value={value}>
+      {children}
+    </ThemeProviderContext.Provider>
+  );
+}
+
+export const useTheme = () => {
+  const context = React.useContext(ThemeProviderContext);
+
+  if (context === undefined) {
+    throw new Error("useTheme must be used within a ThemeProvider");
+  }
+
+  return context;
+};
+```
+
+### Wrap your root layout
+
+```tsx
+import { ThemeProvider } from "@/components/theme-provider";
+
+function App() {
+  return (
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      {children}
+    </ThemeProvider>
+  );
+}
+
+export default App;
+```
+
+### Update theme.ts
+
+Update your `theme.ts` file to include a `getSelector` method.
+
+```tsx title="theme.ts"
+const theme = {
+  // ...
+  getSelector(colorScheme) {
+    return colorScheme ? `[data-theme="${colorScheme}"]` : ":root";
+  },
+};
+```
+
+### Add a mode toggle
+
+Place a mode toggle on your site to toggle between light and dark mode.
+
+```tsx
+"use client";
+
+import * as React from "react";
+import { css } from "@pigment-css/react";
+import { SunIcon, MoonIcon } from "lucide-react";
+
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuPortal,
+  DropdownMenuPositioner,
+  DropdownMenuTrigger,
+} from "@/src/components/ui/dropdown-menu";
+import { IconButton } from "@/src/components/ui/icon-button";
+import { useTheme } from "@/components/theme-provider";
+
+export function ThemeSwitch(): React.JSX.Element {
+  const { setTheme } = useTheme();
+
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger
+        render={
+          <IconButton variant="ghost">
+            <SunIcon
+              className={css(({ theme }) =>
+                theme.applyStyles("dark", {
+                  display: "none",
+                })
+              )}
+            />
+            <MoonIcon
+              className={css(({ theme }) =>
+                theme.applyStyles("light", {
+                  display: "none",
+                })
+              )}
+            />
+          </IconButton>
+        }
+      />
+      <DropdownMenuPortal>
+        <DropdownMenuPositioner align="start" side="bottom" sideOffset={4}>
+          <DropdownMenuContent>
+            <DropdownMenuItem onClick={() => setTheme("light")}>Light</DropdownMenuItem>
+            <DropdownMenuItem onClick={() => setTheme("dark")}>Dark</DropdownMenuItem>
+            <DropdownMenuItem onClick={() => setTheme("system")}>System</DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenuPositioner>
+      </DropdownMenuPortal>
+    </DropdownMenu>
+  );
+}
+```
+
+</Steps>

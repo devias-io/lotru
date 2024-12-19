@@ -1,0 +1,256 @@
+---
+title: "Theming"
+description: "Learn how to customize the look and feel of the components to match your brand."
+---
+
+This design system uses CSS variables to enable consistency, scalability, and easy customization across components and themes.
+
+The `theme.ts` file contains all the design tokens used in the design system.
+
+```ts {8} title="theme.ts"
+const theme = {
+  colorSchemes: {
+    light: {
+      color: {},
+      shadow: {},
+    },
+    dark: {
+      color: {},
+      shadow: {},
+    },
+  },
+  borderRadius: {},
+  duration: {},
+  easing: {},
+  fontFamily: {},
+  // ...
+};
+```
+
+Tokens are converted to CSS variables and used throughout the design system. For example, the following tokens:
+
+```ts
+{
+  colorSchemes: {
+    light: {
+      color: {
+        background: "0 0% 100%",
+      },
+    },
+    dark: {
+      color: {
+        background: "240 5% 10%",
+      },
+    },
+  },
+}
+```
+
+Are converted to CSS variables:
+
+```css
+:root {
+  --color-background: 0 0% 100%;
+}
+
+.dark {
+  --color-background: 240 5% 10%;
+}
+```
+
+This token-based approach allows seamless theming and ensures consistency across all components and layouts.
+
+## Convention
+
+**CSS variables must be defined without color space function.**
+
+## Available Tokens
+
+Here is a list of available tokens that you can use to customize the design system.
+
+### Color
+
+Color tokens define the color palette used in the design system.
+
+```ts
+{
+  background: "0 0% 100%",
+  foreground: "240 5% 10%",
+  border: "240 5% 90%",
+  ring: "240 5% 65%",
+  overlay: "224 71% 4% / 40%",
+  surface: "0 0% 100%",
+  primary: "240 4% 16%",
+  primaryForeground: "0 0% 100%",
+  danger: "347 77% 50%",
+  dangerForeground: "0 0% 100%",
+  muted: "0 0% 98%",
+  mutedForeground: "240 5% 35%",
+}
+```
+
+### Shadow
+
+Shadow tokens provide depth to UI components, emphasizing a layered appearance and hierarchical structure.
+
+```ts
+{
+  shadow: {
+    xs: "0px 1px 2px hsl(0 0% 0% / 12%), 0px 0px 1px hsl(0 0% 0% / 19%)",
+    sm: "0px 2px 4px hsl(0 0% 0% / 6%), 0px 0px 1px hsl(0 0% 0% / 19%)",
+    md: "0px 4px 8px hsl(0 0% 0% / 6%), 0px 0px 1px hsl(0 0% 0% / 19%)",
+    lg: "0px 8px 16px hsl(0 0% 0% / 6%), 0px 0px 1px hsl(0 0% 0% / 19%)",
+    xl: "0px 16px 24px hsl(0 0% 0% / 6%), 0px 0px 1px hsl(0 0% 0% / 19%)",
+    "2xl": "0px 24px 40px hsl(0 0% 0% / 6%), 0px 0px 1px hsl(0 0% 0% / 19%)",
+  },
+}
+```
+
+### Border Radius
+
+Border radius tokens define the border radius.
+
+```ts
+{
+  borderRadius: {
+    "2xs": "0.0625rem",
+    xs: "0.125rem",
+    sm: "0.25rem",
+    md: "0.375rem",
+    lg: "0.5rem",
+    xl: "0.75rem",
+    "2xl": "1rem",
+    "3xl": "1.5rem",
+    full: "9999px",
+  },
+}
+```
+
+### Typography
+
+Typography tokens define the font family, size, weight, line height, and letter spacing.
+
+```ts
+{
+  fontFamily: {
+    sans: "var(--font-geist-sans)",
+    mono: "var(--font-geist-mono)",
+  },
+  fontSize: {
+    "2xs": "0.5rem",
+    xs: "0.75rem",
+    sm: "0.875rem",
+    md: "1rem",
+    lg: "1.125rem",
+    xl: "1.25rem",
+    "2xl": "1.5rem",
+    "3xl": "1.875rem",
+    "4xl": "2.25rem",
+    "5xl": "3rem",
+    "6xl": "3.75rem",
+    "7xl": "4.5rem",
+    "8xl": "6rem",
+    "9xl": "8rem",
+  },
+  fontWeight: {
+    light: "300",
+    regular: "400",
+    medium: "500",
+    semibold: "600",
+    bold: "700",
+  },
+  letterSpacing: {
+    tighter: "-0.05em",
+    tight: "-0.025em",
+    normal: "0em",
+    wide: "0.025em",
+    wider: "0.05em",
+    widest: "0.1em",
+  },
+  lineHeight: {
+    none: "1",
+    tighter: "1.125",
+    tight: "1.25",
+    normal: "1.5",
+    relaxed: "1.75",
+    loose: "2",
+  },
+}
+```
+
+### Size and Spacing
+
+Size and spacing tokens define the size and spacing scale to maintain consistency across components.
+
+```ts
+{
+  size: {
+    unit: ".25rem",
+    xs: "20rem",
+    sm: "24rem",
+    md: "28rem",
+    lg: "32rem",
+    xl: "36rem",
+    "2xl": "42rem",
+    "3xl": "48rem",
+    "4xl": "56rem",
+    "5xl": "64rem",
+    "6xl": "72rem",
+    "7xl": "80rem",
+    full: "100%",
+    min: "min-content",
+    max: "max-content",
+    fit: "fit-content",
+  },
+  spacing: {
+    unit: ".25rem",
+  },
+}
+```
+
+### Animation
+
+Animation tokens control transition durations and easing curves.
+
+```ts
+{
+  duration: {
+    fastest: "50ms",
+    faster: "100ms",
+    fast: "150ms",
+    normal: "200ms",
+    slow: "300ms",
+    slower: "400ms",
+    slowest: "500ms",
+  },
+  easing: {
+    pulse: "cubic-bezier(0.4, 0.0, 0.6, 1.0)",
+    default: "cubic-bezier(0.2, 0.0, 0, 1.0)",
+    emphasizedIn: "cubic-bezier(0.05, 0.7, 0.1, 1.0)",
+    emphasizedOut: "cubic-bezier(0.3, 0.0, 0.8, 0.15)",
+  },
+}
+```
+
+### Z-Index
+
+Z-index tokens define the stacking order of components in the layout hierarchy.
+
+```ts
+{
+  zIndex: {
+    hide: "-1",
+    base: "0",
+    docked: "10",
+    dropdown: "1000",
+    sticky: "1100",
+    banner: "1200",
+    overlay: "1300",
+    modal: "1400",
+    popover: "1500",
+    skipLink: "1600",
+    toast: "1700",
+    tooltip: "1800",
+  },
+}
+```

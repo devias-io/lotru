@@ -21,6 +21,10 @@ export const groups: Group[] = [
         href: "/docs",
       },
       {
+        title: "Theming",
+        href: "/docs/theming",
+      },
+      {
         title: "CLI",
         href: "/docs/cli",
       },

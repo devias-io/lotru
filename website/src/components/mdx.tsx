@@ -207,7 +207,7 @@ function Code({
           "&[data-line-numbers]": {
             counterReset: "line",
           },
-          "&[data-line-numbers] > [data-line]::before": {
+          "&[data-line-numbers] [data-line]::before": {
             color: "gray",
             content: "counter(line)",
             counterIncrement: "line",
@@ -217,13 +217,13 @@ function Code({
             textAlign: "end",
             width: "0.75rem",
           },
-          '&[data-line-numbers-max-digits="2"] > [data-line]::before': {
+          '&[data-line-numbers-max-digits="2"] [data-line]::before': {
             width: "1.25rem",
           },
-          '&[data-line-numbers-max-digits="3"] > [data-line]::before': {
+          '&[data-line-numbers-max-digits="3"] [data-line]::before': {
             width: "1.75rem",
           },
-          '&[data-line-numbers-max-digits="4"] > [data-line]::before': {
+          '&[data-line-numbers-max-digits="4"] [data-line]::before': {
             width: "2.25rem",
           },
         }),
@@ -255,6 +255,8 @@ function Pre({
             boxSizing: "border-box",
             maxHeight: "650px",
             overflowX: "auto",
+            marginBlockEnd: "calc(var(--spacing-unit) * 4)",
+            marginBlockStart: "calc(var(--spacing-unit) * 6)",
             paddingBlock: "calc(var(--spacing-unit) * 4)",
             width: "var(--size-full)",
           }),
@@ -294,6 +296,32 @@ function Figure({ className, ...props }: React.ComponentProps<"figure">): React.
         css({
           margin: 0,
           position: "relative",
+        }),
+        className
+      )}
+      {...props}
+    />
+  );
+}
+
+function FigureCaption({
+  className,
+  ...props
+}: React.ComponentProps<"figcaption">): React.JSX.Element {
+  return (
+    <figcaption
+      className={cn(
+        css({
+          "&[data-rehype-pretty-code-title]": {
+            fontSize: "var(--fontSize-sm)",
+            fontWeight: "var(--fontWeight-medium)",
+            marginBlockStart: "calc(var(--spacing-unit) * 2)",
+            paddingBlockStart: "calc(var(--spacing-unit) * 6)",
+            paddingInline: "calc(var(--spacing-unit) * 4)",
+            "& + pre": {
+              marginBlockStart: "calc(var(--spacing-unit) * 2)",
+            },
+          },
         }),
         className
       )}
@@ -361,6 +389,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     code: Code,
     pre: Pre,
     figure: Figure,
+    figcaption: FigureCaption,
     Accordion,
     AccordionItem,
     AccordionTrigger,

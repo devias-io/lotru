@@ -97,6 +97,15 @@ export const index: Record<
     }],
     
   },
+  "ui/drawer": {
+    id: "ui/drawer",
+    name: "Drawer",
+    description: "",
+    files: [{
+      path: "ui/drawer.tsx",
+    }],
+    
+  },
   "ui/dropdown-menu": {
     id: "ui/dropdown-menu",
     name: "Dropdown Menu",

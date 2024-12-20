@@ -36,6 +36,10 @@
     "name": "Dialog"
   },
   {
+    "id": "ui/drawer",
+    "name": "Drawer"
+  },
+  {
     "id": "ui/dropdown-menu",
     "name": "Dropdown Menu"
   },

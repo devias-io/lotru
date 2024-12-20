@@ -91,6 +91,16 @@ export const ui: RegistryComponent[] = [
     ],
   },
   {
+    id: "ui/drawer",
+    name: "Drawer",
+    dependencies: ["@base-ui-components/react"],
+    files: [
+      {
+        path: "ui/drawer.tsx",
+      },
+    ],
+  },
+  {
     id: "ui/dropdown-menu",
     name: "Dropdown Menu",
     dependencies: ["@base-ui-components/react"],

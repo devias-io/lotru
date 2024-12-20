@@ -2,8 +2,8 @@ import * as React from "react";
 import { css } from "@pigment-css/react";
 
 import { index } from "@/src/__registry__";
+import { cn } from "@/src/lib/cn";
 import { CodeBlockWrapper } from "@/src/components/code-block-wrapper";
-import { cn } from "../lib/cn";
 
 export interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
   id: string;

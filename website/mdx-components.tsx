@@ -1,5 +1,4 @@
 import * as React from "react";
-import { MDXContent } from "@content-collections/mdx/react";
 import { css } from "@pigment-css/react";
 import type { MDXComponents } from "mdx/types";
 
@@ -450,14 +449,4 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
     TabsContent,
   };
-}
-
-interface MDXProps {
-  code: string;
-}
-
-export function MDX({ code }: MDXProps) {
-  const components = useMDXComponents({});
-
-  return <MDXContent components={components} code={code} />;
 }

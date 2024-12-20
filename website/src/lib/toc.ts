@@ -6,6 +6,7 @@ import type { Node } from "unist";
 import { visit } from "unist-util-visit";
 import type { VFile } from "vfile";
 import { unified } from "unified";
+import remarkFrontmatter from "remark-frontmatter";
 
 interface Item {
   title?: string;
@@ -99,7 +100,12 @@ export interface TableOfContents {
 }
 
 export async function getTableOfContents(content: string): Promise<TableOfContents> {
-  const file = await unified().use(remarkParse).use(remarkStringify).use(getToc).process(content);
+  const file = await unified()
+    .use(remarkFrontmatter)
+    .use(remarkParse)
+    .use(remarkStringify)
+    .use(getToc)
+    .process(content);
 
   return file.data as TableOfContents;
 }

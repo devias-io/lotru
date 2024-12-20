@@ -10,7 +10,6 @@ import { Text } from "@/src/components/ui/text";
 import { Stack } from "@/src/components/ui/stack";
 import { Badge } from "@/src/components/ui/badge";
 import { DocsPager } from "@/src/components/docs-pager";
-import { MDX } from "@/src/components/mdx";
 import { Toc } from "@/src/components/toc";
 
 async function getDocFromParams(params: Promise<{ slug: string[] }>): Promise<Doc | null> {
@@ -29,6 +28,8 @@ export default async function Page({ params }: PageProps): Promise<React.JSX.Ele
   if (!doc) {
     return notFound();
   }
+
+  const { default: MdxContent } = await import(`@/src/content/docs/${doc._meta.filePath}`);
 
   return (
     <main
@@ -99,7 +100,7 @@ export default async function Page({ params }: PageProps): Promise<React.JSX.Ele
           ) : null}
         </div>
         <div className={css({ minWidth: 0 })}>
-          <MDX code={doc.mdx} />
+          <MdxContent />
         </div>
         <DocsPager doc={doc} />
       </div>

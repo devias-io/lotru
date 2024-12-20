@@ -112,7 +112,7 @@ export const index: Record<
 };
 `;
 
-  await fs.writeFile(path.join(targetPath, "index.tsx"), content);
+  await fs.writeFile(path.join(targetPath, "index.ts"), content);
 }
 
 async function buildComponentsIndex(): Promise<void> {
